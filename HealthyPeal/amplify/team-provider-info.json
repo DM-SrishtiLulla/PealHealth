@@ -10,6 +10,11 @@
             "StackName": "amplify-healthypeal-dev-235836",
             "StackId": "arn:aws:cloudformation:us-east-1:722627052616:stack/amplify-healthypeal-dev-235836/b48a5150-aace-11ea-9ad3-0e8805686543",
             "AmplifyAppId": "d5ymjkis55lcv"
+        },
+        "categories": {
+            "auth": {
+                "healthypeal8ae500f7": {}
+            }
         }
     }
 }

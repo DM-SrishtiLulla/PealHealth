@@ -15,6 +15,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
 const Stack = createStackNavigator();
 
@@ -56,7 +57,7 @@ function ProfilePage({ navigation }) {
   )
 }
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -70,3 +71,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+export default withAuthenticator(App);

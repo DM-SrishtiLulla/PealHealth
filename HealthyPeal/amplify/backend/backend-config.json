@@ -1,1 +1,10 @@
-{}
+{
+	"auth": {
+		"healthypeal8ae500f7": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
