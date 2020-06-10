@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-healthypeal-dev-235836-authRole",
+            "UnauthRoleArn": "arn:aws:iam::722627052616:role/amplify-healthypeal-dev-235836-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::722627052616:role/amplify-healthypeal-dev-235836-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-healthypeal-dev-235836-deployment",
+            "UnauthRoleName": "amplify-healthypeal-dev-235836-unauthRole",
+            "StackName": "amplify-healthypeal-dev-235836",
+            "StackId": "arn:aws:cloudformation:us-east-1:722627052616:stack/amplify-healthypeal-dev-235836/b48a5150-aace-11ea-9ad3-0e8805686543",
+            "AmplifyAppId": "d5ymjkis55lcv"
+        }
+    }
+}
