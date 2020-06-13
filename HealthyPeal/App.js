@@ -1,12 +1,13 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {
-  View,
-  Text,
-  Button
+  View
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import * as eva from '@eva-design/eva';
+import { default as theme } from './theme.json';
+import { ApplicationProvider, Layout, Text, Button } from '@ui-kitten/components';
 
 import {
   Header,
@@ -21,44 +22,37 @@ const Stack = createStackNavigator();
 
 function HelloWorldApp({ navigation }) {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-      }}>
-      <Text>Hello, world!</Text>
-      <Button
-        title="Go to Jane's profile"
+    <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text category='h1'>HOME</Text>
+     <Button
+        size="medium"
         onPress={() =>
           navigation.navigate('Profile', { name: 'Jane' })
-        }
-      />
-    </View>
+        }>
+          Go to Jane's profile
+        </Button>
+  </Layout>
   )
 }
 
 function ProfilePage({ navigation }) {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-      }}>
-      <Text>Profile!</Text>
-      <Button
-        title="Go to Bob's profile"
+    <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text category='h1'>Jane's Profile</Text>
+     <Button
+        size="medium"
         onPress={() =>
           navigation.navigate('Home')
-        }
-      />
-    </View>
+        }>
+          Go Back
+        </Button>
+  </Layout>
   )
 }
 
 function App() {
   return (
+    <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -69,6 +63,7 @@ function App() {
         <Stack.Screen name="Profile" component={ProfilePage} />
       </Stack.Navigator>
     </NavigationContainer>
+    </ApplicationProvider>
   );
 }
 
