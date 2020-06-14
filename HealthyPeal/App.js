@@ -1,21 +1,22 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {
-  View
+  View, AsyncStorage, Image
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as eva from '@eva-design/eva';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { default as theme } from './theme.json';
-import { ApplicationProvider, Layout, Text, Button } from '@ui-kitten/components';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { ApplicationProvider, Layout, Text, Button, IconRegistry, Icon} from '@ui-kitten/components';
+import Onboarding from "react-native-onboarding-swiper";
+// import {
+//   Header,
+//   LearnMoreLinks,
+//   Colors,
+//   DebugInstructions,
+//   ReloadInstructions,
+// } from 'react-native/Libraries/NewAppScreen';
 import { withAuthenticator } from 'aws-amplify-react-native';
 
 const Stack = createStackNavigator();
@@ -46,13 +47,60 @@ function ProfilePage({ navigation }) {
         }>
           Go Back
         </Button>
+      <Button
+        size="medium"
+        onPress={() =>
+          navigation.navigate('Onboarding')
+        }>
+          Onboarding
+        </Button>
   </Layout>
   )
 }
 
+
+function OnboardingPage() {
+return (
+    <Onboarding
+      pages={[
+        {
+          backgroundColor: "#fff",
+          image: (
+            <Icon name="swap" size={100} color="white" />
+          ),
+          title: "Page One",
+          subtitle: "This is the first page of the onboarding sequence.",
+        },
+        {
+          backgroundColor: "#fff",
+          title: "Page Two",
+          subtitle: (
+            <Button
+          title={'Get Started'}
+          containerViewStyle={{ marginTop: 20 }}
+          backgroundColor={'white'}
+          borderRadius={5}
+          textStyle={{ color: '#003c8f' }}
+          onPress={() => {
+              navigation.navigate('Home')
+            }
+          }
+        />
+          ),
+          image: (
+            <Icon name="swap" size={100} color="white" />
+          ),
+        },
+      ]}
+    />
+  );
+};
+
 function App() {
   return (
-    <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
+    <>
+    <IconRegistry icons={EvaIconsPack} />
+    <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -61,9 +109,11 @@ function App() {
           options={{ title: 'Welcome' }}
         />
         <Stack.Screen name="Profile" component={ProfilePage} />
+        <Stack.Screen name="Onboarding" component={OnboardingPage} />
       </Stack.Navigator>
     </NavigationContainer>
     </ApplicationProvider>
+    </>
   );
 }
 
