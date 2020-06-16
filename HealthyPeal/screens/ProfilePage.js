@@ -1,12 +1,15 @@
 import React from 'react';
+import { StyleSheet } from "react-native";
 import { Layout, Text, Button } from '@ui-kitten/components';
+import COLORS from "../Colors";
 
 export default function ProfilePage({ navigation }) {
     return (
-      <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text category='h1'>Jane's Profile</Text>
+      <Layout style={styles.container}>
+      <Text style={styles.title} category='h1'>Jane's Profile</Text>
        <Button
           size="medium"
+          style={styles.button1}
           onPress={() =>
             navigation.navigate('Home')
           }>
@@ -14,6 +17,7 @@ export default function ProfilePage({ navigation }) {
           </Button>
         <Button
           size="medium"
+          style={styles.button1}
           onPress={() =>
             navigation.navigate('Onboarding')
           }>
@@ -22,3 +26,20 @@ export default function ProfilePage({ navigation }) {
     </Layout>
     )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 0,
+    backgroundColor: COLORS.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    },
+  title: {
+    color: COLORS.darkaccent,
+    marginHorizontal: 20,
+  },
+  button1: {
+    marginTop: 30
+  },
+});

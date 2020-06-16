@@ -1,12 +1,15 @@
 import React from 'react';
+import { StyleSheet } from "react-native";
 import { Layout, Text, Button } from '@ui-kitten/components';
+import COLORS from "../Colors";
 
 export default function HelloWorldApp({ navigation }) {
     return (
-      <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text category='h1'>HOME</Text>
+      <Layout style={styles.container}>
+      <Text style={styles.title} category='h1'>A mindful path to deep insights.</Text>
        <Button
           size="medium"
+          style={styles.button1}
           onPress={() =>
             navigation.navigate('Profile', { name: 'Jane' })
           }>
@@ -15,3 +18,20 @@ export default function HelloWorldApp({ navigation }) {
     </Layout>
     )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 0,
+    backgroundColor: COLORS.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    },
+  title: {
+    color: COLORS.darkaccent,
+    marginHorizontal: 20,
+  },
+  button1: {
+    marginTop: 30
+  },
+});
