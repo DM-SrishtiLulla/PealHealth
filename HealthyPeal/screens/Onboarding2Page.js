@@ -4,7 +4,7 @@ import {
   } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 
-export default function OnboardingPage({ navigation }) {
+export default function Onboarding2Page({ navigation }) {
     // const [goals, setGoals] = useState([
     //   {goal: "manage stress", key: "1"},
     //   {goal: "reduce anxiety", key: "2"},
@@ -15,7 +15,7 @@ export default function OnboardingPage({ navigation }) {
     // ]);
   
     const [data, setData] = useState([
-        {id:1, title: "First",        color:"#FF4500", members:8,  image:"https://img.icons8.com/color/70/000000/name.png", backimage:"https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"},
+        {id:1, title: "Second",        color:"#FF4500", members:8,  image:"https://img.icons8.com/color/70/000000/name.png", backimage:"https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"},
         {id:1, title: "Home",     color:"#87CEEB", members:6,  image:"https://img.icons8.com/office/70/000000/home-page.png", backimage:"https://images.unsplash.com/flagged/photo-1556848797-f3d99afc29af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80"},
         {id:2, title: "Love",     color:"#4682B4", members:12, image:"https://img.icons8.com/color/70/000000/two-hearts.png", backimage:"https://images.unsplash.com/photo-1543176634-8593f3d8330e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"} ,
         {id:3, title: "Family",   color:"#6A5ACD", members:5,  image:"https://img.icons8.com/color/70/000000/family.png", backimage:"https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"} ,
@@ -67,9 +67,9 @@ export default function OnboardingPage({ navigation }) {
           <Button
           size="medium"
           onPress={() =>
-            navigation.navigate('Onboarding2')
+            navigation.navigate('Home')
           }>
-            Next
+            Home
           </Button>
       </View>
     );

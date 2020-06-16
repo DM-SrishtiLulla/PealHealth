@@ -8,6 +8,7 @@ import { ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import HelloWorldApp from './HelloWorldPage';
 import ProfilePage from './ProfilePage';
 import OnboardingPage from './OnboardingPage';
+import Onboarding2Page from "./Onboarding2Page";
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ export default function MainStackNavigator() {
           />
           <Stack.Screen name="Profile" component={ProfilePage} />
           <Stack.Screen name="Onboarding" component={OnboardingPage} />
+          <Stack.Screen name="Onboarding2" component={Onboarding2Page} />
         </Stack.Navigator>
       </NavigationContainer>
       </ApplicationProvider>
