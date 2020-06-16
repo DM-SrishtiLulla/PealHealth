@@ -18,7 +18,7 @@ export default function MainStackNavigator() {
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Onboarding">
           <Stack.Screen
             name="Home"
             component={HelloWorldApp}
