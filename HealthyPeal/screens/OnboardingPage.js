@@ -5,7 +5,7 @@ import {
 import { Text } from '@ui-kitten/components';
 
 
-export default function OnboardingPage() {
+export default function OnboardingPage({ navigation }) {
     // const [goals, setGoals] = useState([
     //   {goal: "manage stress", key: "1"},
     //   {goal: "reduce anxiety", key: "2"},
