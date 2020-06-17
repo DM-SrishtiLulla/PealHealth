@@ -9,6 +9,8 @@ import HelloWorldApp from './HelloWorldPage';
 import ProfilePage from './ProfilePage';
 import OnboardingPage from './OnboardingPage';
 import Onboarding2Page from "./Onboarding2Page";
+import DatabaseTest from "./DatabaseTest";
+
 
 const Stack = createStackNavigator();
 
@@ -27,6 +29,7 @@ export default function MainStackNavigator() {
           <Stack.Screen name="Profile" component={ProfilePage} />
           <Stack.Screen name="Onboarding" component={OnboardingPage} />
           <Stack.Screen name="Onboarding2" component={Onboarding2Page} />
+          <Stack.Screen name="DatabaseTest" component={DatabaseTest} />
         </Stack.Navigator>
       </NavigationContainer>
       </ApplicationProvider>

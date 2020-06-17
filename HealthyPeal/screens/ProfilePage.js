@@ -14,7 +14,7 @@ export default function ProfilePage({ navigation }) {
             navigation.navigate('Home')
           }>
             Go Back
-          </Button>
+        </Button>
         <Button
           size="medium"
           style={styles.button1}
@@ -22,7 +22,15 @@ export default function ProfilePage({ navigation }) {
             navigation.navigate('Onboarding')
           }>
             Onboarding
-          </Button>
+        </Button>
+        <Button
+          size="medium"
+          style={styles.button1}
+          onPress={() =>
+            navigation.navigate('DatabaseTest')
+          }>
+            DatabaseTest
+        </Button>
     </Layout>
     )
 }
