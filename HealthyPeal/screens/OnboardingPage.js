@@ -3,6 +3,8 @@ import {
     View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
   } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
+import LottieView from "lottie-react-native";
+import COLORS from "../Colors";
 
 export default function OnboardingPage({ navigation }) {
     // const [goals, setGoals] = useState([
@@ -41,7 +43,13 @@ export default function OnboardingPage({ navigation }) {
   // )
     return (
       <View style={styles.container}>
-        <FlatList style={styles.list}
+        <LottieView 
+          source={require("../assets/22871-skater.json")} 
+          autoPlay
+          speed={0.4}
+          loop={true}
+          style={styles.animation}/>
+        {/* <FlatList style={styles.list}
           contentContainerStyle={styles.listContainer}
           data={data}
           horizontal={false}
@@ -56,20 +64,25 @@ export default function OnboardingPage({ navigation }) {
                 <View style={styles.cardHeader}>
                   <Text style={styles.title}>{item.title}</Text>
                 </View>
-                {/* <Image style={styles.cardImage} source={{uri:item.image}}/> */}
-                {/* <View style={styles.cardFooter}>
+                <View style={styles.cardFooter}>
                   <Text style={styles.subTitle}>{item.members} members</Text>
-                </View> */}
+                  </View>
                 </ImageBackground>
               </TouchableOpacity>
-            )
-          }}/>
+            ) */}
+        <Text style={styles.title} category='h1'>
+          Welcome to Peal!
+        </Text>
+        <Text style={styles.title} category='h2'>
+          A space for thoughtful reflection.
+        </Text>
           <Button
-          size="medium"
+          size="giant"
+          style={styles.buttonbottom}
           onPress={() =>
             navigation.navigate('Onboarding2')
           }>
-            Next
+            Get Started
           </Button>
       </View>
     );
@@ -79,6 +92,7 @@ const styles = StyleSheet.create({
     container:{
       flex:1,
       marginTop:0,
+      backgroundColor: COLORS.primary
     },
     list: {
       //paddingHorizontal: 5,
@@ -143,5 +157,20 @@ const styles = StyleSheet.create({
       flex: 1,
       resizeMode: "cover",
       justifyContent: "center"
+    },
+    animation: {
+      alignSelf: "center",
+      justifyContent: "center",
+      backgroundColor: COLORS.primary
+    },
+    buttonbottom: {
+      flex: 0.1,
+      alignSelf: "center",
+      marginTop: 500,
+    },
+    title: {
+      color: COLORS.darkaccent,
+      marginHorizontal: 20,
+      marginTop: 20
     },
 });

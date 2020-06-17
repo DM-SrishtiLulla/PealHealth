@@ -3,6 +3,7 @@ import {
     View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
   } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
+import LottieView from 'lottie-react-native';
 
 export default function Onboarding2Page({ navigation }) {
     // const [goals, setGoals] = useState([
