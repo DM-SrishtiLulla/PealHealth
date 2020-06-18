@@ -23,7 +23,7 @@ const Stack = createStackNavigator();
 
 function MainTabNavigator() {
   return (
-    <Tab.Navigator activeColor="#e91e63" shifting={false}>
+    <Tab.Navigator activeColor="#e91e63" shifting={false} initialRouteName="Dashboard">
       <Tab.Screen name="Dashboard" 
                       component={HelloWorldApp} 
                       options={{
@@ -69,15 +69,15 @@ export default function MainStackNavigator() {
             component={MainTabNavigator}
             options={{headerTitle: "", headerTransparent: true}}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Home"
             component={HelloWorldApp}
             options={{ title: 'Welcome' }}
-          />
-          <Stack.Screen name="Profile" component={ProfilePage} />
+          /> */}
+          {/* <Stack.Screen name="Profile" component={ProfilePage} /> */}
           <Stack.Screen name="Onboarding" component={OnboardingPage} />
           <Stack.Screen name="Onboarding2" component={Onboarding2Page} />
-          <Stack.Screen name="DatabaseTest" component={DatabaseTest} />
+          {/* <Stack.Screen name="DatabaseTest" component={DatabaseTest} /> */}
         </Stack.Navigator>
       </NavigationContainer>
       </ApplicationProvider>
