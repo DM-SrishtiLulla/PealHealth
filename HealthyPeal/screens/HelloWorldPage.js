@@ -11,7 +11,7 @@ export default function HelloWorldApp({ navigation }) {
           size="medium"
           style={styles.button1}
           onPress={() =>
-            navigation.navigate('Profile', { name: 'Jane' })
+            navigation.navigate('Insights', { name: 'Jane' })
           }>
             Go to Jane's profile
           </Button>

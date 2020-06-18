@@ -68,7 +68,7 @@ export default function Onboarding2Page({ navigation }) {
           <Button
           size="medium"
           onPress={() =>
-            navigation.navigate('Home')
+            navigation.navigate('Tabs')
           }>
             Home
           </Button>

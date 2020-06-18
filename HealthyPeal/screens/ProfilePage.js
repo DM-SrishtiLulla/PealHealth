@@ -27,7 +27,7 @@ export default function ProfilePage({ navigation }) {
           size="medium"
           style={styles.button1}
           onPress={() =>
-            navigation.navigate('DatabaseTest')
+            navigation.navigate('More')
           }>
             DatabaseTest
         </Button>

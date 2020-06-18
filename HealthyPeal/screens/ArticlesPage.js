@@ -8,7 +8,7 @@ export default function ArticlesPage({ navigation }) {
        <Button
           size="medium"
           onPress={() =>
-            navigation.navigate('Profile', { name: 'Jane' })
+            navigation.navigate('Insights', { name: 'Jane' })
           }>
             Go to Jane's profile
           </Button>
