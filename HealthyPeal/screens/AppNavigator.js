@@ -15,6 +15,7 @@ import DatabaseTest from "./DatabaseTest";
 import { Icon } from 'react-native-eva-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ArticlesPage from './ArticlesPage';
+import COLORS from "../Colors";
 
 
 
@@ -23,13 +24,13 @@ const Stack = createStackNavigator();
 
 function MainTabNavigator() {
   return (
-    <Tab.Navigator activeColor="#e91e63" shifting={false}>
+    <Tab.Navigator color={COLORS.lightaccent} activeColor={COLORS.darkaccent} shifting={false}>
       <Tab.Screen name="Dashboard" 
                       component={HelloWorldApp} 
                       options={{
                         tabBarLabel: 'Dashboard',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='home-outline' width={24} height={24} fill='#3366FF' />
+                          <Icon name='home-outline' width={24} height={24} fill={COLORS.lightaccent} />
                           // <MaterialCommunityIcons name="home" color={color} size={26} />
                         ),}}/>
       <Tab.Screen name="Insights" 
@@ -37,21 +38,21 @@ function MainTabNavigator() {
                       options={{
                         tabBarLabel: 'Insights',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='bulb-outline' width={24} height={24} fill='#3366FF' />
+                          <Icon name='bulb-outline' width={24} height={24} fill={COLORS.lightaccent} />
                         ),}}/>
       <Tab.Screen name="Community" 
                       component={ArticlesPage} 
                       options={{
                         tabBarLabel: 'Articles',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='globe-outline' width={24} height={24} fill='#3366FF' />
+                          <Icon name='globe-outline' width={24} height={24} fill={COLORS.lightaccent} />
                           ),}}/>
       <Tab.Screen name="More" 
                       component={DatabaseTest} 
                       options={{
                         tabBarLabel: 'More',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='more-horizontal-outline' width={24} height={24} fill='#3366FF' />
+                          <Icon name='more-horizontal-outline' width={24} height={24} fill={COLORS.lightaccent} />
                           ),}}/>
     </Tab.Navigator>
   );

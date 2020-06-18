@@ -2,27 +2,18 @@ import React from 'react';
 import { StyleSheet } from "react-native";
 import { Layout, Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
+import LottieView from "lottie-react-native";
 
 export default function ProfilePage({ navigation }) {
     return (
       <Layout style={styles.container}>
-      <Text style={styles.title} category='h1'>Jane's Profile</Text>
-       <Button
-          size="medium"
-          style={styles.button1}
-          onPress={() =>
-            navigation.navigate('Home')
-          }>
-            Go Back
-        </Button>
-        <Button
-          size="medium"
-          style={styles.button1}
-          onPress={() =>
-            navigation.navigate('Onboarding')
-          }>
-            Onboarding
-        </Button>
+      <Text style={styles.title} category='h1'>Saved Strategies</Text>
+      <LottieView 
+          source={require("../assets/23694-morning-tea.json")} 
+          autoPlay
+          speed={0.5}
+          loop={true}
+          style={styles.animation}/>
         <Button
           size="medium"
           style={styles.button1}
@@ -40,14 +31,25 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 0,
     backgroundColor: COLORS.primary,
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    flexDirection: "column"
     },
   title: {
-    color: COLORS.darkaccent,
-    marginHorizontal: 20,
+      flex:1,
+      alignSelf: "center",
+      color:"#FFFFFF",
+      fontWeight:'bold',
+      color: COLORS.darkaccent,
+      marginHorizontal: 20,
+      marginTop: 100
   },
   button1: {
-    marginTop: 30
+    marginHorizontal: 10,
+    marginBottom: 100
+  },
+  animation: {
+    alignSelf: "center",
+    justifyContent: "center",
   },
 });

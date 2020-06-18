@@ -46,7 +46,7 @@ export default function OnboardingPage({ navigation }) {
         <LottieView 
           source={require("../assets/22871-skater.json")} 
           autoPlay
-          speed={0.4}
+          speed={1}
           loop={true}
           style={styles.animation}/>
         {/* <FlatList style={styles.list}
