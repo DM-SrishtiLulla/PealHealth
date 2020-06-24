@@ -6,7 +6,7 @@ import COLORS from "../Colors";
 export default function HelloWorldApp({ navigation }) {
     return (
       <Layout style={styles.container}>
-      <Text style={styles.title} category='h1'>A mindful path to deep insights.</Text>
+      <Text style={styles.title} category='h1'>Home</Text>
        <Button
           size="medium"
           style={styles.button1}
@@ -24,14 +24,14 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 0,
     backgroundColor: COLORS.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
     },
   title: {
+    marginTop: 100,
     color: COLORS.darkaccent,
     marginHorizontal: 20,
   },
   button1: {
-    marginTop: 30
+    marginTop: 30,
+    marginHorizontal: 50
   },
 });

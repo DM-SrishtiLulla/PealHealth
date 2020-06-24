@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
       fontSize:20,
       flex:1,
       alignSelf: "center",
-      color:"#FFFFFF",
+      color:COLORS.lightaccent,
       fontWeight:'bold'
     },
     subTitle:{
