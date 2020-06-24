@@ -11,6 +11,8 @@ import HelloWorldApp from './HelloWorldPage';
 import ProfilePage from './ProfilePage';
 import OnboardingPage from './OnboardingPage';
 import Onboarding2Page from "./Onboarding2Page";
+import Onboarding3Page from "./Onboarding3Page";
+import Onboarding4Page from "./Onboarding4Page";
 import DatabaseTest from "./DatabaseTest";
 import { Icon } from 'react-native-eva-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -78,6 +80,8 @@ export default function MainStackNavigator() {
           <Stack.Screen name="Profile" component={ProfilePage} />
           <Stack.Screen name="Onboarding" component={OnboardingPage} />
           <Stack.Screen name="Onboarding2" component={Onboarding2Page} />
+          <Stack.Screen name="Onboarding3" component={Onboarding3Page} />
+          <Stack.Screen name="Onboarding4" component={Onboarding4Page} />
           <Stack.Screen name="DatabaseTest" component={DatabaseTest} />
         </Stack.Navigator>
       </NavigationContainer>

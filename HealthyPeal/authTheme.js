@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import COLORS from "./Colors"
 
 // Colors
 export const deepSquidInk = '#FFFFFF';
@@ -17,7 +18,7 @@ const authTheme = StyleSheet.create({
 		justifyContent: 'space-around',
 		paddingTop: 20,
 		width: '100%',
-		backgroundColor: '#FFA1AC',
+		backgroundColor: COLORS.primary,
 		color: '#FFFFFF'
 	},
 	section: {

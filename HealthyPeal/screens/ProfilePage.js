@@ -8,12 +8,6 @@ export default function ProfilePage({ navigation }) {
     return (
       <Layout style={styles.container}>
       <Text style={styles.title} category='h1'>Saved Strategies</Text>
-      <LottieView 
-          source={require("../assets/23694-morning-tea.json")} 
-          autoPlay
-          speed={0.5}
-          loop={true}
-          style={styles.animation}/>
         <Button
           size="medium"
           style={styles.button1}
