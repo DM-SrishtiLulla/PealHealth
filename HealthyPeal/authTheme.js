@@ -1,25 +1,17 @@
 import { StyleSheet } from 'react-native';
 import COLORS from "./Colors"
 
-// Colors
-export const deepSquidInk = '#FFFFFF';
-export const linkUnderlayColor = '#FFF';
-export const errorIconColor = '#FFFFFF';
-export const textInputColor = '#FFFFFF';
-export const textInputBorderColor = '#FFFFFF';
-export const placeholderColor = '#11CDEF';
-
 // Theme
 const authTheme = StyleSheet.create({
 	container: {
 		flex: 1,
 		flexDirection: 'column',
-		alignItems: 'center',
+		// alignItems: "flex-start",
 		justifyContent: 'space-around',
 		paddingTop: 20,
 		width: '100%',
 		backgroundColor: COLORS.primary,
-		color: '#FFFFFF'
+		color: COLORS.darkaccent
 	},
 	section: {
 		flex: 1,
@@ -29,28 +21,30 @@ const authTheme = StyleSheet.create({
 	sectionHeader: {
 		width: '100%',
 		marginBottom: 20,
-		color: "#FFFFFF"
+		marginTop: 50,
+		marginHorizontal: 10,
+		color: COLORS.darkaccent
 	},
 	sectionHeaderText: {
-		color: "#FFFFFF",
+		color: COLORS.darkaccent,
 		fontSize: 20,
-		fontWeight: '500',
+		fontWeight: '300',
 	},
 	sectionFooter: {
-		width: '100%',
-		padding: 10,
+		width: '150%',
+		padding: 0,
 		flexDirection: 'row',
-		justifyContent: 'space-between',
-		marginTop: 15,
-		marginBottom: 20,
-		color: "#FFFFFF"
+		marginTop: 20,
+		marginBottom: 2000,
+		marginLeft: 20,
+		color: COLORS.darkaccent
 	},
 	sectionFooterLink: {
-		fontSize: 14,
-		fontWeight: "bold",
-		color: "#FFFFFF",
-		alignItems: 'baseline',
-		textAlign: 'center',
+		fontSize: 16,
+		fontWeight: "300",
+		color: COLORS.darkaccent,
+		alignItems: 'center',
+		textAlign: 'left',
 	},
 	navBar: {
 		marginTop: 35,
@@ -58,7 +52,7 @@ const authTheme = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'flex-end',
 		alignItems: 'center',
-		color: "#FFFFFF"
+		color: COLORS.darkaccent
 	},
 	navButton: {
 		marginLeft: 12,
@@ -67,7 +61,7 @@ const authTheme = StyleSheet.create({
 	cell: {
 		flex: 1,
 		width: '50%',
-		color: "#FFFFFF",
+		color: COLORS.primary,
 	},
 	errorRow: {
 		flexDirection: 'row',
@@ -83,37 +77,41 @@ const authTheme = StyleSheet.create({
 		width: '100%',
 	},
 	button: {
-		backgroundColor: placeholderColor,
+		backgroundColor: COLORS.darkaccent,
 		alignItems: 'center',
 		justifyContent: 'center',
-		width: '30%',
-		padding: 5,
+		width: '90%',
+		padding: 10,
+		marginHorizontal: 20,
 	},
 	buttonDisabled: {
-		backgroundColor: placeholderColor,
+		backgroundColor: COLORS.darkaccent,
 		alignItems: 'center',
 		padding: 16,
 	},
 	buttonText: {
-		color: '#fff',
+		color: "white",
 		fontSize: 16,
 		fontWeight: 'bold',
 	},
 	formField: {
-		marginBottom: 22,
+		marginBottom: 30,
 	},
 	input: {
 		padding: 14,
-		borderWidth: 2,
+		marginLeft:20,
+		width: "90%",
+		borderWidth: 0.7,
 		borderRadius: 3,
-		borderColor: textInputBorderColor,
-		color: textInputColor,
+		borderColor: COLORS.darkaccent,
+		color: COLORS.darkaccent,
 	},
 	inputLabel: {
-		marginBottom: 8,
-		color: "white",
+		marginBottom: 10,
+		marginHorizontal: 20,
+		color: COLORS.darkaccent,
 		fontSize: 16,
-		fontWeight: "bold"
+		fontWeight: "300"
 	},
 	phoneContainer: {
 		display: 'flex',
@@ -125,8 +123,8 @@ const authTheme = StyleSheet.create({
 		padding: 14,
 		borderWidth: 2,
 		borderRadius: 3,
-		borderColor: textInputBorderColor,
-		color: textInputColor,
+		borderColor: COLORS.darkaccent,
+		color: COLORS.darkaccent,
 	},
 	picker: {
 		flex: 1,
