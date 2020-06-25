@@ -44,7 +44,17 @@ export default function CommunityPage({ navigation }) {
               </Text>
               <View style={{height: 130, marginTop: 20}}>
                 <ScrollView>
-                    <CommunityModule imageURI={require("../assets/")}
+                    <CommunityModule imageURI={require
+                    ("../assets/HealthyPeal/assets/becca-tapert--A_Sx8GrRWg-unsplash.jpg")}
+                    name="Home"
+                    />
+                    <CommunityModule imageURI={require
+                    ("../assets/HealthyPeal/assets/becca-tapert--A_Sx8GrRWg-unsplash.jpg")}
+                    name="Land"
+                    />
+                    <CommunityModule imageURI={require
+                    ("../assets/HealthyPeal/assets/becca-tapert--A_Sx8GrRWg-unsplash.jpg")}
+                    name="Sea"
                     />
                 </ScrollView>
               </View>
