@@ -16,7 +16,7 @@ import Onboarding4Page from "./Onboarding4Page";
 import DatabaseTest from "./DatabaseTest";
 import { Icon } from 'react-native-eva-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import ArticlesPage from './ArticlesPage';
+import CommunityPage from './CommunityPage';
 import COLORS from "../Colors";
 
 
@@ -43,9 +43,9 @@ function MainTabNavigator() {
                           <Icon name='bulb-outline' width={24} height={24} fill={COLORS.lightaccent} />
                         ),}}/>
       <Tab.Screen name="Community" 
-                      component={ArticlesPage} 
+                      component={CommunityPage} 
                       options={{
-                        tabBarLabel: 'Articles',
+                        tabBarLabel: 'Community',
                         tabBarIcon: ({ color }) => (
                           <Icon name='globe-outline' width={24} height={24} fill={COLORS.lightaccent} />
                           ),}}/>

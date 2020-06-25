@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Text, Button } from '@ui-kitten/components';
 
-export default function ArticlesPage({ navigation }) {
+export default function CommunityPage({ navigation }) {
     return (
       <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
        <Button
