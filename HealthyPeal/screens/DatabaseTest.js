@@ -1,11 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import {
-  View, Text, StyleSheet, TextInput, Button
+  View, Text, StyleSheet, TextInput, ScrollView, SafeAreaView,
 } from 'react-native'
-
+import { Avatar, Button, ListItem, Divider } from '@ui-kitten/components';
+import COLORS from "../Colors";
 import { API, graphqlOperation } from 'aws-amplify'
 import { createTodo } from './../src/graphql/mutations'
 import { listTodos } from './../src/graphql/queries'
+
+const InstallButton = (props) => (
+  <Button size='tiny'>
+    INSTALL
+  </Button>
+);
+
+const ItemImage = (props) => (
+  <Avatar
+    {...props}
+    style={[props.style, { tintColor: null }]}
+  />
+);
 
 const initialState = { name: '', description: '' }
 
@@ -42,6 +56,65 @@ const DatabaseTest = () => {
 
   return (
     <View style={styles.container}>
+      <SafeAreaView>
+      <ScrollView>
+      <Text style={{color:COLORS.darkaccent, fontSize:32, fontWeight:"700", marginBottom: 10, paddingHorizontal: 2 }}>
+        More
+      </Text>
+      <ListItem
+      style={{height:50}}
+    title='Account Details'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:50}}
+    title='Invite Friends'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:50, marginTop: 20}}
+    title='Notifications'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:50}}
+    title='Apple Health'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:50}}
+    title='Activity'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+    style={{height:50, marginTop: 20}}
+    title='Feedback'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:50}}
+    title='Support'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:50}}
+    title='About'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:50, marginTop: 20, marginBottom: 10}}
+    title='Sign out'
+    // description='A set of React Native components'
+  />
+  <Divider/>
       <TextInput
         onChangeText={val => setInput('name', val)}
         style={styles.input}
@@ -63,15 +136,17 @@ const DatabaseTest = () => {
           </View>
         ))
       }
+      </ScrollView>
+      </SafeAreaView>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20 },
+  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 80 },
   todo: {  marginBottom: 15 },
-  input: { height: 50, backgroundColor: '#ddd', marginBottom: 10, padding: 8 },
+  input: { height: 50, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 }
 })
 
-export default DatabaseTest
+export default DatabaseTest;
