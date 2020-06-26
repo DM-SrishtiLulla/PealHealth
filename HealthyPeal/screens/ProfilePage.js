@@ -16,6 +16,14 @@ export default function ProfilePage({ navigation }) {
           }>
             DatabaseTest
         </Button>
+        <Button
+          size="medium"
+          style={styles.button1}
+          onPress={() =>
+            navigation.navigate('ArticlesPage')
+          }>
+            ArticlesPage
+        </Button>
     </Layout>
     )
 }

@@ -43,3 +43,14 @@ export const deleteTodo = /* GraphQL */ `
     }
   }
 `;
+
+export const createArticles = /* GraphQL */ `
+  mutation CreateArticles(
+    $input: CreateArticlesInput!
+  ) {
+    createArticles(input: $input) {
+      ID
+      Title
+    }
+  }
+`;

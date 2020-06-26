@@ -34,3 +34,11 @@ export const onDeleteTodo = /* GraphQL */ `
     }
   }
 `;
+export const onCreateArticles = /* GraphQL */ `
+  subscription onCreateArticles {
+    onCreateArticles {
+      ID
+      Title
+    }
+  }
+`;

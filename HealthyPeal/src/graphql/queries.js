@@ -30,3 +30,23 @@ export const listTodos = /* GraphQL */ `
     }
   }
 `;
+
+
+export const listArticles = /* GraphQL */ `
+  query ListTodos(
+    $filter: TableArticlesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listArticles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        ID
+        ArticleText
+        Author
+        Title
+        ImageLink
+      }
+      nextToken
+    }
+  }
+`;
