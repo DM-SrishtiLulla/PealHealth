@@ -56,8 +56,8 @@ const DatabaseTest = () => {
 
   return (
     <View style={styles.container}>
-      <SafeAreaView>
-      <ScrollView>
+      <SafeAreaView style={{color:COLORS.primary}}>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={{color:COLORS.darkaccent, fontSize:32, fontWeight:"700", marginBottom: 10, paddingHorizontal: 2 }}>
         More
       </Text>
@@ -143,7 +143,7 @@ const DatabaseTest = () => {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 80 },
+  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 80, color: COLORS.primary },
   todo: {  marginBottom: 15 },
   input: { height: 50, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 }

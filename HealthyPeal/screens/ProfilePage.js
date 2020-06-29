@@ -1,15 +1,26 @@
 import React from 'react';
-import { StyleSheet } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import { Layout, Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 import LottieView from "lottie-react-native";
 
 export default function ProfilePage({ navigation }) {
     return (
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollcontainer}>
       <Layout style={styles.container}>
       <Text style={styles.title} category='h1'>Saved Strategies</Text>
+      <LottieView source={require("../assets/18409-breathe.json")}
+          autoPlay 
+          loop
+          speed={1}
+          style={{
+            height: 300,
+            marginVertical: 40,
+            backgroundColor: COLORS.primary,
+            color: COLORS.lightaccent
+          }}/>
         <Button
-          size="medium"
+          size="giant"
           style={styles.button1}
           onPress={() =>
             navigation.navigate('More')
@@ -17,7 +28,7 @@ export default function ProfilePage({ navigation }) {
             DatabaseTest
         </Button>
         <Button
-          size="medium"
+          size="giant"
           style={styles.button1}
           onPress={() =>
             navigation.navigate('ArticlesPage')
@@ -25,30 +36,36 @@ export default function ProfilePage({ navigation }) {
             ArticlesPage
         </Button>
     </Layout>
+    </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     marginTop: 0,
     backgroundColor: COLORS.primary,
     justifyContent: 'flex-end',
     alignItems: 'center',
     flexDirection: "column"
     },
+    scrollcontainer: {
+      backgroundColor: COLORS.primary,
+      },
   title: {
       flex:1,
       alignSelf: "center",
       color:"#FFFFFF",
       fontWeight:'bold',
-      color: COLORS.darkaccent,
+      color: COLORS.lightaccent,
       marginHorizontal: 20,
       marginTop: 100
   },
   button1: {
     marginHorizontal: 10,
-    marginBottom: 100
+    marginBottom: 100,
+    marginTop: 400,
+    color: COLORS.darkaccent
   },
   animation: {
     alignSelf: "center",

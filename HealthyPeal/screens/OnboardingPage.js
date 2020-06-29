@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
 import {
-    View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
+    View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, SafeAreaView
   } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 import LottieView from "lottie-react-native";
@@ -8,6 +8,7 @@ import COLORS from "../Colors";
 
 export default function OnboardingPage({ navigation }) {
     return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
       <View style={styles.container}>
         <Text style={styles.title} category='h1'>
           PEAL IS...
@@ -39,6 +40,7 @@ export default function OnboardingPage({ navigation }) {
             Get Started
           </Button>
       </View>
+      </SafeAreaView>
     );
 }
   
@@ -72,7 +74,7 @@ const styles = StyleSheet.create({
       justifyContent: "center"
     },
     buttonbottom: {
-      marginTop: 0,
+      marginTop: 20,
       alignSelf: "center",
     },
     title: {

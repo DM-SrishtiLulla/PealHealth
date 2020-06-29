@@ -33,7 +33,7 @@ function MainTabNavigator() {
                       options={{
                         tabBarLabel: 'Dashboard',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='home-outline' width={24} height={24} fill={COLORS.lightaccent} />
+                          <Icon name='home-outline' width={24} height={24} fill={COLORS.primary} />
                           // <MaterialCommunityIcons name="home" color={color} size={26} />
                         ),}}/>
       <Tab.Screen name="Insights" 
@@ -41,21 +41,21 @@ function MainTabNavigator() {
                       options={{
                         tabBarLabel: 'Insights',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='bulb-outline' width={24} height={24} fill={COLORS.lightaccent} />
+                          <Icon name='bulb-outline' width={24} height={24} fill={COLORS.primary} />
                         ),}}/>
       <Tab.Screen name="Community" 
                       component={CommunityPage} 
                       options={{
                         tabBarLabel: 'Community',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='globe-outline' width={24} height={24} fill={COLORS.lightaccent} />
+                          <Icon name='globe-outline' width={24} height={24} fill={COLORS.primary} />
                           ),}}/>
       <Tab.Screen name="More" 
                       component={DatabaseTest} 
                       options={{
                         tabBarLabel: 'More',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='more-horizontal-outline' width={24} height={24} fill={COLORS.lightaccent} />
+                          <Icon name='more-horizontal-outline' width={24} height={24} fill={COLORS.primary} />
                           ),}}/>
     </Tab.Navigator>
   );
@@ -67,7 +67,7 @@ export default function MainStackNavigator() {
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Onboarding">
+        <Stack.Navigator initialRouteName="Onboarding" options={{headerTitle: "", headerTransparent: true}}>
           <Stack.Screen
             name="Tabs"
             component={MainTabNavigator}
