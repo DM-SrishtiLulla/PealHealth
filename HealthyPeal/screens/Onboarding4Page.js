@@ -1,22 +1,13 @@
 
 import React, { useState }  from 'react';
 import {
-    View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
+    View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground,
   } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 import LottieView from 'lottie-react-native';
 import COLORS from "../Colors";
 
 export default function Onboarding4Page({ navigation }) {
-    // const [goals, setGoals] = useState([
-    //   {goal: "manage stress", key: "1"},
-    //   {goal: "reduce anxiety", key: "2"},
-    //   {goal: "process grief", key: "3"},
-    //   {goal: "release anger", key: "4"},
-    //   {goal: "raise self-esteem", key: "5"},
-    //   {goal: "love your body", key: "6"},
-    // ]);
-  
     const [data, setData] = useState([
       {id:1, title: "Meditation",        color:"#FF4500", members:8,  image:"https://img.icons8.com/color/70/000000/name.png", backimage:"https://images.unsplash.com/photo-1587388959664-8c35a87caa58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"},
       {id:1, title: "Journaling",     color:"#87CEEB", members:6,  image:"https://img.icons8.com/office/70/000000/home-page.png", backimage:"https://images.unsplash.com/photo-1485990005353-9abcf694f3e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"},
@@ -29,7 +20,7 @@ export default function Onboarding4Page({ navigation }) {
         // {id:9, title: "Remember", color:"#191970", members:45, image:"https://img.icons8.com/color/70/000000/to-do.png"} ,
         // {id:9, title: "Game",     color:"#008080", members:13, image:"https://img.icons8.com/color/70/000000/basketball.png"} ,
       ])
-  
+      const [activeChecked, setActiveChecked] = React.useState(false);
   // return (
   //   <View style={styles.onboarding}>
   //     <FlatList
