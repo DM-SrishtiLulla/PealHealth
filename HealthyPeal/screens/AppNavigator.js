@@ -18,7 +18,7 @@ import { Icon } from 'react-native-eva-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CommunityPage from './CommunityPage';
 import COLORS from "../Colors";
-import ArticlesPage from './ArticlesPage';
+//import ArticlesPage from './ArticlesPage';
 
 
 
@@ -83,7 +83,7 @@ export default function MainStackNavigator() {
           <Stack.Screen name="Onboarding2" component={Onboarding2Page} />
           <Stack.Screen name="Onboarding3" component={Onboarding3Page} />
           <Stack.Screen name="Onboarding4" component={Onboarding4Page} />
-          <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
+          {/* <Stack.Screen name="ArticlesPage" component={ArticlesPage} /> */}
           {/* <Stack.Screen name="DatabaseTest" component={DatabaseTest} /> */}
         </Stack.Navigator>
       </NavigationContainer>

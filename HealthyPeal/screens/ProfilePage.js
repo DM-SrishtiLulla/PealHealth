@@ -19,22 +19,22 @@ export default function ProfilePage({ navigation }) {
             backgroundColor: COLORS.primary,
             color: COLORS.lightaccent
           }}/>
-        <Button
+        {/* <Button
           size="giant"
           style={styles.button1}
           onPress={() =>
             navigation.navigate('More')
           }>
             DatabaseTest
-        </Button>
-        <Button
+        </Button> */}
+        {/* <Button
           size="giant"
           style={styles.button1}
           onPress={() =>
             navigation.navigate('ArticlesPage')
           }>
             ArticlesPage
-        </Button>
+        </Button> */}
     </Layout>
     </ScrollView>
     )
