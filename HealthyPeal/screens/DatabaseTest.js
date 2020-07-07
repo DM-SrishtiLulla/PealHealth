@@ -4,9 +4,9 @@ import {
 } from 'react-native'
 import { Avatar, Button, ListItem, Divider } from '@ui-kitten/components';
 import COLORS from "../Colors";
-import { API, graphqlOperation } from 'aws-amplify'
-import { createTodo } from './../src/graphql/mutations'
-import { listTodos } from './../src/graphql/queries'
+//import { API, graphqlOperation } from 'aws-amplify'
+//import { createTodo } from './../src/graphql/mutations'
+//import { listTodos } from './../src/graphql/queries'
 
 const InstallButton = (props) => (
   <Button size='tiny'>
@@ -21,38 +21,38 @@ const ItemImage = (props) => (
   />
 );
 
-const initialState = { name: '', description: '' }
+// const initialState = { name: '', description: '' }
 
 const DatabaseTest = () => {
-  const [formState, setFormState] = useState(initialState)
-  const [todos, setTodos] = useState([])
+//   const [formState, setFormState] = useState(initialState)
+//   const [todos, setTodos] = useState([])
 
-  useEffect(() => {
-    fetchTodos()
-  }, [])
+//   useEffect(() => {
+//     fetchTodos()
+//   }, [])
 
-  function setInput(key, value) {
-    setFormState({ ...formState, [key]: value })
-  }
+//   function setInput(key, value) {
+//     setFormState({ ...formState, [key]: value })
+//   }
 
-  async function fetchTodos() {
-    try {
-      const todoData = await API.graphql(graphqlOperation(listTodos))
-      const todos = todoData.data.listTodos.items
-      setTodos(todos)
-    } catch (err) { console.log('error fetching todos') }
-  }
+//   async function fetchTodos() {
+//     try {
+//       const todoData = await API.graphql(graphqlOperation(listTodos))
+//       const todos = todoData.data.listTodos.items
+//       setTodos(todos)
+//     } catch (err) { console.log('error fetching todos') }
+//   }
 
-  async function addTodo() {
-    try {
-      const todo = { ...formState }
-      setTodos([...todos, todo])
-      setFormState(initialState)
-      await API.graphql(graphqlOperation(createTodo, {input: todo}))
-    } catch (err) {
-      console.log('error creating todo:', err)
-    }
-  }
+//   async function addTodo() {
+//     try {
+//       const todo = { ...formState }
+//       setTodos([...todos, todo])
+//       setFormState(initialState)
+//       await API.graphql(graphqlOperation(createTodo, {input: todo}))
+//     } catch (err) {
+//       console.log('error creating todo:', err)
+//     }
+//   }
 
   return (
     <View style={styles.container}>
@@ -115,7 +115,7 @@ const DatabaseTest = () => {
     // description='A set of React Native components'
   />
   <Divider/>
-      <TextInput
+      {/* <TextInput
         onChangeText={val => setInput('name', val)}
         style={styles.input}
         value={formState.name} 
@@ -135,7 +135,7 @@ const DatabaseTest = () => {
             <Text>{todo.description}</Text>
           </View>
         ))
-      }
+      } */}
       </ScrollView>
       </SafeAreaView>
     </View>

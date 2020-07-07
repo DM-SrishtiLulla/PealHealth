@@ -18,7 +18,7 @@ import { Icon } from 'react-native-eva-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CommunityPage from './CommunityPage';
 import COLORS from "../Colors";
-import ArticlesPage from './ArticlesPage';
+//import ArticlesPage from './ArticlesPage';
 
 
 
