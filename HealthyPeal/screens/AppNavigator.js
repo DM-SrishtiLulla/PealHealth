@@ -83,7 +83,7 @@ export default function MainStackNavigator() {
           <Stack.Screen name="About" component={Onboarding2Page} />
           <Stack.Screen name="Communities" component={Onboarding3Page} />
           <Stack.Screen name="Skills" component={Onboarding4Page} />
-          <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
+          {/* <Stack.Screen name="ArticlesPage" component={ArticlesPage} /> */}
           {/* <Stack.Screen name="DatabaseTest" component={DatabaseTest} /> */}
         </Stack.Navigator>
       </NavigationContainer>
