@@ -15,7 +15,8 @@ export default function ProfilePage({ navigation }) {
           speed={1}
           style={{
             height: 300,
-            marginVertical: 40,
+            marginTop: 10,
+            marginBottom: 40,
             backgroundColor: COLORS.primary,
             color: COLORS.lightaccent
           }}/>

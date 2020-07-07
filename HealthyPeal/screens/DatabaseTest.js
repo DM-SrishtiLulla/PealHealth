@@ -143,7 +143,7 @@ const DatabaseTest = () => {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 80, color: COLORS.primary },
+  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 50, color: COLORS.primary },
   todo: {  marginBottom: 15 },
   input: { height: 50, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 }

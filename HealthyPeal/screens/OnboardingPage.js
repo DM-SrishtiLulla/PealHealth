@@ -9,6 +9,7 @@ import COLORS from "../Colors";
 export default function OnboardingPage({ navigation }) {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
+        <ScrollView>
       <View style={styles.container}>
         <Text style={styles.title} category='h1'>
           PEAL IS...
@@ -27,7 +28,7 @@ export default function OnboardingPage({ navigation }) {
           loop
           speed={0.7}
           style={{
-            height: 300,
+            height: 200,
             backgroundColor: COLORS.primary,
             color: COLORS.lightaccent
           }}/>
@@ -35,11 +36,12 @@ export default function OnboardingPage({ navigation }) {
           size="giant"
           style={styles.buttonbottom}
           onPress={() =>
-            navigation.navigate('Onboarding2')
+            navigation.navigate('About')
           }>
-            Get Started
+            <Text style={styles.title2}>Get Started</Text>
           </Button>
       </View>
+      </ScrollView>
       </SafeAreaView>
     );
 }
@@ -74,16 +76,27 @@ const styles = StyleSheet.create({
       justifyContent: "center"
     },
     buttonbottom: {
-      marginTop: 20,
+      marginTop: -10,
       alignSelf: "center",
     },
     title: {
       color: COLORS.lightaccent,
       justifyContent: "center",
       alignContent: "center",
-      marginTop: 30,
+      marginTop: 25,
       marginBottom: 10,
       fontSize: 40,
       fontWeight: "bold"
+    },
+    title2: {
+      color: COLORS.lightaccent,
+      justifyContent: "center",
+      // alignContent: "center",
+      marginTop: 30,
+      marginBottom: 10,
+      marginLeft: 30,
+      marginRight: 20,
+      fontSize: 30,
+      fontWeight: "bold",
     },
 });

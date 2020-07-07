@@ -68,7 +68,7 @@ export default function Onboarding4Page({ navigation }) {
             </TouchableOpacity>
           )
         }}/>
-        <Button
+                <Button
         size="giant"
         style={styles.buttonbottom}
         onPress={() =>
@@ -98,9 +98,9 @@ const styles = StyleSheet.create({
   card:{
     marginHorizontal:5,
     marginVertical:5,
-    flexBasis: '47%',
+    flexBasis: '46%',
     borderRadius: 30,
-    height: 150,
+    height: 130,
     width: 130
   },
   cardHeader: {
@@ -167,8 +167,10 @@ const styles = StyleSheet.create({
     color: COLORS.lightaccent,
     // marginLeft: 20,
     // marginTop: 10,
-    marginBottom: 16,
-    padding: 20,
+    marginBottom: 10,
+    paddingTop: 20,
+    paddingBottom: 30,
+    paddingLeft: 10,
     alignSelf: "flex-start",
     fontWeight:'bold'
   }
