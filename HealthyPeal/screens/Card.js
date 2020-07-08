@@ -19,7 +19,7 @@ export default function Card(props) {
     return (
         <View style={{width:width/2 - 30, height: width/2 - 30, marginVertical: 10, borderWidth:0.5, borderColor:COLORS.secondary}}>
             <View style={{flex: 2}}>
-                <Image source={{uri: props.imageLink}}
+                <Image source={{uri: props.ImageLink}}
                 style={{flex: 1, height : null, width: null, resizeMode: "cover",
                 }}/>
             </View>

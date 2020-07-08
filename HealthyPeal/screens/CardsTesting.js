@@ -20,7 +20,46 @@ import Card from './Card';
 const {height, width} = Dimensions.get("window")
 
 
+const initialState = {Title: '', Author: ''}
+
+
+
+
+
+
+
+
 export default function CardsTesting({ navigation }) {
+
+    const [formState, setFormState] = useState(initialState)
+    const [articles, setArticles] = useState([])
+
+    useEffect(() => {
+        fetchArticles()
+    }, [])
+
+    function setInput(key, value) {
+        setFormState({ ...formState, [key]: value })
+    }
+
+    async function fetchArticles() {
+        try {
+        const articleData = await API.graphql(graphqlOperation(listPealArticles))
+        const articles = articleData.data.listPealArticles.items
+        setArticles(articles)
+        } catch (err) { console.log('error fetching articles') }
+    }
+
+    async function addArticle() {
+        try {
+        const article = { ...formState }
+        setArticles([...articles, article])
+        setFormState(initialState)
+        await API.graphql(graphqlOperation(createPealArticle, {input: article}))
+        } catch (err) {
+        console.log('error creating article:', err)
+        }
+    }
     return (
         // HEADERS FOR PAGE - see below for content 
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
@@ -69,9 +108,20 @@ export default function CardsTesting({ navigation }) {
                             justifyContent: "space-between"}}>
         {/* ACTUAL CONTENT GOES HERE */}
                         {/* WHERE OUR AWS MAP GOES */}
-                            <Card imageLink="https://images.unsplash.com/photo-1523459178261-028135da2714?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80"
-                                    Title="Hello"
-                                    Author="Asha"></Card>
+
+                            {
+                                articles.map((article, index) => (
+                                
+                                
+                                <View key={article.id ? article.id : index}>
+                                    <Card ImageLink={article.ImageLink || "https://images.unsplash.com/photo-1523459178261-028135da2714?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80"}
+                                    Title={article.Title}
+                                    Author={article.Author}/>
+                                    
+                                </View>
+                                ))
+                            }
+                            
                         </View>
                     </View>
                 </ScrollView>
