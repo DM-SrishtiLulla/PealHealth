@@ -28,14 +28,14 @@ export default function ProfilePage({ navigation }) {
           }>
             DatabaseTest
         </Button> */}
-        {/* <Button
+        <Button
           size="giant"
           style={styles.button1}
           onPress={() =>
             navigation.navigate('ArticlesPage')
           }>
             ArticlesPage
-        </Button> */}
+        </Button>
     </Layout>
     </ScrollView>
     )

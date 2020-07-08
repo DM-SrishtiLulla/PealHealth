@@ -20,7 +20,7 @@ import { Icon } from 'react-native-eva-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CommunityPage from './CommunityPage';
 import COLORS from "../Colors";
-//import ArticlesPage from './ArticlesPage';
+import ArticlesPage from './ArticlesPage';
 
 
 
@@ -87,7 +87,7 @@ export default function MainStackNavigator() {
           <Stack.Screen name="Skills" component={Onboarding4Page} />
           <Stack.Screen name="Resources" component={ResourcesPage} />
           <Stack.Screen name="Information" component={InformationPage} />
-          {/* <Stack.Screen name="ArticlesPage" component={ArticlesPage} /> */}
+          <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
           {/* <Stack.Screen name="DatabaseTest" component={DatabaseTest} /> */}
         </Stack.Navigator>
       </NavigationContainer>

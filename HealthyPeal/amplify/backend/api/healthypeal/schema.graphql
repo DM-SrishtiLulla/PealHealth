@@ -1,0 +1,8 @@
+type PealArticle @model {
+  id: ID!
+  Title: String!
+  ArticleText: String
+  Author: String
+  HealthTags: [String]
+  ImageLink: String
+}
