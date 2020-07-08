@@ -21,7 +21,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import CommunityPage from './CommunityPage';
 import COLORS from "../Colors";
 import ArticlesPage from './ArticlesPage';
-
+import CardsTesting from './CardsTesting';
 
 
 const Tab = createBottomTabNavigator();
@@ -88,7 +88,7 @@ export default function MainStackNavigator() {
           <Stack.Screen name="Resources" component={ResourcesPage} />
           <Stack.Screen name="Information" component={InformationPage} />
           <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
-          {/* <Stack.Screen name="DatabaseTest" component={DatabaseTest} /> */}
+          <Stack.Screen name="CardsTesting" component={CardsTesting} />
         </Stack.Navigator>
       </NavigationContainer>
       </ApplicationProvider>

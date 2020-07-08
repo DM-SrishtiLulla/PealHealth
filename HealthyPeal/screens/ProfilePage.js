@@ -20,14 +20,14 @@ export default function ProfilePage({ navigation }) {
             backgroundColor: COLORS.primary,
             color: COLORS.lightaccent
           }}/>
-        {/* <Button
+        <Button
           size="giant"
           style={styles.button1}
           onPress={() =>
-            navigation.navigate('More')
+            navigation.navigate('CardsTesting')
           }>
-            DatabaseTest
-        </Button> */}
+            CardsTesting
+        </Button> 
         <Button
           size="giant"
           style={styles.button1}
