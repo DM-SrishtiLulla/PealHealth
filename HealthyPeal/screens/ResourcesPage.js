@@ -21,7 +21,7 @@ export default function ResourcesPage({ navigation }) {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
         <View style={{flex: 1}}>
-        <Text style={{marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold"}}>Resources</Text>
+        <Text style={{marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.lightaccent}}>Resources</Text>
           <View style={{height:20, backgroundColor: COLORS.primary,
           borderBottomWidth: 1, borderBottomColor: COLORS.secondary}}>
           </View>
@@ -36,28 +36,28 @@ export default function ResourcesPage({ navigation }) {
                   borderColor: COLORS.secondary}}
                       />
                 </View>
-                <Text style={{color: COLORS.darkaccent, fontSize: 32, fontWeight: "700"}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 32, fontWeight: "700"}}>
                   Crisis Lines - Options for Immediate Help
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 National Suicide Prevention Lifeline: 1-800-273-8255
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 Trans Lifeline: 877-565-8860
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 Crisis Text Line: Text HOME to 741741 to connect with a Crisis Counselor
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 LGBT National Hotline: 888-843-4564
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 National Coalition of Anti-Violence Programs: 212-714-1141
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 LGBT National Youth Talkline: 800-246-7743
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 DeHQ [LGBTQ Helpline for South Asians]: 908-367-3374
                 </Text>
               </View>

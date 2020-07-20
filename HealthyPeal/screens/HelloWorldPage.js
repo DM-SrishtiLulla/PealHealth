@@ -23,7 +23,7 @@ export default function CommunityPage({ navigation }) {
         <View style={{flex: 1}}>
           <View style={{height:100, backgroundColor: COLORS.primary,
           borderBottomWidth: 1, borderBottomColor: COLORS.secondary}}>
-            <Text style={{marginTop: 50, fontSize: 32, alignSelf: "center", fontWeight: "bold"}}>Your Daily Steps</Text>
+            <Text style={{marginTop: 50, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.lightaccent}}>Your Daily Steps</Text>
           </View>
           <ScrollView
             showsVerticalScrollIndicator={false}
@@ -42,7 +42,7 @@ export default function CommunityPage({ navigation }) {
               </View> */}
             </Animated.View>
             <View style={{flex:1, backgroundColor:COLORS.primary, paddingTop: 20}}>
-              <Text style={{color:COLORS.darkaccent, fontSize:24, fontWeight:"700", paddingHorizontal:20}}>
+              <Text style={{color:COLORS.lightaccent, fontSize:24, fontWeight:"700", paddingHorizontal:20}}>
                 What can we help you find?
               </Text>
               <View style={{height: 130, marginTop: 20}}>
@@ -85,10 +85,10 @@ export default function CommunityPage({ navigation }) {
                 </ScrollView>
               </View>
               <View style={{marginTop: 40, paddingHorizontal: 20}}>
-                <Text style={{color: COLORS.darkaccent, fontSize: 24, fontWeight: "700"}}>
+                <Text style={{color: COLORS.lightaccent, fontSize: 24, fontWeight: "700"}}>
                   Introducing Peal Community
                 </Text>
-                <Text style={{color: COLORS.darkaccent, fontWeight: "300", marginTop: 10}}>
+                <Text style={{color: COLORS.lightaccent, fontWeight: "300", marginTop: 10}}>
                  A space for compassionate conversation
                 </Text>
                 <View style={{width:width-40, height:240, marginTop: 20}}>
@@ -101,7 +101,7 @@ export default function CommunityPage({ navigation }) {
               </View>
   <View style={{marginTop: 40}}>
       <Text style={{fontSize: 24, fontWeight: "700",
-    paddingHorizontal: 20}}>
+    paddingHorizontal: 20, color: COLORS.lightaccent}}>
       Spaces for conversation
     </Text>
     <View style={{paddingHorizontal: 20, marginTop: 20, flexDirection: "row", flexWrap: "wrap",

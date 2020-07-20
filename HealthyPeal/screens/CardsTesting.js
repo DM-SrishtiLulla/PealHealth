@@ -64,24 +64,7 @@ export default function CardsTesting({ navigation }) {
         // HEADERS FOR PAGE - see below for content 
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
             <View style={{flex: 1}}>
-                <Text style={{marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold"}}>Community</Text>
-                <View style={{height:80, backgroundColor: COLORS.primary,
-                borderBottomWidth: 1, borderBottomColor: COLORS.secondary}}>
-                    <View style={{flexDirection:"row", padding: 10,
-                    backgroundColor:COLORS.primary, marginHorizontal: 30,
-                    shadowOffset: { width: 0, height: 0},
-                    shadowOpacity: 0.2,
-                    elevation: 1,
-                    marginTop: 20
-                    }}>
-                    <Icon name='search-outline' width={24} height={24} fill={COLORS.lightaccent}/>
-                    <TextInput
-                    placeholder="Try Meditation"
-                    placeholderTextColor={COLORS.lightaccent}
-                    style={{flex: 1, fontWeight: "700", backgroundColor:COLORS.primary}}
-                    />
-                    </View>
-                </View>
+                <Text style={{color: COLORS.darkaccent, marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold"}}>Coping Cards</Text>
                 <ScrollView
                     showsVerticalScrollIndicator={false}>
                     <View style={{marginTop: 40, paddingHorizontal: 20}}>

@@ -23,7 +23,7 @@ const ItemImage = (props) => (
 
 // const initialState = { name: '', description: '' }
 
-const DatabaseTest = () => {
+export default function DatabaseTest({ navigation }) {
 //   const [formState, setFormState] = useState(initialState)
 //   const [todos, setTodos] = useState([])
 
@@ -61,6 +61,22 @@ const DatabaseTest = () => {
       <Text style={{color:COLORS.darkaccent, fontSize:32, fontWeight:"700", marginBottom: 10, paddingHorizontal: 2 }}>
         More
       </Text>
+      <Button
+          size="giant"
+          style={styles.button1}
+          onPress={() =>
+            navigation.navigate('CardsTesting')
+          }>
+            CardsTesting
+        </Button> 
+        <Button
+          size="giant"
+          style={styles.button1}
+          onPress={() =>
+            navigation.navigate('ArticlesPage')
+          }>
+            ArticlesPage
+        </Button>
       <ListItem
       style={{height:50}}
     title='Account Details'
@@ -147,6 +163,4 @@ const styles = StyleSheet.create({
   todo: {  marginBottom: 15 },
   input: { height: 50, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 }
-})
-
-export default DatabaseTest;
+});
