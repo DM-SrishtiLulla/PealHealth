@@ -7,7 +7,7 @@ import { Text, Button } from '@ui-kitten/components';
 import LottieView from 'lottie-react-native';
 import COLORS from "../Colors";
 
-export default function Onboarding4Page({ navigation }) {
+export default function OnboardingGoals({ navigation }) {
     const [data, setData] = useState([
       {id:1, title: "Sleep Better",        color:"#FF4500", members:8,  image:"https://img.icons8.com/color/70/000000/name.png", backimage:"https://images.unsplash.com/photo-1518260243959-eaff079e5987?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"},
       {id:1, title: "Be Social",     color:"#87CEEB", members:6,  image:"https://img.icons8.com/office/70/000000/home-page.png", backimage:"https://images.unsplash.com/photo-1568561300108-e0c35b5f7c1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"},

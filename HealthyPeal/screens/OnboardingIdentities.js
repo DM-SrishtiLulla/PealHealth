@@ -7,7 +7,7 @@ import { Text, Button } from '@ui-kitten/components';
 import LottieView from 'lottie-react-native';
 import COLORS from "../Colors";
 
-export default function Onboarding3Page({ navigation }) {
+export default function OnboardingIdentities({ navigation }) {
     // const [goals, setGoals] = useState([
     //   {goal: "manage stress", key: "1"},
     //   {goal: "reduce anxiety", key: "2"},

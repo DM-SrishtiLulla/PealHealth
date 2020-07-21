@@ -10,7 +10,7 @@ const { width, height } = Dimensions.get('window')
 
 const image2 = {uri: "https://images.unsplash.com/photo-1595246861171-ab531e06cfe4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"};
 
-export default function Onboarding2Page({ navigation }) {
+export default function PealExplanation({ navigation }) {
     return (
       <View style={styles.container}>
         <Text style={styles.title} category='h1'>

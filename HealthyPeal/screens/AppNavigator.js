@@ -10,10 +10,10 @@ import { ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import HelloWorldApp from './HelloWorldPage';
 import ProfilePage from './ProfilePage';
 import OnboardingPage from './OnboardingPage';
-import Onboarding2Page from "./Onboarding2Page";
-import Onboarding3Page from "./OnboardingIdentities";
-import Onboarding4Page from "./OnboardingPurposes";
-import Onboarding5Page from "./OnboardingInterests";
+import PealExplanation from "./PealExplanation";
+import OnboardingIdentities from "./OnboardingIdentities";
+import OnboardingGoals from "./OnboardingGoals";
+import OnboardingInterests from "./OnboardingInterests";
 import ResourcesPage from "./ResourcesPage";
 import InformationPage from "./InformationPage";
 import DatabaseTest from "./DatabaseTest";
@@ -83,10 +83,10 @@ export default function MainStackNavigator() {
           /> */}
           {/* <Stack.Screen name="Profile" component={ProfilePage} /> */}
           <Stack.Screen name="Onboarding" component={OnboardingPage} />
-          <Stack.Screen name="About" component={Onboarding2Page} />
-          <Stack.Screen name="Communities" component={Onboarding3Page} />
-          <Stack.Screen name="Goals" component={Onboarding4Page} />
-          <Stack.Screen name="Interests" component={Onboarding5Page} />
+          <Stack.Screen name="About" component={PealExplanation} />
+          <Stack.Screen name="Communities" component={OnboardingIdentities} />
+          <Stack.Screen name="Goals" component={OnboardingGoals} />
+          <Stack.Screen name="Interests" component={OnboardingInterests} />
           <Stack.Screen name="Resources" component={ResourcesPage} />
           <Stack.Screen name="Information" component={InformationPage} />
           <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
