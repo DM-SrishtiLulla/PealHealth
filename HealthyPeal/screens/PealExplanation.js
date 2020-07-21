@@ -20,7 +20,7 @@ export default function PealExplanation({ navigation }) {
           Peal can help you find exercises, resources, and communities.
         </Text>
         <Text style={styles.title} category='h1'>
-          To start, try an activity on your dashboard.
+          To start, fill in your identities, goals, and interests. Peal will immediately give you personalized ideas and coping mechanisms for the day.
         </Text>
         {/* <LottieView source={require("../assets/22979-meditating-lady.json")}
           autoPlay 
@@ -35,7 +35,7 @@ export default function PealExplanation({ navigation }) {
           size="giant"
           style={styles.buttonbottom}
           onPress={() =>
-            navigation.navigate('Tabs')
+            navigation.navigate('Identities')
           }>
             <Text style={styles.buttontext}>Next</Text>
           </Button>

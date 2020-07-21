@@ -84,7 +84,7 @@ export default function MainStackNavigator() {
           {/* <Stack.Screen name="Profile" component={ProfilePage} /> */}
           <Stack.Screen name="Onboarding" component={OnboardingPage} />
           <Stack.Screen name="About" component={PealExplanation} />
-          <Stack.Screen name="Communities" component={OnboardingIdentities} />
+          <Stack.Screen name="Identities" component={OnboardingIdentities} />
           <Stack.Screen name="Goals" component={OnboardingGoals} />
           <Stack.Screen name="Interests" component={OnboardingInterests} />
           <Stack.Screen name="Resources" component={ResourcesPage} />
