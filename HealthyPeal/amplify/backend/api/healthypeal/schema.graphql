@@ -6,3 +6,21 @@ type PealArticle @model {
   HealthTags: [String]
   ImageLink: String
 }
+
+type Identity @model {
+  id: ID!
+  IdentityText: String!
+  ImageLink: String
+}
+
+type Goal @model {
+  id: ID!
+  GoalText: String!
+  ImageLink: String
+}
+
+type Interest @model {
+  id: ID!
+  InterestText: String!
+  ImageLink: String
+}
