@@ -39,13 +39,6 @@ function MainTabNavigator() {
                           <Icon name='home-outline' width={24} height={24} fill={COLORS.secondary} />
                           // <MaterialCommunityIcons name="home" color={color} size={26} />
                         ),}}/>
-      <Tab.Screen name="Insights" 
-                      component={HelloWorldApp} 
-                      options={{
-                        tabBarLabel: 'Insights',
-                        tabBarIcon: ({ color }) => (
-                          <Icon name='bulb-outline' width={24} height={24} fill={COLORS.secondary} />
-                        ),}}/>
       <Tab.Screen name="Community" 
                       component={CommunityPage} 
                       options={{
@@ -53,6 +46,13 @@ function MainTabNavigator() {
                         tabBarIcon: ({ color }) => (
                           <Icon name='globe-outline' width={24} height={24} fill={COLORS.secondary} />
                           ),}}/>
+      <Tab.Screen name="Profile" 
+                      component={HelloWorldApp} 
+                      options={{
+                        tabBarLabel: 'Profile',
+                        tabBarIcon: ({ color }) => (
+                          <Icon name='person-outline' width={24} height={24} fill={COLORS.secondary} />
+                        ),}}/>
       <Tab.Screen name="More" 
                       component={DatabaseTest} 
                       options={{
