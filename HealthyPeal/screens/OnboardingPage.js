@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     },
     list: {
       //paddingHorizontal: 5,
-      backgroundColor:"#E6E6E6",
+      // backgroundColor:"#E6E6E6",
     },
     listContainer:{
       alignItems:'center'
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     buttonbottom: {
       marginTop: -10,
       alignSelf: "center",
+      backgroundColor: COLORS.lightaccent 
     },
     title: {
       color: COLORS.lightaccent,
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
       fontWeight: "bold"
     },
     title2: {
-      color: COLORS.lightaccent,
+      color: COLORS.primary,
       justifyContent: "center",
       // alignContent: "center",
       marginTop: 30,

@@ -1,39 +1,43 @@
 import React, { useState }  from 'react';
 import {
-    View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
+    View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, Dimensions
   } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 import LottieView from 'lottie-react-native';
 import COLORS from "../Colors";
 
+const { width, height } = Dimensions.get('window')
+
+const image2 = {uri: "https://images.unsplash.com/photo-1595246861171-ab531e06cfe4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"};
+
 export default function Onboarding2Page({ navigation }) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title} category='h3'>
-          Find support from your communities.
-          </Text>
-        <Text style={styles.title} category='h3'>
-           Monitor your mood and track how you're feeling.
+        <Text style={styles.title} category='h1'>
+          If you have anxiety, you are not alone.
         </Text>
-        <Text style={styles.title2} category='h3'>
-           Our algorithms learn what works for you.
+        <Text style={styles.title} category='h1'>
+          Peal can help you find exercises, resources, and communities.
         </Text>
-        {/* <LottieView source={require("../assets/4776-graph (1).json")}
+        <Text style={styles.title} category='h1'>
+          To start, try an activity on your dashboard.
+        </Text>
+        {/* <LottieView source={require("../assets/22979-meditating-lady.json")}
           autoPlay 
           loop
-          speed={0.5}
+          speed={0.7}
           style={{
-            marginRight: 200,
             height: 200,
             backgroundColor: COLORS.primary,
+            color: COLORS.lightaccent
           }}/> */}
           <Button
           size="giant"
           style={styles.buttonbottom}
           onPress={() =>
-            navigation.navigate('Communities')
+            navigation.navigate('Tabs')
           }>
-            <Text style={styles.title2}>Next</Text>
+            <Text style={styles.buttontext}>Next</Text>
           </Button>
       </View>
     );
@@ -44,34 +48,44 @@ const styles = StyleSheet.create({
       flex:1,
       marginTop:0,
       backgroundColor: COLORS.primary,
-      alignItems: "flex-start",
+      // alignItems: "center",
     },
     title: {
       color: COLORS.lightaccent,
       justifyContent: "center",
-      // alignContent: "center",
+      alignContent: "center",
       marginTop: 30,
       marginBottom: 0,
       marginLeft: 30,
       marginRight: 20,
-      fontSize: 30,
+      fontSize: 36,
       fontWeight: "bold",
     },
-    title2: {
+    title1: {
       color: COLORS.lightaccent,
-      justifyContent: "center",
+      // justifyContent: "center",
       // alignContent: "center",
       marginTop: 30,
-      marginBottom: 10,
-      marginLeft: 30,
-      marginRight: 20,
-      fontSize: 30,
+      // marginBottom: 10,
+      marginLeft: 0,
+      // marginRight: 20,
+      fontSize: 36,
       fontWeight: "bold",
     },
     buttonbottom: {
       marginTop: 40,
       width: 200,
       alignSelf: "center",
-      color: COLORS.lightaccent,
+      backgroundColor: COLORS.lightaccent,
     },
+    buttontext: {
+      fontSize: 30,
+      fontWeight: "800",
+      color: COLORS.primary
+  },
+    image: {
+      width: width - 20,
+      height: height / 1.35,
+      borderRadius: 10
+  },
 });

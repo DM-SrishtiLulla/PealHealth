@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       textAlign: "center",
       alignSelf: "center",
-      color:COLORS.lightaccent,
+      color:COLORS.primary,
       fontWeight:'bold'
     },
     subTitle:{
@@ -159,12 +159,12 @@ const styles = StyleSheet.create({
         marginBottom: "10%",
         alignSelf: "center",
         width: 200,
-        color: COLORS.lightaccent
+        backgroundColor: COLORS.lightaccent
     },
     buttontext: {
       fontSize: 30,
       fontWeight: "800",
-      color: COLORS.lightaccent
+      color: COLORS.primary
   },
     head: {
       flex: 1,

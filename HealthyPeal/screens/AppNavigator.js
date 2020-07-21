@@ -30,35 +30,35 @@ const Stack = createStackNavigator();
 
 function MainTabNavigator() {
   return (
-    <Tab.Navigator color={COLORS.lightaccent} activeColor={COLORS.darkaccent} shifting={false} initialRouteName="Dashboard">
+    <Tab.Navigator color={COLORS.lightaccent} activeColor={COLORS.secondary} shifting={false} initialRouteName="Dashboard">
       <Tab.Screen name="Dashboard" 
-                      component={HelloWorldApp} 
+                      component={ProfilePage} 
                       options={{
                         tabBarLabel: 'Dashboard',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='home-outline' width={24} height={24} fill={COLORS.primary} />
+                          <Icon name='home-outline' width={24} height={24} fill={COLORS.secondary} />
                           // <MaterialCommunityIcons name="home" color={color} size={26} />
                         ),}}/>
       <Tab.Screen name="Insights" 
-                      component={ProfilePage} 
+                      component={HelloWorldApp} 
                       options={{
                         tabBarLabel: 'Insights',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='bulb-outline' width={24} height={24} fill={COLORS.primary} />
+                          <Icon name='bulb-outline' width={24} height={24} fill={COLORS.secondary} />
                         ),}}/>
       <Tab.Screen name="Community" 
                       component={CommunityPage} 
                       options={{
                         tabBarLabel: 'Community',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='globe-outline' width={24} height={24} fill={COLORS.primary} />
+                          <Icon name='globe-outline' width={24} height={24} fill={COLORS.secondary} />
                           ),}}/>
       <Tab.Screen name="More" 
                       component={DatabaseTest} 
                       options={{
                         tabBarLabel: 'More',
                         tabBarIcon: ({ color }) => (
-                          <Icon name='more-horizontal-outline' width={24} height={24} fill={COLORS.primary} />
+                          <Icon name='more-horizontal-outline' width={24} height={24} fill={COLORS.secondary} />
                           ),}}/>
     </Tab.Navigator>
   );

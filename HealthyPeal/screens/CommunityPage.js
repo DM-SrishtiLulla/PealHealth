@@ -23,7 +23,7 @@ export default function CommunityPage({ navigation }) {
         <View style={{flex: 1}}>
         <Text style={{marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.lightaccent}}>Community</Text>
           <View style={{height:80, backgroundColor: COLORS.primary,
-          borderBottomWidth: 1, borderBottomColor: COLORS.secondary}}>
+          borderBottomWidth: 1, borderBottomColor: COLORS.lightaccent}}>
             <View style={{flexDirection:"row", padding: 10,
             backgroundColor:COLORS.primary, marginHorizontal: 30,
             shadowOffset: { width: 0, height: 0},
@@ -88,7 +88,7 @@ export default function CommunityPage({ navigation }) {
               </View> */}
               <View style={{marginTop: 40, paddingHorizontal: 20}}>
                 <Text style={{color: COLORS.lightaccent, fontSize: 24, fontWeight: "700"}}>
-                  Introducing Peal Community
+                  Introducing Peal Community [Coming Soon]
                 </Text>
                 <Text style={{color: COLORS.lightaccent, fontWeight: "300", marginTop: 10}}>
                  A space for compassionate conversation
@@ -116,7 +116,7 @@ export default function CommunityPage({ navigation }) {
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Body Image</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>100 members</Text>
+          {/* <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>100 members</Text> */}
         </View>
       </View>
       <View style={{width:width/2 - 30, height: width/2 - 30, marginVertical: 10, borderWidth:0.5, borderColor:COLORS.secondary}}>
@@ -127,7 +127,7 @@ export default function CommunityPage({ navigation }) {
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Grief</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>40 members</Text>
+          {/* <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>40 members</Text> */}
         </View>
       </View>
       <View style={{width:width/2 - 30, height: width/2 - 30, borderWidth:0.5, borderColor:COLORS.secondary}}>
@@ -138,7 +138,7 @@ export default function CommunityPage({ navigation }) {
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Depression</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>200 members</Text>
+          {/* <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>200 members</Text> */}
         </View>
       </View>
       <View style={{width:width/2 - 30, height: width/2 - 30, borderWidth:0.5, borderColor:COLORS.secondary}}>
@@ -149,7 +149,7 @@ export default function CommunityPage({ navigation }) {
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Anger</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>50 members</Text>
+          {/* <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>50 members</Text> */}
         </View>
       </View>
     </View>

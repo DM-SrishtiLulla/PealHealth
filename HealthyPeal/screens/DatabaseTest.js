@@ -61,7 +61,61 @@ export default function DatabaseTest({ navigation }) {
       <Text style={{color:COLORS.darkaccent, fontSize:32, fontWeight:"700", marginBottom: 10, paddingHorizontal: 2 }}>
         More
       </Text>
-      <Button
+      <ListItem
+      style={{height:70}}
+    title='Account Details'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:70}}
+    title='Invite Friends'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:70, marginTop: 20}}
+    title='Notifications'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:70}}
+    title='Apple Health'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:70}}
+    title='Activity'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+    style={{height:70, marginTop: 20}}
+    title='Feedback'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:70}}
+    title='Support'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:70}}
+    title='About'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <ListItem
+  style={{height:70, marginTop: 20, marginBottom: 10}}
+    title='Sign out'
+    // description='A set of React Native components'
+  />
+  <Divider/>
+  <Button
           size="giant"
           style={styles.button1}
           onPress={() =>
@@ -77,60 +131,6 @@ export default function DatabaseTest({ navigation }) {
           }>
             ArticlesPage
         </Button>
-      <ListItem
-      style={{height:50}}
-    title='Account Details'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-  style={{height:50}}
-    title='Invite Friends'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-  style={{height:50, marginTop: 20}}
-    title='Notifications'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-  style={{height:50}}
-    title='Apple Health'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-  style={{height:50}}
-    title='Activity'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-    style={{height:50, marginTop: 20}}
-    title='Feedback'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-  style={{height:50}}
-    title='Support'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-  style={{height:50}}
-    title='About'
-    // description='A set of React Native components'
-  />
-  <Divider/>
-  <ListItem
-  style={{height:50, marginTop: 20, marginBottom: 10}}
-    title='Sign out'
-    // description='A set of React Native components'
-  />
-  <Divider/>
       {/* <TextInput
         onChangeText={val => setInput('name', val)}
         style={styles.input}
@@ -159,8 +159,15 @@ export default function DatabaseTest({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 50, color: COLORS.primary },
+  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 70, color: COLORS.primary },
   todo: {  marginBottom: 15 },
-  input: { height: 50, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
-  todoName: { fontSize: 18 }
+  input: { height: 70, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
+  todoName: { fontSize: 18 },
+  button1: {
+    flex: 0.5,
+    marginBottom: "10%",
+    alignSelf: "center",
+    width: 200,
+    color: COLORS.lightaccent
+},
 });

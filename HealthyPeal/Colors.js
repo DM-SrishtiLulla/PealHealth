@@ -1,9 +1,9 @@
 const COLORS = {
-    primary: "#3AAFA9",
-    secondary: "#2B7A78",
-    tertiary: "#FEFFF",
-    lightaccent: "#DEF2F1",
-    darkaccent: "#172529",
+    primary: "#fff",
+    secondary: "#57BC90",
+    tertiary: "#015249",
+    lightaccent: "#77C9D4",
+    darkaccent: "#A5A5AF",
 }
 
 export default COLORS;
