@@ -3,7 +3,7 @@ import { listIdentitys } from './../src/graphql/queries'
 import { createIdentity } from './../src/graphql/mutations'
 import React, { useEffect, useState } from 'react'
 import {
-  View, Text, StyleSheet, TextInput, Button
+  View, Text, StyleSheet, TextInput, Button, Image
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
@@ -58,9 +58,9 @@ const IdentitiesPage = () => {
         <Button title="Create identity" onPress={addIdentity} /> 
         {
             identitys.map((identity, index) => (
-            <View key={identity.ID ? article.ID : index} style={styles.identity}>
+            <View key={identity.ID ? identity.ID : index} style={styles.identity}>
                 <Text style={styles.identityTitle}>{identity.IdentityText}</Text>
-                <Text style={styles.identityTitle}>{identity.ImageLink}</Text>
+                <Image source={{ uri: identity.ImageLink }} style={{height : 200, width: 200}}/>
             </View>
             ))
         }
