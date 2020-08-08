@@ -12,12 +12,12 @@ import {
   Animated
 } from "react-native";
 import Carousel from "./Carousel";
-import { resourcesData } from "./ResourcesData";
+import { dummyData } from "./Data.js";
 
 const {height, width} = Dimensions.get("window")
 
 export default function HelloWorldPage({ navigation }) {
     return (
-      <Carousel data = {resourcesData}/>
+      <Carousel data = {dummyData}/>
     );
 };

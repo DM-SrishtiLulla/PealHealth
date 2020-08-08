@@ -88,7 +88,7 @@ export default function CommunityPage({ navigation }) {
               </View> */}
               <View style={{marginTop: 40, paddingHorizontal: 20}}>
                 <Text style={{color: COLORS.lightaccent, fontSize: 24, fontWeight: "700"}}>
-                  Introducing Peal Community [Coming Soon]
+                  Introducing Peal Community
                 </Text>
                 <Text style={{color: COLORS.lightaccent, fontWeight: "300", marginTop: 10}}>
                  A space for compassionate conversation

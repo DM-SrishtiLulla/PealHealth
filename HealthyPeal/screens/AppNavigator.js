@@ -18,12 +18,12 @@ import ResourcesPage from "./ResourcesPage";
 import InformationPage from "./InformationPage";
 import MorePage from "./MorePage";
 import { Icon } from 'react-native-eva-icons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CommunityPage from './CommunityPage';
 import COLORS from "../Colors";
 import ArticlesPage from './ArticlesPage';
 import CardsTesting from './CardsTesting';
 import IdentitiesPage from './IdentitiesPage';
+import HelloWorldPage from './HelloWorldPage';
 
 
 const Tab = createBottomTabNavigator();
@@ -33,7 +33,7 @@ function MainTabNavigator() {
   return (
     <Tab.Navigator color={COLORS.lightaccent} activeColor={COLORS.secondary} shifting={false} initialRouteName="Dashboard">
       <Tab.Screen name="Dashboard"
-        component={ProfilePage}
+        component={HelloWorldPage}
         options={{
           tabBarLabel: 'Dashboard',
           tabBarIcon: ({ color }) => (
@@ -50,7 +50,7 @@ function MainTabNavigator() {
           ),
         }} />
       <Tab.Screen name="Profile"
-        component={HelloWorldApp}
+        component={ProfilePage}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
