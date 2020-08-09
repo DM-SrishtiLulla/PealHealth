@@ -14,6 +14,7 @@ import {
 import { Icon } from 'react-native-eva-icons';
 import { Layout, Text, Button } from '@ui-kitten/components';
 import COLORS from '../Colors';
+import { TouchableHighlight, TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler';
 
 const {height, width} = Dimensions.get("window")
 
@@ -45,48 +46,39 @@ export default function CommunityPage({ navigation }) {
             {/* <View style={{flex:1, backgroundColor:COLORS.primary, paddingTop: 20}}>
               <Text style={{color:COLORS.darkaccent, fontSize:24, fontWeight:"700", paddingHorizontal:20}}>
                 What can we help you find?
-              </Text>
-              <View style={{height: 130, marginTop: 20}}>
+              </Text> */}
+              {/* <View style={{height: 60, marginTop: 20}}>
                 <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 >
-                  <View style={{height: 130, width: 130,
+                  <View style={{height: 60, width: 160,
                   marginLeft: 20, borderWidth: 2, borderColor: COLORS.secondary}}>
-                    <View style={{flex: 3}}>
-                      <Image source={{uri: "https://images.unsplash.com/photo-1494386346843-e12284507169?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}}
-                      style={{flex: 1, height : null, width: null, resizeMode: "cover"}}
-                      />
-                    </View>
-                    <View style={{flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-                    <Text style={{color: COLORS.lightaccent, fontWeight:"bold"}}>Resources</Text>
+                    <View style={{flex: 1, paddingLeft: 20, paddingTop: 12 }}>
+                    <TouchableOpacity onPress={() =>navigation.navigate('Resources')}>
+                    <Text style={{color: COLORS.lightaccent, fontWeight:"bold", fontSize: 24}}>Resources</Text>
+                    </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={{height: 130, width: 130,
+                  <View style={{height: 60, width: 160,
                   marginLeft: 20, borderWidth: 2, borderColor: COLORS.secondary}}>
-                    <View style={{flex: 3}}>
-                      <Image source={{uri: "https://images.unsplash.com/photo-1522211988038-6fcbb8c12c7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}}
-                      style={{flex: 1, height : null, width: null, resizeMode: "cover"}}
-                      />
-                    </View>
-                    <View style={{flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-                      <Text style={{color: COLORS.lightaccent, fontWeight:"bold"}}>Information</Text>
+                    <View style={{flex: 1, paddingLeft: 16, paddingTop: 12 }}>
+                    <TouchableOpacity onPress={() =>navigation.navigate('Information')}>
+                    <Text style={{color: COLORS.lightaccent, fontWeight:"bold", fontSize: 24}}>Conditions</Text>
+                    </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={{height: 130, width: 130,
+                  <View style={{height: 60, width: 140,
                   marginLeft: 20, borderWidth: 2, borderColor: COLORS.secondary}}>
-                    <View style={{flex: 3}}>
-                      <Image source={{uri: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}}
-                      style={{flex: 1, height : null, width: null, resizeMode: "cover"}}
-                      />
-                    </View>
-                    <View style={{flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-                    <Text style={{color: COLORS.lightaccent, fontWeight:"bold"}}>Events</Text>
+                    <View style={{flex: 1, paddingLeft: 8, paddingTop: 12 }}>
+                    <TouchableOpacity onPress={() =>navigation.navigate('Resources')}>
+                    <Text style={{color: COLORS.lightaccent, fontWeight:"bold", fontSize: 24}}>Symptoms</Text>
+                    </TouchableOpacity>
                     </View>
                   </View>
                 </ScrollView>
               </View> */}
-              <View style={{marginTop: 40, paddingHorizontal: 20}}>
+              <View style={{marginTop: 20, paddingHorizontal: 20}}>
                 <Text style={{color: COLORS.lightaccent, fontSize: 24, fontWeight: "700"}}>
                   Introducing Peal Community
                 </Text>

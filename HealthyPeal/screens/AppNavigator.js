@@ -86,7 +86,7 @@ export default function MainStackNavigator() {
             component={HelloWorldApp}
             options={{ title: 'Welcome' }}
           /> */}
-            {/* <Stack.Screen name="Profile" component={ProfilePage} /> */}
+            <Stack.Screen name="Profile" component={ProfilePage} />
             <Stack.Screen name="Onboarding" component={OnboardingPage} />
             <Stack.Screen name="About" component={PealExplanation} />
             <Stack.Screen name="Identities" component={OnboardingIdentities} />
@@ -97,7 +97,6 @@ export default function MainStackNavigator() {
             <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
             <Stack.Screen name="CardsTesting" component={CardsTesting} />
             <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} />
-
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

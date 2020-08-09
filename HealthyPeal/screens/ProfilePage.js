@@ -106,8 +106,9 @@ const styles = StyleSheet.create({
         fontWeight: "500"
     },
     profileImage: {
-        width: 200,
-        height: 200,
+        width: 120,
+        height: 120,
+        marginTop: 20,
         borderRadius: 150,
         overflow: "hidden"
     },
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
     infoContainer: {
         alignSelf: "center",
         alignItems: "center",
-        marginTop: 16
+        marginTop: 0
     },
     statsContainer: {
         flexDirection: "row",
