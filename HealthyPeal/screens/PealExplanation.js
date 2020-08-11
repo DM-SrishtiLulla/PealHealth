@@ -1,91 +1,116 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import {
-    View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, Dimensions
-  } from 'react-native';
+  View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, SafeAreaView
+} from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
-import LottieView from 'lottie-react-native';
+import LottieView from "lottie-react-native";
 import COLORS from "../Colors";
 
-const { width, height } = Dimensions.get('window')
-
-const image2 = {uri: "https://images.unsplash.com/photo-1595246861171-ab531e06cfe4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"};
-
 export default function PealExplanation({ navigation }) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title} category='h1'>
-          If you have anxiety, you are not alone.
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.darkprimary, justifyContent: "center" }}>
+      <ScrollView>
+      {/* <View style={styles.container}>
+        </View> */}
+        <View style={styles.container}>
+          <Text style={styles.title} category='h1'>
+            Every day you will get a personalized set of exercises to improve you mental health.
         </Text>
-        <Text style={styles.title} category='h1'>
-          Peal can help you find exercises, resources, and communities.
+          <Text style={styles.title} category='h1'>
+            supports
         </Text>
-        <Text style={styles.title} category='h1'>
-          To start, fill in your identities, goals, and interests. Peal will immediately give you personalized ideas and coping mechanisms for the day.
+          <Text style={styles.title} category='h1'>
+            <Text style={styles.bold}>your</Text> mental and
         </Text>
-        {/* <LottieView source={require("../assets/22979-meditating-lady.json")}
-          autoPlay 
-          loop
-          speed={0.7}
-          style={{
-            height: 200,
-            backgroundColor: COLORS.primary,
-            color: COLORS.lightaccent
-          }}/> */}
+          <Text style={styles.title} category='h1'>
+            emotional wellness.
+        </Text>
+        </View>
+        <View style={styles.container3}>
           <Button
-          size="giant"
-          style={styles.buttonbottom}
-          onPress={() =>
-            navigation.navigate('Identities')
-          }>
-            <Text style={styles.buttontext}>Next</Text>
+            size="giant"
+            style={styles.buttonbottom}
+            onPress={() =>
+              navigation.navigate('Identities')
+            }>
+            <Text style={styles.title2}>Start Your Journey</Text>
           </Button>
-      </View>
-    );
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
-  
+
 const styles = StyleSheet.create({
-    container:{
-      flex:1,
-      marginTop:0,
-      backgroundColor: COLORS.primary,
-      // alignItems: "center",
-    },
-    title: {
-      color: COLORS.lightaccent,
-      justifyContent: "center",
-      alignContent: "center",
-      marginTop: 30,
-      marginBottom: 0,
-      marginLeft: 30,
-      marginRight: 20,
-      fontSize: 36,
-      fontWeight: "bold",
-    },
-    title1: {
-      color: COLORS.lightaccent,
-      // justifyContent: "center",
-      // alignContent: "center",
-      marginTop: 30,
-      // marginBottom: 10,
-      marginLeft: 0,
-      // marginRight: 20,
-      fontSize: 36,
-      fontWeight: "bold",
-    },
-    buttonbottom: {
-      marginTop: 40,
-      width: 200,
-      alignSelf: "center",
-      backgroundColor: COLORS.lightaccent,
-    },
-    buttontext: {
-      fontSize: 30,
-      fontWeight: "800",
-      color: COLORS.primary
+  container: {
+    flex: 1,
+    marginTop: "10%",
+    marginLeft: "7%",
+    backgroundColor: COLORS.primary,
+    alignItems: "flex-start",
   },
-    image: {
-      width: width - 20,
-      height: height / 1.35,
-      borderRadius: 10
+  container2: {
+    flex: 1,
+    marginTop: "80%",
+    marginLeft: "7%",
+    backgroundColor: COLORS.primary,
+    alignItems: "flex-start",
+  },
+  container3: {
+    flex: 1,
+    backgroundColor: COLORS.darkprimary,
+    justifyContent: "flex-end",
+  },
+  list: {
+    //paddingHorizontal: 5,
+    // backgroundColor:"#E6E6E6",
+  },
+  listContainer: {
+    alignItems: 'center'
+  },
+  subTitle: {
+    fontSize: 12,
+    flex: 1,
+    color: "#FFFFFF",
+  },
+  icon: {
+    height: 20,
+    width: 20,
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
+  buttonbottom: {
+    marginTop: "20%",
+    alignSelf: "center",
+    marginBottom: 0,
+    backgroundColor: "white",
+    width: "90%"
+  },
+  title: {
+    color: "white",
+    marginRight: "8%",
+    marginBottom: 0,
+    fontSize: 24,
+    fontWeight: "400"
+  },
+  bold: {
+    color: "white",
+    marginTop: 0,
+    marginBottom: 0,
+    fontSize: 16,
+    fontWeight: "600"
+  },
+  title2: {
+    color: COLORS.darkprimary,
+    // alignContent: "center",
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 30,
+    marginRight: 20,
+    fontSize: 30,
+    fontWeight: "500"
   },
 });

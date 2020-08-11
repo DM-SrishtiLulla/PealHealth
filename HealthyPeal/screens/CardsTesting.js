@@ -62,7 +62,7 @@ export default function CardsTesting({ navigation }) {
     }
     return (
         // HEADERS FOR PAGE - see below for content 
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.text}}>
             <View style={{flex: 1}}>
                 <Text style={{color: COLORS.darkaccent, marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold"}}>Coping Cards</Text>
                 <ScrollView

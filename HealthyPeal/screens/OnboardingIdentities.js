@@ -45,8 +45,7 @@ export default function OnboardingIdentities({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}>Join communities </Text>
-
+      <Text style={styles.head}>Communities</Text>
       <FlatList style={styles.list}
         contentContainerStyle={styles.listContainer}
         data={identitys}
@@ -87,23 +86,23 @@ export default function OnboardingIdentities({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 0,
+  container:{
+    flex:1,
+    marginTop:0,
     marginBottom: 0,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkprimary,
   },
   list: {
     //paddingHorizontal: 5,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkprimary,
   },
-  listContainer: {
-    alignItems: 'center',
+  listContainer:{
+    alignItems:'center',
   },
   /******** card **************/
-  card: {
-    marginHorizontal: 5,
-    marginVertical: 5,
+  card:{
+    marginHorizontal:5,
+    marginVertical:5,
     flexBasis: '47%',
     borderRadius: 30,
     height: 140,
@@ -115,15 +114,14 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
-    alignItems: "center",
-    justifyContent: "center",
-    opacity: 1
+    alignItems:"center", 
+    justifyContent:"center"
   },
   cardContent: {
     paddingVertical: 12.5,
     paddingHorizontal: 16,
   },
-  cardFooter: {
+  cardFooter:{
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingTop: 12.5,
@@ -132,51 +130,52 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-  cardImage: {
+  cardImage:{
     height: 70,
     width: 70,
-    alignSelf: 'center',
+    alignSelf:'center'
   },
-  title: {
-    fontSize: 20,
-    flex: 1,
+  title:{
+    fontSize:20,
+    flex:1,
     marginTop: 30,
     justifyContent: "center",
     textAlign: "center",
     alignSelf: "center",
-    color: COLORS.primary,
-    fontWeight: 'bold'
+    color:"white",
+    fontWeight: "400"
   },
-  subTitle: {
-    fontSize: 12,
-    flex: 1,
-    color: "#FFFFFF",
+  subTitle:{
+    fontSize:12,
+    flex:1,
+    color:"#FFFFFF",
   },
-  icon: {
+  icon:{
     height: 20,
-    width: 20,
+    width: 20, 
   },
   image: {
     flex: 1,
     resizeMode: "cover",
-    justifyContent: "center",
-    //opacity: 0.7
+    justifyContent: "center"
   },
   buttonbottom: {
-    flex: 0.5,
-    marginBottom: "10%",
-    alignSelf: "center",
-    width: 200,
-    backgroundColor: COLORS.lightaccent
+      marginBottom: "10%",
+      marginTop: "5%",
+      alignSelf: "center",
+      width: 200,
+      height: 60,
+      backgroundColor: "white",
+      borderColor: COLORS.darkprimary,
   },
   buttontext: {
-    fontSize: 30,
-    fontWeight: "800",
-    color: COLORS.primary
-  },
+    fontSize: 24,
+    fontWeight: "600",
+    color: COLORS.darkprimary
+},
   head: {
     flex: 1,
-    color: COLORS.lightaccent,
+    color: "white",
     // marginLeft: 20,
     // marginTop: 10,
     marginBottom: 10,
@@ -185,7 +184,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     alignSelf: "center",
     fontSize: 30,
-    fontWeight: "800",
-    color: COLORS.lightaccent
+    fontWeight: "600",
   }
 });

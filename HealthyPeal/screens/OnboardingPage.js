@@ -8,37 +8,32 @@ import COLORS from "../Colors";
 
 export default function OnboardingPage({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.darkprimary, justifyContent: "center" }}>
       <ScrollView>
-        <View style={styles.container}>
+      {/* <View style={styles.container}>
+        </View> */}
+        <View style={styles.container2}>
           <Text style={styles.title} category='h1'>
-            PEAL IS...
+            Peal
         </Text>
           <Text style={styles.title} category='h1'>
-            COMMUNITY
+            supports
         </Text>
           <Text style={styles.title} category='h1'>
-            CONVERSATION
+            <Text style={styles.bold}>your</Text> mental and
         </Text>
           <Text style={styles.title} category='h1'>
-            COMPASSION
+            emotional <Text style={styles.bold}>health</Text>.
         </Text>
-          <LottieView source={require("../assets/22979-meditating-lady.json")}
-            autoPlay
-            loop
-            speed={0.7}
-            style={{
-              height: 200,
-              backgroundColor: COLORS.primary,
-              color: COLORS.lightaccent
-            }} />
+        </View>
+        <View style={styles.container3}>
           <Button
             size="giant"
             style={styles.buttonbottom}
             onPress={() =>
               navigation.navigate('About')
             }>
-            <Text style={styles.title2}>Get Started</Text>
+            <Text style={styles.title2}>Start Your Journey</Text>
           </Button>
         </View>
       </ScrollView>
@@ -47,12 +42,17 @@ export default function OnboardingPage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container2: {
     flex: 1,
-    marginTop: 0,
+    marginTop: "80%",
+    marginLeft: "7%",
     backgroundColor: COLORS.primary,
-    justifyContent: "flex-start",
-    alignItems: "center"
+    alignItems: "flex-start",
+  },
+  container3: {
+    flex: 1,
+    backgroundColor: COLORS.darkprimary,
+    justifyContent: "flex-end",
   },
   list: {
     //paddingHorizontal: 5,
@@ -76,28 +76,34 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   buttonbottom: {
-    marginTop: -10,
+    marginTop: "20%",
     alignSelf: "center",
-    backgroundColor: COLORS.lightaccent
+    marginBottom: 0,
+    backgroundColor: "white",
+    width: "90%"
   },
   title: {
-    color: COLORS.lightaccent,
-    justifyContent: "center",
-    alignContent: "center",
-    marginTop: 25,
-    marginBottom: 10,
+    color: "white",
+    marginTop: 0,
+    marginBottom: 0,
     fontSize: 40,
-    fontWeight: "bold"
+    fontWeight: "300"
+  },
+  bold: {
+    color: "white",
+    marginTop: 0,
+    marginBottom: 0,
+    fontSize: 40,
+    fontWeight: "600"
   },
   title2: {
-    color: COLORS.primary,
-    justifyContent: "center",
+    color: COLORS.darkprimary,
     // alignContent: "center",
-    marginTop: 30,
+    marginTop: 10,
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 20,
     fontSize: 30,
-    fontWeight: "bold",
+    fontWeight: "500"
   },
 });

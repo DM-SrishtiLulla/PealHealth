@@ -19,10 +19,10 @@ const {height, width} = Dimensions.get("window")
 
 export default function ResourcesPage({ navigation }) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.text}}>
         <View style={{flex: 1}}>
         <Text style={{marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.lightaccent}}>Resources</Text>
-          <View style={{height:20, backgroundColor: COLORS.primary,
+          <View style={{height:20, backgroundColor: COLORS.text,
           borderBottomWidth: 1, borderBottomColor: COLORS.secondary}}>
           </View>
           <ScrollView
@@ -75,8 +75,8 @@ export default function ResourcesPage({ navigation }) {
           }}/>
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
-          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Body Image</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>100 members</Text>
+          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Body Image</Text>
+          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>100 members</Text>
         </View>
       </View>
       <View style={{width:width/2 - 30, height: width/2 - 30, marginVertical: 10, borderWidth:0.5, borderColor:COLORS.secondary}}>
@@ -86,8 +86,8 @@ export default function ResourcesPage({ navigation }) {
           }}/>
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
-          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Grief</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>40 members</Text>
+          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Grief</Text>
+          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>40 members</Text>
         </View>
       </View>
       <View style={{width:width/2 - 30, height: width/2 - 30, borderWidth:0.5, borderColor:COLORS.secondary}}>
@@ -97,8 +97,8 @@ export default function ResourcesPage({ navigation }) {
           }}/>
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
-          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Depression</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>200 members</Text>
+          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Depression</Text>
+          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>200 members</Text>
         </View>
       </View>
       <View style={{width:width/2 - 30, height: width/2 - 30, borderWidth:0.5, borderColor:COLORS.secondary}}>
@@ -108,8 +108,8 @@ export default function ResourcesPage({ navigation }) {
           }}/>
         </View>
         <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
-          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>Anger</Text>
-          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>50 members</Text>
+          <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Anger</Text>
+          <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>50 members</Text>
         </View>
       </View>
     </View>

@@ -49,26 +49,18 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     itemTitle: {
-        color: COLORS.primary,
+        color: "white",
         fontSize: 56,
-        shadowColor: COLORS.darkaccent,
-        shadowOffset: { width: 0.8, height: 0.8 },
-        shadowOpacity: 0.5,
-        shadowRadius: 3,
-        marginBottom: 5,
         fontWeight: "bold",
         elevation: 5
     },
     itemDescription: {
-        color: COLORS.primary,
+        color: "white",
         fontWeight: "bold",
-        fontSize: 32,
-        shadowColor: COLORS.darkaccent,
-        shadowOffset: { width: 0.8, height: 0.8 },
-        shadowOpacity: 0.5,
-        shadowRadius: 3,
+        fontSize: 24,
         elevation: 5,
-        marginTop: 30
+        marginTop: 30,
+        marginHorizontal: 5
     },
     itemAuthor: {
         color: 'white',

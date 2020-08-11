@@ -10,6 +10,7 @@ import {
   Image,
   Dimensions,
   Animated,
+  ColorPropType,
 } from "react-native";
 import { Avatar, Button, ListItem, Layout, Text, Divider } from '@ui-kitten/components';
 import COLORS from '../Colors';
@@ -33,16 +34,16 @@ export default function MorePage({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <SafeAreaView style={{ color: COLORS.primary }}>
+      <SafeAreaView style={{ color: "white" }}>
         <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={{ color: COLORS.darkaccent, fontSize: 32, fontWeight: "700", marginBottom: 10, paddingHorizontal: 2 }}>
+        <Text style={{ color: "white", fontSize: 32, fontWeight: "700", marginBottom: 10, paddingHorizontal: 2 }}>
             More
       </Text>
         <View style={{marginTop: 10, paddingHorizontal: 4}}>
-                <Text style={{color: COLORS.lightaccent, fontSize: 24, fontWeight: "700"}}>
+                <Text style={{color: "white", fontSize: 24, fontWeight: "700"}}>
                   Resources
                 </Text>
-                <Text style={{color: COLORS.lightaccent, fontWeight: "300", marginTop: 10}}>
+                <Text style={{color: "white", fontWeight: "300", marginTop: 10}}>
                  A space for compassionate conversation
                 </Text>
                 <View style={{width:width-50, height:240, marginTop: 20}}>
@@ -54,19 +55,19 @@ export default function MorePage({ navigation }) {
                       />
                 <Button
             size="giant"
-            style={{marginTop: 10}}
+            style={{marginTop: 10, backgroundColor: "white", borderColor: COLORS.secondary}}
             onPress={() =>
               navigation.navigate('Resources')
             }>
-            Resources
+            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Resources</Text>
           </Button>
                 </View>
               </View>
               <View style={{marginTop: 20, paddingHorizontal: 4}}>
-                <Text style={{color: COLORS.lightaccent, fontSize: 24, fontWeight: "700"}}>
+                <Text style={{color: "white", fontSize: 24, fontWeight: "700"}}>
                   Information
                 </Text>
-                <Text style={{color: COLORS.lightaccent, fontWeight: "300", marginTop: 10}}>
+                <Text style={{color: "white", fontWeight: "300", marginTop: 10}}>
                  A space for compassionate conversation
                 </Text>
                 <View style={{width:width-50, height:240, marginTop: 20}}>
@@ -78,19 +79,19 @@ export default function MorePage({ navigation }) {
                       />
                 <Button
             size="giant"
-            style={{marginTop: 10}}
+            style={{marginTop: 10, backgroundColor: "white", borderColor: COLORS.secondary}}
             onPress={() =>
               navigation.navigate('Information')
             }>
-            Information
+            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Information</Text>
           </Button>
                 </View>
               </View>
               <View style={{marginTop: 20, paddingHorizontal: 4}}>
-                <Text style={{color: COLORS.lightaccent, fontSize: 24, fontWeight: "700"}}>
+                <Text style={{color: "white", fontSize: 24, fontWeight: "700"}}>
                   Resources
                 </Text>
-                <Text style={{color: COLORS.lightaccent, fontWeight: "300", marginTop: 10}}>
+                <Text style={{color: "white", fontWeight: "300", marginTop: 10}}>
                  A space for compassionate conversation
                 </Text>
                 <View style={{width:width-50, height:240, marginTop: 20}}>
@@ -102,11 +103,11 @@ export default function MorePage({ navigation }) {
                       />
                 <Button
             size="giant"
-            style={{marginTop: 10}}
+            style={{marginTop: 10, backgroundColor: "white", borderColor: COLORS.secondary}}
             onPress={() =>
               navigation.navigate('Resources')
             }>
-            Resources
+            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Resources</Text>
           </Button>
                 </View>
               </View>
@@ -195,7 +196,7 @@ export default function MorePage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 70, color: COLORS.primary },
+  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 70, backgroundColor: COLORS.darkprimary },
   todo: { marginBottom: 15 },
   input: { height: 70, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 },
@@ -204,6 +205,6 @@ const styles = StyleSheet.create({
     marginBottom: "10%",
     alignSelf: "center",
     width: 200,
-    color: COLORS.lightaccent
+    color: "white"
   },
 });

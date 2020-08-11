@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, Dimensions, FlatList, Animated } from 'react-native'
 import CarouselItem from './CarouselItem'
+import COLORS from "../Colors";
 
 
 const { width, heigth } = Dimensions.get('window')
@@ -57,6 +58,6 @@ const Carousel = ({data}) => {
 export default Carousel;
 
 const styles = StyleSheet.create({
-    container: {backgroundColor: "white" },
+    container: {backgroundColor: COLORS.darkprimary },
     dotView: { flexDirection: 'row', justifyContent: 'center' }
 })

@@ -19,10 +19,10 @@ const {height, width} = Dimensions.get("window")
 
 export default function InformationPage({ navigation }) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary}}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.text}}>
         <View style={{flex: 1}}>
         <Text style={{marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold"}}>Information</Text>
-          <View style={{height:20, backgroundColor: COLORS.primary,
+          <View style={{height:20, backgroundColor: COLORS.text,
           borderBottomWidth: 1, borderBottomColor: COLORS.secondary}}>
           </View>
           <ScrollView

@@ -76,11 +76,11 @@ const styles = StyleSheet.create({
     flex:1,
     marginTop:0,
     marginBottom: 0,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkprimary,
   },
   list: {
     //paddingHorizontal: 5,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkprimary,
   },
   listContainer:{
     alignItems:'center',
@@ -128,8 +128,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     textAlign: "center",
     alignSelf: "center",
-    color:COLORS.primary,
-    fontWeight:'bold'
+    color:"white",
+    fontWeight: "400"
   },
   subTitle:{
     fontSize:12,
@@ -146,20 +146,22 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   buttonbottom: {
-      flex: 0.5,
-      marginBottom: "10%",
-      alignSelf: "center",
-      width: 200,
-      backgroundColor: COLORS.lightaccent
-  },
-  buttontext: {
-    fontSize: 30,
-    fontWeight: "800",
-    color: COLORS.primary
+    marginBottom: "10%",
+    marginTop: "5%",
+    alignSelf: "center",
+    width: 200,
+    height: 60,
+    backgroundColor: "white",
+    borderColor: COLORS.darkprimary,
+},
+buttontext: {
+  fontSize: 24,
+  fontWeight: "600",
+  color: COLORS.darkprimary
 },
   head: {
     flex: 1,
-    color: COLORS.lightaccent,
+    color: "white",
     // marginLeft: 20,
     // marginTop: 10,
     marginBottom: 10,
@@ -168,7 +170,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     alignSelf: "center",
     fontSize: 30,
-    fontWeight: "800",
-    color: COLORS.lightaccent
+    fontWeight: "600",
   }
 });

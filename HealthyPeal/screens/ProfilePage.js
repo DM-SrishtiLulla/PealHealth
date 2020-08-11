@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView } from "react-native";
 import { Icon } from 'react-native-eva-icons';
+import COLORS from "../Colors";
 
 export default function ProfilePage() {
     return (
@@ -65,8 +66,8 @@ export default function ProfilePage() {
                     <View style={styles.recentItem}>
                         <View style={styles.activityIndicator}></View>
                         <View style={{ width: 250 }}>
-                            <Text style={[styles.text, { color: "#41444B", fontWeight: "400" }]}>
-                                Meditated <Text style={{ fontWeight: "500" }}>3 days</Text> this week.
+                            <Text style={[styles.text, { color: "white", fontWeight: "300" }]}>
+                                Meditated <Text style={{ fontWeight: "600" }}>3 days</Text> this week.
                             </Text>
                         </View>
                     </View>
@@ -74,8 +75,8 @@ export default function ProfilePage() {
                     <View style={styles.recentItem}>
                         <View style={styles.activityIndicator}></View>
                         <View style={{ width: 250 }}>
-                            <Text style={[styles.text, { color: "#41444B", fontWeight: "400" }]}>
-                                Commented on a post about <Text style={{ fontWeight: "500" }}>depression</Text>
+                            <Text style={[styles.text, { color: "white", fontWeight: "300" }]}>
+                                Commented on a post about <Text style={{ fontWeight: "600" }}>depression</Text>
                             </Text>
                         </View>
                     </View>
@@ -88,11 +89,11 @@ export default function ProfilePage() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFF",
+        backgroundColor: COLORS.darkprimary,
     },
     text: {
         fontFamily: "HelveticaNeue",
-        color: "#52575D"
+        color: "white"
     },
     image: {
         flex: 1,
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
     },
     subText: {
         fontSize: 12,
-        color: "#AEB5BC",
+        color: "white",
         textTransform: "uppercase",
         fontWeight: "500"
     },
