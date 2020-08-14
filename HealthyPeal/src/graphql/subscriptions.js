@@ -142,3 +142,99 @@ export const onDeleteInterest = /* GraphQL */ `
     }
   }
 `;
+export const onCreateUserInfo = /* GraphQL */ `
+  subscription OnCreateUserInfo {
+    onCreateUserInfo {
+      Username
+      Sub
+      Identities {
+        id
+        IdentityText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Goals {
+        id
+        GoalText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Interests {
+        id
+        InterestText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateUserInfo = /* GraphQL */ `
+  subscription OnUpdateUserInfo {
+    onUpdateUserInfo {
+      Username
+      Sub
+      Identities {
+        id
+        IdentityText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Goals {
+        id
+        GoalText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Interests {
+        id
+        InterestText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteUserInfo = /* GraphQL */ `
+  subscription OnDeleteUserInfo {
+    onDeleteUserInfo {
+      Username
+      Sub
+      Identities {
+        id
+        IdentityText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Goals {
+        id
+        GoalText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Interests {
+        id
+        InterestText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;

@@ -24,3 +24,12 @@ type Interest @model {
   InterestText: String!
   ImageLink: String
 }
+
+type UserInfo @model {
+  Username: String!
+  Sub: String!
+  Identities: [Identity]
+  Goals: [Goal]
+  Interests: [Interest]
+  ProfileImage: String
+}

@@ -123,3 +123,74 @@ export const listInterests = /* GraphQL */ `
     }
   }
 `;
+export const getUserInfo = /* GraphQL */ `
+  query GetUserInfo($id: ID!) {
+    getUserInfo(id: $id) {
+      Username
+      Sub
+      Identities {
+        id
+        IdentityText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Goals {
+        id
+        GoalText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Interests {
+        id
+        InterestText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUserInfos = /* GraphQL */ `
+  query ListUserInfos(
+    $filter: ModelUserInfoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        Username
+        Sub
+        Identities {
+          id
+          IdentityText
+          ImageLink
+          createdAt
+          updatedAt
+        }
+        Goals {
+          id
+          GoalText
+          ImageLink
+          createdAt
+          updatedAt
+        }
+        Interests {
+          id
+          InterestText
+          ImageLink
+          createdAt
+          updatedAt
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

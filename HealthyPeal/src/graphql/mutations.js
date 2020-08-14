@@ -178,3 +178,108 @@ export const deleteInterest = /* GraphQL */ `
     }
   }
 `;
+export const createUserInfo = /* GraphQL */ `
+  mutation CreateUserInfo(
+    $input: CreateUserInfoInput!
+    $condition: ModelUserInfoConditionInput
+  ) {
+    createUserInfo(input: $input, condition: $condition) {
+      Username
+      Sub
+      Identities {
+        id
+        IdentityText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Goals {
+        id
+        GoalText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Interests {
+        id
+        InterestText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserInfo = /* GraphQL */ `
+  mutation UpdateUserInfo(
+    $input: UpdateUserInfoInput!
+    $condition: ModelUserInfoConditionInput
+  ) {
+    updateUserInfo(input: $input, condition: $condition) {
+      Username
+      Sub
+      Identities {
+        id
+        IdentityText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Goals {
+        id
+        GoalText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Interests {
+        id
+        InterestText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserInfo = /* GraphQL */ `
+  mutation DeleteUserInfo(
+    $input: DeleteUserInfoInput!
+    $condition: ModelUserInfoConditionInput
+  ) {
+    deleteUserInfo(input: $input, condition: $condition) {
+      Username
+      Sub
+      Identities {
+        id
+        IdentityText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Goals {
+        id
+        GoalText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      Interests {
+        id
+        InterestText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
