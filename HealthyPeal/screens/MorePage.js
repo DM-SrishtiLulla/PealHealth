@@ -192,6 +192,14 @@ export default function MorePage({ navigation }) {
             size="giant"
             style={styles.button1}
             onPress={() =>
+              navigation.navigate('InterestsPage')
+            }>
+            InterestsPage
+          </Button>
+          <Button
+            size="giant"
+            style={styles.button1}
+            onPress={() =>
               navigation.navigate('ArticlesPage')
             }>
             ArticlesPage
