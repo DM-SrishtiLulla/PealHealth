@@ -23,6 +23,7 @@ import COLORS from "../Colors";
 import ArticlesPage from './ArticlesPage';
 import CardsTesting from './CardsTesting';
 import IdentitiesPage from './IdentitiesPage';
+import GoalsPage from './GoalsPage';
 import HelloWorldPage from './HelloWorldPage';
 
 
@@ -97,6 +98,7 @@ export default function MainStackNavigator() {
             <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
             <Stack.Screen name="CardsTesting" component={CardsTesting} />
             <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} />
+            <Stack.Screen name="GoalsPage" component={GoalsPage} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>
