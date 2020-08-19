@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Dimensions, FlatList, Animated } from 'react-na
 import CarouselItem from './CarouselItem'
 
 
-const { width, heigth } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 const scrollX = new Animated.Value(0)
 let position = Animated.divide(scrollX, width)

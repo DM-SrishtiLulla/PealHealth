@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { API, graphqlOperation } from 'aws-amplify'
 import { listInsights } from './../src/graphql/queries'
-import {
-  View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
-} from 'react-native';
-import { Text, Button } from '@ui-kitten/components';
-import COLORS from "../Colors";
 
-const [insights, setInsights] = useState([])
+export const Data = () => {
+        const [insights, setInsights] = useState([])
 
-  useEffect(() => {
-    fetchInsights()
-  }, [])
+        useEffect(() => {
+          fetchInsights()
+        }, [])
+      
+        async function fetchInsights() {
+          try {
+            const insightData = await API.graphql(graphqlOperation(listInsights))
+            const insights = insightData.data.listInsights.items
+            setInsights(insights)
+          } catch (err) { console.log('error fetching interests') }
+        }
+        
+        return insights;
+}
 
-  async function fetchInsights() {
-    try {
-      const insightData = await API.graphql(graphqlOperation(listInsights))
-      const insights = insightData.data.listInsights.items
-      setInsights(insights)
-    } catch (err) { console.log('error fetching interests') }
-  }
 
-  export const dummyData = insights;
+
+  //export const dummyData = insights;
 
 
 /*export const dummyData =

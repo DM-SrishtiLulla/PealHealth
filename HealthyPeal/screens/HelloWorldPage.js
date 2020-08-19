@@ -13,11 +13,35 @@ import {
 } from "react-native";
 import Carousel from "./Carousel";
 import { dummyData } from "./Data.js";
+import { useEffect, useState } from 'react'
+import { API, graphqlOperation } from 'aws-amplify'
+import { listInsights } from './../src/graphql/queries'
+
+
 
 const {height, width} = Dimensions.get("window")
 
 export default function HelloWorldPage({ navigation }) {
+
+  const [insights, setInsights] = useState([])
+
+  useEffect(() => {
+    fetchInsights()
+  }, [])
+
+  async function fetchInsights() {
+    try {
+      const insightData = await API.graphql(graphqlOperation(listInsights))
+      const insights = insightData.data.listInsights.items
+      setInsights(insights)
+      const shuffled = insights.sort(() => 0.5 - Math.random());
+      let selected = shuffled.slice(0, 3);
+      setInsights(selected)
+    } catch (err) { console.log('error fetching interests') }
+  }
+
+  
     return (
-      <Carousel data = {dummyData}/>
+      <Carousel data = {insights}/>
     );
 };
