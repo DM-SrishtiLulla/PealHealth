@@ -1,42 +1,42 @@
 import { API, graphqlOperation } from 'aws-amplify'
-import { listPealArticles } from './../src/graphql/queries'
-import { createPealArticle } from './../src/graphql/mutations'
+import { listPosts } from './../src/graphql/queries'
+import { createPost } from './../src/graphql/mutations'
 import React, { useEffect, useState } from 'react'
 import {
-  View, Text, StyleSheet, TextInput, Button
+  View, Text, StyleSheet, TextInput, Button, Image
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
-const initialState = {Title: '', Author: ''}
+const initialState = {PostText: '', ImageLink: ''}
 
 const ArticlesPage = () => {
   const [formState, setFormState] = useState(initialState)
-  const [articles, setArticles] = useState([])
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetchArticles()
+    fetchPosts()
   }, [])
 
   function setInput(key, value) {
     setFormState({ ...formState, [key]: value })
   }
 
-  async function fetchArticles() {
+  async function fetchPosts() {
     try {
-      const articleData = await API.graphql(graphqlOperation(listPealArticles))
-      const articles = articleData.data.listPealArticles.items
-      setArticles(articles)
+      const postData = await API.graphql(graphqlOperation(listPosts))
+      const posts = postData.data.listPosts.items
+      setPosts(posts)
     } catch (err) { console.log('error fetching articles') }
   }
 
-  async function addArticle() {
+  async function addPost() {
     try {
-      const article = { ...formState }
-      setArticles([...articles, article])
+      const post = { ...formState }
+      setPosts([...posts, post])
       setFormState(initialState)
-      await API.graphql(graphqlOperation(createPealArticle, {input: article}))
+      await API.graphql(graphqlOperation(createPost, {input: post}))
     } catch (err) {
-      console.log('error creating article:', err)
+      console.log('error creating post:', err)
     }
   }
 
@@ -44,24 +44,23 @@ const ArticlesPage = () => {
     <ScrollView>
         <View style={styles.container}>
         <TextInput
-            onChangeText={val => setInput('Title', val)}
+            onChangeText={val => setInput('PostText', val)}
             style={styles.input}
-            value={formState.Title} 
-            placeholder="Title"
+            value={formState.PostText} 
+            placeholder="PostText"
         />
         <TextInput
-            onChangeText={val => setInput('Author', val)}
+            onChangeText={val => setInput('ImageLink', val)}
             style={styles.input}
-            value={formState.Author}
-            placeholder="Author"
+            value={formState.ImageLink}
+            placeholder="ImageLink"
         />
-        <Button title="Create article" onPress={addArticle} /> 
+        <Button title="Create post" onPress={addPost} /> 
         {
-            articles.map((article, index) => (
-            <View key={article.id ? article.id : index} style={styles.article}>
-                <Text style={styles.articleTitle}>{article.Title}</Text>
-                <Text style={styles.articleTitle}>{article.Author}</Text>
-                <Text>{article.ArticleText}</Text>
+            posts.map((post, index) => (
+            <View key={post.ID ? post.ID : index} style={styles.identity}>
+                <Text style={styles.identityTitle}>{post.PostText}</Text>
+                <Image source={{ uri: post.PostLink }} style={{height : 200, width: 200}}/>
             </View>
             ))
         }
