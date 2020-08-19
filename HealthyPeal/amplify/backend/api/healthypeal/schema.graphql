@@ -11,25 +11,73 @@ type Identity @model {
   id: ID!
   IdentityText: String!
   ImageLink: String
+  IdentityUsers: [UserIdentities] @connection(keyName: "byIdentity", fields: ["id"])
 }
 
 type Goal @model {
   id: ID!
   GoalText: String!
   ImageLink: String
+  GoalUsers: [UserGoals] @connection(keyName: "byGoal", fields: ["id"])
 }
 
 type Interest @model {
   id: ID!
   InterestText: String!
   ImageLink: String
+  InterestUsers: [UserInterests] @connection(keyName: "byInterest", fields: ["id"])
+}
+
+type UserIdentities 
+  @model(queries: null)
+  @key(name: "byIdentity", fields: ["identityID", "userID"])
+  @key(name: "byUserId", fields: ["userID", "identityID"])
+{
+  id: ID!
+  identityID: ID!
+  userID: ID!
+  identity: Identity! @connection(fields: ["identityID"])
+  user: UserInfo! @connection(fields: ["userID"])
+}
+
+type UserGoals 
+  @model(queries: null)
+  @key(name: "byGoal", fields: ["goalID", "userID"])
+  @key(name: "byUserGo", fields: ["userID", "goalID"])
+{
+  id: ID!
+  goalID: ID!
+  userID: ID!
+  goal: Goal! @connection(fields: ["goalID"])
+  user: UserInfo! @connection(fields: ["userID"])
+}
+
+type UserInterests 
+  @model(queries: null)
+  @key(name: "byInterest", fields: ["interestID", "userID"])
+  @key(name: "byUserIn", fields: ["userID", "interestID"])
+{
+  id: ID!
+  interestID: ID!
+  userID: ID!
+  interest: Interest! @connection(fields: ["interestID"])
+  user: UserInfo! @connection(fields: ["userID"])
 }
 
 type UserInfo @model {
+  id: ID!
   Username: String!
   Sub: String!
-  Identities: [Identity]
-  Goals: [Goal]
-  Interests: [Interest]
+  Identities: [UserIdentities] @connection(keyName: "byUserId", fields: ["id"]) 
+  Goals: [UserGoals] @connection(keyName: "byUserGo", fields: ["id"]) 
+  Interests: [UserInterests] @connection(keyName: "byUserIn", fields: ["id"]) 
   ProfileImage: String
+}
+
+type Insight @model {
+  id: ID!
+  InsightText: String!
+  ImageLink: String
+  InsightGoal: Goal
+  InsightInterest: Interest
 }

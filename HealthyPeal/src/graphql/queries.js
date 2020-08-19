@@ -42,6 +42,16 @@ export const getIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -58,6 +68,9 @@ export const listIdentitys = /* GraphQL */ `
         id
         IdentityText
         ImageLink
+        IdentityUsers {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -71,6 +84,16 @@ export const getGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -87,6 +110,9 @@ export const listGoals = /* GraphQL */ `
         id
         GoalText
         ImageLink
+        GoalUsers {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -100,6 +126,16 @@ export const getInterest = /* GraphQL */ `
       id
       InterestText
       ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -116,6 +152,9 @@ export const listInterests = /* GraphQL */ `
         id
         InterestText
         ImageLink
+        InterestUsers {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -126,28 +165,38 @@ export const listInterests = /* GraphQL */ `
 export const getUserInfo = /* GraphQL */ `
   query GetUserInfo($id: ID!) {
     getUserInfo(id: $id) {
+      id
       Username
       Sub
       Identities {
-        id
-        IdentityText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       Goals {
-        id
-        GoalText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       Interests {
-        id
-        InterestText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       ProfileImage
       createdAt
@@ -163,30 +212,82 @@ export const listUserInfos = /* GraphQL */ `
   ) {
     listUserInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
+        id
         Username
         Sub
         Identities {
-          id
-          IdentityText
-          ImageLink
-          createdAt
-          updatedAt
+          nextToken
         }
         Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getInsight = /* GraphQL */ `
+  query GetInsight($id: ID!) {
+    getInsight(id: $id) {
+      id
+      InsightText
+      ImageLink
+      InsightGoal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      InsightInterest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listInsights = /* GraphQL */ `
+  query ListInsights(
+    $filter: ModelInsightFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listInsights(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        InsightText
+        ImageLink
+        InsightGoal {
           id
           GoalText
           ImageLink
           createdAt
           updatedAt
         }
-        Interests {
+        InsightInterest {
           id
           InterestText
           ImageLink
           createdAt
           updatedAt
         }
-        ProfileImage
         createdAt
         updatedAt
       }

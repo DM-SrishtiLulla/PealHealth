@@ -49,6 +49,16 @@ export const onCreateIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -60,6 +70,16 @@ export const onUpdateIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -71,6 +91,16 @@ export const onDeleteIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -82,6 +112,16 @@ export const onCreateGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -93,6 +133,16 @@ export const onUpdateGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -104,6 +154,16 @@ export const onDeleteGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -115,6 +175,16 @@ export const onCreateInterest = /* GraphQL */ `
       id
       InterestText
       ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -126,6 +196,16 @@ export const onUpdateInterest = /* GraphQL */ `
       id
       InterestText
       ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -137,6 +217,358 @@ export const onDeleteInterest = /* GraphQL */ `
       id
       InterestText
       ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateUserIdentities = /* GraphQL */ `
+  subscription OnCreateUserIdentities {
+    onCreateUserIdentities {
+      id
+      identityID
+      userID
+      identity {
+        id
+        IdentityText
+        ImageLink
+        IdentityUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateUserIdentities = /* GraphQL */ `
+  subscription OnUpdateUserIdentities {
+    onUpdateUserIdentities {
+      id
+      identityID
+      userID
+      identity {
+        id
+        IdentityText
+        ImageLink
+        IdentityUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteUserIdentities = /* GraphQL */ `
+  subscription OnDeleteUserIdentities {
+    onDeleteUserIdentities {
+      id
+      identityID
+      userID
+      identity {
+        id
+        IdentityText
+        ImageLink
+        IdentityUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateUserGoals = /* GraphQL */ `
+  subscription OnCreateUserGoals {
+    onCreateUserGoals {
+      id
+      goalID
+      userID
+      goal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateUserGoals = /* GraphQL */ `
+  subscription OnUpdateUserGoals {
+    onUpdateUserGoals {
+      id
+      goalID
+      userID
+      goal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteUserGoals = /* GraphQL */ `
+  subscription OnDeleteUserGoals {
+    onDeleteUserGoals {
+      id
+      goalID
+      userID
+      goal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateUserInterests = /* GraphQL */ `
+  subscription OnCreateUserInterests {
+    onCreateUserInterests {
+      id
+      interestID
+      userID
+      interest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateUserInterests = /* GraphQL */ `
+  subscription OnUpdateUserInterests {
+    onUpdateUserInterests {
+      id
+      interestID
+      userID
+      interest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteUserInterests = /* GraphQL */ `
+  subscription OnDeleteUserInterests {
+    onDeleteUserInterests {
+      id
+      interestID
+      userID
+      interest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -145,28 +577,38 @@ export const onDeleteInterest = /* GraphQL */ `
 export const onCreateUserInfo = /* GraphQL */ `
   subscription OnCreateUserInfo {
     onCreateUserInfo {
+      id
       Username
       Sub
       Identities {
-        id
-        IdentityText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       Goals {
-        id
-        GoalText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       Interests {
-        id
-        InterestText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       ProfileImage
       createdAt
@@ -177,28 +619,38 @@ export const onCreateUserInfo = /* GraphQL */ `
 export const onUpdateUserInfo = /* GraphQL */ `
   subscription OnUpdateUserInfo {
     onUpdateUserInfo {
+      id
       Username
       Sub
       Identities {
-        id
-        IdentityText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       Goals {
-        id
-        GoalText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       Interests {
-        id
-        InterestText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       ProfileImage
       createdAt
@@ -209,30 +661,133 @@ export const onUpdateUserInfo = /* GraphQL */ `
 export const onDeleteUserInfo = /* GraphQL */ `
   subscription OnDeleteUserInfo {
     onDeleteUserInfo {
+      id
       Username
       Sub
       Identities {
-        id
-        IdentityText
-        ImageLink
-        createdAt
-        updatedAt
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       Goals {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Interests {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateInsight = /* GraphQL */ `
+  subscription OnCreateInsight {
+    onCreateInsight {
+      id
+      InsightText
+      ImageLink
+      InsightGoal {
         id
         GoalText
         ImageLink
+        GoalUsers {
+          nextToken
+        }
         createdAt
         updatedAt
       }
-      Interests {
+      InsightInterest {
         id
         InterestText
         ImageLink
+        InterestUsers {
+          nextToken
+        }
         createdAt
         updatedAt
       }
-      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateInsight = /* GraphQL */ `
+  subscription OnUpdateInsight {
+    onUpdateInsight {
+      id
+      InsightText
+      ImageLink
+      InsightGoal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      InsightInterest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteInsight = /* GraphQL */ `
+  subscription OnDeleteInsight {
+    onDeleteInsight {
+      id
+      InsightText
+      ImageLink
+      InsightGoal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      InsightInterest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
