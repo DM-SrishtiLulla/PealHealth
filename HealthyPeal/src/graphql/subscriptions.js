@@ -706,26 +706,6 @@ export const onCreateInsight = /* GraphQL */ `
       id
       InsightText
       ImageLink
-      InsightGoal {
-        id
-        GoalText
-        ImageLink
-        GoalUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      InsightInterest {
-        id
-        InterestText
-        ImageLink
-        InterestUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -737,26 +717,6 @@ export const onUpdateInsight = /* GraphQL */ `
       id
       InsightText
       ImageLink
-      InsightGoal {
-        id
-        GoalText
-        ImageLink
-        GoalUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      InsightInterest {
-        id
-        InterestText
-        ImageLink
-        InterestUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -768,26 +728,39 @@ export const onDeleteInsight = /* GraphQL */ `
       id
       InsightText
       ImageLink
-      InsightGoal {
-        id
-        GoalText
-        ImageLink
-        GoalUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      InsightInterest {
-        id
-        InterestText
-        ImageLink
-        InterestUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreatePost = /* GraphQL */ `
+  subscription OnCreatePost {
+    onCreatePost {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePost = /* GraphQL */ `
+  subscription OnUpdatePost {
+    onUpdatePost {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePost = /* GraphQL */ `
+  subscription OnDeletePost {
+    onDeletePost {
+      id
+      PostText
+      ImageLink
       createdAt
       updatedAt
     }

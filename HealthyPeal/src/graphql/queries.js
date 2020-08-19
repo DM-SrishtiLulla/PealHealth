@@ -238,26 +238,6 @@ export const getInsight = /* GraphQL */ `
       id
       InsightText
       ImageLink
-      InsightGoal {
-        id
-        GoalText
-        ImageLink
-        GoalUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      InsightInterest {
-        id
-        InterestText
-        ImageLink
-        InterestUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -274,20 +254,35 @@ export const listInsights = /* GraphQL */ `
         id
         InsightText
         ImageLink
-        InsightGoal {
-          id
-          GoalText
-          ImageLink
-          createdAt
-          updatedAt
-        }
-        InsightInterest {
-          id
-          InterestText
-          ImageLink
-          createdAt
-          updatedAt
-        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getPost = /* GraphQL */ `
+  query GetPost($id: ID!) {
+    getPost(id: $id) {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPosts = /* GraphQL */ `
+  query ListPosts(
+    $filter: ModelPostFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        PostText
+        ImageLink
         createdAt
         updatedAt
       }

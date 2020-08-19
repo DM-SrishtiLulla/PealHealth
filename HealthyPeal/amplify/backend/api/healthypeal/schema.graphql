@@ -74,10 +74,15 @@ type UserInfo @model {
   ProfileImage: String
 }
 
-type Insight @model {
+type Insight 
+  @model { 
   id: ID!
   InsightText: String!
   ImageLink: String
-  InsightGoal: Goal
-  InsightInterest: Interest
+}
+
+type Post @model {
+  id: ID!
+  PostText: String!
+  ImageLink: String
 }

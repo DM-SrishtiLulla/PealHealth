@@ -781,26 +781,6 @@ export const createInsight = /* GraphQL */ `
       id
       InsightText
       ImageLink
-      InsightGoal {
-        id
-        GoalText
-        ImageLink
-        GoalUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      InsightInterest {
-        id
-        InterestText
-        ImageLink
-        InterestUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -815,26 +795,6 @@ export const updateInsight = /* GraphQL */ `
       id
       InsightText
       ImageLink
-      InsightGoal {
-        id
-        GoalText
-        ImageLink
-        GoalUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      InsightInterest {
-        id
-        InterestText
-        ImageLink
-        InterestUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -849,26 +809,48 @@ export const deleteInsight = /* GraphQL */ `
       id
       InsightText
       ImageLink
-      InsightGoal {
-        id
-        GoalText
-        ImageLink
-        GoalUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      InsightInterest {
-        id
-        InterestText
-        ImageLink
-        InterestUsers {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createPost = /* GraphQL */ `
+  mutation CreatePost(
+    $input: CreatePostInput!
+    $condition: ModelPostConditionInput
+  ) {
+    createPost(input: $input, condition: $condition) {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updatePost = /* GraphQL */ `
+  mutation UpdatePost(
+    $input: UpdatePostInput!
+    $condition: ModelPostConditionInput
+  ) {
+    updatePost(input: $input, condition: $condition) {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deletePost = /* GraphQL */ `
+  mutation DeletePost(
+    $input: DeletePostInput!
+    $condition: ModelPostConditionInput
+  ) {
+    deletePost(input: $input, condition: $condition) {
+      id
+      PostText
+      ImageLink
       createdAt
       updatedAt
     }

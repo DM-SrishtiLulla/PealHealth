@@ -24,8 +24,8 @@ export default function Card(props) {
                 }}/>
             </View>
             <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.lightaccent}}>
-                <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>{props.Title}</Text>
-                <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>{props.Author}</Text>
+                <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.primary}}>{props.PostText}</Text>
+                {/* <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.primary}}>{props.Author}</Text> */}
             </View>
         </View>
     );
