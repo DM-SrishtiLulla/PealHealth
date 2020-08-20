@@ -61,6 +61,16 @@ export const createIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -75,6 +85,16 @@ export const updateIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -89,6 +109,16 @@ export const deleteIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -103,6 +133,16 @@ export const createGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -117,6 +157,16 @@ export const updateGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -131,6 +181,16 @@ export const deleteGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -145,6 +205,16 @@ export const createInterest = /* GraphQL */ `
       id
       InterestText
       ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -159,6 +229,16 @@ export const updateInterest = /* GraphQL */ `
       id
       InterestText
       ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -172,6 +252,604 @@ export const deleteInterest = /* GraphQL */ `
     deleteInterest(input: $input, condition: $condition) {
       id
       InterestText
+      ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUserIdentities = /* GraphQL */ `
+  mutation CreateUserIdentities(
+    $input: CreateUserIdentitiesInput!
+    $condition: ModelUserIdentitiesConditionInput
+  ) {
+    createUserIdentities(input: $input, condition: $condition) {
+      id
+      identityID
+      userID
+      identity {
+        id
+        IdentityText
+        ImageLink
+        IdentityUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserIdentities = /* GraphQL */ `
+  mutation UpdateUserIdentities(
+    $input: UpdateUserIdentitiesInput!
+    $condition: ModelUserIdentitiesConditionInput
+  ) {
+    updateUserIdentities(input: $input, condition: $condition) {
+      id
+      identityID
+      userID
+      identity {
+        id
+        IdentityText
+        ImageLink
+        IdentityUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserIdentities = /* GraphQL */ `
+  mutation DeleteUserIdentities(
+    $input: DeleteUserIdentitiesInput!
+    $condition: ModelUserIdentitiesConditionInput
+  ) {
+    deleteUserIdentities(input: $input, condition: $condition) {
+      id
+      identityID
+      userID
+      identity {
+        id
+        IdentityText
+        ImageLink
+        IdentityUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUserGoals = /* GraphQL */ `
+  mutation CreateUserGoals(
+    $input: CreateUserGoalsInput!
+    $condition: ModelUserGoalsConditionInput
+  ) {
+    createUserGoals(input: $input, condition: $condition) {
+      id
+      goalID
+      userID
+      goal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserGoals = /* GraphQL */ `
+  mutation UpdateUserGoals(
+    $input: UpdateUserGoalsInput!
+    $condition: ModelUserGoalsConditionInput
+  ) {
+    updateUserGoals(input: $input, condition: $condition) {
+      id
+      goalID
+      userID
+      goal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserGoals = /* GraphQL */ `
+  mutation DeleteUserGoals(
+    $input: DeleteUserGoalsInput!
+    $condition: ModelUserGoalsConditionInput
+  ) {
+    deleteUserGoals(input: $input, condition: $condition) {
+      id
+      goalID
+      userID
+      goal {
+        id
+        GoalText
+        ImageLink
+        GoalUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUserInterests = /* GraphQL */ `
+  mutation CreateUserInterests(
+    $input: CreateUserInterestsInput!
+    $condition: ModelUserInterestsConditionInput
+  ) {
+    createUserInterests(input: $input, condition: $condition) {
+      id
+      interestID
+      userID
+      interest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserInterests = /* GraphQL */ `
+  mutation UpdateUserInterests(
+    $input: UpdateUserInterestsInput!
+    $condition: ModelUserInterestsConditionInput
+  ) {
+    updateUserInterests(input: $input, condition: $condition) {
+      id
+      interestID
+      userID
+      interest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserInterests = /* GraphQL */ `
+  mutation DeleteUserInterests(
+    $input: DeleteUserInterestsInput!
+    $condition: ModelUserInterestsConditionInput
+  ) {
+    deleteUserInterests(input: $input, condition: $condition) {
+      id
+      interestID
+      userID
+      interest {
+        id
+        InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUserInfo = /* GraphQL */ `
+  mutation CreateUserInfo(
+    $input: CreateUserInfoInput!
+    $condition: ModelUserInfoConditionInput
+  ) {
+    createUserInfo(input: $input, condition: $condition) {
+      id
+      Username
+      Sub
+      Identities {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Goals {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Interests {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserInfo = /* GraphQL */ `
+  mutation UpdateUserInfo(
+    $input: UpdateUserInfoInput!
+    $condition: ModelUserInfoConditionInput
+  ) {
+    updateUserInfo(input: $input, condition: $condition) {
+      id
+      Username
+      Sub
+      Identities {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Goals {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Interests {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserInfo = /* GraphQL */ `
+  mutation DeleteUserInfo(
+    $input: DeleteUserInfoInput!
+    $condition: ModelUserInfoConditionInput
+  ) {
+    deleteUserInfo(input: $input, condition: $condition) {
+      id
+      Username
+      Sub
+      Identities {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Goals {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Interests {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createInsight = /* GraphQL */ `
+  mutation CreateInsight(
+    $input: CreateInsightInput!
+    $condition: ModelInsightConditionInput
+  ) {
+    createInsight(input: $input, condition: $condition) {
+      id
+      InsightText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateInsight = /* GraphQL */ `
+  mutation UpdateInsight(
+    $input: UpdateInsightInput!
+    $condition: ModelInsightConditionInput
+  ) {
+    updateInsight(input: $input, condition: $condition) {
+      id
+      InsightText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteInsight = /* GraphQL */ `
+  mutation DeleteInsight(
+    $input: DeleteInsightInput!
+    $condition: ModelInsightConditionInput
+  ) {
+    deleteInsight(input: $input, condition: $condition) {
+      id
+      InsightText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createPost = /* GraphQL */ `
+  mutation CreatePost(
+    $input: CreatePostInput!
+    $condition: ModelPostConditionInput
+  ) {
+    createPost(input: $input, condition: $condition) {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updatePost = /* GraphQL */ `
+  mutation UpdatePost(
+    $input: UpdatePostInput!
+    $condition: ModelPostConditionInput
+  ) {
+    updatePost(input: $input, condition: $condition) {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deletePost = /* GraphQL */ `
+  mutation DeletePost(
+    $input: DeletePostInput!
+    $condition: ModelPostConditionInput
+  ) {
+    deletePost(input: $input, condition: $condition) {
+      id
+      PostText
       ImageLink
       createdAt
       updatedAt

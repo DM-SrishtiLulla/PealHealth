@@ -23,7 +23,10 @@ import COLORS from "../Colors";
 import ArticlesPage from './ArticlesPage';
 import CardsTesting from './CardsTesting';
 import IdentitiesPage from './IdentitiesPage';
+import GoalsPage from './GoalsPage';
+import InterestsPage from './InterestsPage';
 import HelloWorldPage from './HelloWorldPage';
+import InsightsPage from './InsightsPage';
 
 
 const Tab = createBottomTabNavigator();
@@ -97,6 +100,9 @@ export default function MainStackNavigator() {
             <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
             <Stack.Screen name="CardsTesting" component={CardsTesting} />
             <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} />
+            <Stack.Screen name="GoalsPage" component={GoalsPage} />
+            <Stack.Screen name="InterestsPage" component={InterestsPage} />
+            <Stack.Screen name="InsightsPage" component={InsightsPage} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

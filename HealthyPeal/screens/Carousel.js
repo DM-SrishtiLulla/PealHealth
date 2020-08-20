@@ -4,7 +4,7 @@ import CarouselItem from './CarouselItem'
 import COLORS from "../Colors";
 
 
-const { width, heigth } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 const scrollX = new Animated.Value(0)
 let position = Animated.divide(scrollX, width)

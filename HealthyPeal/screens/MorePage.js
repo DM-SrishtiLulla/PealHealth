@@ -165,7 +165,7 @@ export default function MorePage({ navigation }) {
           // description='A set of React Native components'
           />
           <Divider />
-          <Button
+          {/* <Button
             size="giant"
             style={styles.button1}
             onPress={() =>
@@ -185,10 +185,34 @@ export default function MorePage({ navigation }) {
             size="giant"
             style={styles.button1}
             onPress={() =>
+              navigation.navigate('GoalsPage')
+            }>
+            GoalsPage
+          </Button>
+          <Button
+            size="giant"
+            style={styles.button1}
+            onPress={() =>
+              navigation.navigate('InterestsPage')
+            }>
+            InterestsPage
+          </Button>
+          <Button
+            size="giant"
+            style={styles.button1}
+            onPress={() =>
+              navigation.navigate('InsightsPage')
+            }>
+            InsightsPage
+          </Button>
+          <Button
+            size="giant"
+            style={styles.button1}
+            onPress={() =>
               navigation.navigate('ArticlesPage')
             }>
             ArticlesPage
-          </Button>
+          </Button> */}
         </ScrollView>
       </SafeAreaView>
     </View>

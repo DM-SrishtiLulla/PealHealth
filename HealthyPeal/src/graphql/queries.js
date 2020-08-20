@@ -42,6 +42,16 @@ export const getIdentity = /* GraphQL */ `
       id
       IdentityText
       ImageLink
+      IdentityUsers {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -58,6 +68,9 @@ export const listIdentitys = /* GraphQL */ `
         id
         IdentityText
         ImageLink
+        IdentityUsers {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -71,6 +84,16 @@ export const getGoal = /* GraphQL */ `
       id
       GoalText
       ImageLink
+      GoalUsers {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -87,6 +110,9 @@ export const listGoals = /* GraphQL */ `
         id
         GoalText
         ImageLink
+        GoalUsers {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -100,6 +126,16 @@ export const getInterest = /* GraphQL */ `
       id
       InterestText
       ImageLink
+      InterestUsers {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -115,6 +151,137 @@ export const listInterests = /* GraphQL */ `
       items {
         id
         InterestText
+        ImageLink
+        InterestUsers {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getUserInfo = /* GraphQL */ `
+  query GetUserInfo($id: ID!) {
+    getUserInfo(id: $id) {
+      id
+      Username
+      Sub
+      Identities {
+        items {
+          id
+          identityID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Goals {
+        items {
+          id
+          goalID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Interests {
+        items {
+          id
+          interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ProfileImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUserInfos = /* GraphQL */ `
+  query ListUserInfos(
+    $filter: ModelUserInfoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getInsight = /* GraphQL */ `
+  query GetInsight($id: ID!) {
+    getInsight(id: $id) {
+      id
+      InsightText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listInsights = /* GraphQL */ `
+  query ListInsights(
+    $filter: ModelInsightFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listInsights(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getPost = /* GraphQL */ `
+  query GetPost($id: ID!) {
+    getPost(id: $id) {
+      id
+      PostText
+      ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPosts = /* GraphQL */ `
+  query ListPosts(
+    $filter: ModelPostFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        PostText
         ImageLink
         createdAt
         updatedAt

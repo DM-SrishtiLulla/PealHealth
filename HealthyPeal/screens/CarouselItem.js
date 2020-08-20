@@ -8,10 +8,10 @@ const { width, height } = Dimensions.get('window')
 const CarouselItem = ({item}) => {
     return (
         <SafeAreaView style={styles.cardView}>
-            <Image style={styles.image} source={{ uri: item.url }} />
+            <Image style={styles.image} source={{ uri: item.ImageLink }} />
             <View style={styles.textView}>
-                <Text style={styles.itemTitle}>{item.title}</Text>
-                <Text style={styles.itemDescription}>{item.description}</Text>
+                {/* <Text style={styles.itemTitle}>{item.InsightText}</Text> */}
+                <Text style={styles.itemDescription}>{item.InsightText}</Text>
                 <Text style={styles.itemDescription}>{item.description2}</Text>
                 <Text style={styles.itemDescription}>{item.description3}</Text>
                 <Text style={styles.itemDescription}>{item.description4}</Text>

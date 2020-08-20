@@ -1,9 +1,39 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button } from "react-native";
 import { Icon } from 'react-native-eva-icons';
+import { Auth } from 'aws-amplify';
 import COLORS from "../Colors";
+import { withAuthenticator } from 'aws-amplify-react-native'
 
-export default function ProfilePage() {
+
+/*async function onSignOutClick() {
+    await Auth.signOut()
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+}*/
+
+async function signOut() {
+    try {
+        await Auth.signOut();
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+}
+
+
+//export default 
+function ProfilePage() {
+
+    function signOut() {
+        Auth.signOut()
+          .then(() => {
+            props.onStateChange('signedOut', null);
+          })
+          .catch(err => {
+            console.log('err: ', err)
+          })
+      }
+    
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -13,7 +43,7 @@ export default function ProfilePage() {
                 </View> */}
                 <View style={{ alignSelf: "center", marginTop: 10 }}>
                     <View style={styles.profileImage}>
-                        <Image source={{uri: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80"}} style={styles.image} resizeMode="center"/>
+                        <Image source={{ uri: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80" }} style={styles.image} resizeMode="center" />
                     </View>
                     {/* <View style={styles.dm}>
                         <Icon name="message-square" size={18} color="#DFD8C8"/>
@@ -47,13 +77,13 @@ export default function ProfilePage() {
                 <View style={{ marginTop: 32 }}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles.mediaImageContainer}>
-                            <Image source={{uri: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}} style={styles.image} resizeMode="cover"/>
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
                         </View>
                         <View style={styles.mediaImageContainer}>
-                            <Image source={{uri: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}} style={styles.image} resizeMode="cover"/>
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
                         </View>
                         <View style={styles.mediaImageContainer}>
-                            <Image source={{uri: "https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}} style={styles.image} resizeMode="cover"/>
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
                         </View>
                     </ScrollView>
                     {/* <View style={styles.mediaCount}>
@@ -81,12 +111,29 @@ export default function ProfilePage() {
                         </View>
                     </View>
                 </View>
+                <Button title="Sign Out" onPress={signOut}></Button>
             </ScrollView>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    title2: {
+        color: COLORS.primary,
+        justifyContent: "center",
+        // alignContent: "center",
+        marginTop: 30,
+        marginBottom: 10,
+        marginLeft: 30,
+        marginRight: 20,
+        fontSize: 30,
+        fontWeight: "bold",
+    },
+    buttonbottom: {
+        marginTop: -10,
+        alignSelf: "center",
+        backgroundColor: COLORS.lightaccent
+    },
     container: {
         flex: 1,
         backgroundColor: COLORS.darkprimary,
@@ -202,3 +249,7 @@ const styles = StyleSheet.create({
         marginRight: 20
     }
 });
+
+export default withAuthenticator(ProfilePage)
+
+

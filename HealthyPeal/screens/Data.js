@@ -1,4 +1,31 @@
-export const dummyData =
+import { useEffect, useState } from 'react'
+import { API, graphqlOperation } from 'aws-amplify'
+import { listInsights } from './../src/graphql/queries'
+
+export const Data = () => {
+        const [insights, setInsights] = useState([])
+
+        useEffect(() => {
+          fetchInsights()
+        }, [])
+      
+        async function fetchInsights() {
+          try {
+            const insightData = await API.graphql(graphqlOperation(listInsights))
+            const insights = insightData.data.listInsights.items
+            setInsights(insights)
+          } catch (err) { console.log('error fetching interests') }
+        }
+        
+        return insights;
+}
+
+
+
+  //export const dummyData = insights;
+
+
+/*export const dummyData =
         [{
                 title: 'Grounding, Literally', url: 'https://images.unsplash.com/photo-1506056820413-f8fa4de15de6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60',
                 author: "Asha",
@@ -84,4 +111,4 @@ export const dummyData =
         //         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         //         author: "Asha",
         //         id: 14
-        // }]
+        // }]*/
