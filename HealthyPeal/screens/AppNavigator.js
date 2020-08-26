@@ -15,7 +15,6 @@ import OnboardingIdentities from "./OnboardingIdentities";
 import OnboardingGoals from "./OnboardingGoals";
 import OnboardingInterests from "./OnboardingInterests";
 import ResourcesPage from "./ResourcesPage";
-import InformationPage from "./InformationPage";
 import MorePage from "./MorePage";
 import { Icon } from 'react-native-eva-icons';
 import CommunityPage from './CommunityPage';
@@ -96,7 +95,6 @@ export default function MainStackNavigator() {
             <Stack.Screen name="Goals" component={OnboardingGoals} />
             <Stack.Screen name="Interests" component={OnboardingInterests} />
             <Stack.Screen name="Resources" component={ResourcesPage} />
-            <Stack.Screen name="Information" component={InformationPage} />
             <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
             <Stack.Screen name="CardsTesting" component={CardsTesting} />
             <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} />

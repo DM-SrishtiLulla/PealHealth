@@ -3,7 +3,7 @@ import { listInsights } from './../src/graphql/queries'
 import { createInsight } from './../src/graphql/mutations'
 import React, { useEffect, useState } from 'react'
 import {
-  View, Text, StyleSheet, TextInput, Button, Image
+  View, Text, StyleSheet, TextInput, Button, Image, SafeAreaView
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
@@ -41,6 +41,7 @@ const InsightsPage = () => {
   }
 
   return (
+    <SafeAreaView>
     <ScrollView>
         <View style={styles.container}>
         <TextInput
@@ -66,12 +67,13 @@ const InsightsPage = () => {
         }
         </View>
     </ScrollView>
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20 },
-  identity: {  marginBottom: 15 },
+  identity: {  marginBottom: 30 },
   input: { height: 50, backgroundColor: '#ddd', marginBottom: 10, padding: 8 },
   identityTitle: { fontSize: 18 }
 })

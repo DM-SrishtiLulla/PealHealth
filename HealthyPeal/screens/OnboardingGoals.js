@@ -7,6 +7,7 @@ import {
 import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 import CheckBox from '@react-native-community/checkbox';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
 
@@ -45,8 +46,7 @@ export default function OnboardingGoals({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}> Your Goals </Text>
-
+      <Text style={styles.head}>What do you want help with?</Text>
       <FlatList style={styles.list}
         contentContainerStyle={styles.listContainer}
         data={goals}
@@ -60,11 +60,19 @@ export default function OnboardingGoals({ navigation }) {
             <TouchableOpacity style={[styles.card]}>
 
               <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+              <View style={styles.checkbox}>
                 <CheckBox
+                 boxType={'square'}
+                 tintColor={COLORS.darkaccent}
+                 onCheckColor={COLORS.primary}
+                 lineWidth={3}
+                 onFillColor={COLORS.secondary}
+                 onTintColor={COLORS.darkaccent}
                   name={item.id}
                   disabled={false}
                   onValueChange={event => handleChange({ name: item.id })}
                 />
+                </View>
                 <View style={styles.cardHeader}>
                   <Text style={styles.title}>{item.GoalText}</Text>
                 </View>
@@ -87,23 +95,23 @@ export default function OnboardingGoals({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 0,
+  container:{
+    flex:1,
+    marginTop:0,
     marginBottom: 0,
-    backgroundColor: COLORS.darkprimary,
+    backgroundColor: COLORS.primary,
   },
   list: {
     //paddingHorizontal: 5,
-    backgroundColor: COLORS.darkprimary,
+    backgroundColor: COLORS.primary,
   },
-  listContainer: {
-    alignItems: 'center',
+  listContainer:{
+    alignItems:'center',
   },
   /******** card **************/
-  card: {
-    marginHorizontal: 5,
-    marginVertical: 5,
+  card:{
+    marginHorizontal:5,
+    marginVertical:5,
     flexBasis: '47%',
     borderRadius: 30,
     height: 140,
@@ -111,19 +119,18 @@ const styles = StyleSheet.create({
   },
   cardHeader: {
     paddingVertical: 17,
-    paddingHorizontal: 16,
+    paddingHorizontal: 14,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
-    alignItems: "center",
-    justifyContent: "center",
-    opacity: 1
+    alignItems:"center", 
+    justifyContent:"center"
   },
   cardContent: {
     paddingVertical: 12.5,
     paddingHorizontal: 16,
   },
-  cardFooter: {
+  cardFooter:{
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingTop: 12.5,
@@ -132,59 +139,67 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-  cardImage: {
+  cardImage:{
     height: 70,
     width: 70,
-    alignSelf: 'center',
+    alignSelf:'center'
   },
-  title: {
-    fontSize: 20,
+  title:{
+    fontSize: 16,
     flex: 1,
-    marginTop: 30,
+    marginTop: 0,
     justifyContent: "center",
     textAlign: "center",
     alignSelf: "center",
     color: COLORS.primary,
-    fontWeight: 'bold'
+    backgroundColor: COLORS.secondary,
+    borderColor: COLORS.secondary,
+    borderWidth: 10,
+    fontWeight: '700'
   },
-  subTitle: {
-    fontSize: 12,
-    flex: 1,
-    color: "#FFFFFF",
+  subTitle:{
+    fontSize:12,
+    flex:1,
+    color:"#FFFFFF",
   },
-  icon: {
+  icon:{
     height: 20,
-    width: 20,
+    width: 20, 
   },
   image: {
     flex: 1,
     resizeMode: "cover",
-    justifyContent: "center",
-    //opacity: 0.7
+    justifyContent: "center"
   },
   buttonbottom: {
-    flex: 0.5,
-    marginBottom: "10%",
-    alignSelf: "center",
-    width: 200,
-    backgroundColor: COLORS.lightaccent
+      marginBottom: "10%",
+      marginTop: "5%",
+      alignSelf: "center",
+      width: 200,
+      height: 60,
+      backgroundColor: COLORS.darkprimary,
+      borderColor: COLORS.darkprimary,
   },
   buttontext: {
-    fontSize: 30,
-    fontWeight: "800",
+    fontSize: 24,
+    fontWeight: "600",
     color: COLORS.primary
-  },
+},
   head: {
     flex: 1,
-    color: "white",
+    color: COLORS.darkprimary,
     // marginLeft: 20,
     // marginTop: 10,
     marginBottom: 10,
-    paddingTop: 30,
+    paddingTop: 20,
     paddingBottom: 30,
     paddingLeft: 10,
     alignSelf: "center",
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: "600",
+  },
+  checkbox: {
+    marginTop: 20,
+    marginLeft: 10
   }
 });

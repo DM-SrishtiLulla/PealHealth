@@ -15,7 +15,8 @@ import Carousel from "./Carousel";
 import { dummyData } from "./Data.js";
 import { useEffect, useState } from 'react'
 import { API, graphqlOperation } from 'aws-amplify'
-import { listInsights } from './../src/graphql/queries'
+import { listInsights } from './../src/graphql/queries';
+import COLORS from "../Colors";
 
 
 

@@ -45,7 +45,7 @@ export default function OnboardingInterests({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}> Your Interests </Text>
+      <Text style={styles.head}> What interests you? </Text>
 
       <FlatList style={styles.list}
         contentContainerStyle={styles.listContainer}
@@ -60,11 +60,19 @@ export default function OnboardingInterests({ navigation }) {
             <TouchableOpacity style={[styles.card]}>
 
               <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+                <View style={styles.checkbox}>
                 <CheckBox
+                  boxType={'square'}
+                  tintColor={COLORS.darkaccent}
+                  onCheckColor={COLORS.primary}
+                  lineWidth={3}
+                  onFillColor={COLORS.secondary}
+                  onTintColor={COLORS.darkaccent}
                   name={item.id}
                   disabled={false}
                   onValueChange={event => handleChange({ name: item.id })}
                 />
+                </View>
                 <View style={styles.cardHeader}>
                   <Text style={styles.title}>{item.InterestText}</Text>
                 </View>
@@ -101,9 +109,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   /******** card **************/
-  card: {
-    marginHorizontal: 5,
-    marginVertical: 5,
+  card:{
+    marginHorizontal:5,
+    marginVertical:5,
     flexBasis: '47%',
     borderRadius: 30,
     height: 140,
@@ -115,15 +123,14 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
-    alignItems: "center",
-    justifyContent: "center",
-    opacity: 1
+    alignItems:"center", 
+    justifyContent:"center"
   },
   cardContent: {
     paddingVertical: 12.5,
     paddingHorizontal: 16,
   },
-  cardFooter: {
+  cardFooter:{
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingTop: 12.5,
@@ -132,60 +139,67 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-  cardImage: {
+  cardImage:{
     height: 70,
     width: 70,
-    alignSelf: 'center',
+    alignSelf:'center'
   },
-  title: {
+  title:{
     fontSize: 20,
     flex: 1,
-    marginTop: 30,
+    marginTop: 0,
     justifyContent: "center",
     textAlign: "center",
     alignSelf: "center",
     color: COLORS.primary,
-    fontWeight: 'bold'
+    backgroundColor: COLORS.secondary,
+    borderColor: COLORS.secondary,
+    borderWidth: 10,
+    fontWeight: '800'
   },
-  subTitle: {
-    fontSize: 12,
-    flex: 1,
-    color: "#FFFFFF",
+  subTitle:{
+    fontSize:12,
+    flex:1,
+    color:"#FFFFFF",
   },
-  icon: {
+  icon:{
     height: 20,
-    width: 20,
+    width: 20, 
   },
   image: {
     flex: 1,
     resizeMode: "cover",
-    justifyContent: "center",
-    //opacity: 0.7
+    justifyContent: "center"
   },
   buttonbottom: {
-    flex: 0.5,
-    marginBottom: "10%",
-    alignSelf: "center",
-    width: 200,
-    backgroundColor: COLORS.lightaccent
+      marginBottom: "10%",
+      marginTop: "5%",
+      alignSelf: "center",
+      width: 200,
+      height: 60,
+      backgroundColor: COLORS.darkprimary,
+      borderColor: COLORS.darkprimary,
   },
   buttontext: {
-    fontSize: 30,
-    fontWeight: "800",
+    fontSize: 24,
+    fontWeight: "600",
     color: COLORS.primary
-  },
+},
   head: {
     flex: 1,
-    color: COLORS.lightaccent,
+    color: COLORS.darkprimary,
     // marginLeft: 20,
     // marginTop: 10,
     marginBottom: 10,
-    paddingTop: 30,
-    paddingBottom: 30,
+    paddingTop: 20,
+    paddingBottom: 36,
     paddingLeft: 10,
     alignSelf: "center",
-    fontSize: 30,
-    fontWeight: "800",
-    color: COLORS.lightaccent
+    fontSize: 24,
+    fontWeight: "600",
+  },
+  checkbox: {
+    marginTop: 20,
+    marginLeft: 10
   }
 });

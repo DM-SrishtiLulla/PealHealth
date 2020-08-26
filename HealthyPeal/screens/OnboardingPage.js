@@ -23,7 +23,7 @@ export default function OnboardingPage({ navigation }) {
             <Text style={styles.bold}>your</Text> mental and
         </Text>
           <Text style={styles.title} category='h1'>
-            emotional <Text style={styles.bold}>health</Text>.
+            emotional health.
         </Text>
         </View>
         <View style={styles.container3}>
@@ -44,9 +44,9 @@ export default function OnboardingPage({ navigation }) {
 const styles = StyleSheet.create({
   container2: {
     flex: 1,
-    marginTop: "80%",
+    marginTop: "70%",
     marginLeft: "7%",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkprimary,
     alignItems: "flex-start",
   },
   container3: {
@@ -76,10 +76,10 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   buttonbottom: {
-    marginTop: "20%",
+    marginTop: "10%",
     alignSelf: "center",
     marginBottom: 0,
-    backgroundColor: "white",
+    backgroundColor: COLORS.primary,
     width: "90%"
   },
   title: {

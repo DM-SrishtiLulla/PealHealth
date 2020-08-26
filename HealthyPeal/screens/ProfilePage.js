@@ -37,26 +37,15 @@ function ProfilePage() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                {/* <View style={styles.titleBar}>
-                    <Icon name="arrow-back" size={24} color="red"/>
-                    <Icon name="plus" size={24} color="red"/>
-                </View> */}
                 <View style={{ alignSelf: "center", marginTop: 10 }}>
                     <View style={styles.profileImage}>
-                        <Image source={{ uri: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80" }} style={styles.image} resizeMode="center" />
+                        <Image source={{ uri: "https://images.unsplash.com/photo-1594270410221-e6a33cbc6fb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="center" />
                     </View>
-                    {/* <View style={styles.dm}>
-                        <Icon name="message-square" size={18} color="#DFD8C8"/>
-                    </View> */}
-                    {/* <View style={styles.active}></View> */}
-                    {/* <View style={styles.add}>
-                        <Icon name="plus" size={48} color="#DFD8C8" style={{ marginTop: 6, marginLeft: 2 }}/>
-                    </View> */}
                 </View>
 
                 <View style={styles.infoContainer}>
-                    <Text style={[styles.text, { fontWeight: "400", fontSize: 36 }]}>James</Text>
-                    <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@jimothy101</Text>
+                    <Text style={[styles.text, { fontWeight: "400", fontSize: 24 }]}>Coming Soon</Text>
+                    <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text>
                 </View>
 
                 <View style={styles.statsContainer}>
@@ -86,10 +75,6 @@ function ProfilePage() {
                             <Image source={{ uri: "https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
                         </View>
                     </ScrollView>
-                    {/* <View style={styles.mediaCount}>
-                        <Text style={[styles.text, { fontSize: 24, color: "#DFD8C8", fontWeight: "300" }]}>70</Text>
-                        <Text style={[styles.text, { fontSize: 12, color: "#DFD8C8", textTransform: "uppercase" }]}>Media</Text>
-                    </View> */}
                 </View>
                 <Text style={[styles.subText, styles.recent]}>Recent Activity</Text>
                 <View style={{ alignItems: "center" }}>
@@ -154,10 +139,11 @@ const styles = StyleSheet.create({
         fontWeight: "500"
     },
     profileImage: {
-        width: 120,
-        height: 120,
+        width: 130,
+        height: 130,
         marginTop: 20,
-        borderRadius: 150,
+        borderRadius: 130,
+        resizeMode: "cover",
         overflow: "hidden"
     },
     dm: {

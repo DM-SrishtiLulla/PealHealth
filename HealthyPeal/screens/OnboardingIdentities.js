@@ -45,7 +45,7 @@ export default function OnboardingIdentities({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}>Communities</Text>
+      <Text style={styles.head}>How do you identify?</Text>
       <FlatList style={styles.list}
         contentContainerStyle={styles.listContainer}
         data={identitys}
@@ -59,11 +59,19 @@ export default function OnboardingIdentities({ navigation }) {
             <TouchableOpacity style={[styles.card]}>
 
               <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+              <View style={styles.checkbox}>
                 <CheckBox
+                  boxType={'square'}
+                  tintColor={COLORS.darkaccent}
+                  onCheckColor={COLORS.primary}
+                  lineWidth={3}
+                  onFillColor={COLORS.secondary}
+                  onTintColor={COLORS.darkaccent}
                   name={item.id}
                   disabled={false}
                   onValueChange={event => handleChange({ name: item.id })}
                 />
+              </View>
                 <View style={styles.cardHeader}>
                   <Text style={styles.title}>{item.IdentityText}</Text>
                 </View>
@@ -90,11 +98,11 @@ const styles = StyleSheet.create({
     flex:1,
     marginTop:0,
     marginBottom: 0,
-    backgroundColor: COLORS.darkprimary,
+    backgroundColor: COLORS.primary,
   },
   list: {
     //paddingHorizontal: 5,
-    backgroundColor: COLORS.darkprimary,
+    backgroundColor: COLORS.primary,
   },
   listContainer:{
     alignItems:'center',
@@ -136,14 +144,17 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   title:{
-    fontSize:20,
-    flex:1,
-    marginTop: 30,
+    fontSize: 18,
+    flex: 1,
+    marginTop: 0,
     justifyContent: "center",
     textAlign: "center",
     alignSelf: "center",
-    color:"white",
-    fontWeight: "400"
+    color: COLORS.primary,
+    backgroundColor: COLORS.secondary,
+    borderColor: COLORS.secondary,
+    borderWidth: 10,
+    fontWeight: '700'
   },
   subTitle:{
     fontSize:12,
@@ -165,25 +176,29 @@ const styles = StyleSheet.create({
       alignSelf: "center",
       width: 200,
       height: 60,
-      backgroundColor: "white",
+      backgroundColor: COLORS.darkprimary,
       borderColor: COLORS.darkprimary,
   },
   buttontext: {
     fontSize: 24,
     fontWeight: "600",
-    color: COLORS.darkprimary
+    color: COLORS.primary
 },
   head: {
     flex: 1,
-    color: "white",
+    color: COLORS.darkprimary,
     // marginLeft: 20,
     // marginTop: 10,
     marginBottom: 10,
-    paddingTop: 30,
+    paddingTop: 20,
     paddingBottom: 30,
     paddingLeft: 10,
     alignSelf: "center",
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: "600",
+  },
+  checkbox: {
+    marginTop: 20,
+    marginLeft: 10
   }
 });

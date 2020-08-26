@@ -13,17 +13,14 @@ export default function PealExplanation({ navigation }) {
       {/* <View style={styles.container}>
         </View> */}
         <View style={styles.container}>
-          <Text style={styles.title} category='h1'>
-            Every day you will get a personalized set of exercises to improve you mental health.
+        <Text style={styles.title} category='h1'>
+            <Text style={styles.bold}>Peal</Text> is here to help bring joy and peace to your life.
         </Text>
-          <Text style={styles.title} category='h1'>
-            supports
+        <Text style={styles.title3} category='h1'>
+            Every day you'll receive a set of <Text style={styles.bold}>3 personalized activities</Text> to help you reach your wellness goals.
         </Text>
-          <Text style={styles.title} category='h1'>
-            <Text style={styles.bold}>your</Text> mental and
-        </Text>
-          <Text style={styles.title} category='h1'>
-            emotional wellness.
+          <Text style={styles.title3} category='h1'>
+            Before we start, we want to get to know you better!
         </Text>
         </View>
         <View style={styles.container3}>
@@ -33,7 +30,7 @@ export default function PealExplanation({ navigation }) {
             onPress={() =>
               navigation.navigate('Identities')
             }>
-            <Text style={styles.title2}>Start Your Journey</Text>
+            <Text style={styles.title2}>Next</Text>
           </Button>
         </View>
       </ScrollView>
@@ -46,14 +43,14 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: "10%",
     marginLeft: "7%",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkprimary,
     alignItems: "flex-start",
   },
   container2: {
     flex: 1,
     marginTop: "80%",
     marginLeft: "7%",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkprimary,
     alignItems: "flex-start",
   },
   container3: {
@@ -100,7 +97,7 @@ const styles = StyleSheet.create({
     color: "white",
     marginTop: 0,
     marginBottom: 0,
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: "600"
   },
   title2: {
@@ -112,5 +109,12 @@ const styles = StyleSheet.create({
     marginRight: 20,
     fontSize: 30,
     fontWeight: "500"
+  },
+  title3: {
+    color: "white",
+    marginRight: "8%",
+    marginTop: 30,
+    fontSize: 24,
+    fontWeight: "400"
   },
 });

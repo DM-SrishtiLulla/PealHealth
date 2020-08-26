@@ -34,84 +34,36 @@ export default function MorePage({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <SafeAreaView style={{ color: "white" }}>
+      <SafeAreaView style={{ flex: 1, color: COLORS.darkprimary}}>
         <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={{ color: "white", fontSize: 32, fontWeight: "700", marginBottom: 10, paddingHorizontal: 2 }}>
             More
       </Text>
         <View style={{marginTop: 10, paddingHorizontal: 4}}>
                 <Text style={{color: "white", fontSize: 24, fontWeight: "700"}}>
-                  Resources
+                  Crisis Resources
                 </Text>
                 <Text style={{color: "white", fontWeight: "300", marginTop: 10}}>
-                 A space for compassionate conversation
+                 Call or text in for help.
                 </Text>
                 <View style={{width:width-50, height:240, marginTop: 20}}>
                 <Image
-                source={{uri: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"}}
+                source={{uri: "https://images.unsplash.com/photo-1487499648633-2ade40e0f769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}}
                       style={{flex: 1, height : null, width: null, resizeMode: "cover",
                     borderRadius: 5, borderWidth: 1,
                   borderColor: COLORS.secondary}}
                       />
                 <Button
             size="giant"
-            style={{marginTop: 10, backgroundColor: "white", borderColor: COLORS.secondary}}
+            style={{marginTop: 30, backgroundColor: "white", borderColor: COLORS.secondary}}
             onPress={() =>
               navigation.navigate('Resources')
             }>
-            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Resources</Text>
+            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Crisis Resources</Text>
           </Button>
                 </View>
               </View>
-              <View style={{marginTop: 20, paddingHorizontal: 4}}>
-                <Text style={{color: "white", fontSize: 24, fontWeight: "700"}}>
-                  Information
-                </Text>
-                <Text style={{color: "white", fontWeight: "300", marginTop: 10}}>
-                 A space for compassionate conversation
-                </Text>
-                <View style={{width:width-50, height:240, marginTop: 20}}>
-                <Image
-                source={{uri: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"}}
-                      style={{flex: 1, height : null, width: null, resizeMode: "cover",
-                    borderRadius: 5, borderWidth: 1,
-                  borderColor: COLORS.secondary}}
-                      />
-                <Button
-            size="giant"
-            style={{marginTop: 10, backgroundColor: "white", borderColor: COLORS.secondary}}
-            onPress={() =>
-              navigation.navigate('Information')
-            }>
-            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Information</Text>
-          </Button>
-                </View>
-              </View>
-              <View style={{marginTop: 20, paddingHorizontal: 4}}>
-                <Text style={{color: "white", fontSize: 24, fontWeight: "700"}}>
-                  Resources
-                </Text>
-                <Text style={{color: "white", fontWeight: "300", marginTop: 10}}>
-                 A space for compassionate conversation
-                </Text>
-                <View style={{width:width-50, height:240, marginTop: 20}}>
-                <Image
-                source={{uri: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"}}
-                      style={{flex: 1, height : null, width: null, resizeMode: "cover",
-                    borderRadius: 5, borderWidth: 1,
-                  borderColor: COLORS.secondary}}
-                      />
-                <Button
-            size="giant"
-            style={{marginTop: 10, backgroundColor: "white", borderColor: COLORS.secondary}}
-            onPress={() =>
-              navigation.navigate('Resources')
-            }>
-            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Resources</Text>
-          </Button>
-                </View>
-              </View>
-          <ListItem
+          {/* <ListItem
             style={{ height: 70, marginTop: 20 }}
             title='Account Details'
           // description='A set of React Native components'
@@ -164,7 +116,7 @@ export default function MorePage({ navigation }) {
             title='Sign out'
           // description='A set of React Native components'
           />
-          <Divider />
+          <Divider /> */}
           {/* <Button
             size="giant"
             style={styles.button1}
@@ -220,7 +172,7 @@ export default function MorePage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, marginTop: 70, backgroundColor: COLORS.darkprimary },
+  container: { flex: 1, justifyContent: 'center', padding: 20, paddingTop: 80, backgroundColor: COLORS.darkprimary },
   todo: { marginBottom: 15 },
   input: { height: 70, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 },
