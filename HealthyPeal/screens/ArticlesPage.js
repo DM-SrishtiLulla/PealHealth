@@ -47,20 +47,20 @@ const ArticlesPage = () => {
             onChangeText={val => setInput('PostText', val)}
             style={styles.input}
             value={formState.PostText} 
-            placeholder="PostText"
+            placeholder="Add a message!"
         />
         <TextInput
             onChangeText={val => setInput('ImageLink', val)}
             style={styles.input}
             value={formState.ImageLink}
-            placeholder="ImageLink"
+            placeholder="Add an image! (use image address)"
         />
         <Button title="Create post" onPress={addPost} /> 
         {
             posts.map((post, index) => (
             <View key={post.ID ? post.ID : index} style={styles.identity}>
                 <Text style={styles.identityTitle}>{post.PostText}</Text>
-                <Image source={{ uri: post.PostLink }} style={{height : 200, width: 200}}/>
+                <Image source={{ uri: post.PostLink }} style={{height : 10, width: 10}}/>
             </View>
             ))
         }
@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20 },
   article: {  marginBottom: 15 },
   input: { height: 50, backgroundColor: '#ddd', marginBottom: 10, padding: 8 },
-  articleTitle: { fontSize: 18 }
+  articleTitle: { fontSize: 18 },
+  identity: { color: "white", }
 })
 
 export default ArticlesPage

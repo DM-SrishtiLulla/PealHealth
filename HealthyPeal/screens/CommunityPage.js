@@ -54,12 +54,12 @@ export default function CommunityPage({ navigation }) {
     }
     return (
         // HEADERS FOR PAGE - see below for content 
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.darkprimary }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightaccent }}>
             <View style={{ flex: 1 }}>
                 <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.primary }}>Community</Text>
                 <View style={{
-                    height: 80, backgroundColor: COLORS.darkprimary,
-                    borderBottomWidth: 1, borderBottomColor: COLORS.secondary
+                    height: 80, backgroundColor: COLORS.lightaccent,
+                    borderBottomWidth: 1, borderBottomColor: COLORS.darkaccent
                 }}>
                     <View style={{
                         flexDirection: "row", padding: 10,
@@ -98,6 +98,18 @@ export default function CommunityPage({ navigation }) {
                             />
                         </View>
                     </View>
+                    <Button
+            size="giant"
+            style={{flex: 0.5, marginTop: "5%",
+                alignSelf: "center",
+                width: width - 40,
+                backgroundColor: COLORS.darkaccent,
+                borderColor: COLORS.lightaccent}}
+            onPress={() =>
+              navigation.navigate('ArticlesPage')
+            }>
+            Add a post!
+          </Button>
                     <View style={{ marginTop: 20 }}>
                         <Text style={{
                             fontSize: 24, fontWeight: "800",

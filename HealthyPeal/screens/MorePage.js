@@ -34,19 +34,19 @@ export default function MorePage({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <SafeAreaView style={{ flex: 1, color: COLORS.darkprimary}}>
+      <SafeAreaView style={{ flex: 1, color: COLORS.lightaccent}}>
         <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={{ color: "white", fontSize: 32, fontWeight: "700", marginBottom: 10, paddingHorizontal: 2 }}>
             More
       </Text>
         <View style={{marginTop: 10, paddingHorizontal: 4}}>
-                <Text style={{color: "white", fontSize: 24, fontWeight: "700"}}>
+                <Text style={{color: COLORS.primary, fontSize: 24, fontWeight: "700"}}>
                   Crisis Resources
                 </Text>
-                <Text style={{color: "white", fontWeight: "300", marginTop: 10}}>
+                <Text style={{color: COLORS.primary, fontWeight: "300", marginTop: 10}}>
                  Call or text in for help.
                 </Text>
-                <View style={{width:width-50, height:240, marginTop: 20}}>
+                <View style={{width:width-50, height:300, marginTop: 20}}>
                 <Image
                 source={{uri: "https://images.unsplash.com/photo-1487499648633-2ade40e0f769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"}}
                       style={{flex: 1, height : null, width: null, resizeMode: "cover",
@@ -55,11 +55,11 @@ export default function MorePage({ navigation }) {
                       />
                 <Button
             size="giant"
-            style={{marginTop: 30, backgroundColor: "white", borderColor: COLORS.secondary}}
+            style={{marginTop: 20, marginBottom: 20, backgroundColor: COLORS.darkaccent, borderColor: COLORS.lightaccent}}
             onPress={() =>
               navigation.navigate('Resources')
             }>
-            <Text style={{color: COLORS.darkprimary, fontSize: 24, fontWeight: "500"}}>Crisis Resources</Text>
+            <Text style={{color: COLORS.primary, fontSize: 24, fontWeight: "500"}}>Crisis Resources</Text>
           </Button>
                 </View>
               </View>
@@ -124,7 +124,7 @@ export default function MorePage({ navigation }) {
               navigation.navigate('CardsTesting')
             }>
             CardsTesting
-          </Button>
+          </Button> */}
           <Button
             size="giant"
             style={styles.button1}
@@ -157,13 +157,13 @@ export default function MorePage({ navigation }) {
             }>
             InsightsPage
           </Button>
-          <Button
+          {/* <Button
             size="giant"
             style={styles.button1}
             onPress={() =>
               navigation.navigate('ArticlesPage')
             }>
-            ArticlesPage
+            Add a post!
           </Button> */}
         </ScrollView>
       </SafeAreaView>
@@ -172,7 +172,7 @@ export default function MorePage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, paddingTop: 80, backgroundColor: COLORS.darkprimary },
+  container: { flex: 1, justifyContent: 'center', padding: 20, paddingTop: 80, backgroundColor: COLORS.lightaccent },
   todo: { marginBottom: 15 },
   input: { height: 70, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 },

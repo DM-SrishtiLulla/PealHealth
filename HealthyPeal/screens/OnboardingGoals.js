@@ -152,8 +152,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignSelf: "center",
     color: COLORS.primary,
-    backgroundColor: COLORS.secondary,
-    borderColor: COLORS.secondary,
+    backgroundColor: COLORS.lightaccent,
+    borderColor: COLORS.lightaccent,
     borderWidth: 10,
     fontWeight: '700'
   },
@@ -177,8 +177,8 @@ const styles = StyleSheet.create({
       alignSelf: "center",
       width: 200,
       height: 60,
-      backgroundColor: COLORS.darkprimary,
-      borderColor: COLORS.darkprimary,
+      backgroundColor: COLORS.lightaccent,
+      borderColor: COLORS.lightaccent,
   },
   buttontext: {
     fontSize: 24,
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
 },
   head: {
     flex: 1,
-    color: COLORS.darkprimary,
+    color: COLORS.lightaccent,
     // marginLeft: 20,
     // marginTop: 10,
     marginBottom: 10,

@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { Layout, Text, Button } from '@ui-kitten/components';
 import COLORS from '../Colors';
+
 const {height, width} = Dimensions.get("window")
 
 export default function Card(props) {

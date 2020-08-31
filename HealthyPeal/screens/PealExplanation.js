@@ -8,7 +8,7 @@ import COLORS from "../Colors";
 
 export default function PealExplanation({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.darkprimary, justifyContent: "center" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightaccent, justifyContent: "center" }}>
       <ScrollView>
       {/* <View style={styles.container}>
         </View> */}
@@ -43,19 +43,19 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: "10%",
     marginLeft: "7%",
-    backgroundColor: COLORS.darkprimary,
+    backgroundColor: COLORS.lightaccent,
     alignItems: "flex-start",
   },
   container2: {
     flex: 1,
     marginTop: "80%",
     marginLeft: "7%",
-    backgroundColor: COLORS.darkprimary,
+    backgroundColor: COLORS.lightaccent,
     alignItems: "flex-start",
   },
   container3: {
     flex: 1,
-    backgroundColor: COLORS.darkprimary,
+    backgroundColor: COLORS.lightaccent,
     justifyContent: "flex-end",
   },
   list: {
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     fontWeight: "600"
   },
   title2: {
-    color: COLORS.darkprimary,
+    color: COLORS.lightaccent,
     // alignContent: "center",
     marginTop: 10,
     marginBottom: 10,
