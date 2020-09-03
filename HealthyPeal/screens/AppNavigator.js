@@ -54,7 +54,7 @@ function MainTabNavigator() {
       <Tab.Screen name="Profile"
         component={ProfilePage}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Guides',
           tabBarIcon: ({ color }) => (
             <Icon name='person-outline' width={24} height={24} fill={COLORS.secondary} />
           ),
@@ -95,7 +95,7 @@ export default function MainStackNavigator() {
             <Stack.Screen name="Goals" component={OnboardingGoals} />
             <Stack.Screen name="Interests" component={OnboardingInterests} />
             <Stack.Screen name="Resources" component={ResourcesPage} />
-            <Stack.Screen name="ArticlesPage" component={ArticlesPage} />
+            <Stack.Screen name="Post!" component={ArticlesPage} />
             <Stack.Screen name="CardsTesting" component={CardsTesting} />
             <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} />
             <Stack.Screen name="GoalsPage" component={GoalsPage} />

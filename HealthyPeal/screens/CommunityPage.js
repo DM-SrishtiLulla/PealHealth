@@ -106,7 +106,7 @@ export default function CommunityPage({ navigation }) {
                 backgroundColor: COLORS.darkaccent,
                 borderColor: COLORS.lightaccent}}
             onPress={() =>
-              navigation.navigate('ArticlesPage')
+              navigation.navigate('Post!')
             }>
             Add a post!
           </Button>

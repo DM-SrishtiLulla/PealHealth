@@ -5,7 +5,8 @@ import React, { useEffect, useState } from 'react'
 import {
   View, Text, StyleSheet, TextInput, Button, Image
 } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView } from 'react-native-gesture-handler';
+import COLORS from "../Colors";
 
 const initialState = {PostText: '', ImageLink: ''}
 
@@ -55,7 +56,9 @@ const ArticlesPage = () => {
             value={formState.ImageLink}
             placeholder="Add an image! (use image address)"
         />
-        <Button title="Create post" onPress={addPost} /> 
+        <Button style={styles.buttonbottom} title="Create Post" onPress={addPost}>
+          <Text style={styles.buttontext}>Post</Text>
+          </Button>
         {
             posts.map((post, index) => (
             <View key={post.ID ? post.ID : index} style={styles.identity}>
@@ -74,7 +77,21 @@ const styles = StyleSheet.create({
   article: {  marginBottom: 15 },
   input: { height: 50, backgroundColor: '#ddd', marginBottom: 10, padding: 8 },
   articleTitle: { fontSize: 18 },
-  identity: { color: "white", }
+  identity: { color: "white", },
+  buttonbottom: {
+    marginBottom: "10%",
+    // marginTop: "2%",
+    alignSelf: "center",
+    width: 200,
+    height: 60,
+    backgroundColor: COLORS.lightaccent,
+    borderColor: COLORS.lightaccent,
+  },
+  buttontext: {
+    fontSize: 24,
+    fontWeight: "600",
+    color: COLORS.primary
+  },
 })
 
 export default ArticlesPage

@@ -36,14 +36,14 @@ export default function MorePage({ navigation }) {
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 1, color: COLORS.lightaccent}}>
         <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={{ color: "white", fontSize: 32, fontWeight: "700", marginBottom: 10, paddingHorizontal: 2 }}>
+        <Text style={{ color: "white", fontSize: 32, fontWeight: "700", marginTop: 10, marginBottom: 10, paddingHorizontal: 2 }}>
             More
       </Text>
         <View style={{marginTop: 10, paddingHorizontal: 4}}>
-                <Text style={{color: COLORS.primary, fontSize: 24, fontWeight: "700"}}>
+                <Text style={{color: COLORS.primary, fontSize: 28, fontWeight: "700"}}>
                   Crisis Resources
                 </Text>
-                <Text style={{color: COLORS.primary, fontWeight: "300", marginTop: 10}}>
+                <Text style={{color: COLORS.primary, fontSize: 20, fontWeight: "400", marginTop: 10}}>
                  Call or text in for help.
                 </Text>
                 <View style={{width:width-50, height:300, marginTop: 20}}>
@@ -125,7 +125,7 @@ export default function MorePage({ navigation }) {
             }>
             CardsTesting
           </Button> */}
-          <Button
+          {/* <Button
             size="giant"
             style={styles.button1}
             onPress={() =>
@@ -156,7 +156,7 @@ export default function MorePage({ navigation }) {
               navigation.navigate('InsightsPage')
             }>
             InsightsPage
-          </Button>
+          </Button> */}
           {/* <Button
             size="giant"
             style={styles.button1}
