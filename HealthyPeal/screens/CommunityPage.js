@@ -54,12 +54,12 @@ export default function CommunityPage({ navigation }) {
     }
     return (
         // HEADERS FOR PAGE - see below for content 
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightaccent }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
             <View style={{ flex: 1 }}>
-                <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.primary }}>Community</Text>
+                <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.lightaccent }}>Community</Text>
                 <View style={{
-                    height: 80, backgroundColor: COLORS.lightaccent,
-                    borderBottomWidth: 1, borderBottomColor: COLORS.darkaccent
+                    height: 80, backgroundColor: COLORS.primary,
+                    borderBottomWidth: 1, borderBottomColor: COLORS.lightaccent
                 }}>
                     <View style={{
                         flexDirection: "row", padding: 10,
@@ -82,10 +82,10 @@ export default function CommunityPage({ navigation }) {
 
 
                     <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                        <Text style={{ color: COLORS.primary, fontSize: 24, fontWeight: "700" }}>
+                        <Text style={{ color: COLORS.lightaccent, fontSize: 24, fontWeight: "700" }}>
                             Introducing Peal Community
                         </Text>
-                        <Text style={{ color: COLORS.primary, fontWeight: "300", marginTop: 10 }}>
+                        <Text style={{ color: COLORS.lightaccent, fontWeight: "300", marginTop: 10 }}>
                             A space for compassionate conversation
                         </Text>
                         <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
@@ -103,8 +103,8 @@ export default function CommunityPage({ navigation }) {
             style={{flex: 0.5, marginTop: "5%",
                 alignSelf: "center",
                 width: width - 40,
-                backgroundColor: COLORS.darkaccent,
-                borderColor: COLORS.lightaccent}}
+                backgroundColor: COLORS.lightaccent,
+                borderColor: COLORS.primary}}
             onPress={() =>
               navigation.navigate('Post!')
             }>
@@ -113,7 +113,7 @@ export default function CommunityPage({ navigation }) {
                     <View style={{ marginTop: 20 }}>
                         <Text style={{
                             fontSize: 24, fontWeight: "800",
-                            paddingHorizontal: 20, color: COLORS.primary
+                            paddingHorizontal: 20, color: COLORS.lightaccent
                         }}>
                             New Posts!
                         </Text>

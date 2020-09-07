@@ -88,19 +88,19 @@ export default function MainStackNavigator() {
             component={HelloWorldApp}
             options={{ title: 'Welcome' }}
           /> */}
-            <Stack.Screen name="Profile" component={ProfilePage} />
-            <Stack.Screen name="Onboarding" component={OnboardingPage} />
-            <Stack.Screen name="About" component={PealExplanation} />
-            <Stack.Screen name="Identities" component={OnboardingIdentities} />
-            <Stack.Screen name="Goals" component={OnboardingGoals} />
-            <Stack.Screen name="Interests" component={OnboardingInterests} />
-            <Stack.Screen name="Resources" component={ResourcesPage} />
-            <Stack.Screen name="Post!" component={ArticlesPage} />
-            <Stack.Screen name="CardsTesting" component={CardsTesting} />
-            <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} />
-            <Stack.Screen name="GoalsPage" component={GoalsPage} />
-            <Stack.Screen name="InterestsPage" component={InterestsPage} />
-            <Stack.Screen name="InsightsPage" component={InsightsPage} />
+            <Stack.Screen name="Profile" component={ProfilePage}  />
+            <Stack.Screen name="Onboarding" component={OnboardingPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="About" component={PealExplanation} options={{ headerTitle: "", headerTransparent: true }} />
+            <Stack.Screen name="Identities" component={OnboardingIdentities} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Goals" component={OnboardingGoals} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Interests" component={OnboardingInterests} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Resources" component={ResourcesPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Post!" component={ArticlesPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="CardsTesting" component={CardsTesting} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="GoalsPage" component={GoalsPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="InterestsPage" component={InterestsPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="InsightsPage" component={InsightsPage} options={{ headerTitle: "", headerTransparent: true }}/>
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     // marginLeft: 20,
     // marginTop: 10,
     marginBottom: 10,
-    paddingTop: 20,
+    paddingTop: "20%",
     paddingBottom: 36,
     paddingLeft: 10,
     alignSelf: "center",
