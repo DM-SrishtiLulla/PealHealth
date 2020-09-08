@@ -10,21 +10,6 @@ import { Auth } from 'aws-amplify';
 
 const { width, height } = Dimensions.get('window')
 
-/*async function onSignOutClick() {
-    await Auth.signOut()
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
-}*/
-
-async function signOut() {
-    try {
-        await Auth.signOut();
-    } catch (error) {
-        console.log('error signing out: ', error);
-    }
-}
-
-
 //export default 
 function ProfilePage() {
 
@@ -168,7 +153,7 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: COLORS.lightaccent,
     borderColor: COLORS.lightaccent,
-    shadowColor: COLORS.lightaccent
+    shadowColor: COLORS.lightaccent,
   },
   buttontext: {
     fontSize: 24,
