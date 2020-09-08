@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { API, graphqlOperation } from 'aws-amplify'
 import { listIdentitys } from './../src/graphql/queries'
 import {
@@ -6,9 +6,52 @@ import {
 } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
-import CheckBox from '@react-native-community/checkbox';
 
+import { Icon } from 'react-native-eva-icons';
 
+const CardItem = ({item, isChecked, selectItem}) => {
+  return (
+    <React.Fragment>
+      <TouchableOpacity
+        onPress={event => selectItem({name: item.id})}
+        style={styles.card}>
+        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+          {isChecked
+          ? <Icon name='checkmark-circle-2-outline' width={30} height={30} fill={COLORS.secondary} />
+          : <Icon name='radio-button-off-outline' width={30} height={30} fill={COLORS.secondary} />
+          }
+          <View style={styles.cardHeader}>
+            <Text style={styles.title}>{item.IdentityText}</Text>
+          </View>
+          <View style={styles.cardFooter}>
+          </View>
+        </ImageBackground> 
+      </TouchableOpacity>
+    </React.Fragment>
+  );
+}
+
+const renderItem = ({ item, checkedItems, setCheckedItems }) => {
+  return <CardItem
+    item={item}
+    selectItem={item => {
+      setCheckedItems(event => {       
+        const index = checkedItems.indexOf(item.name);
+
+        var newItems = [...checkedItems]
+        if (index == -1) {
+          // If item is not in list
+          newItems = [...checkedItems, item.name]
+        } else {
+          newItems.splice(index, 1);
+        }
+        console.log("checkedItems: ", newItems);
+        return newItems        
+      });
+    }}
+    isChecked={checkedItems.includes(item.id)}
+  />;
+};
 
 export default function OnboardingIdentities({ navigation }) {
 
@@ -27,21 +70,7 @@ export default function OnboardingIdentities({ navigation }) {
   }
 
   const [checkedItems, setCheckedItems] = useState([]);
-
-  const handleChange = event => {
-    const index = checkedItems.indexOf(event.name);
-    
-    var newItems = [... checkedItems]
-    if (index == -1) {
-      // If item is not in list
-      newItems = [...checkedItems, event.name]
-    } else {
-      newItems.splice(index, 1);
-    }
-    setCheckedItems(newItems)
-    console.log("checkedItems: ", checkedItems);
-   
-  };
+  const renderItemCall = useCallback(({ item }) => renderItem({ item, checkedItems, setCheckedItems }));
 
   return (
     <View style={styles.container}>
@@ -54,33 +83,8 @@ export default function OnboardingIdentities({ navigation }) {
         keyExtractor={(item) => {
           return item.id;
         }}
-        renderItem={({ item }) => {
-          return (
-            <TouchableOpacity style={[styles.card]}>
-
-              <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
-              <View style={styles.checkbox}>
-                <CheckBox
-                  boxType={'square'}
-                  tintColor={COLORS.darkaccent}
-                  onCheckColor={COLORS.primary}
-                  lineWidth={3}
-                  onFillColor={COLORS.secondary}
-                  onTintColor={COLORS.darkaccent}
-                  name={item.id}
-                  disabled={false}
-                  onValueChange={event => handleChange({ name: item.id })}
-                />
-              </View>
-                <View style={styles.cardHeader}>
-                  <Text style={styles.title}>{item.IdentityText}</Text>
-                </View>
-                <View style={styles.cardFooter}>
-                </View>
-              </ImageBackground>
-            </TouchableOpacity>
-          )
-        }} />
+        extraData={identitys}
+        renderItem={renderItemCall}/>
       <Button
         size="giant"
         style={styles.buttonbottom}

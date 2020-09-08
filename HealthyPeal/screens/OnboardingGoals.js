@@ -7,6 +7,7 @@ import {
 import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 import { Icon } from 'react-native-eva-icons';
+//import { renderItem } from './CardItem'
 
 const CardItem = ({item, isChecked, selectItem}) => {
   return (
