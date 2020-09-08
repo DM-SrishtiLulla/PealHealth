@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { API, graphqlOperation } from 'aws-amplify'
 import { listGoals } from './../src/graphql/queries'
 import {
@@ -6,10 +6,51 @@ import {
 } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
-import CheckBox from '@react-native-community/checkbox';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Icon } from 'react-native-eva-icons';
 
+const CardItem = ({item, isChecked, selectItem}) => {
+  return (
+    <React.Fragment>
+      <TouchableOpacity
+        onPress={event => selectItem({name: item.id})}
+        style={styles.card}>
+        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+          {isChecked
+          ? <Icon name='checkmark-circle-2-outline' width={30} height={30} fill={COLORS.secondary} />
+          : <Icon name='radio-button-off-outline' width={30} height={30} fill={COLORS.secondary} />
+          }
+          <View style={styles.cardHeader}>
+            <Text style={styles.title}>{item.GoalText}</Text>
+          </View>
+          <View style={styles.cardFooter}>
+          </View>
+        </ImageBackground> 
+      </TouchableOpacity>
+    </React.Fragment>
+  );
+}
 
+const renderItem = ({ item, checkedItems, setCheckedItems }) => {
+  return <CardItem
+    item={item}
+    selectItem={item => {
+      setCheckedItems(event => {       
+        const index = checkedItems.indexOf(item.name);
+
+        var newItems = [...checkedItems]
+        if (index == -1) {
+          // If item is not in list
+          newItems = [...checkedItems, item.name]
+        } else {
+          newItems.splice(index, 1);
+        }
+        console.log("checkedItems: ", newItems);
+        return newItems        
+      });
+    }}
+    isChecked={checkedItems.includes(item.id)}
+  />;
+};
 
 export default function OnboardingGoals({ navigation }) {
 
@@ -24,25 +65,13 @@ export default function OnboardingGoals({ navigation }) {
       const goalData = await API.graphql(graphqlOperation(listGoals))
       const goals = goalData.data.listGoals.items
       setGoals(goals)
+      console.log("ok")
     } catch (err) { console.log('error fetching goals') }
   }
 
+  // get the user's saved items here in future - don't start with useState[] empty list or it wipes progress every time
   const [checkedItems, setCheckedItems] = useState([]);
-
-  const handleChange = event => {
-    const index = checkedItems.indexOf(event.name);
-    
-    var newItems = [... checkedItems]
-    if (index == -1) {
-      // If item is not in list
-      newItems = [...checkedItems, event.name]
-    } else {
-      newItems.splice(index, 1);
-    }
-    setCheckedItems(newItems)
-    console.log("checkedItems: ", checkedItems);
-   
-  };
+  const renderItemCall = useCallback(({ item }) => renderItem({ item, checkedItems, setCheckedItems }));
 
   return (
     <View style={styles.container}>
@@ -55,33 +84,8 @@ export default function OnboardingGoals({ navigation }) {
         keyExtractor={(item) => {
           return item.id;
         }}
-        renderItem={({ item }) => {
-          return (
-            <TouchableOpacity style={[styles.card]}>
-
-              <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
-              <View style={styles.checkbox}>
-                <CheckBox
-                 boxType={'square'}
-                 tintColor={COLORS.darkaccent}
-                 onCheckColor={COLORS.primary}
-                 lineWidth={3}
-                 onFillColor={COLORS.secondary}
-                 onTintColor={COLORS.darkaccent}
-                  name={item.id}
-                  disabled={false}
-                  onValueChange={event => handleChange({ name: item.id })}
-                />
-                </View>
-                <View style={styles.cardHeader}>
-                  <Text style={styles.title}>{item.GoalText}</Text>
-                </View>
-                <View style={styles.cardFooter}>
-                </View>
-              </ImageBackground>
-            </TouchableOpacity>
-          )
-        }} />
+        extraData={goals}
+        renderItem={renderItemCall}/>
       <Button
         size="giant"
         style={styles.buttonbottom}
@@ -95,23 +99,22 @@ export default function OnboardingGoals({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    marginTop:0,
+  container: {
+    flex: 1,
+    marginTop: 0,
     marginBottom: 0,
     backgroundColor: COLORS.primary,
   },
   list: {
-    //paddingHorizontal: 5,
     backgroundColor: COLORS.primary,
   },
-  listContainer:{
-    alignItems:'center',
+  listContainer: {
+    alignItems: 'center',
   },
   /******** card **************/
-  card:{
-    marginHorizontal:5,
-    marginVertical:5,
+  card: {
+    marginHorizontal: 5,
+    marginVertical: 5,
     flexBasis: '47%',
     borderRadius: 30,
     height: 140,
@@ -123,14 +126,14 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
-    alignItems:"center", 
-    justifyContent:"center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   cardContent: {
     paddingVertical: 12.5,
     paddingHorizontal: 16,
   },
-  cardFooter:{
+  cardFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingTop: 12.5,
@@ -139,12 +142,12 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-  cardImage:{
+  cardImage: {
     height: 70,
     width: 70,
-    alignSelf:'center'
+    alignSelf: 'center'
   },
-  title:{
+  title: {
     fontSize: 16,
     flex: 1,
     marginTop: 0,
@@ -157,14 +160,14 @@ const styles = StyleSheet.create({
     borderWidth: 10,
     fontWeight: '700'
   },
-  subTitle:{
-    fontSize:12,
-    flex:1,
-    color:"#FFFFFF",
+  subTitle: {
+    fontSize: 12,
+    flex: 1,
+    color: "#FFFFFF",
   },
-  icon:{
+  icon: {
     height: 20,
-    width: 20, 
+    width: 20,
   },
   image: {
     flex: 1,
@@ -172,25 +175,22 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   buttonbottom: {
-      marginBottom: "10%",
-      marginTop: "5%",
-      alignSelf: "center",
-      width: 200,
-      height: 60,
-      backgroundColor: COLORS.lightaccent,
-      borderColor: COLORS.lightaccent,
+    marginBottom: "10%",
+    marginTop: "5%",
+    alignSelf: "center",
+    width: 200,
+    height: 60,
+    backgroundColor: COLORS.lightaccent,
+    borderColor: COLORS.lightaccent,
   },
   buttontext: {
     fontSize: 24,
     fontWeight: "600",
     color: COLORS.primary
-},
+  },
   head: {
     flex: 1,
     color: COLORS.lightaccent,
-    // marginLeft: 20,
-    // marginTop: 10,
-    // marginBottom: 10,
     paddingTop: "20%",
     paddingLeft: 10,
     alignSelf: "center",
