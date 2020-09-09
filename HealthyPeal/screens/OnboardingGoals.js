@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { listGoals } from './../src/graphql/queries'
 import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
@@ -8,6 +8,8 @@ import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 import { Icon } from 'react-native-eva-icons';
 //import { renderItem } from './CardItem'
+
+
 
 const CardItem = ({item, isChecked, selectItem}) => {
   return (
@@ -45,7 +47,7 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
         } else {
           newItems.splice(index, 1);
         }
-        console.log("checkedItems: ", newItems);
+        //console.log("checkedItems: ", newItems);
         return newItems        
       });
     }}
@@ -54,6 +56,8 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
 };
 
 export default function OnboardingGoals({ navigation }) {
+
+  getUser();
 
   const [goals, setGoals] = useState([])
 
@@ -66,8 +70,22 @@ export default function OnboardingGoals({ navigation }) {
       const goalData = await API.graphql(graphqlOperation(listGoals))
       const goals = goalData.data.listGoals.items
       setGoals(goals)
-      console.log("ok")
+      //console.log("ok")
     } catch (err) { console.log('error fetching goals') }
+  }
+
+  async function getUser() {
+    let user = await Auth.currentAuthenticatedUser();
+
+    //const { attributes } = user;
+    console.log(user.username);
+    //console.log(user);
+    //console.log(attributes);
+  }
+
+  const saveUserInfo = checked => {
+    console.log(checked)
+    navigation.navigate('Interests')
   }
 
   // get the user's saved items here in future - don't start with useState[] empty list or it wipes progress every time
@@ -90,9 +108,8 @@ export default function OnboardingGoals({ navigation }) {
       <Button
         size="giant"
         style={styles.buttonbottom}
-        onPress={() =>
-          navigation.navigate('Interests')
-        }>
+        onPress={checked => saveUserInfo(checkedItems)}
+        >
         <Text style={styles.buttontext}>Next</Text>
       </Button>
     </View>
