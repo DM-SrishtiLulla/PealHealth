@@ -5,6 +5,8 @@ type PealArticle @model {
   Author: String
   HealthTags: [String]
   ImageLink: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Identity @model {
@@ -12,6 +14,8 @@ type Identity @model {
   IdentityText: String!
   ImageLink: String
   IdentityUsers: [UserIdentities] @connection(keyName: "byIdentity", fields: ["id"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Goal @model {
@@ -19,6 +23,8 @@ type Goal @model {
   GoalText: String!
   ImageLink: String
   GoalUsers: [UserGoals] @connection(keyName: "byGoal", fields: ["id"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Interest @model {
@@ -26,6 +32,8 @@ type Interest @model {
   InterestText: String!
   ImageLink: String
   InterestUsers: [UserInterests] @connection(keyName: "byInterest", fields: ["id"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type UserIdentities 
@@ -38,6 +46,8 @@ type UserIdentities
   userID: ID!
   identity: Identity! @connection(fields: ["identityID"])
   user: UserInfo! @connection(fields: ["userID"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type UserGoals 
@@ -50,6 +60,8 @@ type UserGoals
   userID: ID!
   goal: Goal! @connection(fields: ["goalID"])
   user: UserInfo! @connection(fields: ["userID"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type UserInterests 
@@ -62,6 +74,8 @@ type UserInterests
   userID: ID!
   interest: Interest! @connection(fields: ["interestID"])
   user: UserInfo! @connection(fields: ["userID"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type UserInfo @model {
@@ -72,6 +86,8 @@ type UserInfo @model {
   Goals: [UserGoals] @connection(keyName: "byUserGo", fields: ["id"]) 
   Interests: [UserInterests] @connection(keyName: "byUserIn", fields: ["id"]) 
   ProfileImage: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Insight 
@@ -79,10 +95,14 @@ type Insight
   id: ID!
   InsightText: String!
   ImageLink: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Post @model {
   id: ID!
   PostText: String!
   ImageLink: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }

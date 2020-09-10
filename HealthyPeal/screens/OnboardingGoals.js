@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { listGoals } from './../src/graphql/queries'
+import { createUserGoals } from './../src/graphql/mutations'
 import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
 } from 'react-native';
@@ -57,9 +58,10 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
 
 export default function OnboardingGoals({ navigation }) {
 
-  getUser();
+  //getUser();
 
   const [goals, setGoals] = useState([])
+  let user;
 
   useEffect(() => {
     fetchGoals()
@@ -75,17 +77,38 @@ export default function OnboardingGoals({ navigation }) {
   }
 
   async function getUser() {
-    let user = await Auth.currentAuthenticatedUser();
-
+    let us = await Auth.currentAuthenticatedUser();
+    user = us.username;
+    console.log("whennn")
     //const { attributes } = user;
-    console.log(user.username);
+    //console.log(user.username);
     //console.log(user);
     //console.log(attributes);
   }
 
-  const saveUserInfo = checked => {
+  async function saveUserInfo(checked) {
+
+    await getUser();
+    console.log("username: " + user);
     console.log(checked)
+    /*try {
+      await API.graphql(graphqlOperation(createUserGoals, {input: {goalID: "7d6abe9b-156c-446a-9175-159041c98218", userID: "pealhealth"}}))
+    } catch (err) {
+     console.log('error creating usergoal:', err)
+    }*/
+    for (const ch of checked) {
+      addUserGoal(ch);
+      console.log(ch)
+    }
     navigation.navigate('Interests')
+  }
+
+  async function addUserGoal(goal) {
+    try {
+      await API.graphql(graphqlOperation(createUserGoals, {input: {goalID: goal, userID: user}}))
+    } catch (err) {
+      console.log('error creating usergoal:', err)
+    }
   }
 
   // get the user's saved items here in future - don't start with useState[] empty list or it wipes progress every time
