@@ -86,7 +86,6 @@ export const getGoal = /* GraphQL */ `
       ImageLink
       GoalUsers {
         items {
-          id
           goalID
           userID
           createdAt
@@ -180,7 +179,6 @@ export const getUserInfo = /* GraphQL */ `
       }
       Goals {
         items {
-          id
           goalID
           userID
           createdAt

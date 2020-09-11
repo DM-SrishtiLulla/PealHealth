@@ -114,7 +114,6 @@ export const onCreateGoal = /* GraphQL */ `
       ImageLink
       GoalUsers {
         items {
-          id
           goalID
           userID
           createdAt
@@ -135,7 +134,6 @@ export const onUpdateGoal = /* GraphQL */ `
       ImageLink
       GoalUsers {
         items {
-          id
           goalID
           userID
           createdAt
@@ -156,7 +154,6 @@ export const onDeleteGoal = /* GraphQL */ `
       ImageLink
       GoalUsers {
         items {
-          id
           goalID
           userID
           createdAt
@@ -349,7 +346,6 @@ export const onDeleteUserIdentities = /* GraphQL */ `
 export const onCreateUserGoals = /* GraphQL */ `
   subscription OnCreateUserGoals {
     onCreateUserGoals {
-      id
       goalID
       userID
       goal {
@@ -387,7 +383,6 @@ export const onCreateUserGoals = /* GraphQL */ `
 export const onUpdateUserGoals = /* GraphQL */ `
   subscription OnUpdateUserGoals {
     onUpdateUserGoals {
-      id
       goalID
       userID
       goal {
@@ -425,7 +420,6 @@ export const onUpdateUserGoals = /* GraphQL */ `
 export const onDeleteUserGoals = /* GraphQL */ `
   subscription OnDeleteUserGoals {
     onDeleteUserGoals {
-      id
       goalID
       userID
       goal {
@@ -592,7 +586,6 @@ export const onCreateUserInfo = /* GraphQL */ `
       }
       Goals {
         items {
-          id
           goalID
           userID
           createdAt
@@ -634,7 +627,6 @@ export const onUpdateUserInfo = /* GraphQL */ `
       }
       Goals {
         items {
-          id
           goalID
           userID
           createdAt
@@ -676,7 +668,6 @@ export const onDeleteUserInfo = /* GraphQL */ `
       }
       Goals {
         items {
-          id
           goalID
           userID
           createdAt

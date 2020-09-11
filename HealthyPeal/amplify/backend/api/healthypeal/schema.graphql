@@ -52,10 +52,10 @@ type UserIdentities
 
 type UserGoals 
   @model(queries: null)
+  @key(fields: ["userID", "goalID"])
   @key(name: "byGoal", fields: ["goalID", "userID"])
   @key(name: "byUserGo", fields: ["userID", "goalID"])
 {
-  id: ID!
   goalID: ID!
   userID: ID!
   goal: Goal! @connection(fields: ["goalID"])
