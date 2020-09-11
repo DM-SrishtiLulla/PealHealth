@@ -297,6 +297,9 @@ export const createUserIdentities = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -336,6 +339,9 @@ export const updateUserIdentities = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -379,6 +385,9 @@ export const deleteUserIdentities = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -417,6 +426,9 @@ export const createUserGoals = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -459,6 +471,9 @@ export const updateUserGoals = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -497,6 +512,9 @@ export const deleteUserGoals = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -540,6 +558,9 @@ export const createUserInterests = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -579,6 +600,9 @@ export const updateUserInterests = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -622,6 +646,9 @@ export const deleteUserInterests = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -663,6 +690,15 @@ export const createUserInfo = /* GraphQL */ `
         items {
           id
           interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Insights {
+        items {
+          insightID
           userID
           createdAt
           updatedAt
@@ -713,6 +749,15 @@ export const updateUserInfo = /* GraphQL */ `
         }
         nextToken
       }
+      Insights {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       ProfileImage
       createdAt
       updatedAt
@@ -757,6 +802,15 @@ export const deleteUserInfo = /* GraphQL */ `
         }
         nextToken
       }
+      Insights {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       ProfileImage
       createdAt
       updatedAt
@@ -770,6 +824,15 @@ export const createInsight = /* GraphQL */ `
   ) {
     createInsight(input: $input, condition: $condition) {
       id
+      InsightUsers {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       InsightText
       ImageLink
       createdAt
@@ -784,6 +847,15 @@ export const updateInsight = /* GraphQL */ `
   ) {
     updateInsight(input: $input, condition: $condition) {
       id
+      InsightUsers {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       InsightText
       ImageLink
       createdAt
@@ -798,8 +870,146 @@ export const deleteInsight = /* GraphQL */ `
   ) {
     deleteInsight(input: $input, condition: $condition) {
       id
+      InsightUsers {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       InsightText
       ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUserInsights = /* GraphQL */ `
+  mutation CreateUserInsights(
+    $input: CreateUserInsightsInput!
+    $condition: ModelUserInsightsConditionInput
+  ) {
+    createUserInsights(input: $input, condition: $condition) {
+      insightID
+      userID
+      insight {
+        id
+        InsightUsers {
+          nextToken
+        }
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        Insights {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserInsights = /* GraphQL */ `
+  mutation UpdateUserInsights(
+    $input: UpdateUserInsightsInput!
+    $condition: ModelUserInsightsConditionInput
+  ) {
+    updateUserInsights(input: $input, condition: $condition) {
+      insightID
+      userID
+      insight {
+        id
+        InsightUsers {
+          nextToken
+        }
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        Insights {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserInsights = /* GraphQL */ `
+  mutation DeleteUserInsights(
+    $input: DeleteUserInsightsInput!
+    $condition: ModelUserInsightsConditionInput
+  ) {
+    deleteUserInsights(input: $input, condition: $condition) {
+      insightID
+      userID
+      insight {
+        id
+        InsightUsers {
+          nextToken
+        }
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        Insights {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }

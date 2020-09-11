@@ -258,6 +258,9 @@ export const onCreateUserIdentities = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -294,6 +297,9 @@ export const onUpdateUserIdentities = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -334,6 +340,9 @@ export const onDeleteUserIdentities = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -369,6 +378,9 @@ export const onCreateUserGoals = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -408,6 +420,9 @@ export const onUpdateUserGoals = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -443,6 +458,9 @@ export const onDeleteUserGoals = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -483,6 +501,9 @@ export const onCreateUserInterests = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -519,6 +540,9 @@ export const onUpdateUserInterests = /* GraphQL */ `
           nextToken
         }
         Interests {
+          nextToken
+        }
+        Insights {
           nextToken
         }
         ProfileImage
@@ -559,6 +583,9 @@ export const onDeleteUserInterests = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -597,6 +624,15 @@ export const onCreateUserInfo = /* GraphQL */ `
         items {
           id
           interestID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      Insights {
+        items {
+          insightID
           userID
           createdAt
           updatedAt
@@ -644,6 +680,15 @@ export const onUpdateUserInfo = /* GraphQL */ `
         }
         nextToken
       }
+      Insights {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       ProfileImage
       createdAt
       updatedAt
@@ -685,6 +730,15 @@ export const onDeleteUserInfo = /* GraphQL */ `
         }
         nextToken
       }
+      Insights {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       ProfileImage
       createdAt
       updatedAt
@@ -695,6 +749,15 @@ export const onCreateInsight = /* GraphQL */ `
   subscription OnCreateInsight {
     onCreateInsight {
       id
+      InsightUsers {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       InsightText
       ImageLink
       createdAt
@@ -706,6 +769,15 @@ export const onUpdateInsight = /* GraphQL */ `
   subscription OnUpdateInsight {
     onUpdateInsight {
       id
+      InsightUsers {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       InsightText
       ImageLink
       createdAt
@@ -717,8 +789,137 @@ export const onDeleteInsight = /* GraphQL */ `
   subscription OnDeleteInsight {
     onDeleteInsight {
       id
+      InsightUsers {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       InsightText
       ImageLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateUserInsights = /* GraphQL */ `
+  subscription OnCreateUserInsights {
+    onCreateUserInsights {
+      insightID
+      userID
+      insight {
+        id
+        InsightUsers {
+          nextToken
+        }
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        Insights {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateUserInsights = /* GraphQL */ `
+  subscription OnUpdateUserInsights {
+    onUpdateUserInsights {
+      insightID
+      userID
+      insight {
+        id
+        InsightUsers {
+          nextToken
+        }
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        Insights {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteUserInsights = /* GraphQL */ `
+  subscription OnDeleteUserInsights {
+    onDeleteUserInsights {
+      insightID
+      userID
+      insight {
+        id
+        InsightUsers {
+          nextToken
+        }
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        Insights {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }

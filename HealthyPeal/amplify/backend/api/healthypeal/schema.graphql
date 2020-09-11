@@ -85,6 +85,7 @@ type UserInfo @model {
   Identities: [UserIdentities] @connection(keyName: "byUserId", fields: ["id"]) 
   Goals: [UserGoals] @connection(keyName: "byUserGo", fields: ["id"]) 
   Interests: [UserInterests] @connection(keyName: "byUserIn", fields: ["id"]) 
+  Insights: [UserInsights] @connection(keyName: "byUserIns", fields: ["id"]) 
   ProfileImage: String
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
@@ -93,11 +94,27 @@ type UserInfo @model {
 type Insight 
   @model { 
   id: ID!
+  InsightUsers: [UserInsights] @connection(keyName: "byInsight", fields: ["id"])
   InsightText: String!
   ImageLink: String
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
+
+type UserInsights 
+  @model(queries: null)
+  @key(fields: ["userID", "insightID"])
+  @key(name: "byInsight", fields: ["insightID", "userID"])
+  @key(name: "byUserIns", fields: ["userID", "insightID"])
+{
+  insightID: ID!
+  userID: ID!
+  insight: Insight! @connection(fields: ["insightID"])
+  user: UserInfo! @connection(fields: ["userID"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
 
 type Post @model {
   id: ID!

@@ -196,6 +196,15 @@ export const getUserInfo = /* GraphQL */ `
         }
         nextToken
       }
+      Insights {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       ProfileImage
       createdAt
       updatedAt
@@ -222,6 +231,9 @@ export const listUserInfos = /* GraphQL */ `
         Interests {
           nextToken
         }
+        Insights {
+          nextToken
+        }
         ProfileImage
         createdAt
         updatedAt
@@ -234,6 +246,15 @@ export const getInsight = /* GraphQL */ `
   query GetInsight($id: ID!) {
     getInsight(id: $id) {
       id
+      InsightUsers {
+        items {
+          insightID
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       InsightText
       ImageLink
       createdAt
@@ -250,6 +271,9 @@ export const listInsights = /* GraphQL */ `
     listInsights(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        InsightUsers {
+          nextToken
+        }
         InsightText
         ImageLink
         createdAt
