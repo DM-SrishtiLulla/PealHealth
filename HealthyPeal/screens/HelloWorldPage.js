@@ -38,7 +38,7 @@ export default function HelloWorldPage({ navigation }) {
       const shuffled = insights.sort(() => 0.5 - Math.random());
       let selected = shuffled.slice(0, 3);
       setInsights(selected)
-    } catch (err) { console.log('error fetching interests') }
+    } catch (err) { console.log('error fetching insights') }
   }
 
   

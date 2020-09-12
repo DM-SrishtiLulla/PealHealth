@@ -123,6 +123,17 @@ export const onCreateGoal = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      Insights {
+        items {
+          id
+          InsightText
+          ImageLink
+          createdAt
+          updatedAt
+          goalID
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -143,6 +154,17 @@ export const onUpdateGoal = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      Insights {
+        items {
+          id
+          InsightText
+          ImageLink
+          createdAt
+          updatedAt
+          goalID
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -163,6 +185,17 @@ export const onDeleteGoal = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      Insights {
+        items {
+          id
+          InsightText
+          ImageLink
+          createdAt
+          updatedAt
+          goalID
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -366,6 +399,9 @@ export const onCreateUserGoals = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        Insights {
+          nextToken
+        }
       }
       user {
         id
@@ -406,6 +442,9 @@ export const onUpdateUserGoals = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        Insights {
+          nextToken
+        }
       }
       user {
         id
@@ -446,6 +485,9 @@ export const onDeleteUserGoals = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        Insights {
+          nextToken
+        }
       }
       user {
         id
@@ -636,6 +678,7 @@ export const onCreateUserInfo = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -686,6 +729,7 @@ export const onUpdateUserInfo = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -736,6 +780,7 @@ export const onDeleteUserInfo = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -755,6 +800,7 @@ export const onCreateInsight = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -762,6 +808,7 @@ export const onCreateInsight = /* GraphQL */ `
       ImageLink
       createdAt
       updatedAt
+      goalID
     }
   }
 `;
@@ -775,6 +822,7 @@ export const onUpdateInsight = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -782,6 +830,7 @@ export const onUpdateInsight = /* GraphQL */ `
       ImageLink
       createdAt
       updatedAt
+      goalID
     }
   }
 `;
@@ -795,6 +844,7 @@ export const onDeleteInsight = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -802,6 +852,7 @@ export const onDeleteInsight = /* GraphQL */ `
       ImageLink
       createdAt
       updatedAt
+      goalID
     }
   }
 `;
@@ -819,6 +870,7 @@ export const onCreateUserInsights = /* GraphQL */ `
         ImageLink
         createdAt
         updatedAt
+        goalID
       }
       user {
         id
@@ -842,6 +894,7 @@ export const onCreateUserInsights = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      status
     }
   }
 `;
@@ -859,6 +912,7 @@ export const onUpdateUserInsights = /* GraphQL */ `
         ImageLink
         createdAt
         updatedAt
+        goalID
       }
       user {
         id
@@ -882,6 +936,7 @@ export const onUpdateUserInsights = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      status
     }
   }
 `;
@@ -899,6 +954,7 @@ export const onDeleteUserInsights = /* GraphQL */ `
         ImageLink
         createdAt
         updatedAt
+        goalID
       }
       user {
         id
@@ -922,6 +978,7 @@ export const onDeleteUserInsights = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      status
     }
   }
 `;

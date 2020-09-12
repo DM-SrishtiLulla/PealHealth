@@ -95,6 +95,17 @@ export const getGoal = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      Insights {
+        items {
+          id
+          InsightText
+          ImageLink
+          createdAt
+          updatedAt
+          goalID
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -114,6 +125,9 @@ export const listGoals = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        Insights {
+          nextToken
+        }
       }
       nextToken
     }
@@ -202,6 +216,7 @@ export const getUserInfo = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -252,6 +267,7 @@ export const getInsight = /* GraphQL */ `
           userID
           createdAt
           updatedAt
+          status
         }
         nextToken
       }
@@ -259,6 +275,7 @@ export const getInsight = /* GraphQL */ `
       ImageLink
       createdAt
       updatedAt
+      goalID
     }
   }
 `;
@@ -278,6 +295,7 @@ export const listInsights = /* GraphQL */ `
         ImageLink
         createdAt
         updatedAt
+        goalID
       }
       nextToken
     }

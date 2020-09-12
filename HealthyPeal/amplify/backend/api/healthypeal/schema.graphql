@@ -25,6 +25,7 @@ type Goal @model {
   GoalUsers: [UserGoals] @connection(keyName: "byGoal", fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
+  Insights: [Insight] @connection(keyName: "byGoalI", fields: ["id"])
 }
 
 type Interest @model {
@@ -92,13 +93,15 @@ type UserInfo @model {
 }
 
 type Insight 
-  @model { 
+  @model 
+  @key(name: "byGoalI", fields: ["goalID", "id"]) { 
   id: ID!
   InsightUsers: [UserInsights] @connection(keyName: "byInsight", fields: ["id"])
   InsightText: String!
   ImageLink: String
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
+  goalID: ID!
 }
 
 type UserInsights 
@@ -113,6 +116,7 @@ type UserInsights
   user: UserInfo! @connection(fields: ["userID"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
+  status: String!
 }
 
 
