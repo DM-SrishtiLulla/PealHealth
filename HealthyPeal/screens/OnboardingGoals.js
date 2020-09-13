@@ -8,6 +8,7 @@ import {
 import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 import { Icon } from 'react-native-eva-icons';
+import { useIsFocused } from '@react-navigation/native';
 //import { renderItem } from './CardItem'
 
 
@@ -65,10 +66,14 @@ export default function OnboardingGoals({ navigation }) {
 
   const [checkedItems, setCheckedItems] = useState([]);
   const [oldGoals, setOldGoals] = useState([]);
+  const isFocused = useIsFocused();
   useEffect(() => {
-    fetchGoals()
-    fetchSelectedGoals()
-  }, [])
+    if (isFocused) {
+      console.log("are we here??")
+      fetchGoals()
+      fetchSelectedGoals()
+    }
+  }, [isFocused]);
 
   async function fetchGoals() {
     try {
@@ -127,21 +132,38 @@ export default function OnboardingGoals({ navigation }) {
 
     for (const ch of checked) {
       addUserGoal(ch);
+      addUserInsight(ch);
       console.log(ch)
     }
+
     navigation.navigate('Interests')
   }
 
-  async function addUserGoal(goal) {
-
+  async function addUserInsight(goal) {
     try {
       console.log(user)
-      await API.graphql(graphqlOperation(createUserGoals, {input: {goalID: goal, userID: user}}))
       const goalI = await API.graphql(graphqlOperation(getGoal, {id: goal}))
       const item = (goalI.data.getGoal.Insights.items)
       for (const i in item) {
+        console.log("atheplace")
+        console.log(item[i].id)
         console.log(item[i].InsightText)
+
       }
+      //console.log(item)
+    } catch (err) {
+      console.log('error creating gf:', err)
+    }
+  }
+  async function addUserGoal(goal) {
+    try {
+      console.log(user)
+      await API.graphql(graphqlOperation(createUserGoals, {input: {goalID: goal, userID: user}}))
+      /*const goalI = await API.graphql(graphqlOperation(getGoal, {id: goal}))
+      const item = (goalI.data.getGoal.Insights.items)
+      for (const i in item) {
+        console.log(item[i].id)
+      }*/
       //console.log(item)
     } catch (err) {
       console.log('error creating gf:', err)
