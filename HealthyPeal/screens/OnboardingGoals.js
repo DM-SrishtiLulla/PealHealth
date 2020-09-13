@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { listGoals, getGoal, getUserInfo } from './../src/graphql/queries'
-import { createUserGoals, deleteUserGoals } from './../src/graphql/mutations'
+import { createUserGoals, deleteUserGoals, createUserInsights } from './../src/graphql/mutations'
 import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
 } from 'react-native';
@@ -49,7 +49,6 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
         } else {
           newItems.splice(index, 1);
         }
-        //console.log("checkedItems: ", newItems);
         return newItems        
       });
     }}
@@ -59,8 +58,6 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
 
 export default function OnboardingGoals({ navigation }) {
 
-  //getUser();
-
   const [goals, setGoals] = useState([])
   let user;
 
@@ -69,7 +66,6 @@ export default function OnboardingGoals({ navigation }) {
   const isFocused = useIsFocused();
   useEffect(() => {
     if (isFocused) {
-      console.log("are we here??")
       fetchGoals()
       fetchSelectedGoals()
     }
@@ -80,7 +76,6 @@ export default function OnboardingGoals({ navigation }) {
       const goalData = await API.graphql(graphqlOperation(listGoals))
       const goals = goalData.data.listGoals.items
       setGoals(goals)
-      //console.log("ok")
     } catch (err) { console.log('error fetching goals') }
   }
 
@@ -92,12 +87,9 @@ export default function OnboardingGoals({ navigation }) {
       const item = (goalI.data.getUserInfo.Goals.items)
       for (const i in item) {
         userGoals.push(item[i].goalID)
-        //console.log(item[i].goalID)
       }
-      console.log(userGoals)
       setCheckedItems(userGoals)
       setOldGoals(userGoals)
-      //console.log(item)
     } catch (err) {
       console.log('error creating usergoal:', err)
     }
@@ -106,34 +98,21 @@ export default function OnboardingGoals({ navigation }) {
   async function getUser() {
     let us = await Auth.currentAuthenticatedUser();
     user = us.username;
-    console.log("whennn")
-    //const { attributes } = user;
-    //console.log(user.username);
-    //console.log(user);
-    //console.log(attributes);
   }
 
   async function saveUserInfo(checked) {
     await getUser();
-    console.log("username: " + user);
-    console.log("old goals")
-    console.log(oldGoals)
-    console.log("new goals")
-    console.log(checked)
-
     var goalsToDelete = oldGoals.filter(x => checked.indexOf(x) === -1);
-    console.log("delete")
-    console.log(goalsToDelete);
 
     for (const gd of goalsToDelete) {
       deleteOldGoal(gd);
-      console.log(gd);
     }
 
-    for (const ch of checked) {
-      addUserGoal(ch);
-      addUserInsight(ch);
-      console.log(ch)
+    var goalsToAdd = checked.filter(x => oldGoals.indexOf(x) === -1);
+
+    for (const ga of goalsToAdd) {
+      addUserGoal(ga);
+      addUserInsight(ga);
     }
 
     navigation.navigate('Interests')
@@ -141,30 +120,21 @@ export default function OnboardingGoals({ navigation }) {
 
   async function addUserInsight(goal) {
     try {
-      console.log(user)
       const goalI = await API.graphql(graphqlOperation(getGoal, {id: goal}))
       const item = (goalI.data.getGoal.Insights.items)
       for (const i in item) {
         console.log("atheplace")
         console.log(item[i].id)
         console.log(item[i].InsightText)
-
+        await API.graphql(graphqlOperation(createUserInsights, {input: {insightID: item[i].id, userID: user, status: "new"}}))
       }
-      //console.log(item)
     } catch (err) {
       console.log('error creating gf:', err)
     }
   }
   async function addUserGoal(goal) {
     try {
-      console.log(user)
       await API.graphql(graphqlOperation(createUserGoals, {input: {goalID: goal, userID: user}}))
-      /*const goalI = await API.graphql(graphqlOperation(getGoal, {id: goal}))
-      const item = (goalI.data.getGoal.Insights.items)
-      for (const i in item) {
-        console.log(item[i].id)
-      }*/
-      //console.log(item)
     } catch (err) {
       console.log('error creating gf:', err)
     }
@@ -172,10 +142,7 @@ export default function OnboardingGoals({ navigation }) {
 
   async function deleteOldGoal(goal) {
     try {
-      console.log(goal)
-      console.log(user)
       await API.graphql(graphqlOperation(deleteUserGoals, {input: {goalID: goal, userID: user}}))
-      //console.log(item)
     } catch (err) {
       console.log('error deleting goal:', err)
     }
