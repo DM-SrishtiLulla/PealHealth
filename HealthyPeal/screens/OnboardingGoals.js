@@ -124,9 +124,6 @@ export default function OnboardingGoals({ navigation }) {
       const goalI = await API.graphql(graphqlOperation(getGoal, {id: goal}))
       const item = (goalI.data.getGoal.Insights.items)
       for (const i in item) {
-        console.log("atheplace")
-        console.log(item[i].id)
-        console.log(item[i].InsightText)
         await API.graphql(graphqlOperation(createUserInsights, {input: {insightID: item[i].id, userID: user, status: "new"}}))
       }
     } catch (err) {

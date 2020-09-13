@@ -39,21 +39,17 @@ export default function HelloWorldPage({ navigation }) {
 
   async function fetchInsights() {
     await getUser();
-    console.log(user);
     try {
       let userInsights = [];
       const insightI = await API.graphql(graphqlOperation(getUserInfo, {id: user}))
       const item = (insightI.data.getUserInfo.Insights.items)
-      //console.log(item)
       let insightID;
       let insightFull;
       let actualData;
       for (const i in item) {
-        //console.log(item[i])
         insightID = item[i].insightID
         insightFull = await API.graphql(graphqlOperation(getInsight, {id: insightID}))
         actualData = insightFull.data.getInsight
-        //console.log(actualData)
         userInsights.push(actualData)
       }
       setInsights(userInsights)
