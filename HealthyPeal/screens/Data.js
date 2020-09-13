@@ -14,7 +14,7 @@ export const Data = () => {
             const insightData = await API.graphql(graphqlOperation(listInsights))
             const insights = insightData.data.listInsights.items
             setInsights(insights)
-          } catch (err) { console.log('error fetching insights') }
+          } catch (err) { console.log('error fetching inslol') }
         }
         
         return insights;
