@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { listGoals, getGoal, getUserInfo } from './../src/graphql/queries'
-import { createUserGoals, deleteUserGoals, createUserInsights } from './../src/graphql/mutations'
+import { createUserGoals, deleteUserGoals, createUserInsights, deleteUserInsights } from './../src/graphql/mutations'
 import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
 } from 'react-native';
@@ -106,6 +106,7 @@ export default function OnboardingGoals({ navigation }) {
 
     for (const gd of goalsToDelete) {
       deleteOldGoal(gd);
+      deleteUserInsight(gd);
     }
 
     var goalsToAdd = checked.filter(x => oldGoals.indexOf(x) === -1);
@@ -137,6 +138,18 @@ export default function OnboardingGoals({ navigation }) {
       await API.graphql(graphqlOperation(createUserGoals, {input: {goalID: goal, userID: user}}))
     } catch (err) {
       console.log('error creating gf:', err)
+    }
+  }
+
+  async function deleteUserInsight(goal) {
+    try {
+      const goalI = await API.graphql(graphqlOperation(getGoal, {id: goal}))
+      const item = (goalI.data.getGoal.Insights.items)
+      for (const i in item) {
+        await API.graphql(graphqlOperation(deleteUserInsights, {input: {insightID: item[i].id, userID: user}, condition: {status: {eq: "new"}}}))
+      }
+    } catch (err) {
+      console.log('error delting gf:', err)
     }
   }
 
