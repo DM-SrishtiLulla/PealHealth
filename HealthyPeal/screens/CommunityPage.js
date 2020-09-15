@@ -86,7 +86,7 @@ export default function CommunityPage({ navigation }) {
                             Introducing Peal Community
                         </Text>
                         <Text style={{ color: COLORS.lightaccent, fontWeight: "300", marginTop: 10 }}>
-                            A space for compassionate conversation
+                            Check out our new guide!
                         </Text>
                         <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
                             <Image source={{ uri: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80" }}
@@ -102,13 +102,15 @@ export default function CommunityPage({ navigation }) {
             size="giant"
             style={{flex: 0.5, marginTop: "5%",
                 alignSelf: "center",
-                width: width - 40,
+                width: width - 50,
                 backgroundColor: COLORS.lightaccent,
                 borderColor: COLORS.primary}}
             onPress={() =>
-              navigation.navigate('Post!')
-            }>
-            Add a post!
+              navigation.navigate('Guides')
+            }
+            >
+            <Text style={{fontSize: 22, fontWeight: "800", color: COLORS.primary
+                        }}>COVID-19 Anxiety Guide!</Text>
           </Button>
                     <View style={{ marginTop: 20 }}>
                         <Text style={{

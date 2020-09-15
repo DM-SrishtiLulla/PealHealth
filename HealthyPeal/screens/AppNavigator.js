@@ -26,6 +26,7 @@ import GoalsPage from './GoalsPage';
 import InterestsPage from './InterestsPage';
 import HelloWorldPage from './HelloWorldPage';
 import InsightsPage from './InsightsPage';
+import GuidesPage from "./GuidesPage";
 
 
 const Tab = createBottomTabNavigator();
@@ -54,7 +55,7 @@ function MainTabNavigator() {
       <Tab.Screen name="Profile"
         component={ProfilePage}
         options={{
-          tabBarLabel: 'Guides',
+          tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
             <Icon name='person-outline' width={24} height={24} fill={COLORS.secondary} />
           ),
@@ -101,6 +102,7 @@ export default function MainStackNavigator() {
             <Stack.Screen name="GoalsPage" component={GoalsPage} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="InterestsPage" component={InterestsPage} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="InsightsPage" component={InsightsPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Guides" component={GuidesPage} options={{ headerTitle: "", headerTransparent: true }}/>
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

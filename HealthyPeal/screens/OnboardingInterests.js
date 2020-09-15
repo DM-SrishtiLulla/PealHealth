@@ -14,17 +14,17 @@ const CardItem = ({item, isChecked, selectItem}) => {
       <TouchableOpacity
         onPress={event => selectItem({name: item.id})}
         style={styles.card}>
-        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+        {/* <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}> */}
           {isChecked
-          ? <Icon name='checkmark-circle-2-outline' width={30} height={30} fill={COLORS.secondary} />
-          : <Icon name='radio-button-off-outline' width={30} height={30} fill={COLORS.secondary} />
+          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
+          : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
           }
           <View style={styles.cardHeader}>
             <Text style={styles.title}>{item.InterestText}</Text>
           </View>
           <View style={styles.cardFooter}>
           </View>
-        </ImageBackground> 
+        {/* </ImageBackground>  */}
       </TouchableOpacity>
     </React.Fragment>
   );
@@ -97,9 +97,9 @@ export default function OnboardingInterests({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 0,
+  container:{
+    flex:1,
+    marginTop:0,
     marginBottom: 0,
     backgroundColor: COLORS.primary,
   },
@@ -107,20 +107,20 @@ const styles = StyleSheet.create({
     //paddingHorizontal: 5,
     backgroundColor: COLORS.primary,
   },
-  listContainer: {
-    alignItems: 'center',
+  listContainer:{
+    alignItems:'center',
   },
   /******** card **************/
   card:{
     marginHorizontal:5,
     marginVertical:5,
-    flexBasis: '47%',
+    flexBasis: '42%',
     borderRadius: 30,
-    height: 140,
-    width: 130
+    height: 120,
+    backgroundColor: COLORS.lightaccent
   },
   cardHeader: {
-    paddingVertical: 17,
+    paddingVertical: 5,
     paddingHorizontal: 16,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
@@ -129,8 +129,8 @@ const styles = StyleSheet.create({
     justifyContent:"center"
   },
   cardContent: {
-    paddingVertical: 12.5,
-    paddingHorizontal: 16,
+    // paddingVertical: 12.5,
+    // paddingHorizontal: 16,
   },
   cardFooter:{
     flexDirection: 'row',
@@ -147,17 +147,15 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   title:{
-    fontSize: 20,
+    fontSize: 24,
     flex: 1,
-    marginTop: 0,
-    justifyContent: "center",
+    // marginTop: 0,
+    // justifyContent: "center",
     textAlign: "center",
-    alignSelf: "center",
+    // alignSelf: "center",
     color: COLORS.primary,
     backgroundColor: COLORS.lightaccent,
-    borderColor: COLORS.lightaccent,
-    borderWidth: 10,
-    fontWeight: '800'
+    fontWeight: '700'
   },
   subTitle:{
     fontSize:12,
@@ -170,8 +168,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center"
+    height: 0,
+    width: 0,
   },
   buttonbottom: {
       marginBottom: "10%",
@@ -194,14 +192,10 @@ const styles = StyleSheet.create({
     // marginTop: 10,
     marginBottom: 10,
     paddingTop: "20%",
-    paddingBottom: 36,
+    paddingBottom: 40,
     paddingLeft: 10,
     alignSelf: "center",
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: "600",
   },
-  checkbox: {
-    marginTop: 20,
-    marginLeft: 10
-  }
 });

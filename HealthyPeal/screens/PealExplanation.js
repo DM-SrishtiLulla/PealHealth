@@ -14,13 +14,13 @@ export default function PealExplanation({ navigation }) {
         </View> */}
         <View style={styles.container}>
         <Text style={styles.title} category='h1'>
-            <Text style={styles.bold}>Peal</Text> is here to help bring joy and peace to your life.
+            <Text style={styles.bold}>Peal</Text> is here to help you find new ways to engage with your mental health.
         </Text>
         <Text style={styles.title3} category='h1'>
-            Every day you'll receive a set of <Text style={styles.bold}>3 personalized activities</Text> to help you reach your wellness goals.
+            You'll receive a set of <Text style={styles.bold}>personalized activities</Text> to help you reach your wellness goals.
         </Text>
           <Text style={styles.title3} category='h1'>
-            Before we start, we want to get to know you better!
+            Next, help us get to know you better!
         </Text>
         </View>
         <View style={styles.container3}>

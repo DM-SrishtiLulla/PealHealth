@@ -1,224 +1,211 @@
 import React from "react";
-import { StyleSheet, View, SafeAreaView, Image, ScrollView, TouchableOpacity, Dimensions } from "react-native";
-import { Text, Button } from '@ui-kitten/components';
-import CardFlip from "react-native-card-flip";
+import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button } from "react-native";
 import { Icon } from 'react-native-eva-icons';
-import COLORS from "../Colors";
-import { withAuthenticator } from 'aws-amplify-react-native';
-import CardStack, { Card } from 'react-native-card-stack-swiper';
 import { Auth } from 'aws-amplify';
+import COLORS from "../Colors";
 
-const { width, height } = Dimensions.get('window')
-
-//export default 
 function ProfilePage() {
 
-    function signOut() {
-        Auth.signOut()
-          .then(() => {
-            props.onStateChange('signedOut', null);
-          })
-          .catch(err => {
-            console.log('err: ', err)
-          })
-      }
-    
-      return (
-        <SafeAreaView style={{ height: height, width: width, backgroundColor: COLORS.lightaccent }}>
-          <Text style={styles.head}>Swipe!</Text>
-          <CardStack
-            style={styles.content}
-            renderNoMoreCards={() => <Text style={{ fontWeight: '700', fontSize: 16, color: COLORS.primary, marginHorizontal: 80, }}>Inspired by The Wellness Society's Coronavirus Anxiety Workbook.</Text>}
-            ref={swiper => {
-              this.swiper = swiper
-            }}
-            onSwiped={() => console.log('onSwiped')}
-            onSwipedLeft={() => console.log('onSwipedLeft')}
-          >
-            <Card style={[styles.card, styles.card6]}><Text style={styles.label}>The Guide to Understanding Coronavirus Stress and Anxiety</Text></Card>
-            <Card style={[styles.card, styles.card2]}><Text style={styles.label}>The 2020 pandemic has resulted in a meteoric rise in anxiety and stress. </Text></Card>
-            <Card style={[styles.card, styles.card3]}><Text style={styles.label}>With COVID-19 anxiety, you might focus on "what if's" and constantly scan for symptoms. </Text></Card>
-            <Card style={[styles.card, styles.card4]}><Text style={styles.label}>It's important to use trusted news sources and find uplifting stories.</Text></Card>
-            <Card style={[styles.card, styles.card1]}><Text style={styles.label}>Also, don't always think of the worst case scenario! Try taking a step back.</Text></Card>
-            <Card style={[styles.card, styles.card7]}><Text style={styles.label}>Your mind might interpret predictions as facts, but remember that they are not.</Text></Card>
-            <Card style={[styles.card, styles.card2]}><Text style={styles.label}>Try challenging those thoughts with THINK technique.</Text></Card>
-            <Card style={[styles.card, styles.card6]}><Text style={styles.label}>T: Is this thought True? 100%?</Text></Card>
-            <Card style={[styles.card, styles.card4]}><Text style={styles.label}>H: Is this thought Helpful to me?</Text></Card>
-            <Card style={[styles.card, styles.card3]}><Text style={styles.label}>I: Does this thought Inspire me? Or does it have the opposite effect?</Text></Card>
-            <Card style={[styles.card, styles.card7]}><Text style={styles.label}>N: Is it Necessary (or important) for me to focus on this thought?</Text></Card>
-            <Card style={[styles.card, styles.card9]}><Text style={styles.label}>K: Is this thought Kind? Can I think of a kinder thought?</Text></Card>
-            <Card style={[styles.card, styles.card5]}><Text style={styles.label}>Try writing or speaking through this process out loud. We are happy to help during this difficult time.</Text></Card>
-          </CardStack>
-    
-          <View style={styles.footer}>
-      <Button
-        size="medium"
-        style={styles.buttonbottom}
-        onPress={() => {
-          this.swiper.goBackFromRight();
-        }}>
-        <Text style={styles.buttontext}>Back</Text>
-      </Button>
-              {/* <TouchableOpacity style={[styles.button, styles.orange]} onPress={() => {
-                this.swiper.goBackFromLeft();
-              }}>
-                <Icon name='person-outline' resizeMode={'contain'} style={{ height: 32, width: 32, borderRadius: 5 }} />
-              </TouchableOpacity> */}
-              {/* <TouchableOpacity style={[styles.button, styles.green]} onPress={() => {
-                this.swiper.swipeRight();
-              }}>
-                <Text resizeMode={'contain'} style={{color: "black" }}>Next</Text> 
-              </TouchableOpacity> */}
-            </View>
-    
-          </SafeAreaView>
-      );
-    };
-    
-    
+    return (
+        <SafeAreaView style={styles.container}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={{ alignSelf: "center", marginTop: 40 }}>
+                    <View style={styles.profileImage}>
+                        <Image source={{ uri: "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="center" />
+                    </View>
+                </View>
+
+                <View style={styles.infoContainer}>
+                    <Text style={[styles.text, { fontWeight: "400", fontSize: 24, marginTop: 15 }]}>Coming Soon</Text>
+                    {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
+                </View>
+
+                <View style={styles.statsContainer}>
+                    <View style={styles.statsBox}>
+                        <Text style={[styles.text, { fontSize: 24 }]}>48</Text>
+                        <Text style={[styles.text, styles.subText]}>Activities</Text>
+                    </View>
+                    <View style={[styles.statsBox, { borderColor: "#DFD8C8", borderLeftWidth: 1, borderRightWidth: 1 }]}>
+                        <Text style={[styles.text, { fontSize: 24 }]}>20</Text>
+                        <Text style={[styles.text, styles.subText]}>Posts</Text>
+                    </View>
+                    <View style={styles.statsBox}>
+                        <Text style={[styles.text, { fontSize: 24 }]}>103</Text>
+                        <Text style={[styles.text, styles.subText]}>Comments</Text>
+                    </View>
+                </View>
+                <Text style={[styles.subText, styles.recent]}>Saved Skills</Text>
+                <View style={{ marginTop: 24 }}>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={styles.mediaImageContainer}>
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
+                        </View>
+                        <View style={styles.mediaImageContainer}>
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
+                        </View>
+                        <View style={styles.mediaImageContainer}>
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
+                        </View>
+                    </ScrollView>
+                </View>
+                <Text style={[styles.subText, styles.recent]}>Recent Activity</Text>
+                <View style={{ alignItems: "center" }}>
+                    {/* <View style={styles.recentItem}>
+                        <View style={styles.activityIndicator}></View>
+                        <View style={{ width: 250 }}>
+                            <Text style={[styles.text, { color: "white", fontWeight: "300" }]}>
+                                Meditated <Text style={{ fontWeight: "600" }}>3 days</Text> this week.
+                            </Text>
+                        </View>
+                    </View> */}
+
+                    {/* <View style={styles.recentItem}>
+                        <View style={styles.activityIndicator}></View>
+                        <View style={{ width: 250 }}>
+                            <Text style={[styles.text, { color: "white", fontWeight: "300" }]}>
+                                Commented on a post about <Text style={{ fontWeight: "600" }}>depression</Text>
+                            </Text>
+                        </View>
+                    </View> */}
+                </View>
+            </ScrollView>
+        </SafeAreaView>
+    );
+}
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: width,
-    height: height,
-    flexDirection: 'column',
-    backgroundColor: COLORS.lightaccent,
-  },
-  content:{
-    flex: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  card:{
-    width: 320,
-    height: height * 0.55,
-    backgroundColor: '#FE474C',
-    borderRadius: 5,
-    shadowColor: 'rgba(0,0,0,0.5)',
-    shadowOffset: {
-      width: 0,
-      height: 1
+    title2: {
+        color: COLORS.primary,
+        justifyContent: "center",
+        // alignContent: "center",
+        marginTop: 30,
+        marginBottom: 10,
+        marginLeft: 30,
+        marginRight: 20,
+        fontSize: 30,
+        fontWeight: "bold",
     },
-    shadowOpacity:0.5,
-  },
-  card1: {
-    backgroundColor: COLORS.secondary,
-  },
-  card2: {
-    backgroundColor: COLORS.calmpink,
-  },
-  card3: {
-    backgroundColor: COLORS.brightblue,
-  },
-  card4: {
-    backgroundColor: COLORS.darkaccent,
-  },
-  card5: {
-    backgroundColor: COLORS.lavender,
-  },
-  card6: {
-    backgroundColor: COLORS.darkprimary,
-  },
-  card7: {
-    backgroundColor: COLORS.mgradient3,
-  },
-  card8: {
-    backgroundColor: COLORS.brightgreen,
-  },
-  card9: {
-    backgroundColor: COLORS.darkprimary,
-  },
-  // label: {
-  //   lineHeight: 400,
-  //   textAlign: 'center',
-  //   fontSize: 55,
-  //   fontFamily: 'System',
-  //   color: '#ffffff',
-  //   backgroundColor: 'transparent',
-  // },
-  label: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 32,
-    elevation: 5,
-    alignSelf: "center",
-    justifyContent: "center",
-    marginVertical: "20%",
-    marginHorizontal: 20
-},
-  buttonbottom: {
-    alignSelf: "center",
-    marginBottom: height * 0.01,
-    width: 200,
-    height: 50,
-    backgroundColor: COLORS.lightaccent,
-    borderColor: COLORS.lightaccent,
-    shadowColor: COLORS.lightaccent,
-  },
-  buttontext: {
-    fontSize: 24,
-    fontWeight: "600",
-    color: COLORS.primary
-  },
-  footer:{
-    flex:1,
-    marginBottom: "20%",
-    justifyContent:'center',
-    alignItems:'center'
-  },
-  head: {
-    color: COLORS.primary,
-    // marginLeft: 20,
-    paddingBottom: 20,
-    paddingTop: "24%",
-    paddingLeft: 10,
-    alignSelf: "center",
-    fontSize: 32,
-    fontWeight: "700",
-  },
-  buttonContainer:{
-    width:300,
-    flexDirection:'column',
-    justifyContent: 'space-between',
-  },
-  button:{
-    shadowColor: 'rgba(0,0,0,0.3)',
-    shadowOffset: {
-      width: 0,
-      height: 1
+    buttonbottom: {
+        marginTop: -10,
+        alignSelf: "center",
+        backgroundColor: COLORS.lightaccent
     },
-    shadowOpacity:0.5,
-    backgroundColor:'#fff',
-    alignItems:'center',
-    justifyContent:'center',
-    zIndex: 0,
-  },
-  orange:{
-    width:55,
-    height:55,
-    borderWidth:6,
-    borderColor:COLORS.darkaccent,
-    borderRadius:55,
-    marginTop:-15
-  },
-  green:{
-    width:75,
-    height:75,
-    backgroundColor:'#fff',
-    borderRadius:75,
-    borderWidth:6,
-    borderColor:COLORS.darkaccent,
-  },
-  red:{
-    width:75,
-    height:75,
-    backgroundColor:'#fff',
-    borderRadius:75,
-    borderWidth:6,
-    borderColor: COLORS.darkaccent,
-  }
+    container: {
+        flex: 1,
+        backgroundColor: COLORS.lightaccent,
+    },
+    text: {
+        fontFamily: "HelveticaNeue",
+        color: "white"
+    },
+    image: {
+        flex: 1,
+        height: undefined,
+        width: undefined
+    },
+    subText: {
+        fontSize: 12,
+        color: "white",
+        textTransform: "uppercase",
+        fontWeight: "500"
+    },
+    profileImage: {
+        width: 150,
+        height: 150,
+        marginTop: 20,
+        borderRadius: 600,
+        resizeMode: "cover",
+        overflow: "hidden"
+    },
+    dm: {
+        backgroundColor: "#41444B",
+        position: "absolute",
+        top: 20,
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    active: {
+        backgroundColor: "#34FFB9",
+        position: "absolute",
+        bottom: 28,
+        left: 10,
+        padding: 4,
+        height: 20,
+        width: 20,
+        borderRadius: 10
+    },
+    add: {
+        backgroundColor: "#41444B",
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    infoContainer: {
+        alignSelf: "center",
+        alignItems: "center",
+        marginTop: 0
+    },
+    statsContainer: {
+        flexDirection: "row",
+        alignSelf: "center",
+        marginTop: 32
+    },
+    statsBox: {
+        alignItems: "center",
+        flex: 1
+    },
+    mediaImageContainer: {
+        width: 180,
+        height: 200,
+        borderRadius: 12,
+        overflow: "hidden",
+        marginHorizontal: 10
+    },
+    mediaCount: {
+        backgroundColor: "#41444B",
+        position: "absolute",
+        top: "50%",
+        marginTop: -50,
+        marginLeft: 30,
+        width: 100,
+        height: 100,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 12,
+        shadowColor: "rgba(0, 0, 0, 0.38)",
+        shadowOffset: { width: 0, height: 10 },
+        shadowRadius: 20,
+        shadowOpacity: 1
+    },
+    recent: {
+        marginLeft: 16,
+        marginTop: 32,
+        marginBottom: 6,
+        fontSize: 24
+    },
+    recentItem: {
+        flexDirection: "row",
+        alignItems: "flex-start",
+        marginBottom: 16
+    },
+    activityIndicator: {
+        backgroundColor: "#CABFAB",
+        padding: 4,
+        height: 12,
+        width: 12,
+        borderRadius: 6,
+        marginTop: 3,
+        marginRight: 20
+    }
 });
 
-export default withAuthenticator(ProfilePage)
-
+export default ProfilePage;
 

@@ -19,17 +19,17 @@ const CardItem = ({item, isChecked, selectItem}) => {
       <TouchableOpacity
         onPress={event => selectItem({name: item.id})}
         style={styles.card}>
-        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+        {/* <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}> */}
           {isChecked
-          ? <Icon name='checkmark-circle-2-outline' width={30} height={30} fill={COLORS.secondary} />
-          : <Icon name='radio-button-off-outline' width={30} height={30} fill={COLORS.secondary} />
+          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
+          : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
           }
           <View style={styles.cardHeader}>
             <Text style={styles.title}>{item.GoalText}</Text>
           </View>
           <View style={styles.cardFooter}>
           </View>
-        </ImageBackground> 
+        {/* </ImageBackground>  */}
       </TouchableOpacity>
     </React.Fragment>
   );
@@ -163,7 +163,7 @@ export default function OnboardingGoals({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}>What do you want help with?</Text>
+      <Text style={styles.head}>What are your goals?</Text>
       <FlatList style={styles.list}
         contentContainerStyle={styles.listContainer}
         data={goals}
@@ -186,41 +186,42 @@ export default function OnboardingGoals({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 0,
+  container:{
+    flex:1,
+    marginTop:0,
     marginBottom: 0,
     backgroundColor: COLORS.primary,
   },
   list: {
+    //paddingHorizontal: 5,
     backgroundColor: COLORS.primary,
   },
-  listContainer: {
-    alignItems: 'center',
+  listContainer:{
+    alignItems:'center',
   },
   /******** card **************/
-  card: {
-    marginHorizontal: 5,
-    marginVertical: 5,
-    flexBasis: '47%',
+  card:{
+    marginHorizontal:10,
+    marginBottom:10,
+    flexBasis: '42%',
     borderRadius: 30,
-    height: 140,
-    width: 130
+    height: 120,
+    backgroundColor: COLORS.lightaccent
   },
   cardHeader: {
-    paddingVertical: 17,
-    paddingHorizontal: 14,
+    paddingVertical: 0,
+    paddingHorizontal: 16,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
-    alignItems: "center",
-    justifyContent: "center"
+    alignItems:"center", 
+    justifyContent:"center"
   },
   cardContent: {
-    paddingVertical: 12.5,
-    paddingHorizontal: 16,
+    // paddingVertical: 12.5,
+    // paddingHorizontal: 16,
   },
-  cardFooter: {
+  cardFooter:{
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingTop: 12.5,
@@ -229,63 +230,60 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-  cardImage: {
+  cardImage:{
     height: 70,
     width: 70,
-    alignSelf: 'center'
+    alignSelf:'center'
   },
-  title: {
-    fontSize: 16,
+  title:{
+    fontSize: 24,
     flex: 1,
-    marginTop: 0,
-    justifyContent: "center",
+    // marginTop: 0,
+    // justifyContent: "center",
     textAlign: "center",
-    alignSelf: "center",
+    // alignSelf: "center",
     color: COLORS.primary,
     backgroundColor: COLORS.lightaccent,
-    borderColor: COLORS.lightaccent,
-    borderWidth: 10,
     fontWeight: '700'
   },
-  subTitle: {
-    fontSize: 12,
-    flex: 1,
-    color: "#FFFFFF",
+  subTitle:{
+    fontSize:12,
+    flex:1,
+    color:"#FFFFFF",
   },
-  icon: {
+  icon:{
     height: 20,
-    width: 20,
+    width: 20, 
   },
   image: {
     flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center"
+    height: 0,
+    width: 0,
   },
   buttonbottom: {
-    marginBottom: "10%",
-    marginTop: "5%",
-    alignSelf: "center",
-    width: 200,
-    height: 60,
-    backgroundColor: COLORS.lightaccent,
-    borderColor: COLORS.lightaccent,
+      marginBottom: "10%",
+      marginTop: "5%",
+      alignSelf: "center",
+      width: 200,
+      height: 60,
+      backgroundColor: COLORS.lightaccent,
+      borderColor: COLORS.lightaccent,
   },
   buttontext: {
     fontSize: 24,
     fontWeight: "600",
     color: COLORS.primary
-  },
+},
   head: {
     flex: 1,
     color: COLORS.lightaccent,
+    // marginLeft: 20,
+    // marginTop: 10,
+    marginBottom: 10,
     paddingTop: "20%",
     paddingLeft: 10,
     alignSelf: "center",
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: "600",
   },
-  checkbox: {
-    marginTop: 20,
-    marginLeft: 10
-  }
 });
