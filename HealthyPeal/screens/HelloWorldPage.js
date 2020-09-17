@@ -48,7 +48,6 @@ export default function HelloWorldPage({ navigation }) {
       let userInsights = [];
       const insight = await API.graphql(graphqlOperation(listUserInsightss, {filter: {and: {userID: {eq: "scoconut26"}, status: {eq: "new"}}}}))
       const items = (insight.data.listUserInsightss.items)
-      console.log(items.length)
       const shuffled = items.sort(() => 0.5 - Math.random());
       let selected = shuffled.slice(0, 3);
       let actualData;
@@ -85,7 +84,6 @@ export default function HelloWorldPage({ navigation }) {
     async function addUserInsights(currentInsights) {
       let curId;
       let mut;
-      console.log(currentInsights.length)
       for (const cur in currentInsights) {
         curId = currentInsights[cur].id
         mut = await API.graphql(graphqlOperation(createUserInsights, {input: {insightID: curId, userID: user, status: "current"}}))
