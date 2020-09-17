@@ -77,8 +77,6 @@ export default function HelloWorldPage({ navigation }) {
       if (currentInsights.length > 0) {
         for (const cur in currentInsights) {
           curId = currentInsights[cur].id
-          console.log(curId)
-          console.log(user)
           mut = await API.graphql(graphqlOperation(updateUserInsights, {input: {insightID: curId, userID: user, status: "current"}}))
         }
       }
@@ -87,11 +85,9 @@ export default function HelloWorldPage({ navigation }) {
     async function addUserInsights(currentInsights) {
       let curId;
       let mut;
-      console.log(currentInsights)
+      console.log(currentInsights.length)
       for (const cur in currentInsights) {
         curId = currentInsights[cur].id
-        console.log(curId)
-        console.log(user)
         mut = await API.graphql(graphqlOperation(createUserInsights, {input: {insightID: curId, userID: user, status: "current"}}))
       }
     }
