@@ -18,6 +18,7 @@ import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { listUserInsightss, getUserInfo, getInsight, listInsights } from './../src/graphql/queries';
 import COLORS from "../Colors";
 import { useIsFocused } from '@react-navigation/native';
+import { createUserInsights, updateUserInsights } from '../src/graphql/mutations';
 
 const {height, width} = Dimensions.get("window")
 
@@ -55,20 +56,45 @@ export default function HelloWorldPage({ navigation }) {
         actualData = selected[ins].insight
         userInsights.push(actualData)
       }
+      setCurrentStatus(userInsights)
       const extraNeeded = 3 - items.length;
+      let extraItems;
       if (extraNeeded > 0) {
         const extraInsights = await API.graphql(graphqlOperation(listInsights, {limit: extraNeeded}))
-        const extraItems = (extraInsights.data.listInsights.items)
-        console.log(extraItems)
+        extraItems = (extraInsights.data.listInsights.items)
         for (ei in extraItems) {
           userInsights.push(extraItems[ei])
         }
       }
+      addUserInsights(extraItems)
       setInsights(userInsights)
     } catch (err) { console.log('error fetching insightsjas') }
   }
 
-  
+    async function setCurrentStatus(currentInsights) {
+      let curId;
+      let mut;
+      if (currentInsights.length > 0) {
+        for (const cur in currentInsights) {
+          curId = currentInsights[cur].id
+          console.log(curId)
+          console.log(user)
+          mut = await API.graphql(graphqlOperation(updateUserInsights, {input: {insightID: curId, userID: user, status: "current"}}))
+        }
+      }
+    }
+
+    async function addUserInsights(currentInsights) {
+      let curId;
+      let mut;
+      console.log(currentInsights)
+      for (const cur in currentInsights) {
+        curId = currentInsights[cur].id
+        console.log(curId)
+        console.log(user)
+        mut = await API.graphql(graphqlOperation(createUserInsights, {input: {insightID: curId, userID: user, status: "current"}}))
+      }
+    }
     return (
       <Carousel data = {insights}/>
     );
