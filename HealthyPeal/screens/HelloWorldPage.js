@@ -17,8 +17,7 @@ import { useEffect, useState } from 'react'
 import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { listUserInsightss, getUserInfo, getInsight, listInsights } from './../src/graphql/queries';
 import COLORS from "../Colors";
-
-
+import { useIsFocused } from '@react-navigation/native';
 
 const {height, width} = Dimensions.get("window")
 
@@ -28,9 +27,14 @@ export default function HelloWorldPage({ navigation }) {
 
   const [insights, setInsights] = useState([])
 
+  const isFocused = useIsFocused();
   useEffect(() => {
-    fetchInsights()
-  }, [])
+    if (isFocused) {
+      fetchInsights()
+    }
+  }, [isFocused]);
+
+  
 
   async function getUser() {
     let us = await Auth.currentAuthenticatedUser();
