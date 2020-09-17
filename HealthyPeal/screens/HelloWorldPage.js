@@ -73,6 +73,7 @@ export default function HelloWorldPage({ navigation }) {
     async function setCurrentStatus(currentInsights) {
       let curId;
       let mut;
+      console.log(currentInsights.length + "thatsit")
       if (currentInsights.length > 0) {
         for (const cur in currentInsights) {
           curId = currentInsights[cur].id
