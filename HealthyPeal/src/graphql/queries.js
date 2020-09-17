@@ -301,6 +301,92 @@ export const listInsights = /* GraphQL */ `
     }
   }
 `;
+export const getUserInsights = /* GraphQL */ `
+  query GetUserInsights($userID: ID!, $insightID: ID!) {
+    getUserInsights(userID: $userID, insightID: $insightID) {
+      insightID
+      userID
+      insight {
+        id
+        InsightUsers {
+          nextToken
+        }
+        InsightText
+        ImageLink
+        createdAt
+        updatedAt
+        goalID
+      }
+      user {
+        id
+        Username
+        Sub
+        Identities {
+          nextToken
+        }
+        Goals {
+          nextToken
+        }
+        Interests {
+          nextToken
+        }
+        Insights {
+          nextToken
+        }
+        ProfileImage
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      status
+    }
+  }
+`;
+export const listUserInsightss = /* GraphQL */ `
+  query ListUserInsightss(
+    $userID: ID
+    $insightID: ModelIDKeyConditionInput
+    $filter: ModelUserInsightsFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listUserInsightss(
+      userID: $userID
+      insightID: $insightID
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        insightID
+        userID
+        insight {
+          id
+          InsightText
+          ImageLink
+          createdAt
+          updatedAt
+          goalID
+        }
+        user {
+          id
+          Username
+          Sub
+          ProfileImage
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+        status
+      }
+      nextToken
+    }
+  }
+`;
 export const getPost = /* GraphQL */ `
   query GetPost($id: ID!) {
     getPost(id: $id) {
