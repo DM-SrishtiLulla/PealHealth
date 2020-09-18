@@ -6,7 +6,6 @@ const { width, height } = Dimensions.get('window')
 
 
 const CarouselItem = ({item}) => {
-    console.log(item)
     return (
         <SafeAreaView style={styles.cardView}>
             <Image style={styles.image} source={{ uri: item.ImageLink }} />

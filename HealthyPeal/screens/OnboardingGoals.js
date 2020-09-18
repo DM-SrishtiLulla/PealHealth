@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { API, graphqlOperation, Auth } from 'aws-amplify'
-import { listGoals, getGoal, getUserInfo } from './../src/graphql/queries'
+import { listGoals, getGoal, getUserInfo, listUserInsightss } from './../src/graphql/queries'
 import { createUserGoals, deleteUserGoals, createUserInsights, deleteUserInsights } from './../src/graphql/mutations'
 import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground
@@ -63,13 +63,37 @@ export default function OnboardingGoals({ navigation }) {
 
   const [checkedItems, setCheckedItems] = useState([]);
   const [oldGoals, setOldGoals] = useState([]);
+  const [oldInsights, setOldInsights] = useState([]);
   const isFocused = useIsFocused();
   useEffect(() => {
     if (isFocused) {
       fetchGoals()
       fetchSelectedGoals()
+      fetchUserInsights()
     }
   }, [isFocused]);
+
+  async function fetchUserInsights() {
+    await getUser();
+    try {
+      let userInsights = [];
+      const goalI = await API.graphql(graphqlOperation(getUserInfo, {id: user}))
+      const item = (goalI.data.getUserInfo.Insights.items)
+      for (const i in item) {
+        userInsights.push(item[i].insightID)
+      }
+      /*let userInsights = [];
+      const insight = await API.graphql(graphqlOperation(getUserInfo, {id: user}))
+      const items = (insight.data.getUserInfo.Insights.items)
+      let actualData;
+      for (const ins in items) {
+        actualData = items[ins].insightID
+        userInsights.push(actualData)
+      }*/
+      setOldInsights(userInsights)
+      console.log(userInsights)
+    } catch (err) { console.log('error fetching userinsights') }
+  }
 
   async function fetchGoals() {
     try {

@@ -104,8 +104,7 @@ type Insight
   goalID: ID!
 }
 
-type UserInsights 
-  @model(queries: null)
+type UserInsights @model
   @key(fields: ["userID", "insightID"])
   @key(name: "byInsight", fields: ["insightID", "userID"])
   @key(name: "byUserIns", fields: ["userID", "insightID"])
