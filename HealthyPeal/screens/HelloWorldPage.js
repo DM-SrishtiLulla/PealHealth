@@ -46,7 +46,8 @@ export default function HelloWorldPage({ navigation }) {
     await getUser();
     try {
       let userInsights = [];
-      const insight = await API.graphql(graphqlOperation(listUserInsightss, {filter: {and: {userID: {eq: "scoconut26"}, status: {eq: "new"}}}}))
+      //       const insight = await API.graphql(graphqlOperation(listUserInsightss, {filter: {and: {userID: {eq: user}}}}))
+      const insight = await API.graphql(graphqlOperation(listUserInsightss, {filter: {and: {userID: {eq: user}, status: {eq: "new"}}}}))
       const items = (insight.data.listUserInsightss.items)
       const shuffled = items.sort(() => 0.5 - Math.random());
       let selected = shuffled.slice(0, 3);
