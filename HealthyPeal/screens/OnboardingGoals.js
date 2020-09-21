@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   container:{
     flex:1,
     marginTop:0,
-    marginBottom: 0,
+    marginBottom:0,
     backgroundColor: COLORS.primary,
   },
   list: {
@@ -221,19 +221,20 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
   },
   listContainer:{
+    marginTop: 0,
     alignItems:'center',
   },
   /******** card **************/
   card:{
-    marginHorizontal:10,
-    marginBottom:10,
+    marginHorizontal:5,
+    marginVertical:5,
     flexBasis: '42%',
     borderRadius: 30,
     height: 120,
     backgroundColor: COLORS.lightaccent
   },
   cardHeader: {
-    paddingVertical: 0,
+    paddingVertical: 5,
     paddingHorizontal: 16,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
@@ -303,7 +304,7 @@ const styles = StyleSheet.create({
     color: COLORS.lightaccent,
     // marginLeft: 20,
     // marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 0,
     paddingTop: "20%",
     paddingLeft: 10,
     alignSelf: "center",

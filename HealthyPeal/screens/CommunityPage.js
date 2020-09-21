@@ -82,14 +82,17 @@ export default function CommunityPage({ navigation }) {
 
 
                     <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                        <Text style={{ color: COLORS.lightaccent, fontSize: 24, fontWeight: "700" }}>
-                            Introducing Peal Community
+                        <Text style={{ color: COLORS.lightaccent, fontSize: 32, fontWeight: "700" }}>
+                            Peal Community
                         </Text>
                         <Text style={{ color: COLORS.lightaccent, fontWeight: "300", marginTop: 10 }}>
-                            Check out our new guide!
+                            Check out our guides and inspirational posts
+                        </Text>
+                        <Text style={{ color: COLORS.lightaccent, fontSize: 24, marginTop: 20, fontWeight: "700" }}>
+                            COVID-19 Anxiety Support
                         </Text>
                         <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
-                            <Image source={{ uri: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80" }}
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1590417961276-2f4f5e9f6227?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }}
                                 style={{
                                     flex: 1, height: null, width: null, resizeMode: "cover",
                                     borderRadius: 5, borderWidth: 1,
@@ -110,7 +113,38 @@ export default function CommunityPage({ navigation }) {
             }
             >
             <Text style={{fontSize: 22, fontWeight: "800", color: COLORS.primary
-                        }}>COVID-19 Anxiety Guide!</Text>
+                        }}>COVID-19 Anxiety Guide</Text>
+          </Button>
+          <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
+                        <Text style={{ color: COLORS.lightaccent, fontSize: 24, fontWeight: "700" }}>
+                            Positive Thinking
+                        </Text>
+                        <Text style={{ color: COLORS.lightaccent, fontWeight: "300", marginTop: 10 }}>
+                            Try the ABCDE Technique
+                        </Text>
+                        <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1505769542637-a892c7381a3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }}
+                                style={{
+                                    flex: 1, height: null, width: null, resizeMode: "cover",
+                                    borderRadius: 5, borderWidth: 1,
+                                    borderColor: COLORS.secondary
+                                }}
+                            />
+                        </View>
+                    </View>
+                    <Button
+            size="giant"
+            style={{flex: 0.5, marginTop: "5%",
+                alignSelf: "center",
+                width: width - 50,
+                backgroundColor: COLORS.lightaccent,
+                borderColor: COLORS.primary}}
+            onPress={() =>
+              navigation.navigate('Guides2')
+            }
+            >
+            <Text style={{fontSize: 22, fontWeight: "800", color: COLORS.primary
+                        }}>Thought Pattern Guide</Text>
           </Button>
                     <View style={{ marginTop: 20 }}>
                         <Text style={{
