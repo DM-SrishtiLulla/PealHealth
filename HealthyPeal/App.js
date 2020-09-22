@@ -5,6 +5,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 import authTheme from "./authTheme";
 
 function App() {
+  console.disableYellowBox = true;
   return <MainStackNavigator/>;
 }
 
