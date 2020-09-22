@@ -7,6 +7,8 @@ import {
 import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 import { Icon } from 'react-native-eva-icons';
+import { useIsFocused } from '@react-navigation/native';
+
 
 const CardItem = ({item, isChecked, selectItem}) => {
   return (
@@ -55,10 +57,14 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
 export default function OnboardingInterests({ navigation }) {
 
   const [interests, setInterests] = useState([])
+  const isFocused = useIsFocused();
+
 
   useEffect(() => {
-    fetchInterests()
-  }, [])
+    if (isFocused) {
+      fetchInterests()
+    }
+  }, [isFocused]);
 
   async function fetchInterests() {
     try {

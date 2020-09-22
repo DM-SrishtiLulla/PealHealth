@@ -3,6 +3,8 @@ import { listPosts } from './../src/graphql/queries'
 import { createPost } from './../src/graphql/mutations'
 import React, { useEffect, useState } from 'react'
 import { Icon } from 'react-native-eva-icons';
+import { useIsFocused } from '@react-navigation/native';
+
 
 //import { ScrollView } from 'react-native-gesture-handler'
 import {
@@ -17,6 +19,7 @@ import {
 import { Layout, Text, Button } from '@ui-kitten/components';
 import COLORS from '../Colors';
 import Card from './Card';
+
 const { height, width } = Dimensions.get("window")
 
 const initialState = { PostText: '', ImageLink: '' }
@@ -25,10 +28,14 @@ export default function CommunityPage({ navigation }) {
 
     const [formState, setFormState] = useState(initialState)
     const [posts, setPosts] = useState([])
+    const isFocused = useIsFocused();
+
 
     useEffect(() => {
-        fetchPosts()
-    }, [])
+        if (isFocused) {
+          fetchPosts()
+        }
+      }, [isFocused]);
 
     function setInput(key, value) {
         setFormState({ ...formState, [key]: value })
