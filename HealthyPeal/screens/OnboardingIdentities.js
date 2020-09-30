@@ -8,6 +8,8 @@ import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 
 import { Icon } from 'react-native-eva-icons';
+import { useIsFocused } from '@react-navigation/native';
+
 
 const CardItem = ({item, isChecked, selectItem}) => {
   return (
@@ -15,17 +17,17 @@ const CardItem = ({item, isChecked, selectItem}) => {
       <TouchableOpacity
         onPress={event => selectItem({name: item.id})}
         style={styles.card}>
-        {/* <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}> */}
-          {isChecked
-          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
-          : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
+        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+        {isChecked
+          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
+          : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
           }
           <View style={styles.cardHeader}>
             <Text style={styles.title}>{item.IdentityText}</Text>
           </View>
           <View style={styles.cardFooter}>
           </View>
-        {/* </ImageBackground>  */}
+        </ImageBackground> 
       </TouchableOpacity>
     </React.Fragment>
   );
@@ -56,10 +58,13 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
 export default function OnboardingIdentities({ navigation }) {
 
   const [identitys, setIdentitys] = useState([])
+  const isFocused = useIsFocused();
 
   useEffect(() => {
-    fetchIdentitys()
-  }, [])
+    if (isFocused) {
+      fetchIdentitys()
+    }
+  }, [isFocused]);
 
   async function fetchIdentitys() {
     try {
@@ -97,6 +102,7 @@ export default function OnboardingIdentities({ navigation }) {
   );
 }
 
+
 const styles = StyleSheet.create({
   container:{
     flex:1,
@@ -105,7 +111,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
   },
   list: {
-    //paddingHorizontal: 5,
+    paddingHorizontal: 5,
     backgroundColor: COLORS.primary,
   },
   listContainer:{
@@ -114,15 +120,16 @@ const styles = StyleSheet.create({
   /******** card **************/
   card:{
     marginHorizontal:5,
-    marginVertical:5,
-    flexBasis: '42%',
+    marginBottom:5,
+    flexBasis: '47%',
     borderRadius: 30,
-    height: 120,
-    backgroundColor: COLORS.lightaccent
+    height: 140,
+    width: 130,
+    //backgroundColor: COLORS.lightaccent
   },
   cardHeader: {
-    paddingVertical: 5,
-    paddingHorizontal: 16,
+    paddingVertical: 17,
+    paddingHorizontal: 14,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
@@ -130,8 +137,8 @@ const styles = StyleSheet.create({
     justifyContent:"center"
   },
   cardContent: {
-    // paddingVertical: 12.5,
-    // paddingHorizontal: 16,
+    paddingVertical: 12.5,
+    paddingHorizontal: 16,
   },
   cardFooter:{
     flexDirection: 'row',
@@ -148,12 +155,14 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   title:{
-    fontSize: 24,
+    fontSize: 18,
     flex: 1,
-    // marginTop: 0,
-    // justifyContent: "center",
+    marginTop: 0,
+    justifyContent: "center",
     textAlign: "center",
-    // alignSelf: "center",
+    alignSelf: "center",
+    borderColor: COLORS.lightaccent,
+    borderWidth: 10,
     color: COLORS.primary,
     backgroundColor: COLORS.lightaccent,
     fontWeight: '700'
@@ -169,8 +178,10 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    height: 0,
-    width: 0,
+    resizeMode: "cover",
+    justifyContent: "center",
+    // height: 0,
+    // width: 0,
   },
   buttonbottom: {
       marginBottom: "10%",
@@ -199,4 +210,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "600",
   },
+  checkbox: {
+    marginTop: 20,
+    marginLeft: 10
+  }
 });
