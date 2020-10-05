@@ -31,7 +31,7 @@ const authTheme = StyleSheet.create({
         fontWeight: '300',
     },
     sectionFooter: {
-        width: '120%',
+        width: '150%',
         padding: 0,
         flexDirection: 'row',
         marginTop: 20,
@@ -114,7 +114,6 @@ const authTheme = StyleSheet.create({
         fontWeight: "300"
     },
     phoneContainer: {
-        width: "95%",
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -122,7 +121,7 @@ const authTheme = StyleSheet.create({
     phoneInput: {
         flex: 2,
         padding: 14,
-        borderWidth: 0.7,
+        borderWidth: 2,
         borderRadius: 3,
         borderColor: COLORS.darkaccent,
         color: COLORS.darkaccent,

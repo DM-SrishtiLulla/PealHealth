@@ -7,8 +7,6 @@ import {
 import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
 import { Icon } from 'react-native-eva-icons';
-import { useIsFocused } from '@react-navigation/native';
-
 
 const CardItem = ({item, isChecked, selectItem}) => {
   return (
@@ -16,17 +14,17 @@ const CardItem = ({item, isChecked, selectItem}) => {
       <TouchableOpacity
         onPress={event => selectItem({name: item.id})}
         style={styles.card}>
-        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+        {/* <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}> */}
           {isChecked
-          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
-          : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
+          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
+          : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={40} height={40} fill={COLORS.primary} />
           }
           <View style={styles.cardHeader}>
             <Text style={styles.title}>{item.InterestText}</Text>
           </View>
           <View style={styles.cardFooter}>
           </View>
-        </ImageBackground> 
+        {/* </ImageBackground>  */}
       </TouchableOpacity>
     </React.Fragment>
   );
@@ -57,14 +55,10 @@ const renderItem = ({ item, checkedItems, setCheckedItems }) => {
 export default function OnboardingInterests({ navigation }) {
 
   const [interests, setInterests] = useState([])
-  const isFocused = useIsFocused();
-
 
   useEffect(() => {
-    if (isFocused) {
-      fetchInterests()
-    }
-  }, [isFocused]);
+    fetchInterests()
+  }, [])
 
   async function fetchInterests() {
     try {
@@ -110,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
   },
   list: {
-    paddingHorizontal: 5,
+    //paddingHorizontal: 5,
     backgroundColor: COLORS.primary,
   },
   listContainer:{
@@ -119,16 +113,15 @@ const styles = StyleSheet.create({
   /******** card **************/
   card:{
     marginHorizontal:5,
-    marginBottom:5,
-    flexBasis: '47%',
+    marginVertical:5,
+    flexBasis: '42%',
     borderRadius: 30,
-    height: 140,
-    width: 130,
-    //backgroundColor: COLORS.lightaccent
+    height: 120,
+    backgroundColor: COLORS.lightaccent
   },
   cardHeader: {
-    paddingVertical: 17,
-    paddingHorizontal: 14,
+    paddingVertical: 5,
+    paddingHorizontal: 16,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
@@ -136,8 +129,8 @@ const styles = StyleSheet.create({
     justifyContent:"center"
   },
   cardContent: {
-    paddingVertical: 12.5,
-    paddingHorizontal: 16,
+    // paddingVertical: 12.5,
+    // paddingHorizontal: 16,
   },
   cardFooter:{
     flexDirection: 'row',
@@ -154,14 +147,12 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   title:{
-    fontSize: 18,
+    fontSize: 24,
     flex: 1,
-    marginTop: 0,
-    justifyContent: "center",
+    // marginTop: 0,
+    // justifyContent: "center",
     textAlign: "center",
-    alignSelf: "center",
-    borderColor: COLORS.lightaccent,
-    borderWidth: 10,
+    // alignSelf: "center",
     color: COLORS.primary,
     backgroundColor: COLORS.lightaccent,
     fontWeight: '700'
@@ -177,10 +168,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center",
-    // height: 0,
-    // width: 0,
+    height: 0,
+    width: 0,
   },
   buttonbottom: {
       marginBottom: "10%",
@@ -209,8 +198,4 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "600",
   },
-  checkbox: {
-    marginTop: 20,
-    marginLeft: 10
-  }
 });
