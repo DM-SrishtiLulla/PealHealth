@@ -32,6 +32,9 @@ export default function HelloWorldPage({ navigation }) {
   useEffect(() => {
     if (isFocused) {
       fetchInsights()
+      console.log("HELLO")
+      console.log(insights)
+
     }
   }, [isFocused]);
 
@@ -46,7 +49,7 @@ export default function HelloWorldPage({ navigation }) {
     await getUser();
     try {
       let userInsights = [];
-      const insight = await API.graphql(graphqlOperation(listUserInsightss, {filter: {and: {userID: {eq: user}, status: {eq: "new"}}}}))
+      const insight = await API.graphql(graphqlOperation(listUserInsightss, {limit: 10000000, filter: {and: {userID: {eq: user}, status: {eq: "new"}}}}))
       const items = (insight.data.listUserInsightss.items)
       const shuffled = items.sort(() => 0.5 - Math.random());
       let selected = shuffled.slice(0, 3);
@@ -54,11 +57,13 @@ export default function HelloWorldPage({ navigation }) {
       for (const ins in selected) {
         actualData = selected[ins].insight
         userInsights.push(actualData)
+        //console.log(user)
       }
       setCurrentStatus(userInsights)
       const extraNeeded = 3 - items.length;
       let extraItems;
       if (extraNeeded > 0) {
+        //console.log
         const extraInsights = await API.graphql(graphqlOperation(listInsights, {limit: extraNeeded}))
         extraItems = (extraInsights.data.listInsights.items)
         for (ei in extraItems) {
@@ -67,6 +72,7 @@ export default function HelloWorldPage({ navigation }) {
       }
       addUserInsights(extraItems)
       setInsights(userInsights)
+      //console.log(extraItems)
     } catch (err) { console.log('error fetching insightsjas') }
   }
 

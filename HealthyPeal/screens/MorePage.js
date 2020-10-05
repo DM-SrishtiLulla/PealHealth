@@ -187,6 +187,14 @@ export default function MorePage({ navigation }) {
             }>
             Add a post!
           </Button> */}
+          <Button
+            size="giant"
+            style={styles.button1}
+            onPress={() =>
+              navigation.navigate('InsightsPage')
+            }>
+            InsightsPage
+          </Button>
         </ScrollView>
       </SafeAreaView>
     </View>
