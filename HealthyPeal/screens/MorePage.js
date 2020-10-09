@@ -193,7 +193,7 @@ export default function MorePage({ navigation }) {
             onPress={() =>
               navigation.navigate('InsightsPage')
             }>
-            InassightsmadPage
+            Insights Page
           </Button>
         </ScrollView>
       </SafeAreaView>
