@@ -10,6 +10,9 @@ import {
 import { ScrollView } from 'react-native-gesture-handler'
 import { useIsFocused } from '@react-navigation/native';
 
+const initialState = {InsightText: '', ImageLink: ''}
+
+
 const Item = ({ item, onPress, style }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
     <Text style={styles.title}>{item.GoalText}</Text>
@@ -17,6 +20,7 @@ const Item = ({ item, onPress, style }) => (
 );
 
 const InsightsPage = () => {
+  const [formState, setFormState] = useState(initialState)
   const [insights, setInsights] = useState([])
   const [goals, setGoals] = useState([])
   const isFocused = useIsFocused();
@@ -41,6 +45,10 @@ const InsightsPage = () => {
     );
   }; 
 
+  function setInput(key, value) {
+    setFormState({ ...formState, [key]: value })
+  }
+
   async function fetchInsights() {
     try {
       const insightData = await API.graphql(graphqlOperation(listInsights))
@@ -57,26 +65,31 @@ const InsightsPage = () => {
     } catch (err) { console.log('error fetching goals') }
   }
 
-  /*async function addInsight() {
+
+
+  async function addInsight() {
     try {
-      const goal = { ...formState }
-      setGoals([...goals, goal])
-      setFormState(initialState)
-      await API.graphql(graphqlOperation(createGoal, {input: goal}))
+      if (selectedId) {
+        const insight = { ...formState, goalID: selectedId }
+        setInsights([...insights, insight])
+        setFormState(initialState)
+        await API.graphql(graphqlOperation(createInsight, {input: insight}))
+      }
+      
     } catch (err) {
-      console.log('error creating goal:', err)
+      console.log('error creating insight:', err)
     }
-  }*/
+  }
 
 
   return (
     <ScrollView>
         <View style={styles.container}>
-        {/* <TextInput
-            onChangeText={val => setInput('GoalText', val)}
-            style={styles.input}
-            value={formState.GoalText} 
-            placeholder="GoalText"
+        <TextInput
+            onChangeText={val => setInput('InsightText', val)}
+            style={styles.input1}
+            value={formState.InsightText} 
+            placeholder="InsightText"
         />
         <TextInput
             onChangeText={val => setInput('ImageLink', val)}
@@ -84,15 +97,17 @@ const InsightsPage = () => {
             value={formState.ImageLink}
             placeholder="ImageLink"
         />
-        <Button title="Create goal" onPress={addGoal} />  */}
         <SafeAreaView style={styles.container}>
           <FlatList
             data={goals}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
+            numColumns={2}
             extraData={selectedId}
           />
         </SafeAreaView>
+        <Button title="Create insight" onPress={addInsight} /> 
+
         {
             insights.map((insight, index) => (
             <View key={insight.ID ? insight.ID : index} style={styles.identity}>
@@ -107,21 +122,18 @@ const InsightsPage = () => {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20 },
-  identity: {  marginBottom: 15 },
+  container: { flex: 1, justifyContent: 'center', padding: 20, marginBottom: 20, },
+  identity: {  marginTop: 30, marginBottom: 15 },
+  input1: { height: 50, backgroundColor: '#ddd', marginBottom: 10, padding: 8, marginTop: 70 },
   input: { height: 50, backgroundColor: '#ddd', marginBottom: 10, padding: 8 },
   identityTitle: { fontSize: 18 },
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
   item: {
-    padding: 20,
+    padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
   },
   title: {
-    fontSize: 32,
+    fontSize: 16,
   },
 })
 
