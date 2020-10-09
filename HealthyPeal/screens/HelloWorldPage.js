@@ -72,7 +72,8 @@ export default function HelloWorldPage({ navigation }) {
       }
       addUserInsights(extraItems)
       setInsights(userInsights)
-      //console.log(extraItems)
+      console.log("extraneededitems")
+      console.log(extraItems)
     } catch (err) { console.log('error fetching insightsjas') }
   }
 

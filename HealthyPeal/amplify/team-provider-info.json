@@ -1,21 +1,21 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-healthypeal-dev-132312-authRole",
-            "UnauthRoleArn": "arn:aws:iam::722627052616:role/amplify-healthypeal-dev-132312-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::722627052616:role/amplify-healthypeal-dev-132312-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-healthypeal-dev-132312-deployment",
-            "UnauthRoleName": "amplify-healthypeal-dev-132312-unauthRole",
-            "StackName": "amplify-healthypeal-dev-132312",
-            "StackId": "arn:aws:cloudformation:us-east-1:722627052616:stack/amplify-healthypeal-dev-132312/37df8a50-ab58-11ea-97e0-0a78092beb51",
-            "AmplifyAppId": "d1qjovhql7mt06"
-        },
-        "categories": {
-            "auth": {
-                "healthypeal8ae500f7": {},
-                "healthypeal8f23f72c": {}
-            }
-        }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-healthypeal-dev-132312-authRole",
+      "UnauthRoleArn": "arn:aws:iam::722627052616:role/amplify-healthypeal-dev-132312-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::722627052616:role/amplify-healthypeal-dev-132312-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-healthypeal-dev-132312-deployment",
+      "UnauthRoleName": "amplify-healthypeal-dev-132312-unauthRole",
+      "StackName": "amplify-healthypeal-dev-132312",
+      "StackId": "arn:aws:cloudformation:us-east-1:722627052616:stack/amplify-healthypeal-dev-132312/37df8a50-ab58-11ea-97e0-0a78092beb51",
+      "AmplifyAppId": "d1qjovhql7mt06"
+    },
+    "categories": {
+      "auth": {
+        "healthypeal8ae500f7": {},
+        "healthypeal8f23f72c": {}
+      }
     }
+  }
 }

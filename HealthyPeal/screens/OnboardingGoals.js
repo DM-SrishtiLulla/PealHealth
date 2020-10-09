@@ -166,16 +166,19 @@ export default function OnboardingGoals({ navigation }) {
   }
 
   async function deleteUserInsight(goal) {
-    try {
       const goalI = await API.graphql(graphqlOperation(getGoal, {id: goal}))
       const item = (goalI.data.getGoal.Insights.items)
       for (const i in item) {
-        await API.graphql(graphqlOperation(deleteUserInsights, {input: {insightID: item[i].id, userID: user}, condition: {status: {eq: "new"}}}))
+        console.log("look here")
+        console.log(user)
+        console.log(item[i].id)
+        try {
+          await API.graphql(graphqlOperation(deleteUserInsights, {input: {insightID: item[i].id, userID: user}, condition: {status: {eq: "new"}}}))
+        } catch (err) {
+          console.log('error delting gf:', err)
+        }
       }
-    } catch (err) {
-      console.log('error delting gf:', err)
     }
-  }
 
   async function deleteOldGoal(goal) {
     try {
