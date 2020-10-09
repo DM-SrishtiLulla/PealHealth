@@ -66,6 +66,8 @@ export default function HelloWorldPage({ navigation }) {
         //console.log
         const extraInsights = await API.graphql(graphqlOperation(listInsights, {limit: extraNeeded}))
         extraItems = (extraInsights.data.listInsights.items)
+        console.log("extra")
+        console.log(extraItems)
         for (ei in extraItems) {
           userInsights.push(extraItems[ei])
         }

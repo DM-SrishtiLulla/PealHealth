@@ -1,76 +1,74 @@
-import React, {Component} from 'react';
+import { API, graphqlOperation } from 'aws-amplify'
+import { listGoals, listInsights } from './../src/graphql/queries'
+import { createInsight } from './../src/graphql/mutations'
+import React, { useEffect, useState } from 'react'
 import {
-  View,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-  Platform,
-  StatusBar,
-  ScrollView,
-  Image,
-  Dimensions,
-  Animated
-} from "react-native";
-import Carousel from "./Carousel";
-import { dummyData } from "./Data.js";
-import { useEffect, useState } from 'react'
-import { API, graphqlOperation, Auth } from 'aws-amplify'
-import { listUserInsightss, getUserInfo, getInsight, listInsights } from './../src/graphql/queries';
-import COLORS from "../Colors";
-import { useIsFocused } from '@react-navigation/native';
-import { createUserInsights, updateUserInsights } from '../src/graphql/mutations';
+  View, Text, StyleSheet, TextInput, Button, Image
+} from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 
-const {height, width} = Dimensions.get("window")
 
-export default function InsightsPage({ navigation }) {
-
-  //let user;
-
+const InsightsPage = () => {
   const [insights, setInsights] = useState([])
 
-  const isFocused = useIsFocused();
   useEffect(() => {
-    if (isFocused) {
-      fetchInsights()
-      console.log("HELLO")
-      console.log(insights)
-
-    }
-  }, [isFocused]);
-
-  
-
+    fetchInsights()
+  }, [])
 
   async function fetchInsights() {
     try {
-      let userInsights = [];
-      
-      const extraNeeded = 3 - items.length;
-      let extraItems;
-      if (extraNeeded > 0) {
-        //console.log
-        const extraInsights = await API.graphql(graphqlOperation(listInsights, {limit: extraNeeded}))
-        extraItems = (extraInsights.data.listInsights.items)
-        for (ei in extraItems) {
-          userInsights.push(extraItems[ei])
-          console.log(extraItems[ei])
-        }
-      }
-      setInsights(userInsights)
-
-      console.log(extraItems)
-    } catch (err) { console.log('error fetching insightsjas') }
+      const insightData = await API.graphql(graphqlOperation(listInsights))
+      const insights = insightData.data.listInsights.items
+      console.log(insights)
+      setInsights(insights)
+    } catch (err) { console.log('error fetching insights') }
   }
-    return (
-      <View></View>
-    );
-};
+
+  /*async function addInsight() {
+    try {
+      const goal = { ...formState }
+      setGoals([...goals, goal])
+      setFormState(initialState)
+      await API.graphql(graphqlOperation(createGoal, {input: goal}))
+    } catch (err) {
+      console.log('error creating goal:', err)
+    }
+  }*/
+
+  return (
+    <ScrollView>
+        <View style={styles.container}>
+        {/* <TextInput
+            onChangeText={val => setInput('GoalText', val)}
+            style={styles.input}
+            value={formState.GoalText} 
+            placeholder="GoalText"
+        />
+        <TextInput
+            onChangeText={val => setInput('ImageLink', val)}
+            style={styles.input}
+            value={formState.ImageLink}
+            placeholder="ImageLink"
+        />
+        <Button title="Create goal" onPress={addGoal} />  */}
+        {
+            insights.map((insight, index) => (
+            <View key={insight.ID ? insight.ID : index} style={styles.identity}>
+                <Text style={styles.identityTitle}>{insight.InsightText}</Text>
+                <Image source={{ uri: insight.ImageLink }} style={{height : 200, width: 200}}/>
+            </View>
+            ))
+        }
+        </View>
+    </ScrollView>
+  )
+}
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    marginTop:0,
-    marginBottom: 0,
-    backgroundColor: COLORS.darkprimary,
-  },
-});
+  container: { flex: 1, justifyContent: 'center', padding: 20 },
+  identity: {  marginBottom: 15 },
+  input: { height: 50, backgroundColor: '#ddd', marginBottom: 10, padding: 8 },
+  identityTitle: { fontSize: 18 }
+})
+
+export default InsightsPage
