@@ -19,6 +19,9 @@ export default function PealExplanation({ navigation }) {
         <Text style={styles.title3} category='h1'>
             You'll receive a set of <Text style={styles.bold}>personalized activities</Text> to help you reach your wellness goals.
         </Text>
+        <Text style={styles.title3} category='h1'>
+            All of our insights are <Text style={styles.bold}>reviewed by therapists</Text> from Harvard, Tufts, Brown, and other esteemed institutions.
+        </Text>
           <Text style={styles.title3} category='h1'>
             Next, help us get to know you better!
         </Text>

@@ -1,5 +1,8 @@
 import React from 'react'
-import { View, SafeAreaView, StyleSheet, Text, Image, Dimensions } from 'react-native'
+import { View, SafeAreaView, StyleSheet, Text, Image, Dimensions, TouchableOpacity } from 'react-native'
+import { Button } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import { Icon } from 'react-native-eva-icons';
 import COLORS from "../Colors";
 
 const { width, height } = Dimensions.get('window')
@@ -12,6 +15,11 @@ const CarouselItem = ({item}) => {
             <View style={styles.textView}>
                 {/* <Text style={styles.itemTitle}>{item.InsightText}</Text> */}
                 <Text style={styles.itemDescription}>{item.InsightText}</Text>
+                <TouchableOpacity>
+                    <View style={styles.button}>
+                        <Icon style={styles.icon} name='heart-outline' width={36} height={36} fill={COLORS.calmpink} />
+                    </View>
+                </TouchableOpacity>
                 {/* <Text style={styles.itemDescription}>{item.description2}</Text>
                 <Text style={styles.itemDescription}>{item.description3}</Text>
                 <Text style={styles.itemDescription}>{item.description4}</Text> */}
@@ -72,6 +80,20 @@ const styles = StyleSheet.create({
         shadowRadius: 3,
         elevation: 5,
         marginBottom: 10    
+    },
+    button: {
+        width: 64,
+        height: 64,
+        marginTop: 440,
+        marginLeft: "70%",
+        alignItems: "center",
+        alignSelf: "center",
+        borderRadius: 100,
+        backgroundColor: "white",
+        borderColor: "white"
+    },
+    icon: {
+        marginTop: 14,
     }
 })
 
