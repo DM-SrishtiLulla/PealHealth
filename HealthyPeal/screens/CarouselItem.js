@@ -20,6 +20,7 @@ const CarouselItem = ({item}) => {
                         <Icon style={styles.icon} name='heart-outline' width={36} height={36} fill={COLORS.calmpink} />
                     </View>
                 </TouchableOpacity>
+                {/* <Button onPress={() => navigation.navigate('Details')}></Button> */}
                 {/* <Text style={styles.itemDescription}>{item.description2}</Text>
                 <Text style={styles.itemDescription}>{item.description3}</Text>
                 <Text style={styles.itemDescription}>{item.description4}</Text> */}

@@ -83,6 +83,9 @@ export default function MorePage({ navigation }) {
                       onPress={signOut}>
                 <Text style={{ color: COLORS.primary, fontSize: 24, fontWeight: "500" }}>Sign Out</Text>
               </Button>
+              <Button style={styles.button1} onPress={() => navigation.navigate('Details')}>
+              <Text style={{ color: COLORS.primary, fontSize: 24, fontWeight: "500" }}>Details</Text>
+              </Button>
             </View>
           </View>
           {/* <ListItem

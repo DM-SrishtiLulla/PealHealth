@@ -28,6 +28,7 @@ import HelloWorldPage from './HelloWorldPage';
 import InsightsPage from './InsightsPage';
 import GuidesPage from "./GuidesPage";
 import GuidesPage2 from "./GuidesPage2";
+import InsightsDetailPage from "./InsightsDetailPage";
 
 
 const Tab = createBottomTabNavigator();
@@ -105,6 +106,7 @@ export default function MainStackNavigator() {
             <Stack.Screen name="InsightsPage" component={InsightsPage} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="Guides" component={GuidesPage} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="Guides2" component={GuidesPage2} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Details" component={InsightsDetailPage} options={{ headerTitle: "", headerTransparent: true }}/>
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>
