@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     width: 200,
     height: 60,
-    backgroundColor: COLORS.lightaccent,
-    borderColor: COLORS.lightaccent,
+    backgroundColor: COLORS.brightblue,
+    borderColor: COLORS.brightblue,
   },
   buttontext: {
     fontSize: 24,

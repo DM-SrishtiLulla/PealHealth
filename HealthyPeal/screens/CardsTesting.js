@@ -64,10 +64,10 @@ export default function CardsTesting({ navigation }) {
         // HEADERS FOR PAGE - see below for content 
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
             <View style={{ flex: 1 }}>
-                <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.lightaccent }}>Community</Text>
+                <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.brightblue }}>Community</Text>
                 <View style={{
                     height: 80, backgroundColor: COLORS.primary,
-                    borderBottomWidth: 1, borderBottomColor: COLORS.lightaccent
+                    borderBottomWidth: 1, borderBottomColor: COLORS.brightblue
                 }}>
                     <View style={{
                         flexDirection: "row", padding: 10,
@@ -77,10 +77,10 @@ export default function CardsTesting({ navigation }) {
                         elevation: 1,
                         marginTop: 20
                     }}>
-                        <Icon name='search-outline' width={24} height={24} fill={COLORS.lightaccent} />
+                        <Icon name='search-outline' width={24} height={24} fill={COLORS.brightblue} />
                         <TextInput
                             placeholder="Try Meditation"
-                            placeholderTextColor={COLORS.lightaccent}
+                            placeholderTextColor={COLORS.brightblue}
                             style={{ flex: 1, fontWeight: "700", backgroundColor: COLORS.primary }}
                         />
                     </View>
@@ -90,10 +90,10 @@ export default function CardsTesting({ navigation }) {
 
 
                     <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                        <Text style={{ color: COLORS.lightaccent, fontSize: 24, fontWeight: "700" }}>
+                        <Text style={{ color: COLORS.brightblue, fontSize: 24, fontWeight: "700" }}>
                             Introducing Peal Community
                         </Text>
-                        <Text style={{ color: COLORS.lightaccent, fontWeight: "300", marginTop: 10 }}>
+                        <Text style={{ color: COLORS.brightblue, fontWeight: "300", marginTop: 10 }}>
                             A space for compassionate conversation
                         </Text>
                         <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
@@ -109,7 +109,7 @@ export default function CardsTesting({ navigation }) {
                     <View style={{ marginTop: 40 }}>
                         <Text style={{
                             fontSize: 24, fontWeight: "700",
-                            paddingHorizontal: 20, color: COLORS.lightaccent
+                            paddingHorizontal: 20, color: COLORS.brightblue
                         }}>
                             Spaces for conversation
                         </Text>

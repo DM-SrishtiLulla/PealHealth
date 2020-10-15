@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button, TouchableOpacity} from "react-native";
 import { Icon } from 'react-native-eva-icons';
 import { Auth } from 'aws-amplify';
 import COLORS from "../Colors";
@@ -9,18 +9,22 @@ function ProfilePage() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={{ alignSelf: "center", marginTop: 40 }}>
+                {/* <View style={{ alignSelf: "center", marginTop: 40 }}>
                     <View style={styles.profileImage}>
-                        <Image source={{ uri: "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="center" />
+                        <Image source={{ uri: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" }} style={styles.image} resizeMode="center" />
                     </View>
-                </View>
-
+                </View> */}
+                <View style={styles.extraView}>
                 <View style={styles.infoContainer}>
-                    <Text style={[styles.text, { fontWeight: "400", fontSize: 24, marginTop: 15 }]}>Coming Soon</Text>
+                    <Text style={[styles.text, { fontWeight: "700", fontSize: 36, marginTop: 24 }]}>Profile</Text>
                     {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
                 </View>
-
-                <View style={styles.statsContainer}>
+                <View style={styles.infoContainer2}>
+                    <Text style={[styles.text, { fontWeight: "400", fontSize: 20, marginTop: 0 }]}>Learn more about your insights!</Text>
+                    {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
+                </View>
+                </View>
+                {/* <View style={styles.statsContainer}>
                     <View style={styles.statsBox}>
                         <Text style={[styles.text, { fontSize: 24 }]}>48</Text>
                         <Text style={[styles.text, styles.subText]}>Activities</Text>
@@ -33,23 +37,63 @@ function ProfilePage() {
                         <Text style={[styles.text, { fontSize: 24 }]}>103</Text>
                         <Text style={[styles.text, styles.subText]}>Comments</Text>
                     </View>
+                </View> */}
+<Text style={[styles.subText, styles.recent]}>Interests</Text>
+    <View style={{ alignItems: "center" }}>
+        <View style={styles.categoryContainer}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='compass-outline' width={40} height={40} fill={COLORS.primary} />
                 </View>
-                <Text style={[styles.subText, styles.recent]}>Saved Skills</Text>
-                <View style={{ marginTop: 24 }}>
+                <Text style={styles.categoryText}>Nature</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='gift-outline' width={40} height={40} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Self-Care</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='color-palette-outline' width={40} height={40} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Creative</Text>
+              </TouchableOpacity>
+          </View>
+          <View style={styles.categoryContainer}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='book-open-outline' width={40} height={40} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Journal</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='eye-outline' width={40} height={40} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Meditation</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='people-outline' width={40} height={40} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Social</Text>
+              </TouchableOpacity>
+          </View>
+          </View>
+          <Text style={[styles.subText, styles.recent]}>Saved Insights</Text>
+                <View style={{ marginTop: 16 }}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles.mediaImageContainer}>
                             <Image source={{ uri: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
                         </View>
                         <View style={styles.mediaImageContainer}>
-                            <Image source={{ uri: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1519160558534-579f5106e43f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"}} style={styles.image} resizeMode="cover" />
                         </View>
                         <View style={styles.mediaImageContainer}>
                             <Image source={{ uri: "https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
                         </View>
                     </ScrollView>
-                </View>
-                <Text style={[styles.subText, styles.recent]}>Recent Activity</Text>
-                <View style={{ alignItems: "center" }}>
                     {/* <View style={styles.recentItem}>
                         <View style={styles.activityIndicator}></View>
                         <View style={{ width: 250 }}>
@@ -94,6 +138,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.lightaccent,
     },
+    extraView: {
+        borderBottomWidth: 1,
+        borderBottomColor: COLORS.primary,
+        paddingBottom: 16,
+    },
     text: {
         fontFamily: "HelveticaNeue",
         color: "white"
@@ -106,16 +155,9 @@ const styles = StyleSheet.create({
     subText: {
         fontSize: 12,
         color: "white",
-        textTransform: "uppercase",
         fontWeight: "500"
     },
     profileImage: {
-        width: 150,
-        height: 150,
-        marginTop: 20,
-        borderRadius: 600,
-        resizeMode: "cover",
-        overflow: "hidden"
     },
     dm: {
         backgroundColor: "#41444B",
@@ -149,9 +191,14 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     infoContainer: {
-        alignSelf: "center",
-        alignItems: "center",
-        marginTop: 0
+        marginLeft: 16,
+        marginTop: 32,
+        marginBottom: 6,
+    },
+    infoContainer2: {
+        marginLeft: 16,
+        marginTop: 0,
+        marginBottom: 0,
     },
     statsContainer: {
         flexDirection: "row",
@@ -167,7 +214,7 @@ const styles = StyleSheet.create({
         height: 200,
         borderRadius: 12,
         overflow: "hidden",
-        marginHorizontal: 10
+        marginHorizontal: 12
     },
     mediaCount: {
         backgroundColor: "#41444B",
@@ -189,7 +236,8 @@ const styles = StyleSheet.create({
         marginLeft: 16,
         marginTop: 32,
         marginBottom: 6,
-        fontSize: 24
+        fontSize: 28,
+        fontWeight: "700"
     },
     recentItem: {
         flexDirection: "row",
@@ -204,7 +252,37 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         marginTop: 3,
         marginRight: 20
-    }
+    },
+    categoryContainer: {
+        flexDirection: "row",
+        width: "90%",
+        alignSelf: "center",
+        marginTop: 16,
+        marginBottom: 10,
+    },
+    categoryButton: {
+        flex: 1,
+        width: "30%",
+        marginHorizontal: 20,
+        alignSelf: "center",
+    },
+    categoryIcon: {
+       borderWidth: 0,
+       alignItems: "center",
+       justifyContent: "space-evenly",
+       alignSelf: "center",
+       width: 88,
+       height: 88,
+       backgroundColor: COLORS.brightblue,
+       borderRadius: 50
+   },
+   categoryText: {
+       alignSelf: "center",
+       marginTop: 16,
+       fontSize: 16,
+       color: COLORS.primary,
+       fontWeight: "bold",
+   }
 });
 
 export default ProfilePage;

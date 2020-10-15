@@ -15,6 +15,7 @@ import {
     ScrollView,
     Image,
     Dimensions,
+    TouchableOpacity,
 } from "react-native";
 import { Layout, Text, Button } from '@ui-kitten/components';
 import COLORS from '../Colors';
@@ -63,10 +64,10 @@ export default function CommunityPage({ navigation }) {
         // HEADERS FOR PAGE - see below for content 
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
             <View style={{ flex: 1 }}>
-                <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.lightaccent }}>Community</Text>
+                <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.brightblue }}>Community</Text>
                 <View style={{
                     height: 80, backgroundColor: COLORS.primary,
-                    borderBottomWidth: 1, borderBottomColor: COLORS.lightaccent
+                    borderBottomWidth: 1, borderBottomColor: COLORS.brightblue
                 }}>
                     <View style={{
                         flexDirection: "row", padding: 10,
@@ -89,13 +90,13 @@ export default function CommunityPage({ navigation }) {
 
 
                     <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                        <Text style={{ color: COLORS.lightaccent, fontSize: 32, fontWeight: "700" }}>
+                        <Text style={{ color: COLORS.brightblue, fontSize: 32, fontWeight: "700" }}>
                             Peal Community
                         </Text>
-                        <Text style={{ color: COLORS.lightaccent, fontWeight: "300", marginTop: 10 }}>
+                        <Text style={{ color: COLORS.brightblue, fontWeight: "300", marginTop: 10 }}>
                             Check out our guides and inspirational posts
                         </Text>
-                        <Text style={{ color: COLORS.lightaccent, fontSize: 24, marginTop: 20, fontWeight: "700" }}>
+                        <Text style={{ color: COLORS.brightblue, fontSize: 24, marginTop: 20, fontWeight: "700" }}>
                             COVID-19 Anxiety Support
                         </Text>
                         <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
@@ -113,7 +114,7 @@ export default function CommunityPage({ navigation }) {
             style={{flex: 0.5, marginTop: "5%",
                 alignSelf: "center",
                 width: width - 50,
-                backgroundColor: COLORS.lightaccent,
+                backgroundColor: COLORS.brightblue,
                 borderColor: COLORS.primary}}
             onPress={() =>
               navigation.navigate('Guides')
@@ -123,10 +124,10 @@ export default function CommunityPage({ navigation }) {
                         }}>COVID-19 Anxiety Guide</Text>
           </Button>
           <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                        <Text style={{ color: COLORS.lightaccent, fontSize: 24, fontWeight: "700" }}>
+                        <Text style={{ color: COLORS.brightblue, fontSize: 24, fontWeight: "700" }}>
                             Positive Thinking
                         </Text>
-                        <Text style={{ color: COLORS.lightaccent, fontWeight: "300", marginTop: 10 }}>
+                        <Text style={{ color: COLORS.brightblue, fontWeight: "300", marginTop: 10 }}>
                             Try the ABCDE Technique
                         </Text>
                         <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
@@ -144,7 +145,7 @@ export default function CommunityPage({ navigation }) {
             style={{flex: 0.5, marginTop: "5%",
                 alignSelf: "center",
                 width: width - 50,
-                backgroundColor: COLORS.lightaccent,
+                backgroundColor: COLORS.brightblue,
                 borderColor: COLORS.primary}}
             onPress={() =>
               navigation.navigate('Guides2')
@@ -153,10 +154,30 @@ export default function CommunityPage({ navigation }) {
             <Text style={{fontSize: 22, fontWeight: "800", color: COLORS.primary
                         }}>Thought Pattern Guide</Text>
           </Button>
+          {/* <View style={styles.categoryContainer}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='search-outline' width={24} height={24} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Inspiration</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='search-outline' width={24} height={24} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Inspiration</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+                <View style={styles.categoryIcon}>
+                    <Icon name='search-outline' width={24} height={24} fill={COLORS.primary} />
+                </View>
+                <Text style={styles.categoryText}>Inspiration</Text>
+              </TouchableOpacity>
+          </View> */}
                     <View style={{ marginTop: 20 }}>
                         <Text style={{
                             fontSize: 24, fontWeight: "800",
-                            paddingHorizontal: 20, color: COLORS.lightaccent
+                            paddingHorizontal: 20, color: COLORS.brightblue
                         }}>
                             New Posts!
                         </Text>
@@ -187,3 +208,36 @@ export default function CommunityPage({ navigation }) {
         </SafeAreaView>
     );
 }
+
+const styles = StyleSheet.create({
+    categoryContainer: {
+        flexDirection: "row",
+        width: "90%",
+        alignSelf: "center",
+        marginTop: 25,
+        marginBottom: 10,
+    },
+    categoryButton: {
+        flex: 1,
+        width: "30%",
+        marginHorizontal: 20,
+        alignSelf: "center",
+    },
+    categoryIcon: {
+       borderWidth: 0,
+       alignItems: "center",
+       justifyContent: "space-evenly",
+       alignSelf: "center",
+       width: 70,
+       height: 70,
+       backgroundColor: COLORS.calmpink,
+       borderRadius: 50
+   },
+   categoryText: {
+       alignSelf: "center",
+       marginTop: 5,
+       fontSize: 16,
+       color: COLORS.brightblue,
+       fontWeight: "bold",
+   }
+  })

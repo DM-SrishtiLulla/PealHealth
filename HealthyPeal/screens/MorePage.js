@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import { Avatar, Button, ListItem, Layout, Text, Divider } from '@ui-kitten/components';
 import COLORS from '../Colors';
+import Share from "react-native-share";
 import { Auth } from 'aws-amplify'
 
 const { height, width } = Dimensions.get("window")
@@ -45,6 +46,16 @@ async function signOut() {
   }
 }
 
+const myCustomShare = async() => {
+  const shareOptions = {
+    message: "I've been using this great app, Peal! Join the beta here: https://testflight.apple.com/join/1aMZKaW6",
+  }
+  try {
+    const ShareResponse = Share.open(shareOptions);
+  } catch(error) {
+    console.log("Error", error)
+  }
+};
 
 export default function MorePage({ navigation }) {
 
@@ -62,32 +73,33 @@ export default function MorePage({ navigation }) {
             <Text style={{ color: COLORS.primary, fontSize: 20, fontWeight: "400", marginTop: 10 }}>
               Call or text in for help.
                 </Text>
-            <View style={{ width: width - 50, height: 400, marginTop: 20 }}>
+            <View style={{ width: width - 50, height: 300, marginTop: 20 }}>
               <Image
                 source={{ uri: "https://images.unsplash.com/photo-1487499648633-2ade40e0f769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }}
-                style={{
-                  flex: 1, height: null, width: null, resizeMode: "cover",
-                  borderRadius: 5, borderWidth: 1,
-                  borderColor: COLORS.secondary
-                }}
+                style={{flex: 1, height: null, width: null, resizeMode: "cover",
+                borderRadius: 5, borderWidth: 1,
+                borderColor: COLORS.secondary}}
               />
+              </View>
               <Button
                 size="giant"
-                style={{ marginTop: 20, marginBottom: 0, backgroundColor: COLORS.darkaccent, borderColor: COLORS.lightaccent }}
+                style={styles.button1}
                 onPress={() =>
                   navigation.navigate('Resources')
                 }>
                 <Text style={{ color: COLORS.primary, fontSize: 24, fontWeight: "500" }}>Crisis Resources</Text>
               </Button>
-              <Button title="Sign Out" style={{ marginTop: 20, marginBottom: 20, backgroundColor: COLORS.darkaccent, borderColor: COLORS.lightaccent }}
+              <Button title="Sign Out" style={styles.button1}
                       onPress={signOut}>
-                <Text style={{ color: COLORS.primary, fontSize: 24, fontWeight: "500" }}>Sign Out</Text>
+                <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Sign Out</Text>
+              </Button>
+              <Button onPress={myCustomShare} style={styles.button1}>
+              <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Invite Friends</Text>
               </Button>
               <Button style={styles.button1} onPress={() => navigation.navigate('Details')}>
-              <Text style={{ color: COLORS.primary, fontSize: 24, fontWeight: "500" }}>Details</Text>
+              <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Details</Text>
               </Button>
             </View>
-          </View>
           {/* <ListItem
             style={{ height: 70, marginTop: 20 }}
             title='Account Details'
@@ -191,12 +203,11 @@ export default function MorePage({ navigation }) {
             Add a post!
           </Button> */}
           <Button
-            size="giant"
             style={styles.button1}
             onPress={() =>
               navigation.navigate('InsightsPage')
             }>
-            Insights Page
+            <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>For Therapists - Adding Insights</Text>
           </Button>
         </ScrollView>
       </SafeAreaView>
@@ -211,9 +222,10 @@ const styles = StyleSheet.create({
   todoName: { fontSize: 18 },
   button1: {
     flex: 0.5,
-    marginBottom: "10%",
+    marginTop: "7%",
     alignSelf: "center",
-    width: 200,
-    color: "white"
+    width: 240,
+    color: COLORS.primary,
+    backgroundColor: COLORS.brightblue,
   },
 });

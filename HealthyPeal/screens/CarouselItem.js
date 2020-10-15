@@ -10,23 +10,23 @@ const { width, height } = Dimensions.get('window')
 
 const CarouselItem = ({item}) => {
     return (
-        <SafeAreaView style={styles.cardView}>
+        <View style={styles.cardView}>
             <Image style={styles.image} source={{ uri: item.ImageLink }} />
             <View style={styles.textView}>
                 {/* <Text style={styles.itemTitle}>{item.InsightText}</Text> */}
                 <Text style={styles.itemDescription}>{item.InsightText}</Text>
-                <TouchableOpacity>
-                    <View style={styles.button}>
-                        <Icon style={styles.icon} name='heart-outline' width={36} height={36} fill={COLORS.calmpink} />
-                    </View>
-                </TouchableOpacity>
                 {/* <Button onPress={() => navigation.navigate('Details')}></Button> */}
                 {/* <Text style={styles.itemDescription}>{item.description2}</Text>
                 <Text style={styles.itemDescription}>{item.description3}</Text>
                 <Text style={styles.itemDescription}>{item.description4}</Text> */}
                 {/* <Text style={styles.itemAuthor}>By {item.author}</Text> */}
             </View>
-        </SafeAreaView>
+            <TouchableOpacity>
+                    <View style={styles.button}>
+                        <Text style={styles.buttonText}>More Info</Text>
+                    </View>
+                </TouchableOpacity>
+        </View>
     )
 }
 
@@ -60,14 +60,14 @@ const styles = StyleSheet.create({
     },
     itemTitle: {
         color: "white",
-        fontSize: 56,
+        fontSize: 64,
         fontWeight: "bold",
         elevation: 5
     },
     itemDescription: {
         color: "white",
-        fontWeight: "bold",
-        fontSize: 24,
+        fontWeight: "600",
+        fontSize: 28,
         elevation: 5,
         marginTop: 30,
         marginHorizontal: 5
@@ -83,18 +83,23 @@ const styles = StyleSheet.create({
         marginBottom: 10    
     },
     button: {
-        width: 64,
-        height: 64,
-        marginTop: 440,
-        marginLeft: "70%",
-        alignItems: "center",
+        flex: 0.5,
         alignSelf: "center",
-        borderRadius: 100,
-        backgroundColor: "white",
-        borderColor: "white"
-    },
-    icon: {
-        marginTop: 14,
+        marginRight: 10,
+        width: 160,
+        borderRadius: 40,
+        backgroundColor: COLORS.brightblue,
+      },
+    buttonText: {
+        color: COLORS.primary,
+        fontSize: 24,
+        paddingBottom: 24,
+        paddingTop: 12,
+        paddingHorizontal: 8,
+        fontWeight: "400",
+        flex: 1,
+        // alignContent: "flex-end",
+        alignSelf: "center",
     }
 })
 
