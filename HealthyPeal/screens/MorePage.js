@@ -96,9 +96,9 @@ export default function MorePage({ navigation }) {
               <Button onPress={myCustomShare} style={styles.button1}>
               <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Invite Friends</Text>
               </Button>
-              <Button style={styles.button1} onPress={() => navigation.navigate('Details')}>
+              {/* <Button style={styles.button1} onPress={() => navigation.navigate('Details')}>
               <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Details</Text>
-              </Button>
+              </Button> */}
             </View>
           {/* <ListItem
             style={{ height: 70, marginTop: 20 }}
@@ -202,13 +202,13 @@ export default function MorePage({ navigation }) {
             }>
             Add a post!
           </Button> */}
-          <Button
+          {/* <Button
             style={styles.button1}
             onPress={() =>
               navigation.navigate('InsightsPage')
             }>
             <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>For Therapists - Adding Insights</Text>
-          </Button>
+          </Button> */}
         </ScrollView>
       </SafeAreaView>
     </View>

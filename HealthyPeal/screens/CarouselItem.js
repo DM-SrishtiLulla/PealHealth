@@ -21,11 +21,11 @@ const CarouselItem = ({item}) => {
                 <Text style={styles.itemDescription}>{item.description4}</Text> */}
                 {/* <Text style={styles.itemAuthor}>By {item.author}</Text> */}
             </View>
-            <TouchableOpacity>
+            {/* <TouchableOpacity>
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>More Info</Text>
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
         </View>
     )
 }
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         height: height / 1.35,
         backgroundColor: 'white',
         margin: 10,
-        marginTop: 90,
+        marginTop: 70,
         marginBottom: 80,
         borderRadius: 10,
         shadowColor: '#000',

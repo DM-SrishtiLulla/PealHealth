@@ -4,7 +4,7 @@ import { Icon } from 'react-native-eva-icons';
 import { Auth } from 'aws-amplify';
 import COLORS from "../Colors";
 
-function ProfilePage() {
+function ProfilePage({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
@@ -41,19 +41,19 @@ function ProfilePage() {
 <Text style={[styles.subText, styles.recent]}>Interests</Text>
     <View style={{ alignItems: "center" }}>
         <View style={styles.categoryContainer}>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
                 <View style={styles.categoryIcon}>
                     <Icon name='compass-outline' width={40} height={40} fill={COLORS.primary} />
                 </View>
                 <Text style={styles.categoryText}>Nature</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
                 <View style={styles.categoryIcon}>
                     <Icon name='gift-outline' width={40} height={40} fill={COLORS.primary} />
                 </View>
                 <Text style={styles.categoryText}>Self-Care</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
                 <View style={styles.categoryIcon}>
                     <Icon name='color-palette-outline' width={40} height={40} fill={COLORS.primary} />
                 </View>
@@ -61,19 +61,19 @@ function ProfilePage() {
               </TouchableOpacity>
           </View>
           <View style={styles.categoryContainer}>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
                 <View style={styles.categoryIcon}>
                     <Icon name='book-open-outline' width={40} height={40} fill={COLORS.primary} />
                 </View>
                 <Text style={styles.categoryText}>Journal</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
                 <View style={styles.categoryIcon}>
                     <Icon name='eye-outline' width={40} height={40} fill={COLORS.primary} />
                 </View>
                 <Text style={styles.categoryText}>Meditation</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
+              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
                 <View style={styles.categoryIcon}>
                     <Icon name='people-outline' width={40} height={40} fill={COLORS.primary} />
                 </View>
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
     },
     categoryContainer: {
         flexDirection: "row",
-        width: "90%",
+        width: "96%",
         alignSelf: "center",
         marginTop: 16,
         marginBottom: 10,
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
     categoryButton: {
         flex: 1,
         width: "30%",
-        marginHorizontal: 20,
+        marginHorizontal: 8,
         alignSelf: "center",
     },
     categoryIcon: {
@@ -271,15 +271,15 @@ const styles = StyleSheet.create({
        alignItems: "center",
        justifyContent: "space-evenly",
        alignSelf: "center",
-       width: 88,
-       height: 88,
+       width: 90,
+       height: 90,
        backgroundColor: COLORS.brightblue,
        borderRadius: 50
    },
    categoryText: {
        alignSelf: "center",
-       marginTop: 16,
-       fontSize: 16,
+       marginTop: 12,
+       fontSize: 18,
        color: COLORS.primary,
        fontWeight: "bold",
    }

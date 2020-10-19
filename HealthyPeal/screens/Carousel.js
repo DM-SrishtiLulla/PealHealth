@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, Dimensions, FlatList, Animated } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, FlatList, Animated, TouchableOpacity } from 'react-native'
 import CarouselItem from './CarouselItem'
 import COLORS from "../Colors";
 
@@ -30,8 +30,11 @@ const Carousel = ({data}) => {
                         [{ nativeEvent: { contentOffset: { x: scrollX } } }]
                     )}
                 />
-
-               
+                {/* <TouchableOpacity>
+                    <View>
+                        <Text style={styles.buttonText}>More Info</Text>
+                    </View>
+                </TouchableOpacity> */}
             </View>
         )
     }
@@ -43,6 +46,21 @@ const Carousel = ({data}) => {
 export default Carousel;
 
 const styles = StyleSheet.create({
-    container: {backgroundColor: COLORS.lightaccent, paddingBottom: 0 },
-    dotView: { flexDirection: 'row', justifyContent: 'center' }
+    container: {backgroundColor: COLORS.lightaccent, paddingBottom: "10%", alignItems: "center" },
+    dotView: { flexDirection: 'row', justifyContent: 'center' },
+    button: {
+        flex: 0.5,
+        alignSelf: "center",
+        marginRight: 10,
+        width: 160,
+        borderRadius: 40,
+        backgroundColor: COLORS.brightblue,
+      },
+      buttonText: {
+        color: COLORS.primary,
+        fontSize: 24,
+        fontWeight: "400",
+        // alignContent: "flex-end",
+        alignSelf: "center",
+    }
 })

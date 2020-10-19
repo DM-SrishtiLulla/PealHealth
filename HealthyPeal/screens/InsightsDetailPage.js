@@ -34,9 +34,9 @@ export default function InsightsDetailPage({ navigation }) {
                 style={styles.image}
                 imageStyle={{borderBottomLeftRadius: 30, borderBottomRightRadius: 30}}
                 >
-                <TouchableOpacity style={styles.button1}>
+                {/* <TouchableOpacity style={styles.button1}>
                     <Icon style={styles.icon2} name='arrow-ios-back-outline'width={32} height={32} fill={COLORS.primary} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 {/* <Text style={styles.tagline}>Discover Switzerland</Text> */}
                 <Text style={styles.placename}>Meditate for 3 minutes before you get into bed</Text>
             </ImageBackground>
