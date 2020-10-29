@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import { Avatar, Button, ListItem, Layout, Text, Divider } from '@ui-kitten/components';
 import COLORS from '../Colors';
-import Share from "react-native-share";
+//import Share from "react-native-share";
 import { Auth } from 'aws-amplify'
 
 const { height, width } = Dimensions.get("window")

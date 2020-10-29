@@ -8,19 +8,21 @@ import COLORS from "../Colors";
 const { width, height } = Dimensions.get('window')
 
 
-const CarouselItem = ({item}) => {
+const CarouselItem = ({item, navigation}) => {
     return (
         <View style={styles.cardView}>
-            <Image style={styles.image} source={{ uri: item.ImageLink }} />
-            <View style={styles.textView}>
-                {/* <Text style={styles.itemTitle}>{item.InsightText}</Text> */}
-                <Text style={styles.itemDescription}>{item.InsightText}</Text>
-                {/* <Button onPress={() => navigation.navigate('Details')}></Button> */}
-                {/* <Text style={styles.itemDescription}>{item.description2}</Text>
-                <Text style={styles.itemDescription}>{item.description3}</Text>
-                <Text style={styles.itemDescription}>{item.description4}</Text> */}
-                {/* <Text style={styles.itemAuthor}>By {item.author}</Text> */}
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+                <Image style={styles.image} source={{ uri: item.ImageLink }} />
+                <View style={styles.textView}>
+                    {/* <Text style={styles.itemTitle}>{item.InsightText}</Text> */}
+                    <Text style={styles.itemDescription}>{item.InsightText}</Text>
+                    {/* <Button onPress={() => navigation.navigate('Details')}></Button> */}
+                    {/* <Text style={styles.itemDescription}>{item.description2}</Text>
+                    <Text style={styles.itemDescription}>{item.description3}</Text>
+                    <Text style={styles.itemDescription}>{item.description4}</Text> */}
+                    {/* <Text style={styles.itemAuthor}>By {item.author}</Text> */}
+                </View>
+            </TouchableOpacity>
             {/* <TouchableOpacity>
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>More Info</Text>

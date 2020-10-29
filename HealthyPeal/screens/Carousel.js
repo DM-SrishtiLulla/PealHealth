@@ -9,7 +9,7 @@ const { width, height } = Dimensions.get('window')
 const scrollX = new Animated.Value(0)
 let position = Animated.divide(scrollX, width)
 
-const Carousel = ({data}) => {
+const Carousel = ({data, navigation}) => {
     if (data && data.length) {
         return (
             <View style={styles.container}>
@@ -24,7 +24,7 @@ const Carousel = ({data}) => {
                     decelerationRate={"fast"}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => {
-                        return <CarouselItem item={item} />
+                        return <CarouselItem item={item} navigation={navigation}/>
                     }}
                     onScroll={Animated.event(
                         [{ nativeEvent: { contentOffset: { x: scrollX } } }]

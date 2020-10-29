@@ -100,7 +100,7 @@ export default function HelloWorldPage({ navigation }) {
       }
     }
     return (
-      <Carousel data = {insights}/>
+      <Carousel data = {insights} navigation={navigation}/>
     );
 };
 
