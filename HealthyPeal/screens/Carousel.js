@@ -11,6 +11,7 @@ let position = Animated.divide(scrollX, width)
 
 const Carousel = ({data, navigation}) => {
     if (data && data.length) {
+        console.log(data)
         return (
             <View style={styles.container}>
                 <FlatList data={data}

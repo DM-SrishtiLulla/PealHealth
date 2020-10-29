@@ -23,14 +23,17 @@ import { Auth } from 'aws-amplify'
 
 const { height, width } = Dimensions.get("window")
 
-export default function InsightsDetailPage({ navigation }) {
+export default function InsightsDetailPage({ route, navigation }) {
 
-    const image = {uri: "https://images.unsplash.com/photo-1590367514834-9647133f3ae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"};
+    const { InsightText, ImageLink, id } = route.params;
+    console.log(id)
+
+    //const image = {uri: "https://images.unsplash.com/photo-1590367514834-9647133f3ae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"};
   
     return (
         <View style={{backgroundColor: COLORS.brightblue, flex: 1}}>
             <ImageBackground
-                source={image}
+                source={{uri: ImageLink}}
                 style={styles.image}
                 imageStyle={{borderBottomLeftRadius: 30, borderBottomRightRadius: 30}}
                 >
@@ -38,7 +41,7 @@ export default function InsightsDetailPage({ navigation }) {
                     <Icon style={styles.icon2} name='arrow-ios-back-outline'width={32} height={32} fill={COLORS.primary} />
                 </TouchableOpacity> */}
                 {/* <Text style={styles.tagline}>Discover Switzerland</Text> */}
-                <Text style={styles.placename}>Meditate for 3 minutes before you get into bed</Text>
+            <Text style={styles.placename}>{InsightText}</Text>
             </ImageBackground>
             <TouchableOpacity style={styles.info}>
                 <Icon style={styles.icon} name='heart-outline' width={32} height={32} fill={COLORS.primary} />
@@ -144,3 +147,34 @@ const styles = StyleSheet.create({
     //     </ScrollView>
     //   </SafeAreaView>
     // </View>
+
+    // <View style={{backgroundColor: COLORS.brightblue, flex: 1}}>
+    //         <ImageBackground
+    //             source={image}
+    //             style={styles.image}
+    //             imageStyle={{borderBottomLeftRadius: 30, borderBottomRightRadius: 30}}
+    //             >
+    //             {/* <TouchableOpacity style={styles.button1}>
+    //                 <Icon style={styles.icon2} name='arrow-ios-back-outline'width={32} height={32} fill={COLORS.primary} />
+    //             </TouchableOpacity> */}
+    //             {/* <Text style={styles.tagline}>Discover Switzerland</Text> */}
+    //             <Text style={styles.placename}>Meditate for 3 minutes before you get into bed</Text>
+    //         </ImageBackground>
+    //         <TouchableOpacity style={styles.info}>
+    //             <Icon style={styles.icon} name='heart-outline' width={32} height={32} fill={COLORS.primary} />
+    //         </TouchableOpacity>
+    //         <ScrollView>
+    //             <Text style={{color: COLORS.primary, padding: 14, fontSize: 24, fontWeight: "bold"}}>
+    //                 About Meditation
+    //             </Text>
+    //             <Text style={{color: COLORS.primary, paddingHorizontal: 16, fontSize: 18, fontWeight: "normal", justifyContent: "flex-start", textAlign: "justify", lineHeight: 24, paddingBottom: 12}}>
+    //             Why create a small daily meditation practice? There are countless reasons! Meditation relieves stress and helps you to relax. When you practice mindfulness, you can carry it out to everyday life.
+    //             </Text>
+    //             <Text style={{color: COLORS.primary, paddingHorizontal: 16, fontSize: 18, fontWeight: "normal", justifyContent: "flex-start", textAlign: "justify", lineHeight: 24, paddingBottom: 12}}>
+    //             Meditation has been shown to have mental benefits, such as improved focus, happiness, memory, self-control, academic performance and more. Some research on meditation has indicated that it may have other health benefits, including improved metabolism, heart rate, respiration, blood pressure and more.
+    //             </Text>
+    //             <Text style={{color: COLORS.primary, paddingHorizontal: 16, fontSize: 18, fontWeight: "normal", justifyContent: "flex-start", textAlign: "justify", lineHeight: 24, paddingBottom: 12}}>
+    //             It's important to start small and focus on your breath. Being mindful of your body during meditation can help you focus your attention. A quiet space can also be helpful.
+    //             </Text>
+    //         </ScrollView>
+    //     </View>
