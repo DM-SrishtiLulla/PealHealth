@@ -6,25 +6,23 @@ import { Text, Button } from '@ui-kitten/components';
 import LottieView from "lottie-react-native";
 import COLORS from "../Colors";
 
+const image = { uri: "https://bit.ly/2JeqKxs" };
+
 export default function OnboardingPage({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightaccent, justifyContent: "center" }}>
+    <ImageBackground source={image} style={styles.image}>
+    <SafeAreaView style={{ flex: 1, justifyContent: "center"}}>
       <ScrollView>
       {/* <View style={styles.container}>
         </View> */}
         <View style={styles.container2}>
           <Text style={styles.title} category='h1'>
-            Peal
+            ABC
         </Text>
-          <Text style={styles.title} category='h1'>
-            supports
+          <Text style={styles.title3} category='h1'>
+            MENTAL HEALTH COMPANION
         </Text>
-          <Text style={styles.title} category='h1'>
-            <Text style={styles.bold}>your</Text> mental and
-        </Text>
-          <Text style={styles.title} category='h1'>
-            emotional health.
-        </Text>
+
         </View>
         <View style={styles.container3}>
           <Button
@@ -33,25 +31,23 @@ export default function OnboardingPage({ navigation }) {
             onPress={() =>
               navigation.navigate('About')
             }>
-            <Text style={styles.title2}>Start Your Journey</Text>
+            <Text style={styles.title2}>CONTINUE</Text>
           </Button>
         </View>
       </ScrollView>
     </SafeAreaView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container2: {
     flex: 1,
-    marginTop: "70%",
-    marginLeft: "7%",
-    backgroundColor: COLORS.lightaccent,
-    alignItems: "flex-start",
+    marginTop: "45%",
+    alignItems: "center",
   },
   container3: {
     flex: 1,
-    backgroundColor: COLORS.lightaccent,
     justifyContent: "flex-end",
   },
   list: {
@@ -64,7 +60,7 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: 12,
     flex: 1,
-    color: "#FFFFFF",
+    color: "black",
   },
   icon: {
     height: 20,
@@ -76,34 +72,52 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   buttonbottom: {
-    marginTop: "10%",
+    marginTop: "80%",
     alignSelf: "center",
     marginBottom: 0,
-    backgroundColor: COLORS.primary,
-    width: "90%"
+    backgroundColor: "black",
+    width: "80%",
+    borderWidth: 0,
   },
   title: {
-    color: "white",
+    color: "black",
+    justifyContent: "center",
     marginTop: 0,
     marginBottom: 0,
-    fontSize: 40,
-    fontWeight: "300"
+    fontSize: 48,
+    fontWeight: "400",
+    fontFamily: "Cochin",
+  },
+  title3: {
+    color: "black",
+    justifyContent: "center",
+    marginTop: 20,
+    marginBottom: 0,
+    fontSize: 20,
+    fontWeight: "200",
+    fontFamily: "Avenir",
   },
   bold: {
-    color: "white",
+    color: "black",
     marginTop: 0,
     marginBottom: 0,
     fontSize: 40,
-    fontWeight: "600"
+    fontWeight: "600",
+    fontFamily: "Cochin",
   },
   title2: {
-    color: COLORS.lightaccent,
+    color: "white",
     // alignContent: "center",
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 20,
-    fontSize: 30,
-    fontWeight: "500"
+    fontSize: 22,
+    fontWeight: "300",
+    fontFamily: "Avenir",
   },
+  image: {
+    height: 1500,
+    width: "100%",
+  }
 });

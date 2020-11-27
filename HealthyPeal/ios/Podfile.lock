@@ -316,7 +316,7 @@ PODS:
     - React
   - RNScreens (2.8.0):
     - React
-  - RNShare (4.0.2):
+  - RNShare (4.0.4):
     - React-Core
   - RNSVG (12.1.0):
     - React
@@ -536,13 +536,13 @@ SPEC CHECKSUMS:
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNReanimated: b5ccb50650ba06f6e749c7c329a1bc3ae0c88b43
   RNScreens: 62211832af51e0aebcf6e8c36bcf7dd65592f244
-  RNShare: 7a7277f3c313652422d9de072ac50714dff5e8a4
+  RNShare: af2aeae0587bf3e40e5268f1ef96aa162f1a6ac9
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   RNVectorIcons: 368d6d8b8301224e5ffb6254191f4f8876c2be0d
   toolbar-android: 404f4450b203597e7b417f714ff417bed562a1be
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 1de02eee5243a345addbe5403c6dc13ba3b6077d
+PODFILE CHECKSUM: c0af3f866856da18079b2a0737695ff0852538b2
 
 COCOAPODS: 1.9.3

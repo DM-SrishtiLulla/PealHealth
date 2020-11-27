@@ -16,7 +16,7 @@ const CardItem = ({item, isChecked, selectItem}) => {
       <TouchableOpacity
         onPress={event => selectItem({name: item.id})}
         style={styles.card}>
-        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+        {/* <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}> */}
           {isChecked
           ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
           : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
@@ -26,7 +26,7 @@ const CardItem = ({item, isChecked, selectItem}) => {
           </View>
           <View style={styles.cardFooter}>
           </View>
-        </ImageBackground> 
+        {/* </ImageBackground>  */}
       </TouchableOpacity>
     </React.Fragment>
   );

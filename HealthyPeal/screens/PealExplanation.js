@@ -3,28 +3,28 @@ import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, SafeAreaView
 } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
+import SvgUri from 'react-native-svg-uri';
+import testSvg from "../assets/undraw_relaxing_walk_mljx.svg"
 import LottieView from "lottie-react-native";
 import COLORS from "../Colors";
 
+const image = { uri: "https://bit.ly/2KLUfqR" };
+
 export default function PealExplanation({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightaccent, justifyContent: "center" }}>
+    <ImageBackground source={image} style={styles.image}>
+    <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
       <ScrollView>
       {/* <View style={styles.container}>
         </View> */}
-        <View style={styles.container}>
-        <Text style={styles.title} category='h1'>
-            <Text style={styles.bold}>Peal</Text> is here to help you find new ways to engage with your mental health.
+        <View style={styles.container2}>
+          <Text style={styles.title} category='h1'>
+            Personalized activities designed for you
         </Text>
-        <Text style={styles.title3} category='h1'>
-            You'll receive a set of <Text style={styles.bold}>personalized activities</Text> to help you reach your wellness goals.
-        </Text>
-        <Text style={styles.title3} category='h1'>
-            All of our insights are <Text style={styles.bold}>reviewed by therapists</Text> from Harvard, Tufts, Brown, and other esteemed institutions.
-        </Text>
-          <Text style={styles.title3} category='h1'>
-            Next, help us get to know you better!
-        </Text>
+        <SvgUri
+        width="200"
+        height="200"
+        />
         </View>
         <View style={styles.container3}>
           <Button
@@ -33,32 +33,23 @@ export default function PealExplanation({ navigation }) {
             onPress={() =>
               navigation.navigate('Identities')
             }>
-            <Text style={styles.title2}>Next</Text>
+            <Text style={styles.title2}>CONTINUE</Text>
           </Button>
         </View>
       </ScrollView>
     </SafeAreaView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: "10%",
-    marginLeft: "7%",
-    backgroundColor: COLORS.lightaccent,
-    alignItems: "flex-start",
-  },
   container2: {
     flex: 1,
-    marginTop: "80%",
-    marginLeft: "7%",
-    backgroundColor: COLORS.lightaccent,
-    alignItems: "flex-start",
+    marginTop: "45%",
+    alignItems: "center",
   },
   container3: {
     flex: 1,
-    backgroundColor: COLORS.lightaccent,
     justifyContent: "flex-end",
   },
   list: {
@@ -71,7 +62,7 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: 12,
     flex: 1,
-    color: "#FFFFFF",
+    color: "black",
   },
   icon: {
     height: 20,
@@ -83,41 +74,54 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   buttonbottom: {
-    marginTop: "20%",
+    marginTop: "80%",
     alignSelf: "center",
     marginBottom: 0,
-    backgroundColor: "white",
-    width: "90%"
+    backgroundColor: "black",
+    width: "80%",
+    borderWidth: 0,
   },
   title: {
-    color: "white",
-    marginRight: "8%",
-    marginBottom: 0,
-    fontSize: 24,
-    fontWeight: "400"
-  },
-  bold: {
-    color: "white",
+    color: "black",
+    justifyContent: "center",
+    textAlign: "center",
     marginTop: 0,
     marginBottom: 0,
-    fontSize: 24,
-    fontWeight: "600"
+    marginHorizontal: 20,
+    fontSize: 36,
+    fontWeight: "400",
+    fontFamily: "Cochin",
+  },
+  title3: {
+    color: "black",
+    justifyContent: "center",
+    marginTop: 20,
+    marginBottom: 0,
+    fontSize: 20,
+    fontWeight: "200",
+    fontFamily: "Avenir",
+  },
+  bold: {
+    color: "black",
+    marginTop: 0,
+    marginBottom: 0,
+    fontSize: 40,
+    fontWeight: "600",
+    fontFamily: "Cochin",
   },
   title2: {
-    color: COLORS.lightaccent,
+    color: "white",
     // alignContent: "center",
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 20,
-    fontSize: 30,
-    fontWeight: "500"
+    fontSize: 22,
+    fontWeight: "300",
+    fontFamily: "Avenir",
   },
-  title3: {
-    color: "white",
-    marginRight: "8%",
-    marginTop: 30,
-    fontSize: 24,
-    fontWeight: "400"
-  },
+  image: {
+    height: 1500,
+    width: "100%",
+  }
 });
