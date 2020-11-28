@@ -20,7 +20,7 @@ export default function OnboardingPage({ navigation }) {
             ABC
         </Text>
           <Text style={styles.title3} category='h1'>
-            MENTAL HEALTH COMPANION
+            SUPPORT FOR YOU
         </Text>
 
         </View>

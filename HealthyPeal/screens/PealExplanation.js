@@ -3,8 +3,6 @@ import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, SafeAreaView
 } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
-import SvgUri from 'react-native-svg-uri';
-import testSvg from "../assets/undraw_relaxing_walk_mljx.svg"
 import LottieView from "lottie-react-native";
 import COLORS from "../Colors";
 
@@ -21,10 +19,6 @@ export default function PealExplanation({ navigation }) {
           <Text style={styles.title} category='h1'>
             Personalized activities designed for you
         </Text>
-        <SvgUri
-        width="200"
-        height="200"
-        />
         </View>
         <View style={styles.container3}>
           <Button
