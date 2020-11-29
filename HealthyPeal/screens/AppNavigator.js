@@ -29,6 +29,7 @@ import InsightsPage from './InsightsPage';
 import GuidesPage from "./GuidesPage";
 import GuidesPage2 from "./GuidesPage2";
 import InsightsDetailPage from "./InsightsDetailPage";
+import DailyPage from "./DailyPage";
 
 
 const Tab = createBottomTabNavigator();
@@ -107,6 +108,7 @@ export default function MainStackNavigator() {
             <Stack.Screen name="Guides" component={GuidesPage} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="Guides2" component={GuidesPage2} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="Details" component={InsightsDetailPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Daily" component={DailyPage} options={{ headerTitle: "", headerTransparent: true }}/>
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

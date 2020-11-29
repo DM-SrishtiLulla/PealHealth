@@ -23,6 +23,13 @@ function ProfilePage({ navigation }) {
                     <Text style={[styles.text, { fontWeight: "400", fontSize: 20, marginTop: 0 }]}>Learn more about your insights!</Text>
                     {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
                 </View>
+                <Button
+                title="Daily"
+            onPress={() =>
+              navigation.navigate('Daily')
+            }
+            >
+          </Button>
                 </View>
                 {/* <View style={styles.statsContainer}>
                     <View style={styles.statsBox}>

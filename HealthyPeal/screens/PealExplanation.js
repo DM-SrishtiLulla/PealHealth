@@ -11,8 +11,7 @@ const image = { uri: "https://bit.ly/2KLUfqR" };
 export default function PealExplanation({ navigation }) {
   return (
     <ImageBackground source={image} style={styles.image}>
-    <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
-      <ScrollView>
+      <ScrollView style={{backgroundColor: "#ecf1ec"}}>
       {/* <View style={styles.container}>
         </View> */}
         <View style={styles.container2}>
@@ -25,13 +24,12 @@ export default function PealExplanation({ navigation }) {
             size="giant"
             style={styles.buttonbottom}
             onPress={() =>
-              navigation.navigate('Identities')
+              navigation.navigate('Goals')
             }>
             <Text style={styles.title2}>CONTINUE</Text>
           </Button>
         </View>
       </ScrollView>
-    </SafeAreaView>
     </ImageBackground>
   );
 }
