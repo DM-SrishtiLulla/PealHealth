@@ -78,7 +78,7 @@ export default function OnboardingIdentities({ navigation }) {
   const renderItemCall = useCallback(({ item }) => renderItem({ item, checkedItems, setCheckedItems }));
 
   return (
-    <ScrollView style={{backgroundColor: "#ecf1ec"}}>
+    <ScrollView style={{backgroundColor: "#f7f7f7"}}>
     <View style={styles.container}>
       <Text style={styles.head}>How do you identify?</Text>
       <FlatList style={styles.list}
@@ -114,11 +114,11 @@ const styles = StyleSheet.create({
     marginTop: "5%",
 },
   container:{
-    backgroundColor: "#ecf1ec",
+    backgroundColor: "#f7f7f7",
   },
   list: {
     paddingHorizontal: 5,
-    backgroundColor: "#ecf1ec",
+    backgroundColor: "#f7f7f7",
   },
   listContainer:{
     marginTop: 0,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     height: 50,
     width: 180,
-    backgroundColor: "#ecf1ec",
+    backgroundColor: "#f7f7f7",
     //backgroundColor: COLORS.lightaccent
   },
   cardHeader: {
@@ -171,9 +171,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontFamily: "Avenir",
     borderRadius: 100,
-    borderColor: "#ecf1ec",
+    borderColor: "#f7f7f7",
     color: "black",
-    backgroundColor: "#ecf1ec",
+    backgroundColor: "#f7f7f7",
     fontWeight: '400'
   },
   subTitle:{

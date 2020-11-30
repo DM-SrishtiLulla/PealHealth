@@ -11,7 +11,7 @@ const image = { uri: "https://bit.ly/2KLUfqR" };
 export default function DailyPage({ navigation }) {
     return (
         <ImageBackground source={image} style={styles.image}>
-                <ScrollView style={{backgroundColor: "#ecf1ec"}}>
+                <ScrollView style={{backgroundColor: "#f7f7f7"}}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
                         Median –– Health
@@ -26,7 +26,7 @@ export default function DailyPage({ navigation }) {
                     </View>
                     <View style={styles.container3}>
                         <Text style={styles.title2} category='h1'>
-                            YOUR STATS
+                            YOUR INFO
                         </Text>
                     </View>
                     <View style={styles.container4}>
@@ -37,6 +37,11 @@ export default function DailyPage({ navigation }) {
                     <View style={styles.container5}>
                         <Text style={styles.title2} category='h1'>
                             Your interests, identities, and goals matter. They shape your life.
+                        </Text>
+                    </View>
+                    <View style={styles.container5}>
+                        <Text style={styles.title2} category='h1'>
+                            Your interests, identities, and goals matter. They shape your life. Your interests, identities, and goals matter. They shape your life.
                         </Text>
                     </View>
                     <View style={styles.container7}>
@@ -71,29 +76,32 @@ const styles = StyleSheet.create({
     container2: {
         flex: 1,
         marginTop: "5%",
-        backgroundColor: "#ecf1ec",
+        backgroundColor: "#f7f7f7",
         alignItems: "flex-start",
     },
     container3: {
         flex: 1,
         marginTop: "4%",
         alignItems: "flex-start",
-        backgroundColor: "#ecf1ec",
         borderBottomWidth: 1,
         borderColor: "#bfbdc1"
     },
     container4: {
         flex: 1,
-        marginTop: "5%",
+        paddingTop: "5%",
+        backgroundColor: "#f4f5f0",
         alignItems: "flex-start",
     },
     container5: {
         flex: 1,
-        marginTop: "3%",
+        paddingTop: "3%",
+        backgroundColor: "#f4f5f0",
         alignItems: "flex-start",
     },
     container7: {
         flex: 1,
+        borderTopColor: "#bfbdc1",
+        borderWidth: 1,
         justifyContent: "flex-end",
     },
     list: {

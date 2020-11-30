@@ -37,13 +37,14 @@ const Stack = createStackNavigator();
 
 function MainTabNavigator() {
   return (
-    <Tab.Navigator color={COLORS.lightaccent} activeColor={COLORS.secondary} shifting={false} initialRouteName="Dashboard">
+    <Tab.Navigator backgroundColor="#f7f7f7" color="#bfbdc1" activeColor="black" shifting={false} initialRouteName="Dashboard">
       <Tab.Screen name="Dashboard"
         component={HelloWorldPage}
         options={{
           tabBarLabel: 'Dashboard',
+          headerBackTitle: " ",
           tabBarIcon: ({ color }) => (
-            <Icon name='home-outline' width={24} height={24} fill={COLORS.secondary} />
+            <Icon name='home-outline' width={24} height={24} fill="#bfbdc1" />
             // <MaterialCommunityIcons name="home" color={color} size={26} />
           ),
         }} />
@@ -51,8 +52,12 @@ function MainTabNavigator() {
         component={CommunityPage}
         options={{
           tabBarLabel: 'Community',
+          headerTitle: "",
+          headerTransparent: true,
+          headerBackTitle: " ",
+          headerTintColor: "white",
           tabBarIcon: ({ color }) => (
-            <Icon name='globe-outline' width={24} height={24} fill={COLORS.secondary} />
+            <Icon name='globe-outline' width={24} height={24} fill="#bfbdc1" />
           ),
         }} />
       <Tab.Screen name="Profile"
@@ -60,15 +65,18 @@ function MainTabNavigator() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
-            <Icon name='person-outline' width={24} height={24} fill={COLORS.secondary} />
+            <Icon name='person-outline' width={24} height={24} fill="#bfbdc1" />
           ),
+          headerTitle: "",
+          headerTransparent: true,
+          headerBackTitle: " ",
         }} />
       <Tab.Screen name="More"
         component={MorePage}
         options={{
           tabBarLabel: 'More',
           tabBarIcon: ({ color }) => (
-            <Icon name='more-horizontal-outline' width={24} height={24} fill={COLORS.secondary} />
+            <Icon name='more-horizontal-outline' width={24} height={24} fill="#bfbdc1" />
           ),
         }} />
     </Tab.Navigator>
@@ -81,30 +89,29 @@ export default function MainStackNavigator() {
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Onboarding" options={{ headerTitle: "", headerTransparent: true }}>
+          <Stack.Navigator initialRouteName="Onboarding" options={{ headerTitle: "", headerTransparent: true, headerTintColor: "black", }}>
             <Stack.Screen
               name="Tabs"
               component={MainTabNavigator}
-              options={{ headerTitle: "", headerTransparent: true }}
+              options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black"}}
             />
             {/* <Stack.Screen
             name="Home"
             component={HelloWorldApp}
             options={{ title: 'Welcome' }}
           /> */}
-            <Stack.Screen name="Profile" component={ProfilePage}  />
-            <Stack.Screen name="Onboarding" component={OnboardingPage} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="About" component={PealExplanation} options={{ headerTitle: "", headerTransparent: true }} />
-            <Stack.Screen name="Identities" component={OnboardingIdentities} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="Goals" component={OnboardingGoals} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="Interests" component={OnboardingInterests} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="Resources" component={ResourcesPage} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="Post!" component={ArticlesPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="Onboarding" component={OnboardingPage} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="About" component={PealExplanation} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }} />
+            <Stack.Screen name="Identities" component={OnboardingIdentities} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="Goals" component={OnboardingGoals} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="Interests" component={OnboardingInterests} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="Resources" component={ResourcesPage} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="Post!" component={ArticlesPage} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
             <Stack.Screen name="CardsTesting" component={CardsTesting} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="GoalsPage" component={GoalsPage} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="InterestsPage" component={InterestsPage} options={{ headerTitle: "", headerTransparent: true }}/>
-            <Stack.Screen name="InsightsPage" component={InsightsPage} options={{ headerTitle: "", headerTransparent: true }}/>
+            <Stack.Screen name="IdentitiesPage" component={IdentitiesPage} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="GoalsPage" component={GoalsPage} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="InterestsPage" component={InterestsPage} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
+            <Stack.Screen name="InsightsPage" component={InsightsPage} options={{ headerTitle: "", headerTransparent: true, headerBackTitle: " ", headerTintColor: "black" }}/>
             <Stack.Screen name="Guides" component={GuidesPage} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="Guides2" component={GuidesPage2} options={{ headerTitle: "", headerTransparent: true }}/>
             <Stack.Screen name="Details" component={InsightsDetailPage} options={{ headerTitle: "", headerTransparent: true }}/>

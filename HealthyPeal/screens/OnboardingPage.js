@@ -11,7 +11,7 @@ const image = { uri: "https://bit.ly/2JeqKxs" };
 export default function OnboardingPage({ navigation }) {
   return (
     <ImageBackground source={image} style={styles.image}>
-      <ScrollView style={{backgroundColor: "#ecf1ec"}}>
+      <ScrollView style={{backgroundColor: "#f7f7f7"}}>
       {/* <View style={styles.container}>
         </View> */}
         <View style={styles.container2}>

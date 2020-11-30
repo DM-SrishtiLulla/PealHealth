@@ -19,42 +19,35 @@ const {height, width} = Dimensions.get("window")
 
 export default function ResourcesPage({ navigation }) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightaccent}}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#f7f7f7"}}>
         <View style={{flex: 1}}>
-        <Text style={{marginTop: 40, fontSize: 40, alignSelf: "center", fontWeight: "bold", color: COLORS.primary}}>Crisis Resources</Text>
+        <Text style={{marginTop: 40, fontSize: 40, alignSelf: "center", fontWeight: "bold", color: "black"}}>Crisis Resources</Text>
           <ScrollView
             showsVerticalScrollIndicator={false}
           >
-              <View style={{marginTop: 0, paddingHorizontal: 20}}>
-                <View style={{width:width-40, height:240, marginTop: 20, marginBottom: 20}}>
-                <Image source={{uri: "https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80"}}
-                      style={{flex: 1, height : null, width: null, resizeMode: "cover",
-                    borderRadius: 5, borderWidth: 1,
-                  borderColor: COLORS.lightaccent}}
-                      />
-                </View>
-                <Text style={{color: COLORS.primary, fontSize: 24, fontWeight: "700"}}>
+              <View style={{marginTop: "8%", paddingHorizontal: 20}}>
+                <Text style={{color: "black", fontSize: 24, fontWeight: "700", marginBottom: "3%"}}>
                   Options for Help
                 </Text>
-                <Text style={{color: COLORS.primary, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: "black", fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 National Suicide Prevention Lifeline: 1-800-273-8255
                 </Text>
-                <Text style={{color: COLORS.primary, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: "black", fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 Trans Lifeline: 877-565-8860
                 </Text>
-                <Text style={{color: COLORS.primary, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: "black", fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 Crisis Text Line: Text HOME to 741741 to connect with a Crisis Counselor
                 </Text>
-                <Text style={{color: COLORS.primary, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: "black", fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 LGBT National Hotline: 888-843-4564
                 </Text>
-                <Text style={{color: COLORS.primary, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: "black", fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 National Coalition of Anti-Violence Programs: 212-714-1141
                 </Text>
-                <Text style={{color: COLORS.primary, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: "black", fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 LGBT National Youth Talkline: 800-246-7743
                 </Text>
-                <Text style={{color: COLORS.primary, fontSize: 18, fontWeight: "bold", marginTop: 10}}>
+                <Text style={{color: "black", fontSize: 18, fontWeight: "bold", marginTop: 10}}>
                 DeHQ [LGBTQ Helpline for South Asians]: 908-367-3374
                 </Text>
               </View>
@@ -71,7 +64,7 @@ export default function ResourcesPage({ navigation }) {
           style={{flex: 1, height : null, width: null, resizeMode: "cover",
           }}/>
         </View>
-        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.primary}}>
+        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:"black"}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Body Image</Text>
           <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>100 members</Text>
         </View>
@@ -82,7 +75,7 @@ export default function ResourcesPage({ navigation }) {
           style={{flex: 1, height : null, width: null, resizeMode: "cover",
           }}/>
         </View>
-        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.primary}}>
+        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:"black"}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Grief</Text>
           <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>40 members</Text>
         </View>
@@ -93,7 +86,7 @@ export default function ResourcesPage({ navigation }) {
           style={{flex: 1, height : null, width: null, resizeMode: "cover",
           }}/>
         </View>
-        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.primary}}>
+        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:"black"}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Depression</Text>
           <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>200 members</Text>
         </View>
@@ -104,7 +97,7 @@ export default function ResourcesPage({ navigation }) {
           style={{flex: 1, height : null, width: null, resizeMode: "cover",
           }}/>
         </View>
-        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:COLORS.primary}}>
+        <View style={{flex: 1, alignItems:"flex-start", justifyContent: "space-evenly", paddingLeft: 10, backgroundColor:"black"}}>
           <Text style={{fontSize: 16, fontWeight: "bold", color: COLORS.text}}>Anger</Text>
           <Text style={{fontSize: 12, fontWeight: "bold", color: COLORS.text}}>50 members</Text>
         </View>

@@ -63,41 +63,33 @@ export default function MorePage({ navigation }) {
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 1, color: COLORS.lightaccent }}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text style={{ color: "white", fontSize: 32, fontWeight: "700", marginTop: 10, marginBottom: 10, paddingHorizontal: 2 }}>
+          <Text style={{ color: "black", fontSize: 32, fontWeight: "700", marginTop: 10, marginBottom: 10, paddingHorizontal: 2 }}>
             More
       </Text>
           <View style={{ marginTop: 10, paddingHorizontal: 4 }}>
-            <Text style={{ color: COLORS.primary, fontSize: 28, fontWeight: "700" }}>
+            <Text style={{ color: "black", fontSize: 28, fontWeight: "700" }}>
               Crisis Resources
                 </Text>
-            <Text style={{ color: COLORS.primary, fontSize: 20, fontWeight: "400", marginTop: 10 }}>
+            <Text style={{ color: "black", fontSize: 20, fontWeight: "400", marginTop: "5%", marginBottom: "15%" }}>
               Call or text in for help.
                 </Text>
-            <View style={{ width: width - 50, height: 300, marginTop: 20 }}>
-              <Image
-                source={{ uri: "https://images.unsplash.com/photo-1487499648633-2ade40e0f769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }}
-                style={{flex: 1, height: null, width: null, resizeMode: "cover",
-                borderRadius: 5, borderWidth: 1,
-                borderColor: COLORS.secondary}}
-              />
-              </View>
-              <Button
+              <Button 
                 size="giant"
                 style={styles.button1}
                 onPress={() =>
                   navigation.navigate('Resources')
                 }>
-                <Text style={{ color: COLORS.primary, fontSize: 24, fontWeight: "500" }}>Crisis Resources</Text>
+                <Text style={{ color: "black", fontSize: 24, fontWeight: "500" }}>Crisis Resources</Text>
               </Button>
               <Button title="Sign Out" style={styles.button1}
                       onPress={signOut}>
-                <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Sign Out</Text>
+                <Text style={{ color: "black", height: 40, fontSize: 24, fontWeight: "500" }}>Sign Out</Text>
               </Button>
               <Button onPress={myCustomShare} style={styles.button1}>
-              <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Invite Friends</Text>
+              <Text style={{ color: "black", height: 40, fontSize: 24, fontWeight: "500" }}>Invite Friends</Text>
               </Button>
               {/* <Button style={styles.button1} onPress={() => navigation.navigate('Details')}>
-              <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>Details</Text>
+              <Text style={{ color: "black", height: 40, fontSize: 24, fontWeight: "500" }}>Details</Text>
               </Button> */}
             </View>
           {/* <ListItem
@@ -207,7 +199,7 @@ export default function MorePage({ navigation }) {
             onPress={() =>
               navigation.navigate('InsightsPage')
             }>
-            <Text style={{ color: COLORS.primary, height: 40, fontSize: 24, fontWeight: "500" }}>For Therapists - Adding Insights</Text>
+            <Text style={{ color: "black", height: 40, fontSize: 24, fontWeight: "500" }}>For Therapists - Adding Insights</Text>
           </Button> */}
         </ScrollView>
       </SafeAreaView>
@@ -216,7 +208,7 @@ export default function MorePage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, paddingTop: 80, backgroundColor: COLORS.lightaccent },
+  container: { flex: 1, justifyContent: 'center', padding: 20, paddingTop: 80, backgroundColor: "#f7f7f7" },
   todo: { marginBottom: 15 },
   input: { height: 70, backgroundColor: '#ddd', marginTop: 10, marginBottom: 10, padding: 8 },
   todoName: { fontSize: 18 },
@@ -225,7 +217,8 @@ const styles = StyleSheet.create({
     marginTop: "7%",
     alignSelf: "center",
     width: 240,
-    color: COLORS.primary,
-    backgroundColor: COLORS.brightblue,
+    color: "black",
+    backgroundColor: "#f7f7f7",
+    borderColor: "#bfbdc1",
   },
 });

@@ -1,296 +1,254 @@
-import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button, TouchableOpacity} from "react-native";
-import { Icon } from 'react-native-eva-icons';
-import { Auth } from 'aws-amplify';
+import React, { useState } from 'react';
+import {
+  View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, SafeAreaView
+} from 'react-native';
+import { Text, Button } from '@ui-kitten/components';
 import COLORS from "../Colors";
+import { Icon } from 'react-native-eva-icons';
 
-function ProfilePage({ navigation }) {
+const image = { uri: "https://bit.ly/2KLUfqR" };
 
+export default function ProfilePage({ navigation }) {
     return (
-        <SafeAreaView style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                {/* <View style={{ alignSelf: "center", marginTop: 40 }}>
-                    <View style={styles.profileImage}>
-                        <Image source={{ uri: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" }} style={styles.image} resizeMode="center" />
-                    </View>
-                </View> */}
-                <View style={styles.extraView}>
-                <View style={styles.infoContainer}>
-                    <Text style={[styles.text, { fontWeight: "700", fontSize: 36, marginTop: 24 }]}>Profile</Text>
-                    {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
+                <ScrollView style={{backgroundColor: "#f5f5f5"}}>
+                <View style={styles.header}>
+                    <Text style={styles.headerText}>
+                        Median –– Health
+                    </Text>
                 </View>
-                <View style={styles.infoContainer2}>
-                    <Text style={[styles.text, { fontWeight: "400", fontSize: 20, marginTop: 0 }]}>Learn more about your insights!</Text>
-                    {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
-                </View>
-                <Button
-                title="Daily"
-            onPress={() =>
-              navigation.navigate('Daily')
-            }
-            >
-          </Button>
-                </View>
-                {/* <View style={styles.statsContainer}>
-                    <View style={styles.statsBox}>
-                        <Text style={[styles.text, { fontSize: 24 }]}>48</Text>
-                        <Text style={[styles.text, styles.subText]}>Activities</Text>
-                    </View>
-                    <View style={[styles.statsBox, { borderColor: "#DFD8C8", borderLeftWidth: 1, borderRightWidth: 1 }]}>
-                        <Text style={[styles.text, { fontSize: 24 }]}>20</Text>
-                        <Text style={[styles.text, styles.subText]}>Posts</Text>
-                    </View>
-                    <View style={styles.statsBox}>
-                        <Text style={[styles.text, { fontSize: 24 }]}>103</Text>
-                        <Text style={[styles.text, styles.subText]}>Comments</Text>
-                    </View>
-                </View> */}
-<Text style={[styles.subText, styles.recent]}>Interests</Text>
-    <View style={{ alignItems: "center" }}>
-        <View style={styles.categoryContainer}>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='compass-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Nature</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='gift-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Self-Care</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='color-palette-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Creative</Text>
-              </TouchableOpacity>
-          </View>
-          <View style={styles.categoryContainer}>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='book-open-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Journal</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='eye-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Meditation</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='people-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Social</Text>
-              </TouchableOpacity>
-          </View>
-          </View>
-          <Text style={[styles.subText, styles.recent]}>Saved Insights</Text>
-                <View style={{ marginTop: 16 }}>
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={styles.mediaImageContainer}>
-                            <Image source={{ uri: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
-                        </View>
-                        <View style={styles.mediaImageContainer}>
-                            <Image source={{ uri: "https://images.unsplash.com/photo-1519160558534-579f5106e43f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"}} style={styles.image} resizeMode="cover" />
-                        </View>
-                        <View style={styles.mediaImageContainer}>
-                            <Image source={{ uri: "https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
-                        </View>
-                    </ScrollView>
-                    {/* <View style={styles.recentItem}>
-                        <View style={styles.activityIndicator}></View>
-                        <View style={{ width: 250 }}>
-                            <Text style={[styles.text, { color: "white", fontWeight: "300" }]}>
-                                Meditated <Text style={{ fontWeight: "600" }}>3 days</Text> this week.
-                            </Text>
-                        </View>
+                {/* <View style={styles.container}>
                     </View> */}
-
-                    {/* <View style={styles.recentItem}>
-                        <View style={styles.activityIndicator}></View>
-                        <View style={{ width: 250 }}>
-                            <Text style={[styles.text, { color: "white", fontWeight: "300" }]}>
-                                Commented on a post about <Text style={{ fontWeight: "600" }}>depression</Text>
-                            </Text>
-                        </View>
-                    </View> */}
-                </View>
-            </ScrollView>
-        </SafeAreaView>
+                    <View style={styles.container2}>
+                        <Text style={styles.title} category='h1'>
+                            Hello, Asha
+                        </Text>
+                    </View>
+                    <View style={styles.container3}>
+                        <Text style={styles.title2} category='h1'>
+                            YOUR INFO
+                        </Text>
+                    </View>
+                    <View style={styles.container4}>
+                        <Text style={styles.title} category='h1'>
+                            You are strong, loved, and valid.
+                        </Text>
+                    </View>
+                    <View style={styles.container5}>
+                        <Text style={styles.title2} category='h1'>
+                            Your interests, identities, and goals matter. They shape your life.
+                        </Text>
+                    </View>
+                    <View style={styles.container5}>
+                        <Text style={styles.title2} category='h1'>
+                            Your interests, identities, and goals matter. They shape your life. Your interests, identities, and goals matter. They shape your life.
+                        </Text>
+                    </View>
+                    <View style={styles.container6}>
+                    <Text style={styles.title4} category='h1'>
+                        <Icon name='gift-outline' width={24} height={23} fill="black" />
+                        Thing
+                        </Text>
+                        <Text style={styles.title4} category='h1'>
+                        <Icon name='activity-outline' width={24} height={24} fill="black" />
+                            Thing 2
+                        </Text>
+                        <Text style={styles.title4} category='h1'>
+                        <Icon name='umbrella-outline' width={24} height={24} fill="black" />
+                            Thing 3
+                        </Text>
+                        <Button
+                            style={styles.otherbutton}
+                            onPress={() =>
+                            navigation.navigate('Dashboard')
+                            }>
+                            <Text style={styles.title2}>DISCOVER ACTIVITIES</Text>
+                        </Button>
+                    </View>
+                    <View style={styles.container8}>
+                        <Text style={styles.title2} category='h1'>
+                            TODAY
+                        </Text>
+                    </View>
+                    <View style={styles.container5}>
+                        <Text style={styles.title2} category='h1'>
+                            Your interests, identities, and goals matter. They shape your life.
+                        </Text>
+                    </View>
+                    <View style={styles.container5}>
+                        <Text style={styles.title2} category='h1'>
+                            Your interests, identities, and goals matter. They shape your life. Your interests, identities, and goals matter. They shape your life.
+                        </Text>
+                    </View>
+                    <View style={styles.container6}>
+                        <Button
+                            style={styles.otherbutton}
+                            onPress={() =>
+                            navigation.navigate('Community')
+                            }>
+                            <Text style={styles.title2}>COMMUNITY UPDATES</Text>
+                        </Button>
+                    </View>
+                </ScrollView>
     );
 }
-
+    
 const styles = StyleSheet.create({
-    title2: {
-        color: COLORS.primary,
-        justifyContent: "center",
-        // alignContent: "center",
-        marginTop: 30,
-        marginBottom: 10,
-        marginLeft: 30,
-        marginRight: 20,
-        fontSize: 30,
-        fontWeight: "bold",
+    header: {
+        backgroundColor: "black",
+        height: "10%",
+        color: "white",
+        alignItems: "center",
     },
-    buttonbottom: {
-        marginTop: -10,
-        alignSelf: "center",
-        backgroundColor: COLORS.lightaccent
+    headerText: {
+        color: "white",
+        fontSize: 28,
+        marginTop: "12%",
+        fontWeight: "400",
+        fontFamily: "Cochin",
     },
-    container: {
+    container2: {
         flex: 1,
-        backgroundColor: COLORS.lightaccent,
+        marginTop: 30,
+        backgroundColor: "#f5f5f5",
+        alignItems: "flex-start",
     },
-    extraView: {
+    container3: {
+        flex: 1,
+        marginTop: 20,
+        backgroundColor: "#f5f5f5",
+        alignItems: "flex-start",
         borderBottomWidth: 1,
-        borderBottomColor: COLORS.primary,
-        paddingBottom: 16,
+        borderColor: "#bfbdc1"
     },
-    text: {
-        fontFamily: "HelveticaNeue",
-        color: "white"
+    container4: {
+        flex: 1,
+        paddingTop: 30,
+        backgroundColor: "#f7f7f7",
+        alignItems: "flex-start",
+    },
+    container5: {
+        flex: 1,
+        paddingTop: 15,
+        backgroundColor: "#f7f7f7",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+    },
+    container6: {
+        flex: 1,
+        paddingBottom: 20,
+        backgroundColor: "#f7f7f7",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+    },
+    container7: {
+        flex: 1,
+        borderTopColor: "#bfbdc1",
+        borderWidth: 1,
+        borderBottomWidth: 0,
+        justifyContent: "flex-end",
+    },
+    container8: {
+        flex: 1,
+        paddingTop: 10,
+        backgroundColor: "#f5f5f5",
+        alignItems: "flex-start",
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+        borderColor: "#bfbdc1"
+    },
+    list: {
+    //paddingHorizontal: 5,
+    // backgroundColor:"#E6E6E6",
+    },
+    listContainer: {
+        alignItems: 'center'
+    },
+    subTitle: {
+        fontSize: 12,
+        flex: 1,
+        color: "black",
+    },
+    icon: {
+        height: 20,
+        width: 20,
     },
     image: {
         flex: 1,
-        height: undefined,
-        width: undefined
-    },
-    subText: {
-        fontSize: 12,
-        color: "white",
-        fontWeight: "500"
-    },
-    profileImage: {
-    },
-    dm: {
-        backgroundColor: "#41444B",
-        position: "absolute",
-        top: 20,
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        alignItems: "center",
+        resizeMode: "cover",
         justifyContent: "center"
     },
-    active: {
-        backgroundColor: "#34FFB9",
-        position: "absolute",
-        bottom: 28,
-        left: 10,
-        padding: 4,
-        height: 20,
-        width: 20,
-        borderRadius: 10
+    otherbutton: {
+        marginTop: 20,
+        alignSelf: "center",
+        alignItems: "flex-start",
+        marginBottom: 0,
+        backgroundColor: "#f7f7f7",
+        borderColor: "#bfbdc1",
+        width: "95%",
+        borderTopWidth: 1,
+        borderBottomWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
     },
-    add: {
-        backgroundColor: "#41444B",
-        position: "absolute",
-        bottom: 0,
-        right: 0,
-        width: 60,
-        height: 60,
-        borderRadius: 30,
-        alignItems: "center",
-        justifyContent: "center"
+    buttonbottom: {
+        marginTop: 20,
+        alignSelf: "center",
+        marginBottom: 0,
+        backgroundColor: "black",
+        width: "80%",
+        borderWidth: 0,
     },
-    infoContainer: {
-        marginLeft: 16,
-        marginTop: 32,
-        marginBottom: 6,
-    },
-    infoContainer2: {
-        marginLeft: 16,
+    title: {
+        color: "black",
+        justifyContent: "flex-start",
+        textAlign: "left",
         marginTop: 0,
         marginBottom: 0,
+        marginHorizontal: 20,
+        fontSize: 36,
+        fontWeight: "400",
+        fontFamily: "Cochin",
+        marginLeft: 20,
     },
-    statsContainer: {
-        flexDirection: "row",
-        alignSelf: "center",
-        marginTop: 32
-    },
-    statsBox: {
-        alignItems: "center",
-        flex: 1
-    },
-    mediaImageContainer: {
-        width: 180,
-        height: 200,
-        borderRadius: 12,
-        overflow: "hidden",
-        marginHorizontal: 12
-    },
-    mediaCount: {
-        backgroundColor: "#41444B",
-        position: "absolute",
-        top: "50%",
-        marginTop: -50,
-        marginLeft: 30,
-        width: 100,
-        height: 100,
-        alignItems: "center",
+    title3: {
+        color: "black",
         justifyContent: "center",
-        borderRadius: 12,
-        shadowColor: "rgba(0, 0, 0, 0.38)",
-        shadowOffset: { width: 0, height: 10 },
-        shadowRadius: 20,
-        shadowOpacity: 1
+        marginTop: 20,
+        marginBottom: 0,
+        fontSize: 20,
+        fontWeight: "200",
+        fontFamily: "Avenir",
     },
-    recent: {
-        marginLeft: 16,
-        marginTop: 32,
-        marginBottom: 6,
-        fontSize: 28,
-        fontWeight: "700"
+    bold: {
+        color: "black",
+        marginTop: 0,
+        marginBottom: 0,
+        fontSize: 40,
+        fontWeight: "600",
+        fontFamily: "Cochin",
     },
-    recentItem: {
-        flexDirection: "row",
-        alignItems: "flex-start",
-        marginBottom: 16
-    },
-    activityIndicator: {
-        backgroundColor: "#CABFAB",
-        padding: 4,
-        height: 12,
-        width: 12,
-        borderRadius: 6,
-        marginTop: 3,
-        marginRight: 20
-    },
-    categoryContainer: {
-        flexDirection: "row",
-        width: "96%",
-        alignSelf: "center",
-        marginTop: 16,
+    title2: {
+        color: "black",
+        // alignContent: "center",
         marginBottom: 10,
+        marginLeft: 20,
+        marginRight: 20,
+        fontSize: 16,
+        fontWeight: "300",
+        fontFamily: "Avenir",
     },
-    categoryButton: {
-        flex: 1,
-        width: "30%",
-        marginHorizontal: 8,
-        alignSelf: "center",
+    title4: {
+        color: "black",
+        alignContent: "center",
+        marginBottom: 10,
+        marginLeft: 20,
+        marginRight: 20,
+        fontSize: 20,
+        fontWeight: "300",
+        fontFamily: "Avenir",
     },
-    categoryIcon: {
-       borderWidth: 0,
-       alignItems: "center",
-       justifyContent: "space-evenly",
-       alignSelf: "center",
-       width: 90,
-       height: 90,
-       backgroundColor: COLORS.brightblue,
-       borderRadius: 50
-   },
-   categoryText: {
-       alignSelf: "center",
-       marginTop: 12,
-       fontSize: 18,
-       color: COLORS.primary,
-       fontWeight: "bold",
-   }
+    image: {
+        height: 1500,
+        width: "100%",
+    }
 });
-
-export default ProfilePage;
-
