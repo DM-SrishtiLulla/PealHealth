@@ -95,7 +95,7 @@ export default function ProfilePage({ navigation }) {
 const styles = StyleSheet.create({
     header: {
         backgroundColor: "black",
-        height: "10%",
+        height: 100,
         color: "white",
         alignItems: "center",
     },

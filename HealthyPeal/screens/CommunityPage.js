@@ -62,122 +62,111 @@ export default function CommunityPage({ navigation }) {
     }
     return (
         // HEADERS FOR PAGE - see below for content 
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
+        <ScrollView style={{backgroundColor: "#f5f5f5", fontFamily: "Cochin"}}>
+        <View style={styles.header}>
+            <Text style={styles.headerText}>
+                Median –– Health
+            </Text>
+        </View>
             <View style={{ flex: 1 }}>
-                <Text style={{ marginTop: 40, fontSize: 32, alignSelf: "center", fontWeight: "bold", color: COLORS.brightblue }}>Community</Text>
+                <Text style={{ marginTop: 20, fontSize: 40, fontFamily: "Cochin", alignSelf: "center", fontWeight: "500", color: "black" }}>Community</Text>
                 <View style={{
-                    height: 80, backgroundColor: COLORS.primary,
-                    borderBottomWidth: 1, borderBottomColor: COLORS.brightblue
+                    height: 80, backgroundColor: "#f5f5f5",
+                    borderBottomWidth: 1, borderBottomColor: "#bfbdc1",
                 }}>
                     <View style={{
                         flexDirection: "row", padding: 10,
-                        backgroundColor: COLORS.primary, marginHorizontal: 30,
+                        backgroundColor: "#f5f5f5", marginHorizontal: 30,
                         shadowOffset: { width: 0, height: 0 },
                         shadowOpacity: 0.2,
                         elevation: 1,
                         marginTop: 20
                     }}>
-                        <Icon name='search-outline' width={24} height={24} fill={COLORS.darkaccent} />
+                        <Icon name='search-outline' width={24} height={24} fill={"#bfbdc1"} />
                         <TextInput
                             placeholder="Try Meditation"
-                            placeholderTextColor={COLORS.darkaccent}
-                            style={{ flex: 1, fontWeight: "700", backgroundColor: COLORS.primary }}
+                            placeholderTextColor={"#bfbdc1"}
+                            style={{ flex: 1, fontWeight: "700", backgroundColor: "#f5f5f5" }}
                         />
                     </View>
                 </View>
-                <ScrollView
-                    showsVerticalScrollIndicator={false}>
-
-
                     <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                        <Text style={{ color: COLORS.brightblue, fontSize: 32, fontWeight: "700" }}>
-                            Peal Community
+                        <Text style={{ color: "black", fontFamily: "Cochin", fontSize: 32, fontWeight: "500" }}>
+                            Welcome!
                         </Text>
-                        <Text style={{ color: COLORS.brightblue, fontWeight: "300", marginTop: 10 }}>
+                        <Text style={{ color: "black", fontFamily: "Avenir", fontSize: 16, fontWeight: "300", marginTop: 4 }}>
                             Check out our guides and inspirational posts
                         </Text>
-                        <Text style={{ color: COLORS.brightblue, fontSize: 24, marginTop: 20, fontWeight: "700" }}>
+                        <Text style={{ color: "black", fontFamily: "Cochin", fontSize: 24, marginTop: 20, fontWeight: "700" }}>
                             COVID-19 Anxiety Support
+                        </Text>
+                        <Text style={{ color: "black", fontSize: 16, fontFamily: "Avenir", fontWeight: "300", marginTop: 4 }}>
+                            Mental health tips for the pandemic
                         </Text>
                         <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
                             <Image source={{ uri: "https://images.unsplash.com/photo-1590417961276-2f4f5e9f6227?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }}
                                 style={{
                                     flex: 1, height: null, width: null, resizeMode: "cover",
                                     borderRadius: 5, borderWidth: 1,
-                                    borderColor: COLORS.secondary
+                                    borderColor: "#f5f5f5"
                                 }}
                             />
                         </View>
                     </View>
                     <Button
-            size="giant"
-            style={{flex: 0.5, marginTop: "5%",
-                alignSelf: "center",
-                width: width - 50,
-                backgroundColor: COLORS.brightblue,
-                borderColor: COLORS.primary}}
+            style={{flex: 1,
+                marginTop: 10,
+                borderWidth: 1,
+                borderRadius: 10,
+                backgroundColor: "#f7f7f7",
+                borderColor: "black",
+                width: "90%",
+                alignSelf: "center",}}
             onPress={() =>
               navigation.navigate('Guides')
             }
             >
-            <Text style={{fontSize: 22, fontWeight: "800", color: COLORS.primary
+            <Text style={{fontSize: 20, fontFamily: "Avenir", fontWeight: "500", color: "black"
                         }}>COVID-19 Anxiety Guide</Text>
           </Button>
           <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                        <Text style={{ color: COLORS.brightblue, fontSize: 24, fontWeight: "700" }}>
+                        <Text style={{ color: "black", fontFamily: "Cochin", fontSize: 26, fontWeight: "700" }}>
                             Positive Thinking
                         </Text>
-                        <Text style={{ color: COLORS.brightblue, fontWeight: "300", marginTop: 10 }}>
+                        <Text style={{ color: "black", fontSize: 16, fontFamily: "Avenir", fontWeight: "300", marginTop: 4 }}>
                             Try the ABCDE Technique
                         </Text>
-                        <View style={{ width: width - 40, height: 240, marginTop: 20 }}>
+                        <View style={{ width: width - 40, height: 240, marginTop: 10 }}>
                             <Image source={{ uri: "https://images.unsplash.com/photo-1505769542637-a892c7381a3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }}
                                 style={{
                                     flex: 1, height: null, width: null, resizeMode: "cover",
                                     borderRadius: 5, borderWidth: 1,
-                                    borderColor: COLORS.secondary
+                                    borderColor: "#f5f5f5"
                                 }}
                             />
                         </View>
                     </View>
                     <Button
-            size="giant"
-            style={{flex: 0.5, marginTop: "5%",
-                alignSelf: "center",
-                width: width - 50,
-                backgroundColor: COLORS.brightblue,
-                borderColor: COLORS.primary}}
+            style={{
+            flex: 1,
+            marginTop: 10,
+            borderWidth: 1,
+            borderRadius: 10,
+            backgroundColor: "#f7f7f7",
+            borderColor: "black",
+            width: "90%",
+            alignSelf: "center",}}
             onPress={() =>
               navigation.navigate('Guides2')
             }
             >
-            <Text style={{fontSize: 22, fontWeight: "800", color: COLORS.primary
+            <Text style={{fontSize: 20, fontFamily: "Avenir", fontWeight: "500", color: "black"
                         }}>Thought Pattern Guide</Text>
           </Button>
-          {/* <View style={styles.categoryContainer}>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='search-outline' width={24} height={24} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Inspiration</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='search-outline' width={24} height={24} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Inspiration</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => {}}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='search-outline' width={24} height={24} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Inspiration</Text>
-              </TouchableOpacity>
-          </View> */}
                     <View style={{ marginTop: 20 }}>
                         <Text style={{
-                            fontSize: 24, fontWeight: "800",
-                            paddingHorizontal: 20, color: COLORS.brightblue
+                            fontSize: 24, fontFamily: "Cochin", fontWeight: "500",
+                            paddingHorizontal: 20, color: "black"
                         }}>
                             New Posts!
                         </Text>
@@ -202,14 +191,25 @@ export default function CommunityPage({ navigation }) {
 
                         </View>
                     </View>
-                </ScrollView>
-
             </View>
-        </SafeAreaView>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    header: {
+        backgroundColor: "black",
+        height: 100,
+        color: "white",
+        alignItems: "center",
+    },
+    headerText: {
+        color: "white",
+        fontSize: 28,
+        marginTop: "12%",
+        fontWeight: "400",
+        fontFamily: "Cochin",
+    },
     categoryContainer: {
         flexDirection: "row",
         width: "90%",
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
        alignSelf: "center",
        marginTop: 5,
        fontSize: 16,
-       color: COLORS.brightblue,
+       color: "black",
        fontWeight: "bold",
    }
   })
