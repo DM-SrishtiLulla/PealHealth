@@ -16,10 +16,10 @@ export default function OnboardingPage({ navigation }) {
         </View> */}
         <View style={styles.container2}>
           <Text style={styles.title} category='h1'>
-            ABC
+            Mera
         </Text>
           <Text style={styles.title3} category='h1'>
-            SUPPORT FOR YOU
+            Your Mental Wellness Companion
         </Text>
 
         </View>

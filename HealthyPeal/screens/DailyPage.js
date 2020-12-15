@@ -14,19 +14,19 @@ export default function DailyPage({ navigation }) {
                 <ScrollView style={{backgroundColor: "#f7f7f7"}}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
-                        Median –– Health
+                        MERA –– Health
                     </Text>
                 </View>
                 {/* <View style={styles.container}>
                     </View> */}
                     <View style={styles.container2}>
                         <Text style={styles.title} category='h1'>
-                            Hello, Asha
+                            Hello!
                         </Text>
                     </View>
                     <View style={styles.container3}>
                         <Text style={styles.title2} category='h1'>
-                            YOUR INFO
+                            YOUR REMINDERS
                         </Text>
                     </View>
                     <View style={styles.container4}>
@@ -41,7 +41,7 @@ export default function DailyPage({ navigation }) {
                     </View>
                     <View style={styles.container5}>
                         <Text style={styles.title2} category='h1'>
-                            Your interests, identities, and goals matter. They shape your life. Your interests, identities, and goals matter. They shape your life.
+                            Your mental health is important. It is good to take time for yourself.
                         </Text>
                     </View>
                     <View style={styles.container7}>

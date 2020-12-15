@@ -97,7 +97,7 @@ export default function OnboardingInterests({ navigation }) {
         onPress={() =>
           navigation.navigate('Identities')
         }>
-        <Text style={styles.buttontext}>Next</Text>
+        <Text style={styles.buttontext}>NEXT</Text>
       </Button>
     </View>
     </ScrollView>
@@ -193,9 +193,10 @@ const styles = StyleSheet.create({
   },
 
   buttontext: {
-    fontSize: 24,
-    fontWeight: "600",
-    color: COLORS.primary
+    color: "white",
+    fontSize: 22,
+    fontWeight: "300",
+    fontFamily: "Avenir",
 },
   head: {
     flex: 1,

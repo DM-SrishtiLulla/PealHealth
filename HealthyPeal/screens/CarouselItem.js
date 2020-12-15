@@ -62,13 +62,13 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     itemTitle: {
-        color: "black",
+        color: "white",
         fontSize: 64,
         fontWeight: "bold",
         elevation: 5
     },
     itemDescription: {
-        color: "black",
+        color: "white",
         fontFamily: "Cochin",
         fontWeight: "700",
         fontSize: 32,

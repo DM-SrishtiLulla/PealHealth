@@ -13,19 +13,19 @@ export default function ProfilePage({ navigation }) {
                 <ScrollView style={{backgroundColor: "#f5f5f5"}}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
-                        Median –– Health
+                        Mera –– Health
                     </Text>
                 </View>
                 {/* <View style={styles.container}>
                     </View> */}
                     <View style={styles.container2}>
                         <Text style={styles.title} category='h1'>
-                            Hello, Asha
+                            Hello!
                         </Text>
                     </View>
                     <View style={styles.container3}>
                         <Text style={styles.title2} category='h1'>
-                            YOUR INFO
+                            YOUR REMINDERS
                         </Text>
                     </View>
                     <View style={styles.container4}>
@@ -40,22 +40,22 @@ export default function ProfilePage({ navigation }) {
                     </View>
                     <View style={styles.container5}>
                         <Text style={styles.title2} category='h1'>
-                            Your interests, identities, and goals matter. They shape your life. Your interests, identities, and goals matter. They shape your life.
+                        Your mental health is important. It is good to take time for yourself.
                         </Text>
                     </View>
                     <View style={styles.container6}>
-                    <Text style={styles.title4} category='h1'>
-                        <Icon name='gift-outline' width={24} height={23} fill="black" />
-                        Thing
+                    {/* <Text style={styles.title4} category='h1'>
+                        <Icon style={{marginRight: 0}} name='gift-outline' width={24} height={24} fill="black" />
+                        Every day is a gift
                         </Text>
                         <Text style={styles.title4} category='h1'>
-                        <Icon name='activity-outline' width={24} height={24} fill="black" />
-                            Thing 2
+                        <Icon style={{marginRight: 5}} name='activity-outline' width={24} height={24} fill="black" />
+                        Check in with yourself
                         </Text>
                         <Text style={styles.title4} category='h1'>
                         <Icon name='umbrella-outline' width={24} height={24} fill="black" />
-                            Thing 3
-                        </Text>
+                            Umbrellas don't stop the rain, but they can make you more comfortable.
+                        </Text> */}
                         <Button
                             style={styles.otherbutton}
                             onPress={() =>
@@ -71,7 +71,7 @@ export default function ProfilePage({ navigation }) {
                     </View>
                     <View style={styles.container5}>
                         <Text style={styles.title2} category='h1'>
-                            Your interests, identities, and goals matter. They shape your life.
+                            Check in with your dashboard for new fun activities!
                         </Text>
                     </View>
                     <View style={styles.container5}>
@@ -240,7 +240,6 @@ const styles = StyleSheet.create({
     title4: {
         color: "black",
         alignContent: "center",
-        marginBottom: 10,
         marginLeft: 20,
         marginRight: 20,
         fontSize: 20,

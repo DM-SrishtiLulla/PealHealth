@@ -65,7 +65,7 @@ export default function CommunityPage({ navigation }) {
         <ScrollView style={{backgroundColor: "#f5f5f5", fontFamily: "Cochin"}}>
         <View style={styles.header}>
             <Text style={styles.headerText}>
-                ABC
+                Mera –– Health
             </Text>
         </View>
             <View style={{ flex: 1 }}>
