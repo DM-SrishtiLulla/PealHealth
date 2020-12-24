@@ -17,17 +17,17 @@ const CardItem = ({item, isChecked, selectItem}) => {
       <TouchableOpacity
         onPress={event => selectItem({name: item.id})}
         style={styles.card}>
-        <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}>
+        {/* <ImageBackground source={{ uri: item.ImageLink }} style={styles.image}> */}
         {isChecked
-          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
-          : <Icon name='radio-button-off-outline' style={{marginLeft: 5, marginTop: 5}} width={30} height={30} fill={COLORS.secondary} />
+          ? <Icon name='checkmark-circle-2-outline' style={{marginLeft: 10, marginTop: 10}} width={30} height={30} fill={"black"} />
+          : <Icon name='radio-button-off-outline' style={{marginLeft: 10, marginTop: 10}} width={30} height={30} fill={"black"} />
           }
-          <View style={styles.cardHeader}>
+          {/* <View style={styles.cardHeader}> */}
             <Text style={styles.title}>{item.IdentityText}</Text>
-          </View>
+          {/* </View>
           <View style={styles.cardFooter}>
-          </View>
-        </ImageBackground> 
+          </View> */}
+        {/* </ImageBackground>  */}
       </TouchableOpacity>
     </React.Fragment>
   );
@@ -78,6 +78,7 @@ export default function OnboardingIdentities({ navigation }) {
   const renderItemCall = useCallback(({ item }) => renderItem({ item, checkedItems, setCheckedItems }));
 
   return (
+    <ScrollView style={{backgroundColor: "#f7f7f7"}}>
     <View style={styles.container}>
       <Text style={styles.head}>How do you identify?</Text>
       <FlatList style={styles.list}
@@ -94,42 +95,52 @@ export default function OnboardingIdentities({ navigation }) {
         size="giant"
         style={styles.buttonbottom}
         onPress={() =>
-          navigation.navigate('Goals')
+          navigation.navigate('Tabs')
         }>
-        <Text style={styles.buttontext}>Next</Text>
+        <Text style={styles.buttontext}>NEXT</Text>
       </Button>
     </View>
+    </ScrollView>
   );
 }
 
 
 const styles = StyleSheet.create({
+  buttonbottom: {
+    alignSelf: "center",
+    backgroundColor: "black",
+    width: "80%",
+    borderWidth: 0,
+    marginTop: "5%",
+},
   container:{
-    flex:1,
-    marginTop:0,
-    marginBottom: 0,
-    backgroundColor: COLORS.primary,
+    backgroundColor: "#f7f7f7",
   },
   list: {
     paddingHorizontal: 5,
-    backgroundColor: COLORS.primary,
+    backgroundColor: "#f7f7f7",
   },
   listContainer:{
+    marginTop: 0,
     alignItems:'center',
   },
   /******** card **************/
   card:{
+    display: "flex",
+    flexDirection: "row",
     marginHorizontal:5,
-    marginBottom:5,
-    flexBasis: '47%',
+    marginBottom: 20,
     borderRadius: 30,
-    height: 140,
-    width: 130,
+    borderColor: "black",
+    borderWidth: 1,
+    height: 50,
+    width: 180,
+    backgroundColor: "#f7f7f7",
     //backgroundColor: COLORS.lightaccent
   },
   cardHeader: {
-    paddingVertical: 17,
-    paddingHorizontal: 14,
+    // paddingVertical: 17,
+    // paddingHorizontal: 14,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flexDirection: 'row',
@@ -137,15 +148,15 @@ const styles = StyleSheet.create({
     justifyContent:"center"
   },
   cardContent: {
-    paddingVertical: 12.5,
-    paddingHorizontal: 16,
+    // paddingVertical: 12.5,
+    // paddingHorizontal: 16,
   },
   cardFooter:{
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingTop: 12.5,
-    paddingBottom: 25,
-    paddingHorizontal: 16,
+    // paddingTop: 12.5,
+    // paddingBottom: 25,
+    // paddingHorizontal: 16,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
@@ -155,17 +166,15 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   title:{
-    fontSize: 18,
-    flex: 1,
-    marginTop: 0,
-    justifyContent: "center",
-    textAlign: "center",
-    alignSelf: "center",
-    borderColor: COLORS.lightaccent,
-    borderWidth: 10,
-    color: COLORS.primary,
-    backgroundColor: COLORS.lightaccent,
-    fontWeight: '700'
+    fontSize: 20,
+    marginLeft: 8,
+    marginTop: 10,
+    fontFamily: "Avenir",
+    borderRadius: 100,
+    borderColor: "#f7f7f7",
+    color: "black",
+    backgroundColor: "#f7f7f7",
+    fontWeight: '400'
   },
   subTitle:{
     fontSize:12,
@@ -183,32 +192,26 @@ const styles = StyleSheet.create({
     // height: 0,
     // width: 0,
   },
-  buttonbottom: {
-      marginBottom: "10%",
-      marginTop: "5%",
-      alignSelf: "center",
-      width: 200,
-      height: 60,
-      backgroundColor: COLORS.lightaccent,
-      borderColor: COLORS.lightaccent,
-  },
+
   buttontext: {
-    fontSize: 24,
-    fontWeight: "600",
-    color: COLORS.primary
+    color: "white",
+    fontSize: 22,
+    fontWeight: "300",
+    fontFamily: "Avenir",
 },
   head: {
     flex: 1,
-    color: COLORS.lightaccent,
+    color: "black",
+    fontFamily: "Cochin",
     // marginLeft: 20,
-    // marginTop: 10,
-    marginBottom: 10,
+    marginTop: "5%",
+    marginBottom: 0,
     paddingTop: "20%",
-    paddingBottom: 40,
+    paddingBottom: 30,
     paddingLeft: 10,
     alignSelf: "center",
     fontSize: 32,
-    fontWeight: "600",
+    fontWeight: "400",
   },
   checkbox: {
     marginTop: 20,

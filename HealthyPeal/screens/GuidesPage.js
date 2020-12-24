@@ -24,7 +24,7 @@ function GuidesPage() {
       }
     
       return (
-        <SafeAreaView style={{ height: height, width: width, backgroundColor: COLORS.lightaccent }}>
+        <SafeAreaView style={{ height: height, width: width, backgroundColor: "#f5f5f5" }}>
           <Text style={styles.head}>Swipe!</Text>
           <CardStack
             style={styles.content}
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     width: width,
     height: height,
     flexDirection: 'column',
-    backgroundColor: COLORS.lightaccent,
+    backgroundColor: "#f5f5f5",
   },
   content:{
     flex: 5,
@@ -151,14 +151,14 @@ const styles = StyleSheet.create({
     marginBottom: height * 0.01,
     width: 200,
     height: 50,
-    backgroundColor: COLORS.lightaccent,
-    borderColor: COLORS.lightaccent,
-    shadowColor: COLORS.lightaccent,
+    backgroundColor: "#f5f5f5",
+    borderColor: "black",
+    shadowColor: "black",
   },
   buttontext: {
     fontSize: 24,
-    fontWeight: "600",
-    color: COLORS.primary
+    fontWeight: "500",
+    color: "black",
   },
   footer:{
     flex:1,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   head: {
-    color: COLORS.primary,
+    color: "black",
     // marginLeft: 20,
     paddingBottom: 20,
     paddingTop: "24%",

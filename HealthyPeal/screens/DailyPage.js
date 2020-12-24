@@ -3,17 +3,18 @@ import {
   View, Image, FlatList, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, SafeAreaView
 } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
+import LottieView from "lottie-react-native";
 import COLORS from "../Colors";
-import { Icon } from 'react-native-eva-icons';
 
 const image = { uri: "https://bit.ly/2KLUfqR" };
 
-export default function ProfilePage({ navigation }) {
+export default function DailyPage({ navigation }) {
     return (
-                <ScrollView style={{backgroundColor: "#f5f5f5"}}>
+        <ImageBackground source={image} style={styles.image}>
+                <ScrollView style={{backgroundColor: "#f7f7f7"}}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
-                        Mera –– Health
+                        MERA –– Health
                     </Text>
                 </View>
                 {/* <View style={styles.container}>
@@ -40,62 +41,28 @@ export default function ProfilePage({ navigation }) {
                     </View>
                     <View style={styles.container5}>
                         <Text style={styles.title2} category='h1'>
-                        Your mental health is important. It is good to take time for yourself.
+                            Your mental health is important. It is good to take time for yourself.
                         </Text>
                     </View>
-                    <View style={styles.container6}>
-                    {/* <Text style={styles.title4} category='h1'>
-                        <Icon style={{marginRight: 0}} name='gift-outline' width={24} height={24} fill="black" />
-                        Every day is a gift
-                        </Text>
-                        <Text style={styles.title4} category='h1'>
-                        <Icon style={{marginRight: 5}} name='activity-outline' width={24} height={24} fill="black" />
-                        Check in with yourself
-                        </Text>
-                        <Text style={styles.title4} category='h1'>
-                        <Icon name='umbrella-outline' width={24} height={24} fill="black" />
-                            Umbrellas don't stop the rain, but they can make you more comfortable.
-                        </Text> */}
+                    <View style={styles.container7}>
                         <Button
-                            style={styles.otherbutton}
+                            size="giant"
+                            style={styles.buttonbottom}
                             onPress={() =>
-                            navigation.navigate('Dashboard')
+                            navigation.navigate('Identities')
                             }>
-                            <Text style={styles.title2}>DISCOVER ACTIVITIES</Text>
-                        </Button>
-                    </View>
-                    <View style={styles.container8}>
-                        <Text style={styles.title2} category='h1'>
-                            TODAY
-                        </Text>
-                    </View>
-                    <View style={styles.container5}>
-                        <Text style={styles.title2} category='h1'>
-                            Check in with your dashboard for new fun activities!
-                        </Text>
-                    </View>
-                    <View style={styles.container5}>
-                        <Text style={styles.title2} category='h1'>
-                            Your interests, identities, and goals matter. They shape your life. Your interests, identities, and goals matter. They shape your life.
-                        </Text>
-                    </View>
-                    <View style={styles.container6}>
-                        <Button
-                            style={styles.otherbutton}
-                            onPress={() =>
-                            navigation.navigate('Community')
-                            }>
-                            <Text style={styles.title2}>COMMUNITY UPDATES</Text>
+                            <Text style={styles.title2}>CONTINUE</Text>
                         </Button>
                     </View>
                 </ScrollView>
+        </ImageBackground>
     );
 }
     
 const styles = StyleSheet.create({
     header: {
         backgroundColor: "black",
-        height: 100,
+        height: "12%",
         color: "white",
         alignItems: "center",
     },
@@ -108,53 +75,34 @@ const styles = StyleSheet.create({
     },
     container2: {
         flex: 1,
-        marginTop: 30,
-        backgroundColor: "#f5f5f5",
+        marginTop: "5%",
+        backgroundColor: "#f7f7f7",
         alignItems: "flex-start",
     },
     container3: {
         flex: 1,
-        marginTop: 20,
-        backgroundColor: "#f5f5f5",
+        marginTop: "4%",
         alignItems: "flex-start",
         borderBottomWidth: 1,
         borderColor: "#bfbdc1"
     },
     container4: {
         flex: 1,
-        paddingTop: 30,
-        backgroundColor: "#f7f7f7",
+        paddingTop: "5%",
+        backgroundColor: "#f4f5f0",
         alignItems: "flex-start",
     },
     container5: {
         flex: 1,
-        paddingTop: 15,
-        backgroundColor: "#f7f7f7",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-    },
-    container6: {
-        flex: 1,
-        paddingBottom: 20,
-        backgroundColor: "#f7f7f7",
-        justifyContent: "flex-start",
+        paddingTop: "3%",
+        backgroundColor: "#f4f5f0",
         alignItems: "flex-start",
     },
     container7: {
         flex: 1,
         borderTopColor: "#bfbdc1",
         borderWidth: 1,
-        borderBottomWidth: 0,
         justifyContent: "flex-end",
-    },
-    container8: {
-        flex: 1,
-        paddingTop: 10,
-        backgroundColor: "#f5f5f5",
-        alignItems: "flex-start",
-        borderTopWidth: 1,
-        borderBottomWidth: 1,
-        borderColor: "#bfbdc1"
     },
     list: {
     //paddingHorizontal: 5,
@@ -177,21 +125,8 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         justifyContent: "center"
     },
-    otherbutton: {
-        marginTop: 20,
-        alignSelf: "center",
-        alignItems: "flex-start",
-        marginBottom: 0,
-        backgroundColor: "#f7f7f7",
-        borderColor: "#bfbdc1",
-        width: "95%",
-        borderTopWidth: 1,
-        borderBottomWidth: 0,
-        borderLeftWidth: 0,
-        borderRightWidth: 0,
-    },
     buttonbottom: {
-        marginTop: 20,
+        marginTop: "80%",
         alignSelf: "center",
         marginBottom: 0,
         backgroundColor: "black",
@@ -234,15 +169,6 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 20,
         fontSize: 16,
-        fontWeight: "300",
-        fontFamily: "Avenir",
-    },
-    title4: {
-        color: "black",
-        alignContent: "center",
-        marginLeft: 20,
-        marginRight: 20,
-        fontSize: 20,
         fontWeight: "300",
         fontFamily: "Avenir",
     },

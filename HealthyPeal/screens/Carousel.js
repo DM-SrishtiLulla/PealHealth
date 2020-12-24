@@ -47,7 +47,7 @@ const Carousel = ({data, navigation}) => {
 export default Carousel;
 
 const styles = StyleSheet.create({
-    container: {backgroundColor: COLORS.lightaccent, paddingBottom: "10%", alignItems: "center" },
+    container: {backgroundColor: "#f5f5f5", paddingBottom: "10%", alignItems: "center" },
     dotView: { flexDirection: 'row', justifyContent: 'center' },
     button: {
         flex: 0.5,
