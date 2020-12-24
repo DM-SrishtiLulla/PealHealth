@@ -25,7 +25,7 @@ const { height, width } = Dimensions.get("window")
 
 export default function InsightsDetailPage({ route, navigation }) {
 
-    const { InsightText, ImageLink, id } = route.params;
+    const { InsightText, ImageLink, id, goalID } = route.params;
     console.log(id)
 
     //const image = {uri: "https://images.unsplash.com/photo-1590367514834-9647133f3ae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"};
@@ -48,7 +48,7 @@ export default function InsightsDetailPage({ route, navigation }) {
             </TouchableOpacity>
             <ScrollView>
                 <Text style={{color: COLORS.primary, padding: 14, fontSize: 24, fontWeight: "bold"}}>
-                    About Meditation
+                    About {Meditation}
                 </Text>
                 <Text style={{color: COLORS.primary, paddingHorizontal: 16, fontSize: 18, fontWeight: "normal", justifyContent: "flex-start", textAlign: "justify", lineHeight: 24, paddingBottom: 12}}>
                 Why create a small daily meditation practice? There are countless reasons! Meditation relieves stress and helps you to relax. When you practice mindfulness, you can carry it out to everyday life.

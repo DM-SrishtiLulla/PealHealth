@@ -16,7 +16,8 @@ const CarouselItem = ({item, navigation}) => {
                     navigation.navigate('Details', {
                         InsightText: item.InsightText,
                         ImageLink: item.ImageLink,
-                        id: item.id
+                        id: item.id,
+                        goalID: item.goalID
                     })}>
                 <Image style={styles.image} source={{ uri: item.ImageLink }} />
                 <View style={styles.textView}>

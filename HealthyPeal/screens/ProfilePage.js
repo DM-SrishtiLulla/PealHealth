@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button, TouchableOpacity} from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button, TouchableOpacity } from "react-native";
 import { Icon } from 'react-native-eva-icons';
 import { Auth } from 'aws-amplify';
 import COLORS from "../Colors";
@@ -15,14 +15,14 @@ function ProfilePage({ navigation }) {
                     </View>
                 </View> */}
                 <View style={styles.extraView}>
-                <View style={styles.infoContainer}>
-                    <Text style={[styles.text, { fontWeight: "700", fontSize: 36, marginTop: 24 }]}>Profile</Text>
-                    {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
-                </View>
-                <View style={styles.infoContainer2}>
-                    <Text style={[styles.text, { fontWeight: "400", fontSize: 20, marginTop: 0 }]}>Learn more about your insights!</Text>
-                    {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
-                </View>
+                    <View style={styles.infoContainer}>
+                        <Text style={[styles.text, { fontWeight: "700", fontSize: 36, marginTop: 24 }]}>Profile</Text>
+                        {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
+                    </View>
+                    <View style={styles.infoContainer2}>
+                        <Text style={[styles.text, { fontWeight: "400", fontSize: 20, marginTop: 0 }]}>Learn more about your insights!</Text>
+                        {/* <Text style={[styles.text, { color: "#AEB5BC", fontWeight: "400", fontSize: 14 }]}>@comingsoon</Text> */}
+                    </View>
                 </View>
                 {/* <View style={styles.statsContainer}>
                     <View style={styles.statsBox}>
@@ -38,57 +38,57 @@ function ProfilePage({ navigation }) {
                         <Text style={[styles.text, styles.subText]}>Comments</Text>
                     </View>
                 </View> */}
-<Text style={[styles.subText, styles.recent]}>Interests</Text>
-    <View style={{ alignItems: "center" }}>
-        <View style={styles.categoryContainer}>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='compass-outline' width={40} height={40} fill={COLORS.primary} />
+                <Text style={[styles.subText, styles.recent]}>Interests</Text>
+                <View style={{ alignItems: "center" }}>
+                    <View style={styles.categoryContainer}>
+                        <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
+                            <View style={styles.categoryIcon}>
+                                <Icon name='compass-outline' width={40} height={40} fill={COLORS.primary} />
+                            </View>
+                            <Text style={styles.categoryText}>Nature</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
+                            <View style={styles.categoryIcon}>
+                                <Icon name='gift-outline' width={40} height={40} fill={COLORS.primary} />
+                            </View>
+                            <Text style={styles.categoryText}>Self-Care</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
+                            <View style={styles.categoryIcon}>
+                                <Icon name='color-palette-outline' width={40} height={40} fill={COLORS.primary} />
+                            </View>
+                            <Text style={styles.categoryText}>Creative</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.categoryContainer}>
+                        <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
+                            <View style={styles.categoryIcon}>
+                                <Icon name='book-open-outline' width={40} height={40} fill={COLORS.primary} />
+                            </View>
+                            <Text style={styles.categoryText}>Journal</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
+                            <View style={styles.categoryIcon}>
+                                <Icon name='eye-outline' width={40} height={40} fill={COLORS.primary} />
+                            </View>
+                            <Text style={styles.categoryText}>Meditation</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
+                            <View style={styles.categoryIcon}>
+                                <Icon name='people-outline' width={40} height={40} fill={COLORS.primary} />
+                            </View>
+                            <Text style={styles.categoryText}>Social</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <Text style={styles.categoryText}>Nature</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='gift-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Self-Care</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='color-palette-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Creative</Text>
-              </TouchableOpacity>
-          </View>
-          <View style={styles.categoryContainer}>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='book-open-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Journal</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='eye-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Meditation</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.categoryButton} onPress={() => navigation.navigate('Details')}>
-                <View style={styles.categoryIcon}>
-                    <Icon name='people-outline' width={40} height={40} fill={COLORS.primary} />
-                </View>
-                <Text style={styles.categoryText}>Social</Text>
-              </TouchableOpacity>
-          </View>
-          </View>
-          <Text style={[styles.subText, styles.recent]}>Saved Insights</Text>
+                <Text style={[styles.subText, styles.recent]}>Saved Insights</Text>
                 <View style={{ marginTop: 16 }}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles.mediaImageContainer}>
                             <Image source={{ uri: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
                         </View>
                         <View style={styles.mediaImageContainer}>
-                            <Image source={{ uri: "https://images.unsplash.com/photo-1519160558534-579f5106e43f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"}} style={styles.image} resizeMode="cover" />
+                            <Image source={{ uri: "https://images.unsplash.com/photo-1519160558534-579f5106e43f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" }} style={styles.image} resizeMode="cover" />
                         </View>
                         <View style={styles.mediaImageContainer}>
                             <Image source={{ uri: "https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" }} style={styles.image} resizeMode="cover" />
@@ -267,22 +267,22 @@ const styles = StyleSheet.create({
         alignSelf: "center",
     },
     categoryIcon: {
-       borderWidth: 0,
-       alignItems: "center",
-       justifyContent: "space-evenly",
-       alignSelf: "center",
-       width: 90,
-       height: 90,
-       backgroundColor: COLORS.brightblue,
-       borderRadius: 50
-   },
-   categoryText: {
-       alignSelf: "center",
-       marginTop: 12,
-       fontSize: 18,
-       color: COLORS.primary,
-       fontWeight: "bold",
-   }
+        borderWidth: 0,
+        alignItems: "center",
+        justifyContent: "space-evenly",
+        alignSelf: "center",
+        width: 90,
+        height: 90,
+        backgroundColor: COLORS.brightblue,
+        borderRadius: 50
+    },
+    categoryText: {
+        alignSelf: "center",
+        marginTop: 12,
+        fontSize: 18,
+        color: COLORS.primary,
+        fontWeight: "bold",
+    }
 });
 
 export default ProfilePage;
