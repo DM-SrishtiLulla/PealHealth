@@ -1,5 +1,5 @@
 {
-    "AppSyncApiName": "healthypeal",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": "false"
+  "AppSyncApiName": "healthypeal",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": "false"
 }
